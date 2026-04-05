@@ -59,35 +59,6 @@ GitHub Pages      — hosting
 
 ---
 
-## 🚀 Deploy
-
-Sayt **GitHub Pages** orqali deploy qilingan, **Cloudflare DNS** bilan ulangan.
-
-```
-GitHub repo (main branch)
-       ↓
-GitHub Pages (hikmatullohprogramist.github.io)
-       ↓
-Cloudflare CNAME → hiv.hikmatillo.work
-       ↓
-HTTPS (GitHub Pages sertifikati)
-```
-
-O'zingizda ishlatish uchun:
-
-```bash
-# 1. Repo ni clone qiling
-git clone https://github.com/Hikmatullohprogramist/hiv-uz.git
-
-# 2. index.html ni brauzerda oching
-open index.html
-
-# Deploy uchun — GitHub Pages yoki Cloudflare Pages
-# Hech qanday build jarayoni kerak emas
-```
-
----
-
 ## 🤖 Hamroh Bot
 
 [@HIVUzBot](https://t.me/HIVUzBot) — HIV bo'yicha yopiq communitylarga qo'shilgan Telegram bot.
