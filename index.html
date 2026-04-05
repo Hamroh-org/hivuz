@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HIV bilan normal hayot mumkin — ARVT haqida haqiqat</title>
+<title>HIV bilan normal hayot mumkin | Sog'lom Hayot</title>
 <meta name="description" content="HIV diagnozi hayot oxiri emas. ARVT bilan normal, sog'lom hayot kechirish mumkin. Batafsil ma'lumot va jonli vizualizatsiya.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hiv.hikmatillo.work/">
@@ -290,7 +290,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   opacity: 0;
   transition: opacity .25s;
 }
-.seg-card:hover { transform: translateY(-3px); }
+.seg-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
 .seg-card:hover::before { opacity: 1; }
 
 .seg-card.s1::before { background: linear-gradient(90deg, #ff4040, #ff8080); }
@@ -661,6 +661,198 @@ footer a{color:var(--blue-l);text-decoration:none;}
   .centers-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ══════════════════════════════════
+   MYTH VS FACT
+══════════════════════════════════ */
+.myth-section {
+  padding: 0 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.myth-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.myth-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.myth-card:hover { border-color: rgba(255,255,255,.15); }
+.myth-card.open { border-color: rgba(60,216,112,.25); }
+
+.myth-q {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+}
+.myth-badge-q {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+  flex-shrink: 0;
+  background: rgba(255,64,64,.1);
+  border: 1px solid rgba(255,64,64,.25);
+  color: #ff8080;
+}
+.myth-q-text {
+  font-size: 14px; font-weight: 800;
+  color: var(--text); flex: 1; line-height: 1.4;
+}
+.myth-arrow {
+  font-size: 16px; color: var(--muted);
+  transition: transform .3s; flex-shrink: 0;
+}
+.myth-card.open .myth-arrow { transform: rotate(180deg); }
+
+.myth-a {
+  display: none;
+  animation: fadeSlide .3s ease forwards;
+  padding: 0 20px 18px;
+  border-top: 1px solid rgba(60,216,112,.12);
+}
+.myth-card.open .myth-a { display: block; }
+
+.myth-verdict {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  margin-top: 14px;
+}
+.myth-verdict.false {
+  background: rgba(255,64,64,.08);
+  border: 1px solid rgba(255,64,64,.2);
+}
+.myth-verdict.true {
+  background: rgba(60,216,112,.07);
+  border: 1px solid rgba(60,216,112,.2);
+}
+.mv-icon { font-size: 20px; flex-shrink: 0; }
+.mv-text {
+  font-size: 13px; font-weight: 900;
+}
+.mv-text.false { color: #ff7070; }
+.mv-text.true { color: var(--green); }
+
+.myth-explain {
+  font-size: 13px; color: #8a8790;
+  font-weight: 600; line-height: 1.65;
+}
+.myth-explain b { color: var(--text); }
+.myth-explain .g { color: var(--green); }
+.myth-explain .r { color: #ff7070; }
+
+.myth-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(60,216,112,.06);
+  border: 1.5px solid rgba(60,216,112,.2);
+  border-radius: 12px;
+  margin-top: 20px;
+}
+.ms-label {
+  font-size: 12px; color: #8a8790;
+  font-weight: 700; font-family: 'Space Mono', monospace;
+}
+.ms-bar-bg {
+  flex: 1; height: 6px;
+  background: rgba(255,255,255,.06);
+  border-radius: 3px; overflow: hidden;
+}
+.ms-bar-fill {
+  height: 100%; border-radius: 3px;
+  background: var(--green);
+  transition: width .5s ease;
+  width: 0%;
+}
+.ms-count {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: .04em;
+  color: var(--green); flex-shrink: 0;
+}
+@media(max-width:640px) {
+  .myth-q { padding: 14px 16px; gap: 10px; }
+  .myth-q-text { font-size: 13px; }
+  .myth-a { padding: 0 16px 14px; }
+}
+
+
+/* ══════════════════════════════════
+   MANBALAR (SOURCES)
+══════════════════════════════════ */
+.sources-section {
+  padding: 0 24px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.source-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: border-color .2s;
+}
+.source-card:hover { border-color: rgba(64,128,255,.35); }
+.source-icon {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: rgba(64,128,255,.1);
+  border: 1px solid rgba(64,128,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.source-body {}
+.source-name {
+  font-size: 12px; font-weight: 800;
+  color: var(--text); margin-bottom: 2px;
+}
+.source-desc {
+  font-size: 11px; color: var(--muted);
+  font-weight: 600; line-height: 1.4;
+}
+.source-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .1em;
+  color: var(--blue-l); margin-top: 4px;
+  display: block; text-transform: uppercase;
+}
+.disclaimer-box {
+  background: rgba(255,170,48,.05);
+  border: 1px solid rgba(255,170,48,.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #9a8760;
+  font-weight: 600;
+  line-height: 1.65;
+}
+.disclaimer-box b { color: var(--amber); }
+@media(max-width:640px) {
+  .sources-grid { grid-template-columns: 1fr; }
+}
+
 /* ── SCROLL INDICATOR ── */
 .scroll-hint{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
@@ -770,10 +962,11 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <!-- NAV -->
 
 <nav>
-  <div class="nav-logo">Sog'lom Hayot</div>
+  <div class="nav-logo">Sog'lom Hayot 🩸</div>
   <div class="nav-links">
     <a href="#kimsiz" class="nav-hide-sm">Kim siz?</a>
     <a href="#test" class="nav-hide-sm">Test</a>
+    <a href="#myth" class="nav-hide-sm">Mif/Haqiqat</a>
     <a href="#faq">Savollar</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
     <a href="#hotline" class="nav-cta">Yordam →</a>
@@ -802,11 +995,11 @@ footer a{color:var(--blue-l);text-decoration:none;}
     <div class="hero-stats">
       <div class="hstat">
         <div class="hstat-num" style="color:var(--green);">40.8M</div>
-        <div class="hstat-lbl">Dunyo bo'ylab HIV bilan yashamoqda <span style="font-size:8px;display:block;opacity:.6;">UNAIDS 2024</span></div>
+        <div class="hstat-lbl">Dunyo bo'ylab HIV bilan yashamoqda <span style="font-size:8px;display:block;opacity:.6;"><a href="https://www.unaids.org/en/resources/fact-sheet" target="_blank" style="color:inherit;text-decoration:underline;opacity:.7;">UNAIDS 2024</a></span></div>
       </div>
       <div class="hstat">
         <div class="hstat-num" style="color:var(--blue);">94%</div>
-        <div class="hstat-lbl">ARVT ichuvchilarda virus aniqlanmaydi <span style="font-size:8px;display:block;opacity:.6;">WHO 2024</span></div>
+        <div class="hstat-lbl">ARVT ichuvchilarda virus aniqlanmaydi <span style="font-size:8px;display:block;opacity:.6;"><a href="https://www.unaids.org/en/resources/fact-sheet" target="_blank" style="color:inherit;text-decoration:underline;opacity:.7;">UNAIDS 2024</a></span></div>
       </div>
       <div class="hstat">
         <div class="hstat-num" style="color:var(--amber);">77%</div>
@@ -824,7 +1017,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
     </div>
   </div>
   <a href="#bilish" class="scroll-hint">
-    <span>Pastga</span>
+    <span>Ko'proq</span>
     <div class="scroll-arrow"></div>
   </a>
 </section>
@@ -839,22 +1032,22 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
   <!-- KARTALAR -->
   <div class="segment-grid fi" id="segGrid">
-    <div class="seg-card s1" onclick="showSeg('s-qorquv')">
+    <div class="seg-card s1" onclick="window.showSeg('s-qorquv')">
       <span class="seg-icon">😔</span>
       <div class="seg-title">Test topshirishdan qo'rqyapman</div>
       <div class="seg-desc">Nima bo'lishini bilmoqchiman, lekin qo'rqaman</div>
     </div>
-    <div class="seg-card s2" onclick="showSeg('s-diagnoz')">
+    <div class="seg-card s2" onclick="window.showSeg('s-diagnoz')">
       <span class="seg-icon">📋</span>
       <div class="seg-title">Yangi diagnoz oldim</div>
       <div class="seg-desc">HIV aniqlandi — endi nima qilishni bilmayman</div>
     </div>
-    <div class="seg-card s3" onclick="showSeg('s-yaqin')">
+    <div class="seg-card s3" onclick="window.showSeg('s-yaqin')">
       <span class="seg-icon">🤝</span>
       <div class="seg-title">Yaqinim kasallangan</div>
       <div class="seg-desc">Sevgim / do'stim / oila a'zomga qanday yordam beraman</div>
     </div>
-    <div class="seg-card s4" onclick="showSeg('s-arvt')">
+    <div class="seg-card s4" onclick="window.showSeg('s-arvt')">
       <span class="seg-icon">💊</span>
       <div class="seg-title">ARVT ichyapman</div>
       <div class="seg-desc">Davolanmoqdaman — ma'lumot va motivatsiya kerak</div>
@@ -869,7 +1062,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="seg-panel-title">Test topshirishdan qo'rqyapsiz</div>
         <div class="seg-panel-sub">Bu normal. Ko'pchilik xuddi shunday his qiladi.</div>
       </div>
-      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+      <button class="seg-back" onclick="window.hideSeg()">← Orqaga</button>
     </div>
     <div class="seg-steps">
       <div class="seg-step">
@@ -923,7 +1116,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="seg-panel-title">Yangi diagnoz oldingiz</div>
         <div class="seg-panel-sub">Nafas oling. Bu boshqariladigan holat.</div>
       </div>
-      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+      <button class="seg-back" onclick="window.hideSeg()">← Orqaga</button>
     </div>
     <div class="seg-steps">
       <div class="seg-step">
@@ -961,7 +1154,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="seg-panel-title">Yaqiningiz kasallangan</div>
         <div class="seg-panel-sub">Siz bu yerda bo'lganingiz — eng katta yordam.</div>
       </div>
-      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+      <button class="seg-back" onclick="window.hideSeg()">← Orqaga</button>
     </div>
     <div class="seg-steps">
       <div class="seg-step">
@@ -997,7 +1190,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="seg-panel-title">ARVT bilan davolanmoqdasiz</div>
         <div class="seg-panel-sub">Siz to'g'ri yo'ldasiz. Davom eting.</div>
       </div>
-      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+      <button class="seg-back" onclick="window.hideSeg()">← Orqaga</button>
     </div>
     <div class="seg-steps">
       <div class="seg-step">
@@ -1195,6 +1388,141 @@ footer a{color:var(--blue-l);text-decoration:none;}
 </section>
 
 
+<!-- MYTH VS FACT -->
+<section id="myth" class="myth-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--red);">Mif yoki haqiqat?</span>
+    <div class="sec-title">HIV haqida noto'g'ri tushunchalar</div>
+    <p class="sec-desc">Bosing — haqiqatni bilib oling. Bu savollar ko'pchilikni qiynaydi.</p>
+  </div>
+
+  <div class="myth-score fi">
+    <div class="ms-label">Ochilgan: <span id="mythCount">0</span> / 8</div>
+    <div class="ms-bar-bg">
+      <div class="ms-bar-fill" id="mythBar"></div>
+    </div>
+    <div class="ms-count" id="mythPct">0%</div>
+  </div>
+
+  <div class="myth-grid fi">
+    
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 0)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV o'pish yoki quchoqlash orqali yuqadi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Noto'g'ri — bu mif</span>
+        </div>
+        <div class="myth-explain">HIV faqat <b>qon, jinsiy yo'l va ona suti</b> orqali yuqadi. O'pish, quchoqlash, qo'l berishish, birgalikda ovqatlanish, hojatxona, havuz — bulardan <span class="g">hech qachon yuqmaydi</span>.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 1)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"ARVT ichuvchi odam boshqalarga xavfli"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Noto'g'ri — bu eng katta mif</span>
+        </div>
+        <div class="myth-explain"><b>U=U</b> — Undetectable = Untransmittable. ARVT bilan viral yuk &lt;50 bo'lganda yuqtirish xavfi <span class="g">matematikа jihatdan nol</span>. Bu WHO va CDC tomonidan 2019 yilda rasman tasdiqlangan.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 2)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV aniqlansa — umr qisqaradi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Bugungi kunda bu to'g'ri emas</span>
+        </div>
+        <div class="myth-explain">UNAIDS 2024 ma'lumotlariga ko'ra, <b>erta boshlangan ARVT bilan</b> HIV bilan yashovchi insonning umr davomiyligi sog'lom odamnikiga teng. <span class="g">70-80 yoshgacha</span> yashash mumkin.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 3)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV faqat ma'lum guruhlar orasida tarqaladi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Noto'g'ri — HIV hamma uchun xavfli</span>
+        </div>
+        <div class="myth-explain">HIV <b>irqi, jinsi, yoshi, dini yoki ijtimoiy holati</b>ga qaramaydi. Dunyodagi 40.8 million kasalning <b>53%</b> i ayollar va qizlar. Bu faqat "ma'lum guruh" kasalligi emas.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 4)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"ARVT ichsam — yon ta'sirlar juda og'ir bo'ladi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">⚠️</span>
+          <span class="mv-text false">Zamonaviy ARVT boshqacha</span>
+        </div>
+        <div class="myth-explain">Eski dorida yon ta'sirlar kuchli bo'lgan. Lekin <b>zamonaviy ARVT</b> (Biktarvi, Triumeq) 1 ta tabletka, yon ta'sirlari minimal. Ko'ngil aynishi, charchoq — dastlabki 2-4 haftada bo'lib o'tadi. <span class="g">Ko'pchilik hech narsa sezmayin ichadi.</span></div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 5)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV testi topshirsam — hamma bilib qoladi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Qonun sizni himoya qiladi</span>
+        </div>
+        <div class="myth-explain"><b>Tibbiy sir</b> — qonun bilan kafolatlangan. Shifokor sizning roziligizsiz <b>hech kimga</b> ayta olmaydi — na oilangizga, na ish joyingizga. Anonim test ham mavjud — pasportsiz.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 6)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV bilan oila qurib, bola ko'rib bo'lmaydi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Buning teskarisi — mumkin!</span>
+        </div>
+        <div class="myth-explain">ARVT bilan viral yuk aniqlanmaydigan bo'lganda hamkorga yuqtirish xavfi <span class="g">nol</span>. HIV bilan yashovchi ona ARVT ichib, <span class="g">sog'lom bola tug'ishi mumkin</span> — yuqtirish xavfi 1% dan past.</div>
+      </div>
+    </div>
+    <div class="myth-card" role="button" tabindex="0" onclick="window.toggleMyth(this, 7)">
+      <div class="myth-q">
+        <span class="myth-badge-q">Mif?</span>
+        <div class="myth-q-text">"HIV bilan kasallangan odam tashqi ko'rinishidan bilinadi"</div>
+        <span class="myth-arrow">↓</span>
+      </div>
+      <div class="myth-a">
+        <div class="myth-verdict false">
+          <span class="mv-icon">❌</span>
+          <span class="mv-text false">Absolyut noto'g'ri</span>
+        </div>
+        <div class="myth-explain">HIV bilan yashovchi odam <b>yillar davomida hech qanday belgi ko'rsatmasligi</b> mumkin. Tashqi ko'rinishidan aniqlash <b>mutlaqo imkonsiz</b>. Shuning uchun test — yagona aniq usul.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
 <!-- FEAR SECTION -->
 <section id="bilish" class="fear-section">
   <div class="sec-header fi" style="text-align:left;margin-bottom:0;">
@@ -1204,7 +1532,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   </div>
 
   <div class="fears-grid fi">
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">😰</span>
       <div class="fear-q">Men endi uzoq yashamaysmanmi?</div>
       <div class="fear-a">
@@ -1213,7 +1541,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       </div>
       <span class="fear-toggle">Javobni ko'rish ↓</span>
     </div>
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">👫</span>
       <div class="fear-q">Men oila qurolmayman, bolam bo'lmaydi?</div>
       <div class="fear-a">
@@ -1222,7 +1550,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       </div>
       <span class="fear-toggle">Javobni ko'rish ↓</span>
     </div>
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">🤝</span>
       <div class="fear-q">Yaqinlarimga xavfli bo'lib qolaman?</div>
       <div class="fear-a">
@@ -1231,7 +1559,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       </div>
       <span class="fear-toggle">Javobni ko'rish ↓</span>
     </div>
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">💼</span>
       <div class="fear-q">Ish, o'qish — hammasi tugadimi?</div>
       <div class="fear-a">
@@ -1240,7 +1568,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       </div>
       <span class="fear-toggle">Javobni ko'rish ↓</span>
     </div>
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">💊</span>
       <div class="fear-q">Dori butun umr ichilishi kerakmi?</div>
       <div class="fear-a">
@@ -1249,7 +1577,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       </div>
       <span class="fear-toggle">Javobni ko'rish ↓</span>
     </div>
-    <div class="fear-card" onclick="toggleFear(this)">
+    <div class="fear-card" role="button" tabindex="0" onclick="window.toggleFear(this)">
       <span class="fear-icon">🏥</span>
       <div class="fear-q">Hamma bilib qoladi, uyalaman...</div>
       <div class="fear-a">
@@ -1398,27 +1726,27 @@ footer a{color:var(--blue-l);text-decoration:none;}
   </div>
   <div class="fi" id="faqList">
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>HIV test qayerda topshiriladi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>HIV test qayerda topshiriladi?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">O'zbekistonda HIV testi <b>bepul va maxfiy</b> ravishda ixtisoslashtirilgan AIDS markazlarida topshiriladi. Natijalar faqat sizga beriladi. Toshkent shahrida: Respublika AIDS markazi, +998 71 268-30-30.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>ARVT dori O'zbekistonda bepulmi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>ARVT dori O'zbekistonda bepulmi?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">Ha. O'zbekistonda ARVT <b>davlat tomonidan bepul</b> ta'minlanadi. Dori olish uchun AIDS markaziga murojaat qiling va ro'yxatdan o'ting.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>Nikoh va farzand ko'rish mumkinmi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>Nikoh va farzand ko'rish mumkinmi?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">Ha. ARVT bilan viral yuk aniqlanmaydigan darajaga tushganda hamkorga yuqtirish xavfi nol (<span class="g">U=U</span>). HIV bilan yashovchi ona sog'lom bola tug'ishi mumkin — yuqtirish xavfi 1% dan past.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>Qancha vaqt davomida ARVT ichish kerak?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>Qancha vaqt davomida ARVT ichish kerak?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">ARVT umrboyi ichiladi — lekin bu <b>kuniga bitta tabletka</b> xolos. Hozirgi zamonaviy preparatlar (Biktarvi, Triumeq) kichik va yon ta'sirlari minimal.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>HIV qanday yo'llar bilan YUQMAYDI?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>HIV qanday yo'llar bilan YUQMAYDI?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">HIV quyidagi holatlarda <b class="g">YUQMAYDI</b>: quchoqlash, o'pish, qo'l berishish, birgalikda ovqatlanish, hojatxona, hovuz, havo orqali, tashqi aloqa. Faqat: qon, ona suti va jinsiy yo'l bilan yuqishi mumkin.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)"><span>Diagnozdan keyin nima qilish kerak?</span><span class="faq-icon">+</span></div>
+      <div class="faq-q" role="button" tabindex="0" onclick="window.toggleFaq(this)"><span>Diagnozdan keyin nima qilish kerak?</span><span class="faq-icon">+</span></div>
       <div class="faq-a">1. <b>Sakin bo'ling</b> — bu boshqariladigan kasallik.<br>2. <b>AIDS markaziga boring</b> — CD4 va viral yuk tekshiruvi.<br>3. <b>ARVT ni boshlang</b> — imkon qadar tezroq.<br>4. <b>Yaqinlaringizga aytishni o'ylang</b> — yolg'iz emas, yordamchingiz bo'lsin.</div>
     </div>
   </div>
@@ -1536,16 +1864,161 @@ footer a{color:var(--blue-l);text-decoration:none;}
   </div>
 </section>
 
+<!-- MANBALAR -->
+<section class="sources-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--muted);">Ishonchlilik uchun</span>
+    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Ma'lumot manbalari</div>
+  </div>
+
+  <div class="disclaimer-box fi">
+    <b>Muhim eslatma:</b> Bu sayt faqat ta'lim maqsadida yaratilgan.
+    Barcha tibbiy ma'lumotlar quyidagi rasmiy tashkilotlar asosida tuzilgan.
+    Aniq tibbiy maslahat uchun <b>shifokoringizga murojaat qiling</b>.
+  </div>
+
+  <div class="sources-grid fi">
+    <a class="source-card" href="https://www.unaids.org/en/resources/fact-sheet" target="_blank" rel="noopener">
+      <div class="source-icon">🌐</div>
+      <div class="source-body">
+        <div class="source-name">UNAIDS — Global AIDS Update 2024</div>
+        <div class="source-desc">40.8M, 94%, 77% — barcha global statistikalar</div>
+        <span class="source-tag">unaids.org · 2024</span>
+      </div>
+    </a>
+    <a class="source-card" href="https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv/strategic-information/hiv-data-and-statistics" target="_blank" rel="noopener">
+      <div class="source-icon">🏥</div>
+      <div class="source-body">
+        <div class="source-name">WHO — HIV Ma'lumotlar va Statistika</div>
+        <div class="source-desc">U=U, ARVT samaradorligi, davolash qamrovi</div>
+        <span class="source-tag">who.int · 2024</span>
+      </div>
+    </a>
+    <a class="source-card" href="https://www.cdc.gov/hiv/basics/transmission.html" target="_blank" rel="noopener">
+      <div class="source-icon">🔬</div>
+      <div class="source-body">
+        <div class="source-name">CDC — HIV Yuqish Yo'llari</div>
+        <div class="source-desc">HIV qanday yuqadi va yuqmaydi — ilmiy asos</div>
+        <span class="source-tag">cdc.gov · 2024</span>
+      </div>
+    </a>
+    <a class="source-card" href="https://www.nejm.org/doi/full/10.1056/NEJMoa1910836" target="_blank" rel="noopener">
+      <div class="source-icon">📄</div>
+      <div class="source-body">
+        <div class="source-name">NEJM — PARTNER2 Tadqiqoti</div>
+        <div class="source-desc">U=U ilmiy isboti — 0 yuqtirish holati qayd etilgan</div>
+        <span class="source-tag">nejm.org · 2019</span>
+      </div>
+    </a>
+    <a class="source-card" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32341-6/fulltext" target="_blank" rel="noopener">
+      <div class="source-icon">📊</div>
+      <div class="source-body">
+        <div class="source-name">The Lancet — ARVT va Umr Davomiyligi</div>
+        <div class="source-desc">ARVT bilan umr davomiyligi sog'lom odamnikiga teng</div>
+        <span class="source-tag">thelancet.com · 2020</span>
+      </div>
+    </a>
+    <a class="source-card" href="https://hivinfo.uz" target="_blank" rel="noopener">
+      <div class="source-icon">🇺🇿</div>
+      <div class="source-body">
+        <div class="source-name">O'zbekiston AIDS Markazi</div>
+        <div class="source-desc">Mahalliy ma'lumotlar, markazlar, bepul test</div>
+        <span class="source-tag">O'zbekiston · Rasmiy</span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <footer>
   <span class="f-logo">Sog'lom Hayot</span>
   <p>Bu sahifa faqat <b>ta'lim maqsadida</b> yaratilgan. Aniq tibbiy maslahat uchun shifokoringizga murojaat qiling.</p>
-  <p style="margin-top:6px;opacity:.55;font-size:11px;">🔒 Shaxsiy ma'lumotlar saqlanmaydi &nbsp;·&nbsp; Yashirin rejim uchun: Ctrl+Shift+N
+  <p style="margin-top:6px;opacity:.55;font-size:11px;">🔒 Maxfiy &nbsp;·&nbsp; 📚 <a href="#" onclick="document.querySelector('.sources-section').scrollIntoView({behavior:'smooth'});return false;" style="color:inherit;opacity:.7;">Manbalar</a> &nbsp;·&nbsp; 🔒 Shaxsiy ma'lumotlar saqlanmaydi &nbsp;·&nbsp; Yashirin rejim uchun: Ctrl+Shift+N
   </p>
   <p style="margin-top:6px;opacity:.4;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
 </footer>
 
 <script>
 'use strict';
+
+/* ══════════════════════════════════
+   GLOBAL INTERACTIVE FUNCTIONS
+   (fonts.ready dan tashqarida — 
+    onclick HTML atributlari uchun)
+══════════════════════════════════ */
+
+// ── SEGMENT ──
+function showSeg(id) {
+  document.getElementById('segGrid').style.display = 'none';
+  document.querySelectorAll('.seg-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById(id);
+  if (panel) {
+    panel.classList.add('active');
+    const section = document.getElementById('kimsiz');
+    if (section) {
+      window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    }
+  }
+}
+function hideSeg() {
+  document.querySelectorAll('.seg-panel').forEach(p => p.classList.remove('active'));
+  const grid = document.getElementById('segGrid');
+  if (grid) grid.style.display = 'grid';
+}
+
+// ── MYTH VS FACT ──
+const MYTH_TOTAL = 8;
+const mythOpened = new Set();
+
+function toggleMyth(card, idx) {
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.myth-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    card.classList.add('open');
+    mythOpened.add(idx);
+    // Score yangilash
+    const n = mythOpened.size;
+    const pct = Math.round(n / MYTH_TOTAL * 100);
+    const el = document.getElementById('mythCount');
+    const bar = document.getElementById('mythBar');
+    const pctEl = document.getElementById('mythPct');
+    if (el) el.textContent = n;
+    if (bar) bar.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
+    // Smooth scroll
+    const top = card.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const ans = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) { item.classList.add('open'); ans.classList.add('open'); }
+}
+
+// ── FEAR CARDS ──
+function toggleFear(card) {
+  const ans = card.querySelector('.fear-a');
+  const tog = card.querySelector('.fear-toggle');
+  const open = ans.classList.contains('show');
+  ans.classList.toggle('show', !open);
+  tog.textContent = open ? 'Javobni ko\'rish ↓' : 'Yopish ↑';
+}
+// Global scope ga biriktirish
+window.showSeg     = showSeg;
+window.hideSeg     = hideSeg;
+window.toggleMyth  = toggleMyth;
+window.toggleFaq   = toggleFaq;
+window.toggleFear  = toggleFear;
+
+
+
 
 /* ── CONSTANTS ── */
 const SHIELD_R = 22;
@@ -1747,20 +2220,8 @@ function onSlider(){
 document.getElementById('slRange').addEventListener('input',onSlider);
 
 /* ── FAQ ── */
-window.toggleFaq=function(el){
-  const item=el.closest('.faq-item'),ans=item.querySelector('.faq-a');
-  const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').classList.remove('open');});
-  if(!isOpen){item.classList.add('open');ans.classList.add('open');}
-};
 
 /* ── FEAR CARDS ── */
-window.toggleFear=function(card){
-  const ans=card.querySelector('.fear-a'),tog=card.querySelector('.fear-toggle');
-  const open=ans.classList.contains('show');
-  ans.classList.toggle('show',!open);
-  tog.textContent=open?'Javobni ko\'rish ↓':'Yopish ↑';
-};
 
 /* ── SCROLL FADE ── */
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
@@ -1781,5 +2242,7 @@ document.fonts.ready.then(()=>{
 
 </script>
 
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5b74f80b4ef04449ac4f65572bd8bde8"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
