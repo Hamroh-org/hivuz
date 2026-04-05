@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIV bilan normal hayot mumkin — ARVT haqida haqiqat</title>
+<meta name="description" content="HIV diagnozi hayot oxiri emas. ARVT bilan normal, sog'lom hayot kechirish mumkin. Batafsil ma'lumot va jonli vizualizatsiya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f;
+  --bg2:#0d0f1c;
+  --bg3:#111425;
+  --border:#1e2235;
+  --text:#e8e4d8;
+  --muted:#6a6870;
+  --blue:#4080ff;
+  --blue-l:#70a8ff;
+  --green:#3cd870;
+  --green-d:#1a6030;
+  --red:#ff4040;
+  --amber:#ffaa30;
+  --SHIELD_R:22;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#0a0c14;}
+::-webkit-scrollbar-thumb{background:#1e2235;border-radius:3px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 28px;
+  background:rgba(7,9,15,0.9);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(30,34,53,0.5);
+}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.14em;background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-decoration:none;font-family:'Space Mono',monospace;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{padding:7px 16px;border-radius:6px;background:var(--green-d);border:1px solid var(--green);color:var(--green)!important;font-size:11px!important;transition:all .2s!important;}
+.nav-cta:hover{background:rgba(60,216,112,.2)!important;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:100px 24px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(40,80,200,.13) 0%,transparent 70%),radial-gradient(ellipse 35% 30% at 80% 70%,rgba(60,216,112,.07) 0%,transparent 60%);}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(64,128,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(64,128,255,.04) 1px,transparent 1px);background-size:38px 38px;}
+.hero-content{position:relative;z-index:1;max-width:700px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:var(--green);text-transform:uppercase;margin-bottom:24px;padding:6px 14px;border:1px solid rgba(60,216,112,.3);border-radius:20px;background:rgba(60,216,112,.06);}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.5s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,10vw,96px);line-height:.92;letter-spacing:.04em;margin-bottom:12px;}
+.hero h1 .line1{color:#fff;display:block;}
+.hero h1 .line2{background:linear-gradient(135deg,var(--blue-l),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;}
+.hero-sub{font-size:clamp(14px,2.2vw,17px);color:#9a97a0;font-weight:600;line-height:1.72;margin-bottom:36px;}
+.hero-sub b{color:var(--text);}
+
+.hero-stats{display:flex;gap:0;justify-content:center;margin-bottom:40px;flex-wrap:wrap;}
+.hstat{padding:14px 24px;border:1px solid var(--border);background:rgba(13,15,28,.7);text-align:center;}
+.hstat:first-child{border-radius:10px 0 0 10px;}
+.hstat:last-child{border-radius:0 10px 10px 0;}
+.hstat:not(:last-child){border-right:none;}
+.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.06em;line-height:1;}
+.hstat-lbl{font-size:10px;color:var(--muted);font-weight:700;font-family:'Space Mono',monospace;margin-top:3px;}
+
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-main{padding:14px 32px;border-radius:8px;background:linear-gradient(135deg,var(--blue),#2050c0);color:#fff;font-weight:800;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 0 28px rgba(64,128,255,.3);font-family:'Nunito',sans-serif;}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 4px 38px rgba(64,128,255,.5);}
+.btn-ghost{padding:14px 32px;border-radius:8px;background:transparent;border:1.5px solid var(--border);color:var(--text);font-weight:800;font-size:14px;text-decoration:none;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);}
+
+/* ── FEAR SECTION ── */
+.fear-section{padding:72px 24px;max-width:900px;margin:0 auto;}
+.sec-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px;display:block;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);letter-spacing:.06em;line-height:1;margin-bottom:16px;}
+.sec-desc{font-size:14px;color:#8a8790;font-weight:600;line-height:1.68;max-width:560px;}
+
+.fears-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:32px;}
+.fear-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;cursor:pointer;transition:border-color .25s;}
+.fear-card:hover{border-color:var(--blue-l);}
+.fear-q{font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px;line-height:1.4;}
+.fear-a{font-size:13px;color:#8a8790;font-weight:600;line-height:1.62;display:none;}
+.fear-a.show{display:block;}
+.fear-toggle{font-family:'Space Mono',monospace;font-size:10px;color:var(--blue-l);font-weight:700;margin-top:8px;display:block;}
+.fear-icon{font-size:24px;margin-bottom:10px;display:block;}
+.fear-a .hi{color:var(--green);}
+.fear-a .r{color:var(--red);}
+
+/* ── LIVE DEMO ── */
+.demo-section{padding:0 24px 72px;max-width:1080px;margin:0 auto;}
+.sec-header{text-align:center;margin-bottom:40px;}
+
+.live-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.live-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 18px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.3);}
+.tl-dots{display:flex;gap:6px;}
+.tl-dots span{width:11px;height:11px;border-radius:50%;display:block;}
+.tl-r{background:#ff5f57;}.tl-y{background:#febc2e;}.tl-g{background:#28c840;}
+.live-lbl{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;}
+.live-clk{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);}
+
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;border-bottom:1px solid var(--border);}
+.metric{padding:13px 18px;background:var(--bg3);}
+.metric:first-child{border-right:1px solid var(--border);}
+.metric-lbl{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;}
+.metric-val{font-size:20px;font-weight:900;margin-bottom:5px;transition:color .4s;}
+.metric-bg{height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+.metric-fill{height:100%;border-radius:3px;transition:width .5s ease,background .5s ease;}
+
+.main-canvas-wrap{position:relative;background:#06040f;}
+canvas#main{display:block;width:100%;}
+
+.mode-strip{display:flex;border-top:1px solid var(--border);overflow-x:auto;}
+.msbtn{flex:1;min-width:96px;padding:12px 6px;background:transparent;border:none;border-right:1px solid var(--border);color:var(--muted);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+.msbtn:last-child{border-right:none;}
+.msbtn:hover{background:rgba(255,255,255,.03);color:var(--text);}
+.msbtn[data-active]{color:#fff;}
+.msbtn[data-active][data-mode="normal"]{background:rgba(64,128,255,.14);color:var(--blue-l);}
+.msbtn[data-active][data-mode="hiv"]{background:rgba(255,64,64,.1);color:#ff8080;}
+.msbtn[data-active][data-mode="noarvt"]{background:rgba(200,20,20,.12);color:#ff6060;}
+.msbtn[data-active][data-mode="arvt"]{background:rgba(60,216,112,.1);color:var(--green);}
+.msbtn[data-active][data-mode="win"]{background:rgba(60,216,112,.14);color:var(--green);}
+
+.explain{padding:15px 18px;background:rgba(0,0,0,.22);border-top:1px solid var(--border);min-height:76px;}
+.ex-phase{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:3px;}
+.ex-title{font-size:15px;font-weight:900;margin-bottom:4px;}
+.ex-body{font-size:12px;color:#8a8790;font-weight:700;line-height:1.62;}
+.ex-body .g{color:var(--green);}.ex-body .r{color:#ff7070;}.ex-body .b{color:var(--blue-l);}
+
+/* ── CD4 SLIDER ── */
+.slider-section{padding:0 24px 72px;max-width:1080px;margin:0 auto;}
+.slider-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;padding:26px;}
+.sl-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;}
+.sl-head{font-size:15px;font-weight:900;}
+.sl-badge{display:flex;align-items:baseline;gap:5px;}
+.sl-val{font-size:28px;font-weight:900;transition:color .3s;}
+.sl-unit{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;}
+input[type=range]{width:100%;height:6px;-webkit-appearance:none;appearance:none;border-radius:3px;outline:none;cursor:pointer;background:linear-gradient(90deg,var(--red) 0%,var(--amber) 30%,var(--green) 65%,var(--blue) 100%);}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer;box-shadow:0 0 0 7px rgba(64,128,255,.15),0 2px 8px rgba(0,0,0,.5);transition:border-color .3s;}
+.range-marks{display:flex;justify-content:space-between;margin-top:6px;}
+.rm{font-size:9px;font-weight:800;font-family:'Space Mono',monospace;letter-spacing:.06em;}
+.rm.r{color:var(--red);}.rm.a{color:var(--amber);}.rm.g{color:var(--green);}.rm.b{color:var(--blue);}
+.immune-wrap{margin-top:16px;}
+.immune-lbl{font-size:11px;font-weight:700;color:#8a8790;margin-bottom:6px;}
+.immune-bg{height:9px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden;}
+.immune-fill{height:100%;border-radius:5px;transition:width .5s ease,background .5s ease;}
+.blood-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.blood-box{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.bb-label{font-size:8px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;border-bottom:1px solid var(--border);}
+canvas.blood{display:block;width:100%;height:120px;}
+.bb-status{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;}
+.bb-pill{font-size:10px;font-weight:800;padding:3px 10px;border-radius:12px;}
+.bb-count{font-size:11px;font-weight:700;color:var(--muted);}
+.explain-box{margin-top:14px;background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.eb-icon{font-size:22px;margin-bottom:5px;}
+.eb-body{font-size:13px;font-weight:700;color:#9a9790;line-height:1.65;}
+.eb-body .g{color:var(--green);}.eb-body .r{color:var(--red);}.eb-body .b{color:var(--blue-l);}
+
+/* ── TIMELINE ── */
+.timeline-section{padding:0 24px 72px;max-width:900px;margin:0 auto;}
+.timeline{position:relative;padding-left:34px;}
+.timeline::before{content:'';position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--red),var(--amber),var(--green),var(--blue));}
+.tli{position:relative;margin-bottom:22px;}
+.tli::before{content:'';position:absolute;left:-24px;top:10px;width:12px;height:12px;border-radius:50%;border:2px solid;}
+.tli.r::before{background:var(--red);border-color:var(--red);}
+.tli.a::before{background:var(--amber);border-color:var(--amber);}
+.tli.g::before{background:var(--green);border-color:var(--green);}
+.tli.b::before{background:var(--blue);border-color:var(--blue);}
+.tl-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:15px 17px;}
+.tl-time{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:3px;}
+.tl-title{font-size:14px;font-weight:900;margin-bottom:4px;}
+.tl-body{font-size:12px;color:#8a8790;font-weight:600;line-height:1.6;}
+.tl-body .g{color:var(--green);}.tl-body .r{color:var(--red);}
+
+/* ── FAQ ── */
+.faq-section{padding:0 24px 72px;max-width:780px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;background:var(--bg2);}
+.faq-q{padding:16px 18px;font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s;}
+.faq-q:hover{background:rgba(255,255,255,.03);}
+.faq-q .faq-icon{font-size:18px;flex-shrink:0;transition:transform .3s;}
+.faq-a{padding:0 18px 14px;font-size:13px;color:#8a8790;font-weight:600;line-height:1.68;display:none;}
+.faq-a.open{display:block;}
+.faq-a .g{color:var(--green);}.faq-a .r{color:var(--red);}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ── HOTLINE ── */
+.hotline-section{padding:0 24px 72px;max-width:1080px;margin:0 auto;}
+.hotline-card{
+  background:linear-gradient(135deg,rgba(60,216,112,.08) 0%,rgba(64,128,255,.06) 100%);
+  border:1.5px solid rgba(60,216,112,.25);
+  border-radius:16px;padding:36px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hotline-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(60,216,112,.04);pointer-events:none;}
+.hotline-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,42px);letter-spacing:.06em;margin-bottom:10px;}
+.hotline-sub{font-size:14px;color:#8a8790;font-weight:600;margin-bottom:28px;line-height:1.6;}
+.hotline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:28px;}
+.hline-card{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;}
+.hline-num{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.06em;color:var(--green);margin-bottom:4px;}
+.hline-lbl{font-size:11px;color:var(--muted);font-weight:700;font-family:'Space Mono',monospace;}
+.hotline-note{font-size:12px;color:var(--muted);font-weight:600;line-height:1.6;}
+.hotline-note b{color:var(--text);}
+
+/* ── CTA BANNER ── */
+.cta-section{padding:0 24px 100px;max-width:1080px;margin:0 auto;}
+.cta-card{
+  background:var(--bg2);border:1.5px solid var(--border);
+  border-radius:16px;padding:48px 36px;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;
+}
+.cta-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,44px);letter-spacing:.06em;line-height:1;margin-bottom:10px;}
+.cta-text p{font-size:14px;color:#8a8790;font-weight:600;line-height:1.65;}
+.cta-text p b{color:var(--text);}
+.cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0;}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--muted);font-size:12px;font-weight:600;}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.12em;background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:8px;}
+footer a{color:var(--blue-l);text-decoration:none;}
+
+
+/* ── HAMROH BOT ── */
+.bot-section{padding:0 24px 72px;max-width:900px;margin:0 auto;}
+.bot-card{
+  background:linear-gradient(135deg,rgba(64,128,255,.07) 0%,rgba(60,216,112,.05) 100%);
+  border:1.5px solid rgba(64,128,255,.25);
+  border-radius:16px;overflow:hidden;
+}
+.bot-top{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:28px 28px 20px;}
+.bot-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-l);margin-bottom:8px;}
+.bot-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,40px);letter-spacing:.06em;line-height:1;margin-bottom:10px;}
+.bot-desc{font-size:13px;color:#8a8790;font-weight:600;line-height:1.65;}
+.bot-desc b{color:var(--text);}
+.bot-desc .g{color:var(--green);}
+.bot-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1a3060,#0a1830);border:2px solid rgba(64,128,255,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:36px;}
+.bot-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;border-top:1px solid rgba(64,128,255,.15);}
+.bot-feat{padding:16px 20px;background:rgba(0,0,0,.2);}
+.bot-feat-icon{font-size:18px;margin-bottom:6px;}
+.bot-feat-title{font-size:12px;font-weight:800;margin-bottom:3px;}
+.bot-feat-desc{font-size:11px;color:#6a6870;font-weight:600;line-height:1.5;}
+.bot-cta-row{padding:20px 28px;border-top:1px solid rgba(64,128,255,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:rgba(0,0,0,.15);}
+.bot-cta-text{font-size:13px;color:#8a8790;font-weight:600;}
+.bot-cta-text b{color:var(--text);}
+.btn-telegram{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;background:#2481cc;color:#fff;font-weight:800;font-size:14px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif;}
+.btn-telegram:hover{background:#1a6aaa;transform:translateY(-1px);}
+.btn-telegram svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
+.bot-stats-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;}
+.bstat{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted);}
+.bstat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+@media(max-width:600px){
+  .bot-top{grid-template-columns:1fr;}.bot-avatar{display:none;}
+  .bot-cta-row{flex-direction:column;align-items:flex-start;}
+}
+
+/* ── UTILS ── */
+.fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fi.vis{opacity:1;transform:none;}
+@media(max-width:640px){
+  nav{padding:10px 14px;}.nav-links{gap:10px;}
+  .hstat{padding:10px 14px;}
+  .blood-grid{grid-template-columns:1fr;}
+  .mode-strip{flex-wrap:wrap;}.msbtn{min-width:80px;}
+  .cta-card{grid-template-columns:1fr;}.cta-btns{flex-direction:row;flex-wrap:wrap;}
+  .hotline-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sog'lom Hayot</div>
+  <div class="nav-links">
+    <a href="#bilish">Bilish kerak</a>
+    <a href="#demo">Ko'rish</a>
+    <a href="#faq">Savollar</a>
+    <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
+    <a href="#hotline" class="nav-cta">Yordam →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Siz yolg'iz emassiz
+    </div>
+    <h1>
+      <span class="line1">HIV diagnozi —</span>
+      <span class="line2">Hayot oxiri emas</span>
+    </h1>
+    <p class="hero-sub">
+      Bugun <b>40.8 million</b> kishi HIV bilan yashayapti.<br>
+      ARVT dori bilan ularning aksariyati <b>normal, to'liq hayot</b> kechirmoqda.<br>
+      Siz ham shunday yashay olasiz.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num" style="color:var(--green);">40.8M</div>
+        <div class="hstat-lbl">Dunyo bo'ylab HIV bilan yashamoqda <span style="font-size:8px;display:block;opacity:.6;">UNAIDS 2024</span></div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" style="color:var(--blue);">94%</div>
+        <div class="hstat-lbl">ARVT ichuvchilarda virus aniqlanmaydi <span style="font-size:8px;display:block;opacity:.6;">WHO 2024</span></div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" style="color:var(--amber);">77%</div>
+        <div class="hstat-lbl">Dunyoda ARVT qamrovi <span style="font-size:8px;display:block;opacity:.6;">UNAIDS 2024</span></div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" style="color:#c0c0ff;">U=U</div>
+        <div class="hstat-lbl">Aniqlanmaydi = Yuqtirmaydi <span style="font-size:8px;display:block;opacity:.6;">WHO tasdiqlagan</span></div>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#bilish" class="btn-main">Haqiqatni biling →</a>
+      <a href="#hotline" class="btn-ghost">Bepul yordam</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEAR SECTION -->
+<section id="bilish" class="fear-section">
+  <div class="sec-header fi" style="text-align:left;margin-bottom:0;">
+    <span class="sec-tag" style="color:var(--red);">Ko'p so'raladigan qo'rquvlar</span>
+    <div class="sec-title">Nimadan qo'rqayapsiz?</div>
+    <p class="sec-desc" style="margin-bottom:28px;">Bu savollarning hammasi normal. Ko'pchilik xuddi shuni so'raydi. Haqiqatni bilib oling.</p>
+  </div>
+
+  <div class="fears-grid fi">
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">😰</span>
+      <div class="fear-q">Men endi uzoq yashamaysmanmi?</div>
+      <div class="fear-a">
+        <span class="hi"><b>Yo'q — bu eski ma'lumot.</b></span><br><br>
+        ARVT bilan boshlangan bemor bugun <span class="hi">70–80 yoshgacha</span> yashashi mumkin — xuddi sog'lom odamdek. 2024 yil tadqiqotlari shuni ko'rsatadi.
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">👫</span>
+      <div class="fear-q">Men oila qurolmayman, bolam bo'lmaydi?</div>
+      <div class="fear-a">
+        <span class="hi"><b>Buning teskarisi — mumkin!</b></span><br><br>
+        ARVT bilan viral yuk aniqlanmaydigan darajaga tushganda, <span class="hi">hamkorga yuqtirish xavfi nol</span>. HIV bilan yashovchi ona sog'lom bola tug'ishi mumkin (&lt;1% yuqtirish xavfi).
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">🤝</span>
+      <div class="fear-q">Yaqinlarimga xavfli bo'lib qolaman?</div>
+      <div class="fear-a">
+        HIV <span class="r">kundalik hayotda yuqmaydi</span>: quchoqlash, o'pish, birgalikda ovqatlanish, hojatxona, hovuz — bulardan yuqmaydi.<br><br>
+        ARVT bilan <span class="hi">U=U</span> — aniqlanmaydi = yuqtirmaydi.
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">💼</span>
+      <div class="fear-q">Ish, o'qish — hammasi tugadimi?</div>
+      <div class="fear-a">
+        <span class="hi"><b>Absolyut yo'q.</b></span><br><br>
+        ARVT ichuvchi insonlar sport, ish, o'qish — barini qiladi. Ko'pchilik 20 yildan ko'proq vaqt davomida normal hayot kechirmoqda. Siz ham xuddi shunday qilasiz.
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">💊</span>
+      <div class="fear-q">Dori butun umr ichilishi kerakmi?</div>
+      <div class="fear-a">
+        Ha — lekin bu <span class="hi">kuniga bitta tabletka</span>. Hozirgi zamonaviy ARVT preparatlar (Biktarvi, Triumeq) 3 ta dorini 1 ta tabletkaga sig'dirgan.<br><br>
+        Gipertoniya yoki diabet dorilari ham umrboyi ichiladi — HIV bunicha farq qilmaydi.
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+    <div class="fear-card" onclick="toggleFear(this)">
+      <span class="fear-icon">🏥</span>
+      <div class="fear-q">Hamma bilib qoladi, uyalaman...</div>
+      <div class="fear-a">
+        Tibbiy sir qonun bilan himoyalangan. Shifokor sizning roziligizsiz <b>hech kimga</b> ayta olmaydi.<br><br>
+        <span class="hi">Biroq bilmagan holda yashash — bu haqiqatan xavfli.</span> Test topshirish — o'zingizni va yaqinlaringizni himoya qilish.
+      </div>
+      <span class="fear-toggle">Javobni ko'rish ↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<div id="demo" class="demo-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--blue);">Jonli vizualizatsiya</span>
+    <div class="sec-title">Qon ichida nima bo'lyapti?</div>
+    <p class="sec-desc">Tugmalarni bosib, HIV va ARVT ta'sirini o'z ko'zingiz bilan kuzating</p>
+  </div>
+  <div class="live-card fi">
+    <div class="live-bar">
+      <div class="tl-dots"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+      <div class="live-lbl">QON TOMIRI — REAL VAQT SIMULYATSIYASI</div>
+      <div class="live-clk" id="clock">00:00</div>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-lbl" style="color:var(--blue);">CD4 Qo'riqchilar</div>
+        <div class="metric-val" id="mCD4" style="color:var(--blue);">—</div>
+        <div class="metric-bg"><div class="metric-fill" id="fCD4"></div></div>
+      </div>
+      <div class="metric">
+        <div class="metric-lbl" style="color:var(--red);">HIV Viruslar</div>
+        <div class="metric-val" id="mHIV" style="color:var(--red);">—</div>
+        <div class="metric-bg"><div class="metric-fill" id="fHIV"></div></div>
+      </div>
+    </div>
+    <div class="main-canvas-wrap"><canvas id="main" height="290"></canvas></div>
+    <div class="explain" id="explain">
+      <div class="ex-phase" id="ePhase"></div>
+      <div class="ex-title" id="eTitle"></div>
+      <div class="ex-body" id="eBody"></div>
+    </div>
+    <div class="mode-strip" id="modeStrip">
+      <button class="msbtn" data-mode="normal">🩸 Sog'lom qon</button>
+      <button class="msbtn" data-mode="hiv">🦠 HIV kirdi</button>
+      <button class="msbtn" data-mode="noarvt">📉 Davolanmasa</button>
+      <button class="msbtn" data-mode="arvt">💊 ARVT ichsa</button>
+      <button class="msbtn" data-mode="win">✅ Natija</button>
+    </div>
+  </div>
+</div>
+
+<!-- CD4 SLIDER -->
+<div class="slider-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--green);">Interaktiv tajriba</span>
+    <div class="sec-title">CD4 ni o'zgartirib ko'ring</div>
+    <p class="sec-desc">Sliderni suring — CD4 darajasi qonga qanday ta'sir qilishini kuzating</p>
+  </div>
+  <div class="slider-card fi">
+    <div class="sl-top">
+      <div class="sl-head">CD4 hujayralari soni</div>
+      <div class="sl-badge"><span class="sl-val" id="slVal">500</span><span class="sl-unit">hujayra/mm³</span></div>
+    </div>
+    <input type="range" id="slRange" min="0" max="1200" value="500" step="10">
+    <div class="range-marks">
+      <span class="rm r">0 — AIDS</span>
+      <span class="rm a">200 — Xavfli</span>
+      <span class="rm g">500 — Me'yor</span>
+      <span class="rm b">1200 — A'lo</span>
+    </div>
+    <div class="immune-wrap">
+      <div class="immune-lbl">Immunitet kuchi: <span id="imLbl" style="color:var(--blue);">—</span></div>
+      <div class="immune-bg"><div class="immune-fill" id="imBar" style="width:0%;background:var(--blue);"></div></div>
+    </div>
+    <div class="blood-grid">
+      <div class="blood-box">
+        <div class="bb-label" style="color:var(--blue);">Sog'lom qon (CD4: 700+)</div>
+        <canvas class="blood" id="hBlood" height="120"></canvas>
+        <div class="bb-status"><span class="bb-pill" style="background:rgba(60,216,112,.12);color:var(--green);border:1px solid rgba(60,216,112,.3);">Himoyalangan</span><span class="bb-count">CD4: 700+</span></div>
+      </div>
+      <div class="blood-box">
+        <div class="bb-label" style="color:#ccc;">Sizning holatingiz</div>
+        <canvas class="blood" id="uBlood" height="120"></canvas>
+        <div class="bb-status"><span class="bb-pill" id="uPill">—</span><span class="bb-count" id="uCount">CD4: —</span></div>
+      </div>
+    </div>
+    <div class="explain-box">
+      <div class="eb-icon" id="ebIcon">🩸</div>
+      <div class="eb-body" id="ebText">Sliderni suring...</div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div id="arvt" class="timeline-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--green);">ARVT yo'li</span>
+    <div class="sec-title">ARVT ichsangiz nima bo'ladi?</div>
+    <p class="sec-desc">Diagnoz kunidan normal hayotga — bosqichma-bosqich</p>
+  </div>
+  <div class="timeline fi">
+    <div class="tli r">
+      <div class="tl-card">
+        <div class="tl-time" style="color:var(--red);">DIAGNOZ KUNI</div>
+        <div class="tl-title">HIV aniqlandi — ARVT ni boshlash vaqti</div>
+        <div class="tl-body">Viral yuk yuqori, CD4 past. Shifokor ARVT buyuradi. <b>Kuniga 1 tabletka</b>. Qancha erta boshlansa, shuncha tez tiklanasiz.</div>
+      </div>
+    </div>
+    <div class="tli a">
+      <div class="tl-card">
+        <div class="tl-time" style="color:var(--amber);">1–4 HAFTA</div>
+        <div class="tl-title">Dori ish boshlaydi</div>
+        <div class="tl-body">ARVT qonga singib, uch joyda birdan virusga hujum qiladi. Viral yuk kamaymoqda. CD4 hujayralari o'sa boshlaydi.</div>
+      </div>
+    </div>
+    <div class="tli a">
+      <div class="tl-card">
+        <div class="tl-time" style="color:var(--amber);">1–3 OY</div>
+        <div class="tl-title">Viral yuk 90–99% ga kamayadi</div>
+        <div class="tl-body">CD4 ko'paymoqda. <span class="g">Organizmingiz o'zini himoya qilishga qayta boshlaydi.</span></div>
+      </div>
+    </div>
+    <div class="tli g">
+      <div class="tl-card">
+        <div class="tl-time" style="color:var(--green);">6 OY</div>
+        <div class="tl-title">Aniqlanmaydi — U=U</div>
+        <div class="tl-body">Viral yuk <span class="g">&lt;50 kopiya/mL</span>. CD4 500+. Siz boshqalarga <span class="g">yuqtira olmaysiz</span>.</div>
+      </div>
+    </div>
+    <div class="tli b">
+      <div class="tl-card">
+        <div class="tl-time" style="color:var(--blue);">1 YIL +</div>
+        <div class="tl-title">Normal hayot — to'liq tiklanish</div>
+        <div class="tl-body">CD4 700+. <span class="g">Oila, sport, ish, sayohat</span> — hammasi mumkin. Umr davomiyligi sog'lom odamnikidek.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--amber);">Ko'p so'raladigan savollar</span>
+    <div class="sec-title">Savollar & Javoblar</div>
+  </div>
+  <div class="fi" id="faqList">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>HIV test qayerda topshiriladi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">O'zbekistonda HIV testi <b>bepul va maxfiy</b> ravishda ixtisoslashtirilgan AIDS markazlarida topshiriladi. Natijalar faqat sizga beriladi. Toshkent shahrida: Respublika AIDS markazi, +998 71 268-30-30.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>ARVT dori O'zbekistonda bepulmi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">Ha. O'zbekistonda ARVT <b>davlat tomonidan bepul</b> ta'minlanadi. Dori olish uchun AIDS markaziga murojaat qiling va ro'yxatdan o'ting.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Nikoh va farzand ko'rish mumkinmi?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">Ha. ARVT bilan viral yuk aniqlanmaydigan darajaga tushganda hamkorga yuqtirish xavfi nol (<span class="g">U=U</span>). HIV bilan yashovchi ona sog'lom bola tug'ishi mumkin — yuqtirish xavfi 1% dan past.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Qancha vaqt davomida ARVT ichish kerak?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">ARVT umrboyi ichiladi — lekin bu <b>kuniga bitta tabletka</b> xolos. Hozirgi zamonaviy preparatlar (Biktarvi, Triumeq) kichik va yon ta'sirlari minimal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>HIV qanday yo'llar bilan YUQMAYDI?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">HIV quyidagi holatlarda <b class="g">YUQMAYDI</b>: quchoqlash, o'pish, qo'l berishish, birgalikda ovqatlanish, hojatxona, hovuz, havo orqali, tashqi aloqa. Faqat: qon, ona suti va jinsiy yo'l bilan yuqishi mumkin.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Diagnozdan keyin nima qilish kerak?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">1. <b>Sakin bo'ling</b> — bu boshqariladigan kasallik.<br>2. <b>AIDS markaziga boring</b> — CD4 va viral yuk tekshiruvi.<br>3. <b>ARVT ni boshlang</b> — imkon qadar tezroq.<br>4. <b>Yaqinlaringizga aytishni o'ylang</b> — yolg'iz emas, yordamchingiz bo'lsin.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HAMROH BOT -->
+<section id="hamroh" class="bot-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--blue);">Community uchun</span>
+    <div class="sec-title">Hamroh — sizning botingiz</div>
+    <p class="sec-desc">HIV bo'yicha yopiq communitylarga qo'shilgan AI hamroh. Istalgan vaqt, istalgan savol.</p>
+  </div>
+  <div class="bot-card fi">
+    <div class="bot-top">
+      <div>
+        <div class="bot-tag">Telegram Bot • @HIVUzBot</div>
+        <div class="bot-title">Hamroh Bot</div>
+        <p class="bot-desc">
+          HIV bilan yashayotganlar uchun <b>maxfiy va bepul</b> yordamchi.<br>
+          Savollaringizga javob beradi, <span class="g">dalda beradi</span>, shifokorga yo'naltiradi.<br>
+          Yopiq communitylarga qo'shilgan — <b>faqat o'z odamlari</b> bilan.
+        </p>
+        <div class="bot-stats-row">
+          <div class="bstat"><div class="bstat-dot" style="background:var(--green);"></div>Doim online</div>
+          <div class="bstat"><div class="bstat-dot" style="background:var(--blue);"></div>Maxfiy suhbat</div>
+          <div class="bstat"><div class="bstat-dot" style="background:var(--amber);"></div>O'zbek tilida</div>
+          <div class="bstat"><div class="bstat-dot" style="background:#c080ff;"></div>Bepul</div>
+        </div>
+      </div>
+      <div class="bot-avatar">🤖</div>
+    </div>
+    <div class="bot-features">
+      <div class="bot-feat">
+        <div class="bot-feat-icon">💬</div>
+        <div class="bot-feat-title">Savol-javob</div>
+        <div class="bot-feat-desc">HIV, ARVT, dori, yon ta'sirlar haqida istalgan savol</div>
+      </div>
+      <div class="bot-feat">
+        <div class="bot-feat-icon">🤝</div>
+        <div class="bot-feat-title">Hissiy qo'llab-quvvatlash</div>
+        <div class="bot-feat-desc">Tinglaydi, tushunadi, yolg'iz qoldirmaydi</div>
+      </div>
+      <div class="bot-feat">
+        <div class="bot-feat-icon">🏥</div>
+        <div class="bot-feat-title">Shifokorga yo'naltirish</div>
+        <div class="bot-feat-desc">Yaqindagi AIDS markazlari va mutaxassislar</div>
+      </div>
+      <div class="bot-feat">
+        <div class="bot-feat-icon">🔒</div>
+        <div class="bot-feat-title">To'liq maxfiylik</div>
+        <div class="bot-feat-desc">Hech kim bilmaydi — faqat siz va bot</div>
+      </div>
+      <div class="bot-feat">
+        <div class="bot-feat-icon">👥</div>
+        <div class="bot-feat-title">Community</div>
+        <div class="bot-feat-desc">HIV bilan yashovchilar uchun yopiq guruhlar</div>
+      </div>
+      <div class="bot-feat">
+        <div class="bot-feat-icon">📋</div>
+        <div class="bot-feat-title">Dori eslatmasi</div>
+        <div class="bot-feat-desc">ARVT ichish vaqtini eslatib turadi</div>
+      </div>
+    </div>
+    <div class="bot-cta-row">
+      <div class="bot-cta-text">
+        <b>Bugun boshlang</b> — birinchi suhbat 30 soniyadan kam vaqt oladi.<br>
+        <span style="font-size:11px;">Telegram ilovasi orqali to'g'ridan-to'g'ri murojaat qiling.</span>
+      </div>
+      <a href="https://t.me/HIVUzBot" target="_blank" class="btn-telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.9 13.9l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.248.659z"/></svg>
+        @HIVUzBot ga yozish
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOTLINE -->
+<section id="hotline" class="hotline-section">
+  <div class="hotline-card fi">
+    <div class="hotline-title">Yordam olishga tayyor bo'lsangiz</div>
+    <p class="hotline-sub">O'zbekistonda HIV bilan bog'liq barcha xizmatlar <b>bepul va maxfiy</b>.<br>Bugun birinchi qadamni qo'ying.</p>
+    <div class="hotline-grid">
+      <div class="hline-card">
+        <div class="hline-num">1003</div>
+        <div class="hline-lbl">Tibbiy yordam telefon</div>
+      </div>
+      <div class="hline-card">
+        <div class="hline-num">268-30-30</div>
+        <div class="hline-lbl">Toshkent AIDS markazi</div>
+      </div>
+      <div class="hline-card">
+        <div class="hline-num">Bepul</div>
+        <div class="hline-lbl">Test va ARVT dori</div>
+      </div>
+      <div class="hline-card">
+        <div class="hline-num">Maxfiy</div>
+        <div class="hline-lbl">Tibbiy sir saqlanadi</div>
+      </div>
+    </div>
+    <p class="hotline-note">Har bir viloyatda AIDS markazi mavjud. <b>Birinchi tashrif bepul va anonim.</b><br>Siz haqida hech kim bilmaydi — faqat siz va shifokoringiz.</p>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-card fi">
+    <div class="cta-text">
+      <h2>Bugun birinchi qadamni qo'ying</h2>
+      <p>HIV bilan <b>normal, uzoq, to'liq hayot</b> yashash mumkin.<br>ARVT bilan minglab insonlar buni allaqachon isbotlagan.<br>Sizning navbatingiz.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="#hotline" class="btn-main">Yordam olish →</a>
+      <a href="#demo" class="btn-ghost">Ko'rish ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="f-logo">Sog'lom Hayot</span>
+  <p>Bu sahifa faqat <b>ta'lim maqsadida</b> yaratilgan. Aniq tibbiy maslahat uchun shifokoringizga murojaat qiling.</p>
+  <p style="margin-top:6px;opacity:.55;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
+</footer>
+
+<script>
+'use strict';
+
+/* ── CONSTANTS ── */
+const SHIELD_R = 22;
+const MAX_SPARKS = 80;
+const MODES = {
+  normal:{phaseColor:'#4080ff',phase:"SOG'LOM QON",title:"Immunitet kuchli — hamma narsa yaxshi",body:"<span class='b'>Ko'k doirachalar</span> — CD4 hujayralar, ya'ni <b>organizmning qo'riqchilari</b>. Ular erkin harakatlanib, yot narsalarni yo'q qiladi. Hech qanday virus yo'q — tana himoyalangan.",nCD4:22,nHIV:0,nSh:0,nInf:0},
+  hiv:{phaseColor:'#ff4040',phase:"HIV KIRDI",title:"Viruslar CD4 hujayralarni ushlab olmoqda",body:"<span class='r'>Qizil yulduzchalar</span> — HIV viruslari. Ular to'g'ridan-to'g'ri <b>CD4 hujayralariga</b> hujum qiladi. Har bir CD4 ga birikib, uni <span class='r'>virus fabrikasiga</span> aylantiradi. CD4 soni <b>kamayib boradi</b>.",nCD4:16,nHIV:8,nSh:0,nInf:2},
+  noarvt:{phaseColor:'#ff2020',phase:"DAVOLANMASLIK — YILLAR O'TISHI",title:"CD4 kamayadi, virus ko'payadi",body:"Dori yo'q — virus <span class='r'>cheksiz ko'payadi</span>. CD4 birin-ketin halok bo'ladi. <span class='r'>200 dan pastga tushsa — AIDS</span>. Organizmingiz endi oddiy shamollashdan ham himoya qila olmaydi.",nCD4:3,nHIV:20,nSh:0,nInf:6},
+  arvt:{phaseColor:'#3cd870',phase:"ARVT DORI ICHILDI",title:"ARVT qalqonlari virusni to'xtatmoqda",body:"<span class='g'>Yashil qalqonlar</span> — ARVT dorisi. Ular <b>3 joyda birdan</b> virusni bloklaydi. Virus qalqonga tegishi bilan <span class='g'>yashil chaqnash</span> chiqadi — dori ishlayapti!",nCD4:16,nHIV:7,nSh:5,nInf:0},
+  win:{phaseColor:'#3cd870',phase:"ARVT NATIJASI — 6+ OY",title:"Virus aniqlanmaydi — hayot normal!",body:"CD4 hujayralari <span class='g'>700+ ga yetdi</span>. Viruslar deyarli yo'q — <span class='g'>'aniqlanmaydi'</span> (U=U). Siz boshqalarga yuqtira olmaysiz. <b>Normal hayot: oila, sport, ish</b> — hammasi mumkin!",nCD4:24,nHIV:1,nSh:6,nInf:0}
+};
+
+/* ── STATE ── */
+const S = { t:0, mode:'normal', cells:[], shields:[], sparks:[], startMs:Date.now() };
+
+/* ── CANVASES ── */
+const mainCv  = document.getElementById('main');
+const mainCtx = mainCv.getContext('2d');
+const hBldCv  = document.getElementById('hBlood');
+const uBldCv  = document.getElementById('uBlood');
+let hBldCtx, uBldCtx;
+let mW=0,mH=0, hW=0,hH=0, uW=0,uH=0;
+
+function resizeAll(){
+  mW=mainCv.parentElement.clientWidth||340; mH=290;
+  mainCv.width=mW; mainCv.height=mH;
+  hW=hBldCv.parentElement.clientWidth||200; hH=120;
+  hBldCv.width=hW; hBldCv.height=hH;
+  uW=uBldCv.parentElement.clientWidth||200; uH=120;
+  uBldCv.width=uW; uBldCv.height=uH;
+  hBldCtx=hBldCv.getContext('2d');
+  uBldCtx=uBldCv.getContext('2d');
+  S.shields.forEach(s=>{
+    s.x=Math.min(Math.max(s.x,SHIELD_R+10),mW-SHIELD_R-10);
+    s.y=Math.min(Math.max(s.y,SHIELD_R+10),mH-SHIELD_R-10);
+  });
+}
+let resizeT=null;
+window.addEventListener('resize',()=>{clearTimeout(resizeT);resizeT=setTimeout(resizeAll,120);});
+
+/* ── FACTORIES ── */
+function rnd(a,b){return a+Math.random()*(b-a);}
+function makeCell(type,W,H){
+  const sizes={cd4:[10,15],hiv:[8,12],inf:[13,17]};
+  const speeds={cd4:.5,hiv:.8,inf:.35};
+  const [rMin,rMax]=sizes[type];
+  return{type,x:rnd(rMax+4,W-rMax-4),y:rnd(rMax+4,H-rMax-4),vx:rnd(-speeds[type],speeds[type]),vy:rnd(-speeds[type],speeds[type]),r:rnd(rMin,rMax),ph:Math.random()*Math.PI*2};
+}
+function buildScene(m){
+  const cfg=MODES[m];
+  S.cells=[];
+  for(let i=0;i<cfg.nCD4;i++) S.cells.push(makeCell('cd4',mW,mH));
+  for(let i=0;i<cfg.nHIV;i++) S.cells.push(makeCell('hiv',mW,mH));
+  for(let i=0;i<cfg.nInf;i++) S.cells.push(makeCell('inf',mW,mH));
+  const pos=[[mW*.14,mH*.18],[mW*.5,mH*.09],[mW*.86,mH*.18],[mW*.2,mH*.82],[mW*.8,mH*.82],[mW*.5,mH*.91]];
+  S.shields=[];
+  for(let i=0;i<Math.min(cfg.nSh,pos.length);i++) S.shields.push({x:pos[i][0],y:pos[i][1],ph:Math.random()*Math.PI*2});
+  S.sparks=[];
+}
+
+/* ── DRAWING ── */
+function dCD4(c,x,y,r,al=1){
+  c.save();c.globalAlpha=al;
+  const g=c.createRadialGradient(x-r*.3,y-r*.3,0,x,y,r);
+  g.addColorStop(0,'#5090ff');g.addColorStop(1,'#0e2a8a');
+  c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=g;c.fill();
+  c.strokeStyle='#70b0ff';c.lineWidth=1.5;c.stroke();
+  c.beginPath();c.arc(x,y,r*.3,0,Math.PI*2);c.fillStyle='rgba(160,200,255,.7)';c.fill();
+  for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2;c.beginPath();c.moveTo(x+Math.cos(a)*r,y+Math.sin(a)*r);c.lineTo(x+Math.cos(a)*(r+5),y+Math.sin(a)*(r+5));c.strokeStyle='#80a0ff';c.lineWidth=1.5;c.stroke();c.beginPath();c.arc(x+Math.cos(a)*(r+5),y+Math.sin(a)*(r+5),2,0,Math.PI*2);c.fillStyle='#a0c0ff';c.fill();}
+  c.restore();
+}
+function dHIV(c,x,y,r,al=1){
+  c.save();c.globalAlpha=al;
+  const g=c.createRadialGradient(x-r*.3,y-r*.3,0,x,y,r);
+  g.addColorStop(0,'#ff7050');g.addColorStop(1,'#8b1010');
+  c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=g;c.fill();
+  c.strokeStyle='#ff4030';c.lineWidth=1;c.stroke();
+  c.beginPath();c.arc(x,y,r*.28,0,Math.PI*2);c.fillStyle='rgba(255,200,180,.5)';c.fill();
+  for(let i=0;i<10;i++){const a=(i/10)*Math.PI*2;c.beginPath();c.moveTo(x+Math.cos(a)*r,y+Math.sin(a)*r);c.lineTo(x+Math.cos(a)*(r+8),y+Math.sin(a)*(r+8));c.strokeStyle='#ff8060';c.lineWidth=1.5;c.stroke();c.beginPath();c.arc(x+Math.cos(a)*(r+8),y+Math.sin(a)*(r+8),2.5,0,Math.PI*2);c.fillStyle='#ffb090';c.fill();}
+  c.restore();
+}
+function dInf(c,x,y,r,t){
+  c.save();c.globalAlpha=.10+Math.sin(t*3+x*.01)*.05;c.beginPath();c.arc(x,y,r+10,0,Math.PI*2);c.fillStyle='#ff2000';c.fill();c.restore();
+  const g=c.createRadialGradient(x-r*.2,y-r*.2,0,x,y,r);g.addColorStop(0,'#cc4020');g.addColorStop(1,'#601010');
+  c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=g;c.fill();
+  c.save();c.strokeStyle='#ff4020';c.lineWidth=1.5;c.setLineDash([3,2]);c.stroke();c.setLineDash([]);c.restore();
+  for(let i=0;i<4;i++){const a=(i/4)*Math.PI*2+t*.5,pr=r+13,px=x+Math.cos(a)*pr,py=y+Math.sin(a)*pr;c.save();c.globalAlpha=.75;c.beginPath();c.arc(px,py,4,0,Math.PI*2);c.fillStyle='#ff6040';c.fill();for(let s=0;s<5;s++){const sa=(s/5)*Math.PI*2;c.beginPath();c.moveTo(px+Math.cos(sa)*4,py+Math.sin(sa)*4);c.lineTo(px+Math.cos(sa)*7,py+Math.sin(sa)*7);c.strokeStyle='#ff8060';c.lineWidth=1;c.stroke();}c.restore();}
+  c.fillStyle='#ff8060';c.font='700 8px Space Mono';c.textAlign='center';c.textBaseline='middle';c.fillText('FABRIKA',x,y);c.textBaseline='alphabetic';
+}
+function dShield(c,x,y,ph,t){
+  c.save();c.translate(x,y);c.rotate(t*.4+ph);c.strokeStyle='rgba(60,216,112,.28)';c.lineWidth=2;c.setLineDash([6,4]);c.beginPath();c.arc(0,0,SHIELD_R+9,0,Math.PI*2);c.stroke();c.setLineDash([]);c.restore();
+  c.save();c.globalAlpha=.16+Math.sin(t*2+ph)*.07;c.beginPath();c.arc(x,y,SHIELD_R,0,Math.PI*2);c.fillStyle='#3cd870';c.fill();c.restore();
+  c.beginPath();c.arc(x,y,SHIELD_R,0,Math.PI*2);c.fillStyle='rgba(20,80,30,.9)';c.fill();c.strokeStyle='#3cd870';c.lineWidth=1.5;c.stroke();
+  c.fillStyle='#3cd870';c.font='900 13px Nunito';c.textAlign='center';c.textBaseline='middle';c.fillText('✓',x,y);
+  c.fillStyle='#3cd870';c.font='700 8px Space Mono';c.textAlign='center';c.textBaseline='alphabetic';c.fillText('ARVT',x,y+SHIELD_R+12);
+}
+
+/* ── PHYSICS ── */
+function stepCell(cell,W,H,t){
+  cell.x+=cell.vx+Math.sin(t*.4+cell.ph)*.18;
+  cell.y+=cell.vy+Math.cos(t*.38+cell.ph)*.18;
+  if(cell.x<cell.r+3){cell.x=cell.r+3;cell.vx=Math.abs(cell.vx);}
+  if(cell.x>W-cell.r-3){cell.x=W-cell.r-3;cell.vx=-Math.abs(cell.vx);}
+  if(cell.y<cell.r+3){cell.y=cell.r+3;cell.vy=Math.abs(cell.vy);}
+  if(cell.y>H-cell.r-3){cell.y=H-cell.r-3;cell.vy=-Math.abs(cell.vy);}
+}
+function shieldCollide(){
+  S.cells.forEach(cell=>{
+    if(cell.type!=='hiv')return;
+    S.shields.forEach(s=>{
+      const dx=cell.x-s.x,dy=cell.y-s.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<s.r+cell.r+8){
+        const a=Math.atan2(dy,dx);cell.vx=Math.cos(a)*1.6;cell.vy=Math.sin(a)*1.6;
+        if(S.sparks.length<MAX_SPARKS) for(let i=0;i<4;i++) S.sparks.push({x:cell.x,y:cell.y,vx:(Math.random()-.5)*3.5,vy:(Math.random()-.5)*3.5,r:3,life:1});
+      }
+    });
+  });
+}
+function stepSparks(){for(let i=S.sparks.length-1;i>=0;i--){const p=S.sparks[i];p.x+=p.vx;p.y+=p.vy;p.life-=0.07;if(p.life<=0)S.sparks.splice(i,1);}}
+
+/* ── RENDER MAIN ── */
+function renderMain(){
+  const c=mainCtx,W=mW,H=mH,t=S.t;
+  c.fillStyle='#06040f';c.fillRect(0,0,W,H);
+  for(let i=0;i<4;i++){c.save();c.globalAlpha=.04;c.beginPath();c.moveTo(0,H*.14+i*H*.2);c.bezierCurveTo(W*.3,H*.12+i*H*.2+Math.sin(t+i)*8,W*.7,H*.17+i*H*.2+Math.cos(t+i)*7,W,H*.14+i*H*.2);c.strokeStyle='rgba(60,80,200,1)';c.lineWidth=28;c.stroke();c.restore();}
+  S.shields.forEach(s=>dShield(c,s.x,s.y,s.ph,t));
+  if(S.mode==='hiv'||S.mode==='noarvt'){
+    const hivs=S.cells.filter(c=>c.type==='hiv'),cd4s=S.cells.filter(c=>c.type==='cd4');
+    hivs.forEach(h=>{let nd=Infinity,nn=null;cd4s.forEach(c=>{const d=Math.hypot(h.x-c.x,h.y-c.y);if(d<nd){nd=d;nn=c;}});if(nn&&nd<140){mainCtx.save();mainCtx.globalAlpha=(1-nd/140)*.22;mainCtx.beginPath();mainCtx.moveTo(h.x,h.y);mainCtx.lineTo(nn.x,nn.y);mainCtx.strokeStyle='#ff4020';mainCtx.lineWidth=1;mainCtx.setLineDash([3,3]);mainCtx.stroke();mainCtx.setLineDash([]);mainCtx.restore();}});
+  }
+  S.cells.forEach(cell=>{if(cell.type==='cd4')dCD4(c,cell.x,cell.y,cell.r);else if(cell.type==='hiv')dHIV(c,cell.x,cell.y,cell.r);else dInf(c,cell.x,cell.y,cell.r,t);});
+  S.sparks.forEach(p=>{mainCtx.save();mainCtx.globalAlpha=p.life;mainCtx.beginPath();mainCtx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);mainCtx.fillStyle='#3cd870';mainCtx.fill();mainCtx.restore();});
+}
+function renderBlood(){
+  const t=S.t;
+  hBldCtx.fillStyle='#06040f';hBldCtx.fillRect(0,0,hW,hH);
+  hCells.forEach(c=>{moveBC(c,hW,hH);if(c.type==='cd4')dCD4(hBldCtx,c.x,c.y,c.r);else dHIV(hBldCtx,c.x,c.y,c.r,.55);});
+  uBldCtx.fillStyle='#06040f';uBldCtx.fillRect(0,0,uW,uH);
+  uCells.forEach(c=>{moveBC(c,uW,uH);if(c.type==='cd4')dCD4(uBldCtx,c.x,c.y,c.r);else dHIV(uBldCtx,c.x,c.y,c.r);});
+}
+function moveBC(c,W,H){c.x+=c.vx;c.y+=c.vy;if(c.x<c.r){c.x=c.r;c.vx=Math.abs(c.vx);}if(c.x>W-c.r){c.x=W-c.r;c.vx=-Math.abs(c.vx);}if(c.y<c.r){c.y=c.r;c.vy=Math.abs(c.vy);}if(c.y>H-c.r){c.y=H-c.r;c.vy=-Math.abs(c.vy);}}
+function updateMeters(){
+  const nC=S.cells.filter(c=>c.type==='cd4').length,nH=S.cells.filter(c=>c.type!=='cd4').length;
+  const cp=Math.round(nC/24*100),hp=Math.round(nH/28*100);
+  const cC=cp>60?'#4080ff':cp>30?'#ffaa30':'#ff4040';
+  const hC=hp<5?'#3cd870':hp<30?'#ffaa30':'#ff4040';
+  document.getElementById('mCD4').textContent=nC*50+'+';document.getElementById('mCD4').style.color=cC;
+  document.getElementById('fCD4').style.width=cp+'%';document.getElementById('fCD4').style.background=cC;
+  document.getElementById('mHIV').textContent=nH===0?'0 — aniqlanmaydi':nH<=2?'Juda kam':nH<=8?'O\'rtacha':'Ko\'p!';
+  document.getElementById('mHIV').style.color=hC;document.getElementById('fHIV').style.width=hp+'%';document.getElementById('fHIV').style.background=hC;
+  const sec=Math.floor((Date.now()-S.startMs)/1000);
+  document.getElementById('clock').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');
+}
+
+/* ── SINGLE RAF LOOP ── */
+function tick(){
+  S.t+=0.022;
+  S.cells.forEach(cell=>stepCell(cell,mW,mH,S.t));
+  shieldCollide();stepSparks();
+  renderMain();renderBlood();updateMeters();
+  requestAnimationFrame(tick);
+}
+
+/* ── MODE SWITCHING ── */
+document.getElementById('modeStrip').addEventListener('click',e=>{
+  const btn=e.target.closest('[data-mode]');if(!btn)return;
+  const m=btn.dataset.mode;
+  document.querySelectorAll('.msbtn').forEach(b=>delete b.dataset.active);
+  btn.dataset.active='';
+  S.mode=m;buildScene(m);
+  const cfg=MODES[m];
+  document.getElementById('ePhase').textContent=cfg.phase;document.getElementById('ePhase').style.color=cfg.phaseColor;
+  document.getElementById('eTitle').textContent=cfg.title;document.getElementById('eBody').innerHTML=cfg.body;
+});
+
+/* ── SLIDER ── */
+const hCells=[];
+for(let i=0;i<20;i++) hCells.push({x:8+Math.random()*240,y:8+Math.random()*104,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45,r:8+Math.random()*4,type:i<17?'cd4':'hiv'});
+let uCells=[];
+function buildUCells(v){uCells=[];const nC=Math.max(0,Math.round(v/60)),nH=Math.max(0,Math.round((1200-v)/130));for(let i=0;i<nC;i++)uCells.push({x:8+Math.random()*240,y:8+Math.random()*104,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:8+Math.random()*4,type:'cd4'});for(let i=0;i<nH;i++)uCells.push({x:8+Math.random()*240,y:8+Math.random()*104,vx:(Math.random()-.5)*.75,vy:(Math.random()-.5)*.75,r:7+Math.random()*3,type:'hiv'});}
+function getZone(v){
+  if(v<200)return{z:'AIDS',c:'#ff4040',bg:'rgba(255,64,64,.12)',bc:'rgba(255,64,64,.3)',bar:'#ff4040',pct:Math.round(v/12),icon:'💀',txt:'<span class="r">Juda xavfli!</span> CD4 deyarli yo\'q. Immunitet ishlamayapti. <span class="r">ARVT zudlik bilan zarur!</span>'};
+  if(v<350)return{z:'Xavfli',c:'#ff8030',bg:'rgba(255,128,48,.12)',bc:'rgba(255,128,48,.3)',bar:'#ff8030',pct:Math.round(v/12),icon:'⚠️',txt:'<span class="r">Immunitet zaif.</span> Oddiy shamollash ham xavfli. Shifokorga murojaat qiling.'};
+  if(v<500)return{z:'Past',c:'#ffaa30',bg:'rgba(255,170,48,.12)',bc:'rgba(255,170,48,.3)',bar:'#ffaa30',pct:Math.round(v/12),icon:'😟',txt:'Immunitet <span class="r">me\'yordan past.</span> ARVT tavsiya etiladi.'};
+  if(v<800)return{z:"Me'yor",c:'#3cd870',bg:'rgba(60,216,112,.1)',bc:'rgba(60,216,112,.3)',bar:'#3cd870',pct:Math.round(v/12),icon:'😊',txt:'Immunitet <span class="g">yaxshi ishlayapti!</span> ARVT davom ettirilsin.'};
+  return{z:"A'lo",c:'#4080ff',bg:'rgba(64,128,255,.1)',bc:'rgba(64,128,255,.3)',bar:'#4080ff',pct:Math.min(100,Math.round(v/12)),icon:'💪',txt:'Immunitet <span class="g">zo\'r!</span> CD4 ko\'p — to\'liq himoyalangan.'};
+}
+function onSlider(){
+  const v=parseInt(document.getElementById('slRange').value,10),z=getZone(v);
+  document.getElementById('slVal').textContent=v;document.getElementById('slVal').style.color=z.c;
+  document.getElementById('uPill').textContent=z.z;document.getElementById('uPill').style.color=z.c;
+  document.getElementById('uPill').style.background=z.bg;document.getElementById('uPill').style.border='1px solid '+z.bc;
+  document.getElementById('uCount').textContent='CD4: '+v;
+  document.getElementById('imBar').style.width=z.pct+'%';document.getElementById('imBar').style.background=z.bar;
+  document.getElementById('imLbl').textContent=z.pct+'% — '+z.z;document.getElementById('imLbl').style.color=z.c;
+  document.getElementById('ebIcon').textContent=z.icon;document.getElementById('ebText').innerHTML=z.txt;
+  buildUCells(v);
+}
+document.getElementById('slRange').addEventListener('input',onSlider);
+
+/* ── FAQ ── */
+window.toggleFaq=function(el){
+  const item=el.closest('.faq-item'),ans=item.querySelector('.faq-a');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').classList.remove('open');});
+  if(!isOpen){item.classList.add('open');ans.classList.add('open');}
+};
+
+/* ── FEAR CARDS ── */
+window.toggleFear=function(card){
+  const ans=card.querySelector('.fear-a'),tog=card.querySelector('.fear-toggle');
+  const open=ans.classList.contains('show');
+  ans.classList.toggle('show',!open);
+  tog.textContent=open?'Javobni ko\'rish ↓':'Yopish ↑';
+};
+
+/* ── SCROLL FADE ── */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+/* ── BOOT ── */
+document.fonts.ready.then(()=>{
+  resizeAll();
+  buildScene('normal');buildUCells(500);onSlider();
+  const def=document.querySelector('[data-mode="normal"]');
+  if(def)def.dataset.active='';
+  const cfg=MODES['normal'];
+  document.getElementById('ePhase').textContent=cfg.phase;document.getElementById('ePhase').style.color=cfg.phaseColor;
+  document.getElementById('eTitle').textContent=cfg.title;document.getElementById('eBody').innerHTML=cfg.body;
+  tick();
+});
+</script>
+</body>
+</html>
