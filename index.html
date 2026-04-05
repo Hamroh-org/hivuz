@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HIV bilan normal hayot mumkin — ARVT haqida haqiqat</title>
 <meta name="description" content="HIV diagnozi hayot oxiri emas. ARVT bilan normal, sog'lom hayot kechirish mumkin. Batafsil ma'lumot va jonli vizualizatsiya.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hiv.hikmatillo.work/">
+<meta property="og:title" content="HIV bilan normal hayot mumkin — hiv.hikmatillo.work">
+<meta property="og:description" content="Bugun 40.8 million kishi HIV bilan yashayapti. ARVT bilan ularning 94% da virus aniqlanmaydi. Siz ham shunday yashay olasiz.">
+<meta property="og:image" content="https://hiv.hikmatillo.work/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HIV bilan normal hayot mumkin">
+<meta name="twitter:description" content="ARVT bilan 94% da virus aniqlanmaydi. Bepul. O'zbekcha. Maxfiy.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hiv.hikmatillo.work/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -51,7 +61,7 @@ nav{
 .hero{
   min-height:100vh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  padding:110px 24px 80px;text-align:center;position:relative;overflow:hidden;
+  padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden;
 }
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(40,80,200,.13) 0%,transparent 70%),radial-gradient(ellipse 35% 30% at 80% 70%,rgba(60,216,112,.07) 0%,transparent 60%);}
 .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(64,128,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(64,128,255,.04) 1px,transparent 1px);background-size:38px 38px;}
@@ -226,6 +236,431 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
 
 
+
+
+/* ══════════════════════════════════
+   SEGMENT — Kim siz?
+══════════════════════════════════ */
+.segment-section {
+  padding: 0 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.segment-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--blue);
+  text-align: center; display: block;
+  margin-bottom: 10px;
+}
+.segment-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: .06em; text-align: center;
+  margin-bottom: 8px; line-height: 1;
+}
+.segment-sub {
+  text-align: center; font-size: 14px;
+  color: #8a8790; font-weight: 600;
+  margin-bottom: 32px; line-height: 1.6;
+}
+
+.segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+.seg-card {
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: all .25s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+.seg-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.seg-card:hover { transform: translateY(-3px); }
+.seg-card:hover::before { opacity: 1; }
+
+.seg-card.s1::before { background: linear-gradient(90deg, #ff4040, #ff8080); }
+.seg-card.s2::before { background: linear-gradient(90deg, #ffaa30, #ffd080); }
+.seg-card.s3::before { background: linear-gradient(90deg, #4080ff, #80b0ff); }
+.seg-card.s4::before { background: linear-gradient(90deg, #3cd870, #80ffb0); }
+
+.seg-card:hover.s1 { border-color: rgba(255,64,64,.4); box-shadow: 0 8px 32px rgba(255,64,64,.1); }
+.seg-card:hover.s2 { border-color: rgba(255,170,48,.4); box-shadow: 0 8px 32px rgba(255,170,48,.1); }
+.seg-card:hover.s3 { border-color: rgba(64,128,255,.4); box-shadow: 0 8px 32px rgba(64,128,255,.1); }
+.seg-card:hover.s4 { border-color: rgba(60,216,112,.4); box-shadow: 0 8px 32px rgba(60,216,112,.1); }
+
+.seg-icon {
+  font-size: 36px; margin-bottom: 14px;
+  display: block; line-height: 1;
+}
+.seg-title {
+  font-size: 16px; font-weight: 900;
+  margin-bottom: 8px; color: var(--text);
+  line-height: 1.3;
+}
+.seg-desc {
+  font-size: 12px; color: #7a7780;
+  font-weight: 600; line-height: 1.55;
+}
+
+/* ── SEGMENT CONTENT PANELS ── */
+.seg-panel {
+  display: none;
+  animation: fadeSlide .4s ease forwards;
+}
+.seg-panel.active { display: block; }
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.seg-panel-header {
+  display: flex; align-items: center;
+  gap: 14px; margin-bottom: 24px;
+  padding: 18px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.seg-panel-icon { font-size: 28px; flex-shrink: 0; }
+.seg-panel-title {
+  font-size: 18px; font-weight: 900;
+  margin-bottom: 3px;
+}
+.seg-panel-sub {
+  font-size: 12px; color: #8a8790;
+  font-weight: 600;
+}
+.seg-back {
+  background: none; border: 1px solid var(--border);
+  border-radius: 6px; color: var(--muted);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px; font-weight: 700;
+  cursor: pointer; padding: 5px 12px;
+  transition: all .2s; margin-left: auto;
+  flex-shrink: 0;
+}
+.seg-back:hover { border-color: var(--blue); color: var(--blue-l); }
+
+.seg-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px; margin-bottom: 20px;
+}
+.seg-step {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px;
+  position: relative;
+}
+.seg-step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px; letter-spacing: .04em;
+  line-height: 1; margin-bottom: 6px;
+  opacity: .15; position: absolute;
+  right: 14px; top: 12px;
+}
+.seg-step-title {
+  font-size: 13px; font-weight: 900;
+  margin-bottom: 6px; color: var(--text);
+}
+.seg-step-desc {
+  font-size: 12px; color: #7a7780;
+  font-weight: 600; line-height: 1.55;
+}
+.seg-step-action {
+  display: inline-block; margin-top: 10px;
+  font-size: 11px; font-weight: 800;
+  font-family: 'Space Mono', monospace;
+  text-decoration: none; transition: opacity .2s;
+}
+.seg-step-action:hover { opacity: .7; }
+
+.seg-myth {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px;
+  margin-bottom: 10px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.seg-myth-badge {
+  font-size: 10px; font-weight: 800;
+  font-family: 'Space Mono', monospace;
+  padding: 3px 8px; border-radius: 4px;
+  flex-shrink: 0; margin-top: 1px;
+  letter-spacing: .06em;
+}
+.seg-myth-badge.myth {
+  background: rgba(255,64,64,.12);
+  color: #ff8080; border: 1px solid rgba(255,64,64,.25);
+}
+.seg-myth-badge.fact {
+  background: rgba(60,216,112,.1);
+  color: var(--green); border: 1px solid rgba(60,216,112,.25);
+}
+.seg-myth-text {
+  font-size: 13px; font-weight: 700;
+  color: var(--text); line-height: 1.5;
+}
+.seg-myth-sub {
+  font-size: 11px; color: #7a7780;
+  font-weight: 600; margin-top: 4px;
+  line-height: 1.5;
+}
+
+@media(max-width:640px) {
+  .segment-grid { grid-template-columns: 1fr 1fr; }
+  .seg-steps { grid-template-columns: 1fr; }
+  .seg-card { padding: 18px 14px; }
+  .seg-icon { font-size: 28px; margin-bottom: 10px; }
+  .seg-title { font-size: 14px; }
+}
+@media(max-width:380px) {
+  .segment-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+}
+
+
+/* ══════════════════════════════════
+   TEST YO'RIQNOMASI
+══════════════════════════════════ */
+.test-section {
+  padding: 0 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.test-hero {
+  background: linear-gradient(135deg, rgba(64,128,255,.07), rgba(60,216,112,.05));
+  border: 1.5px solid rgba(64,128,255,.2);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.th-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 8px; display: block;
+}
+.th-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: .06em; line-height: 1;
+  margin-bottom: 10px;
+}
+.th-desc {
+  font-size: 13px; color: #8a8790;
+  font-weight: 600; line-height: 1.65;
+}
+.th-badge {
+  display: flex; flex-direction: column;
+  gap: 8px; flex-shrink: 0;
+}
+.th-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+  white-space: nowrap; text-align: center;
+}
+.th-pill.free {
+  background: rgba(60,216,112,.12);
+  border: 1px solid rgba(60,216,112,.3);
+  color: var(--green);
+}
+.th-pill.anon {
+  background: rgba(64,128,255,.1);
+  border: 1px solid rgba(64,128,255,.25);
+  color: var(--blue-l);
+}
+.th-pill.fast {
+  background: rgba(255,170,48,.1);
+  border: 1px solid rgba(255,170,48,.25);
+  color: var(--amber);
+}
+
+/* Steps */
+.test-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  margin-bottom: 24px;
+}
+.test-steps::before {
+  content: '';
+  position: absolute;
+  left: 22px; top: 44px; bottom: 44px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(64,128,255,.3),
+    rgba(60,216,112,.3),
+    rgba(255,170,48,.3),
+    rgba(60,216,112,.5)
+  );
+}
+.tstep {
+  display: flex;
+  gap: 18px;
+  padding: 0 0 20px;
+  position: relative;
+}
+.tstep:last-child { padding-bottom: 0; }
+.tstep-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: .04em;
+  flex-shrink: 0; position: relative; z-index: 1;
+  border: 2px solid;
+}
+.tstep-num.blue {
+  background: rgba(64,128,255,.12);
+  border-color: rgba(64,128,255,.4);
+  color: var(--blue-l);
+}
+.tstep-num.green {
+  background: rgba(60,216,112,.1);
+  border-color: rgba(60,216,112,.35);
+  color: var(--green);
+}
+.tstep-num.amber {
+  background: rgba(255,170,48,.1);
+  border-color: rgba(255,170,48,.3);
+  color: var(--amber);
+}
+.tstep-num.purple {
+  background: rgba(160,96,255,.1);
+  border-color: rgba(160,96,255,.3);
+  color: #c080ff;
+}
+.tstep-body {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  flex: 1;
+}
+.tstep-title {
+  font-size: 15px; font-weight: 900;
+  margin-bottom: 6px; color: var(--text);
+}
+.tstep-desc {
+  font-size: 13px; color: #8a8790;
+  font-weight: 600; line-height: 1.62;
+}
+.tstep-desc b { color: var(--text); }
+.tstep-desc .g { color: var(--green); }
+.tstep-desc .r { color: var(--red); }
+.tstep-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+  margin-top: 8px; font-weight: 700;
+}
+
+/* Window period */
+.window-card {
+  background: rgba(255,170,48,.06);
+  border: 1.5px solid rgba(255,170,48,.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+.wc-title {
+  font-size: 15px; font-weight: 900;
+  margin-bottom: 8px; color: var(--amber);
+  display: flex; align-items: center; gap: 8px;
+}
+.wc-desc {
+  font-size: 13px; color: #9a8760;
+  font-weight: 600; line-height: 1.65;
+  margin-bottom: 16px;
+}
+.wc-timeline {
+  display: flex; gap: 0;
+  background: rgba(0,0,0,.2);
+  border-radius: 8px; overflow: hidden;
+}
+.wct-item {
+  flex: 1; padding: 10px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+.wct-item:last-child { border-right: none; }
+.wct-day {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: .04em;
+  line-height: 1; margin-bottom: 3px;
+}
+.wct-lbl {
+  font-size: 9px; color: var(--muted);
+  font-weight: 700; font-family: 'Space Mono', monospace;
+  letter-spacing: .06em;
+}
+.wct-item.active .wct-day { color: var(--amber); }
+.wct-item.safe .wct-day { color: var(--green); }
+
+/* Markazlar */
+.centers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.center-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.cc-city {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 5px;
+}
+.cc-name {
+  font-size: 13px; font-weight: 800;
+  margin-bottom: 5px; color: var(--text);
+}
+.cc-phone {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px; color: var(--green);
+  font-weight: 700; text-decoration: none;
+  display: block; margin-bottom: 3px;
+}
+.cc-phone:hover { color: var(--blue-l); }
+.cc-note {
+  font-size: 10px; color: var(--muted);
+  font-weight: 600;
+}
+
+@media(max-width:640px) {
+  .test-hero { grid-template-columns: 1fr; }
+  .th-badge { flex-direction: row; flex-wrap: wrap; }
+  .wc-timeline { flex-wrap: wrap; }
+  .wct-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .centers-grid { grid-template-columns: 1fr; }
+}
+
 /* ── SCROLL INDICATOR ── */
 .scroll-hint{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
@@ -333,11 +768,12 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <body>
 
 <!-- NAV -->
+
 <nav>
   <div class="nav-logo">Sog'lom Hayot</div>
   <div class="nav-links">
-    <a href="#bilish" class="nav-hide-sm">Bilish kerak</a>
-    <a href="#demo" class="nav-hide-sm">Ko'rish</a>
+    <a href="#kimsiz" class="nav-hide-sm">Kim siz?</a>
+    <a href="#test" class="nav-hide-sm">Test</a>
     <a href="#faq">Savollar</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
     <a href="#hotline" class="nav-cta">Yordam →</a>
@@ -351,7 +787,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-dot"></span>
-      Siz yolg'iz emassiz
+      Siz yolg'iz emassiz — bu boshqariladigan holat
     </div>
     <h1>
       <span class="line1">HIV diagnozi —</span>
@@ -392,6 +828,372 @@ footer a{color:var(--blue-l);text-decoration:none;}
     <div class="scroll-arrow"></div>
   </a>
 </section>
+
+<!-- SEGMENT: KIM SIZ? -->
+<section id="kimsiz" class="segment-section">
+  <div class="sec-header fi">
+    <span class="segment-label">Siz uchun</span>
+    <div class="segment-title">Bugun sizga qanday yordam bera olaman?</div>
+    <p class="segment-sub">Vaziyatingizga mos ma'lumot va qadamlarni ko'rsataman</p>
+  </div>
+
+  <!-- KARTALAR -->
+  <div class="segment-grid fi" id="segGrid">
+    <div class="seg-card s1" onclick="showSeg('s-qorquv')">
+      <span class="seg-icon">😔</span>
+      <div class="seg-title">Test topshirishdan qo'rqyapman</div>
+      <div class="seg-desc">Nima bo'lishini bilmoqchiman, lekin qo'rqaman</div>
+    </div>
+    <div class="seg-card s2" onclick="showSeg('s-diagnoz')">
+      <span class="seg-icon">📋</span>
+      <div class="seg-title">Yangi diagnoz oldim</div>
+      <div class="seg-desc">HIV aniqlandi — endi nima qilishni bilmayman</div>
+    </div>
+    <div class="seg-card s3" onclick="showSeg('s-yaqin')">
+      <span class="seg-icon">🤝</span>
+      <div class="seg-title">Yaqinim kasallangan</div>
+      <div class="seg-desc">Sevgim / do'stim / oila a'zomga qanday yordam beraman</div>
+    </div>
+    <div class="seg-card s4" onclick="showSeg('s-arvt')">
+      <span class="seg-icon">💊</span>
+      <div class="seg-title">ARVT ichyapman</div>
+      <div class="seg-desc">Davolanmoqdaman — ma'lumot va motivatsiya kerak</div>
+    </div>
+  </div>
+
+  <!-- PANEL 1: QO'RQUV -->
+  <div class="seg-panel" id="s-qorquv">
+    <div class="seg-panel-header">
+      <span class="seg-panel-icon">😔</span>
+      <div>
+        <div class="seg-panel-title">Test topshirishdan qo'rqyapsiz</div>
+        <div class="seg-panel-sub">Bu normal. Ko'pchilik xuddi shunday his qiladi.</div>
+      </div>
+      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+    </div>
+    <div class="seg-steps">
+      <div class="seg-step">
+        <div class="seg-step-num">1</div>
+        <div class="seg-step-title">Nima uchun qo'rqasiz?</div>
+        <div class="seg-step-desc">Natija ijobiy bo'lishidan qo'rqasizmi? Bu eng keng tarqalgan qo'rquv. Lekin bilmaslik — bilishdan ko'ra xavfliroq.</div>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">2</div>
+        <div class="seg-step-title">Test — bepul va anonim</div>
+        <div class="seg-step-desc">O'zbekistonda HIV testi bepul. Hech kim sizning natijangizni bilmaydi — shifokordan boshqa hech kim.</div>
+        <a href="#hotline" class="seg-step-action" style="color:var(--blue-l);">Qayerga borish →</a>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">3</div>
+        <div class="seg-step-title">Ijobiy bo'lsa nima bo'ladi?</div>
+        <div class="seg-step-desc">ARVT boshlanadi. 6 oy ichida virus aniqlanmaydi. Hayot davom etadi — to'liq, normal.</div>
+        <a href="#arvt" class="seg-step-action" style="color:var(--green);">ARVT yo'lini ko'rish →</a>
+      </div>
+    </div>
+    <div>
+      <div class="seg-myth">
+        <span class="seg-myth-badge myth">Mif</span>
+        <div>
+          <div class="seg-myth-text">Test topshirsam — hamma bilib qoladi</div>
+          <div class="seg-myth-sub">Tibbiy sir qonun bilan himoyalangan. Shifokor sizning roziligizsiz hech kimga ayta olmaydi.</div>
+        </div>
+      </div>
+      <div class="seg-myth">
+        <span class="seg-myth-badge myth">Mif</span>
+        <div>
+          <div class="seg-myth-text">Bilmasam — muammo yo'q degan gap</div>
+          <div class="seg-myth-sub">HIV belgilarsiz 10 yil yashirin yurishi mumkin. Bilmasdan boshqalarga yuqtirish xavfi oshadi.</div>
+        </div>
+      </div>
+      <div class="seg-myth">
+        <span class="seg-myth-badge fact">Haqiqat</span>
+        <div>
+          <div class="seg-myth-text">Erta aniqlash = to'liq tiklanish imkoni</div>
+          <div class="seg-myth-sub">Diagnoz qanchalik erta bo'lsa, ARVT shunchalik samarali ishlaydi. CD4 hujayralari tiklanadi.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 2: YANGI DIAGNOZ -->
+  <div class="seg-panel" id="s-diagnoz">
+    <div class="seg-panel-header">
+      <span class="seg-panel-icon">📋</span>
+      <div>
+        <div class="seg-panel-title">Yangi diagnoz oldingiz</div>
+        <div class="seg-panel-sub">Nafas oling. Bu boshqariladigan holat.</div>
+      </div>
+      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+    </div>
+    <div class="seg-steps">
+      <div class="seg-step">
+        <div class="seg-step-num">1</div>
+        <div class="seg-step-title" style="color:var(--red);">Bugun</div>
+        <div class="seg-step-desc">Sakin bo'ling. Bu hayotning oxiri emas — bu yangi boshlang'ich. 40.8 million kishi shu yo'ldan o'tgan.</div>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">2</div>
+        <div class="seg-step-title" style="color:var(--amber);">Bu hafta</div>
+        <div class="seg-step-desc">AIDS markaziga boring. CD4 va viral yuk tahlili topshiring. Bu raqamlar sizning holatni ko'rsatadi.</div>
+        <a href="#hotline" class="seg-step-action" style="color:var(--amber);">Markazlar ro'yxati →</a>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">3</div>
+        <div class="seg-step-title" style="color:var(--green);">Keyingi qadamlar</div>
+        <div class="seg-step-desc">ARVT boshlanadi. Kuniga 1 tabletka. 6 oy ichida virus aniqlanmaydi. Hayot avvalgidek davom etadi.</div>
+        <a href="#demo" class="seg-step-action" style="color:var(--green);">Qonda nima bo'lishini ko'rish →</a>
+      </div>
+    </div>
+    <div class="seg-myth">
+      <span class="seg-myth-badge fact">Eslang</span>
+      <div>
+        <div class="seg-myth-text">Siz yolg'iz emassiz — @HIVUzBot doim yonida</div>
+        <div class="seg-myth-sub">Istalgan savol, istalgan vaqt. Maxfiy. Bepul. Hukm qilmaydi.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3: YAQIN KASALLANGAN -->
+  <div class="seg-panel" id="s-yaqin">
+    <div class="seg-panel-header">
+      <span class="seg-panel-icon">🤝</span>
+      <div>
+        <div class="seg-panel-title">Yaqiningiz kasallangan</div>
+        <div class="seg-panel-sub">Siz bu yerda bo'lganingiz — eng katta yordam.</div>
+      </div>
+      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+    </div>
+    <div class="seg-steps">
+      <div class="seg-step">
+        <div class="seg-step-num">1</div>
+        <div class="seg-step-title">Siz xavfsiz</div>
+        <div class="seg-step-desc">HIV kundalik hayotda yuqmaydi — quchoqlash, o'pish, ovqatlanish, hojatxona, havo orqali. Siz xavf ostida emassiz.</div>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">2</div>
+        <div class="seg-step-title">Unga qanday yordam bering</div>
+        <div class="seg-step-desc">Hukmlamang. Tinglang. Shifokorga borishiga yordam bering. ARVT ichishini eslatib turing — bu eng muhim.</div>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num">3</div>
+        <div class="seg-step-title">U normal yashaydi</div>
+        <div class="seg-step-desc">ARVT bilan 6 oy ichida U=U. Yuqtirish xavfi nol. Birga sport, sayohat, oila — hammasi mumkin.</div>
+      </div>
+    </div>
+    <div class="seg-myth">
+      <span class="seg-myth-badge myth">Mif</span>
+      <div>
+        <div class="seg-myth-text">Uning idish-tovoqlarini alohida ishlatishim kerak</div>
+        <div class="seg-myth-sub">Kerak emas. HIV ovqat, suv, idish orqali yuqmaydi. Oddiy hayot davom etishi mumkin.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 4: ARVT ICHYAPMAN -->
+  <div class="seg-panel" id="s-arvt">
+    <div class="seg-panel-header">
+      <span class="seg-panel-icon">💊</span>
+      <div>
+        <div class="seg-panel-title">ARVT bilan davolanmoqdasiz</div>
+        <div class="seg-panel-sub">Siz to'g'ri yo'ldasiz. Davom eting.</div>
+      </div>
+      <button class="seg-back" onclick="hideSeg()">← Orqaga</button>
+    </div>
+    <div class="seg-steps">
+      <div class="seg-step">
+        <div class="seg-step-num" style="color:var(--green);opacity:.3;">✓</div>
+        <div class="seg-step-title" style="color:var(--green);">Har kuni bir xil vaqtda</div>
+        <div class="seg-step-desc">ARVT samaradorligi dorini bir xil vaqtda ichishga bog'liq. 1 soatlik farq ham viral yukning ko'tarilishiga olib kelishi mumkin.</div>
+        <a href="https://t.me/HIVUzBot" target="_blank" class="seg-step-action" style="color:var(--blue-l);">Eslatma sozlash @HIVUzBot →</a>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num" style="opacity:.15;">!</div>
+        <div class="seg-step-title">Yon ta'sirlar bo'lsa</div>
+        <div class="seg-step-desc">Ko'ngil aynishi, bosh og'riq, charchoq — dastlabki 2-4 haftada normal. Kuchli yon ta'sir bo'lsa — shifokorga ayting, dori almashtirish mumkin.</div>
+      </div>
+      <div class="seg-step">
+        <div class="seg-step-num" style="opacity:.15;">6</div>
+        <div class="seg-step-title">6 oyda maqsad</div>
+        <div class="seg-step-desc">Viral yuk &lt;50 kopiya/mL — "aniqlanmaydi". Bu sizning maqsadingiz. Ko'pchilik 6 oy ichida erishadi.</div>
+        <a href="#demo" class="seg-step-action" style="color:var(--green);">Jarayonni ko'rish →</a>
+      </div>
+    </div>
+    <div class="seg-myth">
+      <span class="seg-myth-badge fact">Eslab qoling</span>
+      <div>
+        <div class="seg-myth-text">U=U — Aniqlanmaydi = Yuqtirmaydi</div>
+        <div class="seg-myth-sub">Viral yuk &lt;50 bo'lganda — siz boshqalarga xavf tug'dirmaysiz. Bu ilmiy haqiqat. WHO tasdiqlagan.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TEST YO'RIQNOMASI -->
+<section id="test" class="test-section">
+
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--amber);">Qadam-baqadam</span>
+    <div class="sec-title">Test topshirish — qanday bo'ladi?</div>
+    <p class="sec-desc">Birinchi marta boradigan odam uchun — hamma narsa aniq va sodda</p>
+  </div>
+
+  <!-- HERO BAND -->
+  <div class="test-hero fi">
+    <div>
+      <span class="th-tag">O'zbekistonda HIV test</span>
+      <div class="th-title">Bepul. Anonim. 30 daqiqa.</div>
+      <p class="th-desc">
+        O'zbekistonda HIV testi <b>to'liq bepul</b>.<br>
+        Hech qanday ro'yxatdan o'tish talab qilinmaydi.<br>
+        Natijalar faqat sizga tegishli — <b>tibbiy sir</b>.
+      </p>
+    </div>
+    <div class="th-badge">
+      <span class="th-pill free">Bepul</span>
+      <span class="th-pill anon">Anonim</span>
+      <span class="th-pill fast">30 daqiqa</span>
+    </div>
+  </div>
+
+  <!-- BOSQICHLAR -->
+  <div class="test-steps fi">
+
+    <div class="tstep">
+      <div class="tstep-num blue">1</div>
+      <div class="tstep-body">
+        <div class="tstep-title">AIDS markaziga boring</div>
+        <div class="tstep-desc">
+          Yaqinidagi AIDS markazini toping (pastdagi ro'yxatga qarang).
+          <b>Hech narsa olib borish shart emas</b> — hatto pasport ham majburiy emas
+          birinchi anonim testda.<br><br>
+          Qo'rqsangiz — <b>ertalab erta boring</b>, odam kam bo'ladi.
+        </div>
+        <span class="tstep-tag" style="background:rgba(64,128,255,.1);color:var(--blue-l);border:1px solid rgba(64,128,255,.2);">Eng yaqin markaz ↓</span>
+      </div>
+    </div>
+
+    <div class="tstep">
+      <div class="tstep-num blue">2</div>
+      <div class="tstep-body">
+        <div class="tstep-title">"HIV testi topshirmoqchiman" deng</div>
+        <div class="tstep-desc">
+          Xolos. Boshqa tushuntirish kerak emas.
+          Shifokor sizdan <b>qo'shimcha savol so'ramaydi</b>.<br><br>
+          Qon yoki og'iz suyuqligi olinadi —
+          <b>og'riq yo'q</b>, 2 daqiqa.
+        </div>
+        <span class="tstep-tag" style="background:rgba(64,128,255,.1);color:var(--blue-l);border:1px solid rgba(64,128,255,.2);">Juda oddiy jarayon</span>
+      </div>
+    </div>
+
+    <div class="tstep">
+      <div class="tstep-num amber">3</div>
+      <div class="tstep-body">
+        <div class="tstep-title">Natijani kutish — 20-30 daqiqa</div>
+        <div class="tstep-desc">
+          Tez test natijalari <b>20-30 daqiqada</b> tayyor bo'ladi.
+          Ba'zi markazlarda 15 daqiqa.<br><br>
+          <span class="r">Muhim:</span> Agar oxirgi <b>3-6 hafta</b> ichida xavfli holat bo'lgan bo'lsa —
+          natija hali aniq bo'lmasligi mumkin. Bu "oyna davri" deyiladi.
+        </div>
+        <span class="tstep-tag" style="background:rgba(255,170,48,.1);color:var(--amber);border:1px solid rgba(255,170,48,.2);">Oyna davri haqida ↓</span>
+      </div>
+    </div>
+
+    <div class="tstep">
+      <div class="tstep-num green">4</div>
+      <div class="tstep-body">
+        <div class="tstep-title">Natija manfiy — zo'r!</div>
+        <div class="tstep-desc">
+          <span class="g">Manfiy = HIV yo'q.</span>
+          Lekin agar oyna davrida bo'lsa — 6 hafta o'tib qayta test topshiring.<br><br>
+          Xavfli holatlar qaytarilmasligi uchun
+          <b>PrEP dori</b> haqida shifokordan so'rang.
+        </div>
+        <span class="tstep-tag" style="background:rgba(60,216,112,.1);color:var(--green);border:1px solid rgba(60,216,112,.2);">Xavfsiz yashash</span>
+      </div>
+    </div>
+
+    <div class="tstep">
+      <div class="tstep-num purple">5</div>
+      <div class="tstep-body">
+        <div class="tstep-title">Natija ijobiy — sakin bo'ling</div>
+        <div class="tstep-desc">
+          Bu <b>hayotning oxiri emas</b>. Bu — yangi boshlang'ich.<br><br>
+          Shifokor sizga CD4 va viral yuk tahlillarini tayinlaydi.
+          ARVT boshlanadi. <span class="g">6 oy ichida virus aniqlanmaydi.</span>
+          Hayot avvalgidek davom etadi.
+        </div>
+        <span class="tstep-tag" style="background:rgba(160,96,255,.1);color:#c080ff;border:1px solid rgba(160,96,255,.2);">ARVT yo'li →</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OYNA DAVRI -->
+  <div class="window-card fi">
+    <div class="wc-title">⏳ Oyna davri nima?</div>
+    <p class="wc-desc">
+      HIV yuqqandan keyin organizm uni darhol aniqlay olmaydi.
+      <b>2-6 hafta</b> o'tishi kerak — bu "oyna davri". Bu davrda test
+      manfiy ko'rsatishi mumkin, lekin aslida virus bor bo'lishi mumkin.
+      Shuning uchun <b>xavfli holatdan keyin 6 hafta o'tib</b> qayta test topshiring.
+    </p>
+    <div class="wc-timeline">
+      <div class="wct-item">
+        <div class="wct-day" style="color:var(--red);">0</div>
+        <div class="wct-lbl">Yuqish</div>
+      </div>
+      <div class="wct-item">
+        <div class="wct-day" style="color:var(--red);">1-2</div>
+        <div class="wct-lbl">Hafta — test aniq emas</div>
+      </div>
+      <div class="wct-item active">
+        <div class="wct-day">3-4</div>
+        <div class="wct-lbl">Hafta — ba'zi testlar aniqlaydi</div>
+      </div>
+      <div class="wct-item safe">
+        <div class="wct-day">6+</div>
+        <div class="wct-lbl">Hafta — to'liq aniq natija</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKAZLAR -->
+  <div class="sec-header fi" style="text-align:left;margin-bottom:16px;">
+    <span class="sec-tag" style="color:var(--blue);">O'zbekistonda</span>
+    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Qayerga borish kerak?</div>
+  </div>
+  <div class="centers-grid fi">
+    <div class="center-card">
+      <div class="cc-city">Toshkent shahar</div>
+      <div class="cc-name">Respublika AIDS Markazi</div>
+      <a class="cc-phone" href="tel:+998712683030">+998 71 268-30-30</a>
+      <div class="cc-note">Dush — Juma, 08:00–17:00 · Bepul</div>
+    </div>
+    <div class="center-card">
+      <div class="cc-city">Barcha viloyatlar</div>
+      <div class="cc-name">Viloyat AIDS Markazlari</div>
+      <a class="cc-phone" href="tel:1003">1003</div>
+      <div class="cc-note">Yaqin markaz manzilini so'rang</div>
+    </div>
+    <div class="center-card">
+      <div class="cc-city">Istalgan vaqt</div>
+      <div class="cc-name">Hamroh Bot @HIVUzBot</div>
+      <a class="cc-phone" href="https://t.me/HIVUzBot" target="_blank">t.me/HIVUzBot</a>
+      <div class="cc-note">24/7 · Maxfiy · Bepul · Savol bering</div>
+    </div>
+    <div class="center-card">
+      <div class="cc-city">Toshkent</div>
+      <div class="cc-name">Anonim Maslahat Markazi</div>
+      <a class="cc-phone" href="tel:+998712562323">+998 71 256-23-23</a>
+      <div class="cc-note">Anonim maslahat · Bepul</div>
+    </div>
+  </div>
+
+</section>
+
 
 <!-- FEAR SECTION -->
 <section id="bilish" class="fear-section">
@@ -737,7 +1539,9 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <footer>
   <span class="f-logo">Sog'lom Hayot</span>
   <p>Bu sahifa faqat <b>ta'lim maqsadida</b> yaratilgan. Aniq tibbiy maslahat uchun shifokoringizga murojaat qiling.</p>
-  <p style="margin-top:6px;opacity:.55;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
+  <p style="margin-top:6px;opacity:.55;font-size:11px;">🔒 Shaxsiy ma'lumotlar saqlanmaydi &nbsp;·&nbsp; Yashirin rejim uchun: Ctrl+Shift+N
+  </p>
+  <p style="margin-top:6px;opacity:.4;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
 </footer>
 
 <script>
@@ -973,6 +1777,9 @@ document.fonts.ready.then(()=>{
   document.getElementById('eTitle').textContent=cfg.title;document.getElementById('eBody').innerHTML=cfg.body;
   tick();
 });
+
+
 </script>
+
 </body>
 </html>
