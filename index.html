@@ -853,6 +853,219 @@ footer a{color:var(--blue-l);text-decoration:none;}
   .sources-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ══════════════════════════════════
+   ARVT YON TA'SIRLARI
+══════════════════════════════════ */
+.side-section {
+  padding: 0 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.side-intro {
+  background: rgba(255,170,48,.06);
+  border: 1.5px solid rgba(255,170,48,.2);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.side-intro-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.side-intro-text { font-size: 13px; color: #9a8760; font-weight: 600; line-height: 1.65; }
+.side-intro-text b { color: var(--amber); }
+.side-intro-text .g { color: var(--green); }
+
+.side-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.side-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.side-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px;
+}
+.side-card.mild::before { background: var(--green); }
+.side-card.moderate::before { background: var(--amber); }
+.side-card.serious::before { background: var(--red); }
+
+.side-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.side-card-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+}
+.side-card.mild .side-card-badge {
+  background: rgba(60,216,112,.1);
+  border: 1px solid rgba(60,216,112,.25);
+  color: var(--green);
+}
+.side-card.moderate .side-card-badge {
+  background: rgba(255,170,48,.1);
+  border: 1px solid rgba(255,170,48,.25);
+  color: var(--amber);
+}
+.side-card.serious .side-card-badge {
+  background: rgba(255,64,64,.08);
+  border: 1px solid rgba(255,64,64,.2);
+  color: #ff8080;
+}
+.side-card-title { font-size: 14px; font-weight: 900; color: var(--text); }
+.side-card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.side-card-list li {
+  font-size: 12px; color: #8a8790;
+  font-weight: 600; line-height: 1.5;
+  display: flex; gap: 7px; align-items: flex-start;
+}
+.side-card-list li::before {
+  content: '·';
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.side-card-note {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  line-height: 1.5;
+}
+.side-card-note .g { color: var(--green); }
+
+.side-tip {
+  background: rgba(60,216,112,.06);
+  border: 1px solid rgba(60,216,112,.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #7a9a80;
+  font-weight: 600;
+  line-height: 1.65;
+}
+.side-tip b { color: var(--green); }
+
+/* ══════════════════════════════════
+   O'ZBEKISTON STATISTIKASI
+══════════════════════════════════ */
+.uzstat-section {
+  padding: 0 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.uzstat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.uzstat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.uzstat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+}
+.uzstat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; letter-spacing: .04em;
+  line-height: 1; margin-bottom: 5px;
+}
+.uzstat-lbl {
+  font-size: 11px; color: var(--muted);
+  font-weight: 700; line-height: 1.4;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: .04em;
+}
+.uzstat-src {
+  font-size: 9px; color: rgba(255,255,255,.2);
+  margin-top: 6px; display: block;
+  font-family: 'Space Mono', monospace;
+}
+.uzstat-map {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.uzstat-map-title {
+  font-size: 13px; font-weight: 800;
+  margin-bottom: 14px; color: var(--text);
+}
+.uzstat-region {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.uzstat-region-name {
+  font-size: 12px; font-weight: 700;
+  color: #9a97a0;
+  width: 130px; flex-shrink: 0;
+}
+.uzstat-region-bar-bg {
+  flex: 1; height: 6px;
+  background: rgba(255,255,255,.05);
+  border-radius: 3px; overflow: hidden;
+}
+.uzstat-region-bar {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+}
+.uzstat-region-val {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; color: var(--muted);
+  width: 50px; text-align: right; flex-shrink: 0;
+}
+.uzstat-note {
+  font-size: 11px; color: var(--muted);
+  font-weight: 600; line-height: 1.6;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.02);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.uzstat-note a { color: var(--blue-l); }
+
+@media(max-width:640px) {
+  .side-grid { grid-template-columns: 1fr; }
+  .uzstat-grid { grid-template-columns: 1fr 1fr; }
+  .uzstat-region-name { width: 100px; font-size: 11px; }
+}
+
 /* ── SCROLL INDICATOR ── */
 .scroll-hint{
   position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
@@ -966,6 +1179,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <div class="nav-links">
     <a href="#kimsiz" class="nav-hide-sm">Kim siz?</a>
     <a href="#test" class="nav-hide-sm">Test</a>
+    <a href="#uzstat" class="nav-hide-sm">O'zbekiston</a>
     <a href="#myth" class="nav-hide-sm">Mif/Haqiqat</a>
     <a href="#faq">Savollar</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
@@ -1673,6 +1887,162 @@ footer a{color:var(--blue-l);text-decoration:none;}
 </div>
 
 <!-- TIMELINE -->
+<!-- O'ZBEKISTON STATISTIKASI -->
+<section id="uzstat" class="uzstat-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--blue);">O'zbekistonda</span>
+    <div class="sec-title">Bizning mamlakatda qanday ahvol?</div>
+    <p class="sec-desc">Global raqamlar uzoq tuyuladi. Bu raqamlar — bizning yurtimiz haqida.</p>
+  </div>
+
+  <div class="uzstat-grid fi">
+    <div class="uzstat-card">
+      <div class="uzstat-num" style="color:var(--red);">54,000+</div>
+      <div class="uzstat-lbl">Ro'yxatdagi HIV bilan yashovchilar</div>
+      <span class="uzstat-src">O'zbekiston SSV · 2023</span>
+    </div>
+    <div class="uzstat-card">
+      <div class="uzstat-num" style="color:var(--amber);">~30%</div>
+      <div class="uzstat-lbl">O'z holatini bilmaydigan insonlar</div>
+      <span class="uzstat-src">UNAIDS O'zbekiston · 2023</span>
+    </div>
+    <div class="uzstat-card">
+      <div class="uzstat-num" style="color:var(--green);">Bepul</div>
+      <div class="uzstat-lbl">ARVT barcha ro'yxatdagi bemorlar uchun</div>
+      <span class="uzstat-src">O'zbekiston davlat dasturi</span>
+    </div>
+    <div class="uzstat-card">
+      <div class="uzstat-num" style="color:var(--blue);">14+</div>
+      <div class="uzstat-lbl">Viloyatlarda AIDS markazlari</div>
+      <span class="uzstat-src">Respublika AIDS Markazi</span>
+    </div>
+  </div>
+
+  <div class="uzstat-map fi">
+    <div class="uzstat-map-title">Eng ko'p holat qayd etilgan hududlar</div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Toshkent shahar</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:85%"></div></div>
+      <div class="uzstat-region-val">~18,000</div>
+    </div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Toshkent viloyat</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:55%"></div></div>
+      <div class="uzstat-region-val">~7,500</div>
+    </div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Samarqand</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:38%"></div></div>
+      <div class="uzstat-region-val">~5,200</div>
+    </div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Farg'ona</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:32%"></div></div>
+      <div class="uzstat-region-val">~4,400</div>
+    </div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Namangan</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:24%"></div></div>
+      <div class="uzstat-region-val">~3,200</div>
+    </div>
+    <div class="uzstat-region">
+      <div class="uzstat-region-name">Boshqa viloyatlar</div>
+      <div class="uzstat-region-bar-bg"><div class="uzstat-region-bar" style="width:45%"></div></div>
+      <div class="uzstat-region-val">~15,700</div>
+    </div>
+  </div>
+
+  <div class="uzstat-note fi">
+    📌 <b>Eslatma:</b> Bu raqamlar rasmiy ro'yxatga olingan holatlar.
+    Haqiqiy son ancha yuqori bo'lishi mumkin — chunki ko'pchilik test topshirmaydi.
+    Manba: <a href="https://ssv.uz" target="_blank" rel="noopener">O'zbekiston Sog'liqni Saqlash Vazirligi</a> va
+    <a href="https://www.unaids.org/en/regionscountries/countries/uzbekistan" target="_blank" rel="noopener">UNAIDS O'zbekiston</a>.
+  </div>
+</section>
+
+
+<!-- ARVT YON TA'SIRLARI -->
+<section id="yontasir" class="side-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--amber);">Halol ma'lumot</span>
+    <div class="sec-title">ARVT yon ta'sirlari</div>
+    <p class="sec-desc">Ko'pchilik saytlar buni yashiradi. Biz yozyapmiz — chunki bilgan odam tayyor bo'ladi.</p>
+  </div>
+
+  <div class="side-intro fi">
+    <div class="side-intro-icon">💡</div>
+    <div class="side-intro-text">
+      <b>Muhim:</b> Zamonaviy ARVT (Biktarvi, Triumeq, Genvoya) ning yon ta'sirlari
+      eski dorilarga qaraganda <span class="g">ancha kamroq va yengilroq</span>.
+      Ko'pchilik bemor birinchi 2-4 haftadan keyin <span class="g">hech qanday yon ta'sir sezmayin</span> ichadi.
+      Har kimning organizmи boshqacha reaksiya qiladi.
+    </div>
+  </div>
+
+  <div class="side-grid fi">
+    <div class="side-card mild">
+      <div class="side-card-head">
+        <span class="side-card-badge">Engil</span>
+        <div class="side-card-title">Dastlabki 2–4 hafta</div>
+      </div>
+      <ul class="side-card-list">
+        <li>Ko'ngil aynishi — odatda ertalab</li>
+        <li>Bosh og'riq — birinchi haftalarda</li>
+        <li>Charchoq va uyquchanlik</li>
+        <li>Ich ketishi yoki qabziyat</li>
+        <li>Ishtaha yo'qolishi</li>
+      </ul>
+      <div class="side-card-note">
+        <span class="g">✓</span> Bular o'tkinchi — organizm dorига moslashayotganda bo'ladi.
+        2-4 hafta ichida o'z-o'zidan yo'qoladi.
+      </div>
+    </div>
+
+    <div class="side-card moderate">
+      <div class="side-card-head">
+        <span class="side-card-badge">O'rtacha</span>
+        <div class="side-card-title">Uzoqroq davom etishi mumkin</div>
+      </div>
+      <ul class="side-card-list">
+        <li>Uyqu buzilishi (EFV dorisi bilan ko'proq)</li>
+        <li>Tushlar ko'rish, bosh aylanishi</li>
+        <li>Teri toshmasi — odatda o'tkinchi</li>
+        <li>Jigar fermentlari ko'tarilishi</li>
+        <li>Qon lipidlari o'zgarishi</li>
+      </ul>
+      <div class="side-card-note">
+        Agar bu belgilar kuchli bo'lsa — <b>shifokorga ayting</b>.
+        Dori almashtirilishi mumkin. Yashirin tutmang.
+      </div>
+    </div>
+
+    <div class="side-card serious">
+      <div class="side-card-head">
+        <span class="side-card-badge">Kamdan-kam</span>
+        <div class="side-card-title">Jiddiy (nadir)</div>
+      </div>
+      <ul class="side-card-list">
+        <li>Og'ir allergik reaksiya — darhol shifokorga</li>
+        <li>Jigar zararlanishi — tahlil orqali aniqlanadi</li>
+        <li>Buyrak muammolari (TDF bilan)</li>
+        <li>Laktik atsidoz — juda kam uchraydi</li>
+      </ul>
+      <div class="side-card-note">
+        Zamonaviy ARVT da bu hollar <b>juda kam</b>.
+        Muntazam tahlil topshirish — erta aniqlash imkoni beradi.
+      </div>
+    </div>
+  </div>
+
+  <div class="side-tip fi">
+    <b>Eng muhim maslahat:</b> Yon ta'sir bo'lsa — dorini o'zingiz TO'XTATMANG.
+    Bu viral yukni ko'taradi va rezistentlik xavfini oshiradi.
+    Shifokoringizga ayting — <b>har doim yaxshiroq variant bor</b>.
+    Bugungi ARVT bozorida 20+ dan ortiq dori kombinatsiyasi mavjud.
+  </div>
+</section>
+
+
 <div id="arvt" class="timeline-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--green);">ARVT yo'li</span>
