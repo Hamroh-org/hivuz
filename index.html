@@ -1168,6 +1168,67 @@ footer a{color:var(--blue-l);text-decoration:none;}
   .nav-cta{padding:6px 10px;}
   .hero h1{font-size:42px;}
 }
+
+/* ── STORY SECTION ── */
+.story-section{padding:0 24px 80px;max-width:900px;margin:0 auto;}
+.story-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:40px 44px;
+  margin-top:36px;
+  position:relative;
+  overflow:hidden;
+}
+.story-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--green));
+}
+.story-card::after{
+  content:'"';
+  position:absolute;
+  top:16px;right:32px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:120px;
+  color:rgba(64,128,255,.07);
+  line-height:1;
+  pointer-events:none;
+}
+.story-meta{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.story-avatar{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;
+  flex-shrink:0;
+}
+.story-info{}
+.story-name{font-weight:800;font-size:15px;color:var(--text);margin-bottom:4px;}
+.story-badge{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--green);background:rgba(60,216,112,.1);border:1px solid rgba(60,216,112,.25);padding:2px 9px;border-radius:20px;display:inline-block;}
+.story-pullquote{
+  font-size:18px;font-weight:800;
+  color:var(--text);
+  line-height:1.5;
+  border-left:3px solid var(--blue);
+  padding-left:18px;
+  margin-bottom:24px;
+}
+.story-body{font-size:14px;color:#9a97a0;font-weight:600;line-height:1.82;}
+.story-body p{margin-bottom:14px;}
+.story-body p:last-child{margin-bottom:0;}
+.story-body b{color:var(--text);}
+.story-body .g{color:var(--green);}
+.story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
+.story-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+.story-note{margin-top:24px;font-size:12px;color:var(--muted);text-align:center;font-family:'Space Mono',monospace;letter-spacing:.06em;opacity:.7;}
+@media(max-width:600px){
+  .story-card{padding:24px 20px;}
+  .story-pullquote{font-size:15px;}
+  .story-section{padding-left:14px;padding-right:14px;}
+}
 </style>
 </head>
 <body>
@@ -1181,6 +1242,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
     <a href="#test" class="nav-hide-sm">Test</a>
     <a href="#uzstat" class="nav-hide-sm">O'zbekiston</a>
     <a href="#myth" class="nav-hide-sm">Mif/Haqiqat</a>
+    <a href="#hikoyalar" class="nav-hide-sm">Hikoyalar</a>
     <a href="#faq">Savollar</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
     <a href="#hotline" class="nav-cta">Yordam →</a>
@@ -2095,6 +2157,52 @@ footer a{color:var(--blue-l);text-decoration:none;}
     </a>
   </div>
 </div>
+
+<!-- HIKOYALAR -->
+<section id="hikoyalar" class="story-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--blue);">Haqiqiy hayot</span>
+    <div class="sec-title">Ular ham shunday yashayapti</div>
+    <p class="sec-desc">Bu hikoyalar real insonlar tajribasidan. Nomlar o'zgartirilgan, lekin so'zlar — haqiqiy.</p>
+  </div>
+
+  <div class="story-card fi">
+    <div class="story-meta">
+      <div class="story-avatar">?</div>
+      <div class="story-info">
+        <div class="story-name">Anonim</div>
+        <span class="story-badge">✓ 10 yildan beri ARVT bilan</span>
+      </div>
+    </div>
+
+    <div class="story-pullquote">
+      "Bu — yuk emas. Bu — Allohning bizga bergan mehridir."
+    </div>
+
+    <div class="story-body">
+      <p>OIV bilan yashayotganimga deyarli <b>o'n yil bo'ldi</b>. Birinchi marta bu haqida bilganimda, kuchli stress yoki siqilish bo'lmagan. Keyinchalik anglay boshlaganimda ham, o'zimni ezilgan his qilmadim — <b>chunki bu holat hayotimni to'xtatib qo'ymadi.</b></p>
+
+      <p>Har kuni dori ichish muammo emas. Axir bugungi kunda sog'lom insonlar ham har kuni vitaminlar ichishadi. Biz ichayotgan dorilar organizmimizni qo'llab-quvvatlaydi, immunitetimizni mustahkamlaydi. Shuning uchun men buni hech qachon <span class="g">"yuk" deb qabul qilmadim.</span></p>
+
+      <p>Meni qiynagan yagona narsa — bu yaqinlarimning tashvishi edi. Lekin vaqt o'tib tushundim: <b>biz o'zimizni aybdor his qilishimiz kerak emas.</b> Biz bu yo'lni o'zimiz tanlamadik. Bu holat jazoni sifatida berilmagan.</p>
+
+      <p>Hayotim davomida statusdagi juda yaxshi insonlarni uchratdim, <span class="g">samimiy do'stlar orttirdim,</span> mehribon shifokorlar bilan tanishdim. Biz bepul davolanish imkoniyatiga egamiz — bu katta ne'mat.</p>
+
+      <p>Koronavirus davrida ko'pchilik kasallandi, <b>lekin men kasallanmadim.</b> Bu ham dorilarimizning, immunitetimizning natijasi edi.</p>
+
+      <p style="color:var(--text);font-weight:800;">Agar yaxshilab qarasangiz, minuslardan ko'ra pluslar ko'proq. Hayotga optimistik qarash kerak. Shukr qilib yashaylik.</p>
+    </div>
+
+    <div class="story-tags">
+      <span class="story-tag">10 yil ARVT</span>
+      <span class="story-tag">Oila qurgan</span>
+      <span class="story-tag">Faol hayot</span>
+      <span class="story-tag">U=U</span>
+    </div>
+  </div>
+
+  <p class="story-note fi">* Maxfiylik maqsadida ism o'zgartirilgan. Hikoya egasining roziligı bilan chop etilgan.</p>
+</section>
 
 <!-- FAQ -->
 <section id="faq" class="faq-section">
