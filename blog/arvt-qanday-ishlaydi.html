@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARVT dorilar qanday ishlaydi? — HIV.Hikmatillo.uz</title>
+<meta name="description" content="Antiretroviral terapiya HIV virusining ko'payishini qanday to'xtatadi — animatsiya va grafiklar orqali.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;}
+
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
+  .nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
+  .nav-logo span{color:#00ffb4;}
+  .nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;letter-spacing:0.06em;}
+  .nav-back:hover{color:#00ffb4;}
+
+  /* HERO */
+  .hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(0,180,255,0.05) 0%,transparent 60%);pointer-events:none;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+  .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+  .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
+  .hero-title em{font-style:italic;color:#00ffb4;}
+  .hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+
+  /* CONTENT */
+  .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
+  .section{padding:2.5rem 0;}
+  .section+.section{border-top:1px solid rgba(255,255,255,0.06);}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
+  .prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
+
+  /* VISUAL CARD */
+  .vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+  .vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
+
+  /* SCENE */
+  .scene{position:relative;width:100%;height:200px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+  .scene-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,180,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,180,0.03) 1px,transparent 1px);background-size:32px 32px;}
+
+  /* SLIDER */
+  .sl-row{display:flex;align-items:center;gap:12px;margin-bottom:.75rem;}
+  .sl-row label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);white-space:nowrap;}
+  .sl-row input[type=range]{flex:1;-webkit-appearance:none;height:2px;background:rgba(255,255,255,0.1);border-radius:1px;outline:none;}
+  .sl-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#00ffb4;cursor:pointer;border:2px solid #080c10;box-shadow:0 0 8px rgba(0,255,180,0.6);}
+  .sl-val{font-family:'DM Mono',monospace;font-size:13px;color:#00ffb4;min-width:40px;text-align:right;}
+  .scene-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.5);min-height:18px;}
+
+  /* MECH CARDS */
+  .mech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:1rem 0;}
+  .mcard{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px 12px;cursor:pointer;transition:border-color .2s,background .2s;}
+  .mcard:hover{border-color:rgba(0,255,180,0.25);}
+  .mcard.on{border-color:#00ffb4;background:rgba(0,255,180,0.05);}
+  .mcard-icon{font-size:20px;margin-bottom:8px;}
+  .mcard-name{font-size:12px;font-weight:600;color:#e8edf2;margin-bottom:3px;line-height:1.3;}
+  .mcard-drug{font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.5);}
+  .mcard-detail{background:#06090d;border:1px solid rgba(0,255,180,0.2);border-radius:3px;padding:14px;margin-top:8px;font-size:13px;color:rgba(232,237,242,0.7);line-height:1.7;display:none;}
+  .mcard-detail.on{display:block;}
+
+  /* CHART */
+  .chart-xl{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.2);margin-top:6px;}
+
+  /* TIMELINE */
+  .tl-item{display:flex;gap:16px;padding:0 0 1.5rem;position:relative;}
+  .tl-item:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:1px;background:rgba(255,255,255,0.08);}
+  .tl-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);background:#0d1318;z-index:1;}
+  .tl-dot.done{border-color:#00ffb4;color:#00ffb4;background:rgba(0,255,180,0.08);}
+  .tl-dot.now{border-color:#00b4ff;color:#00b4ff;background:rgba(0,180,255,0.08);box-shadow:0 0 10px rgba(0,180,255,0.25);}
+  .tl-title{font-size:14px;font-weight:600;color:#e8edf2;margin-bottom:3px;}
+  .tl-desc{font-size:13px;color:rgba(232,237,242,0.4);line-height:1.6;}
+
+  /* NEXT/FOOTER */
+  .next-section{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .next-label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25);}
+  .next-link{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;}
+  .next-link:hover{color:#00ffb4;}
+  .footnote{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.15);padding:0 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">HIV.<span>HIKMATILLO</span>.UZ</a>
+  <a href="./index.html" class="nav-back">← Blog</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Davolash · ARVT</div>
+  <h1 class="hero-title">ARVT dorilar<br><em>qanday ishlaydi?</em></h1>
+  <div class="hero-meta">
+    <span>21 Aprel 2025</span>
+    <span>5 daqiqa</span>
+    <span>Vizual maqola</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- INTRO -->
+  <div class="section">
+    <p class="prose">Antiretroviral terapiya (ARVT) — HIV virusining ko'payishini to'xtatadigan dorilar majmuasi. Ular virusni yo'q qilmaydi, lekin uni "jim" holda ushlab turadi va immunitet tiklana boshlaydi.</p>
+    <p class="prose">Bugun siz animatsiya va grafiklar orqali ARVT qanday ishlashini ko'rasiz.</p>
+  </div>
+
+  <!-- ANIMATION -->
+  <div class="section">
+    <p class="eyebrow">01 — Interaktiv model</p>
+    <h2 class="section-title">ARVT'siz va ARVT bilan</h2>
+    <p class="prose">Sliderni suring — ARVT kuchi ortgan sayin HIV zarrachalari kamayib, CD4 hujayralari xavfsiz bo'lishini kuzating.</p>
+    <div class="vcard">
+      <p class="vcard-label">Simulyatsiya</p>
+      <div class="sl-row">
+        <label>ARVT kuchi</label>
+        <input type="range" id="sl" min="0" max="100" value="0" step="1">
+        <span class="sl-val" id="slv">0%</span>
+      </div>
+      <div class="scene" id="scene">
+        <div class="scene-grid"></div>
+      </div>
+      <div class="scene-status" id="sstat">— Sliderni o'ng tomonga suring</div>
+    </div>
+  </div>
+
+  <!-- MECHANISM -->
+  <div class="section">
+    <p class="eyebrow">02 — Mexanizm</p>
+    <h2 class="section-title">Dori qanday to'xtatadi?</h2>
+    <p class="prose">ARVT kombinatsiyadan iborat. Har bir sinf HIV hayot siklining turli bosqichini bloklaydi.</p>
+    <div class="vcard">
+      <p class="vcard-label">Dori turini tanlang</p>
+      <div class="mech-grid" id="mg">
+        <div class="mcard" data-i="0"><div class="mcard-icon">🔒</div><div class="mcard-name">Kirish blokirovkasi</div><div class="mcard-drug">Maravirok</div></div>
+        <div class="mcard" data-i="1"><div class="mcard-icon">✂️</div><div class="mcard-name">RT inhibitori</div><div class="mcard-drug">Tenofovir · Lamivudin</div></div>
+        <div class="mcard" data-i="2"><div class="mcard-icon">🧩</div><div class="mcard-name">Integraz inhibitori</div><div class="mcard-drug">Dolutegravir</div></div>
+        <div class="mcard" data-i="3"><div class="mcard-icon">⚙️</div><div class="mcard-name">Proteza inhibitori</div><div class="mcard-drug">Darunavir</div></div>
+      </div>
+      <div class="mcard-detail" id="md"></div>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="section">
+    <p class="eyebrow">03 — Dinamika</p>
+    <h2 class="section-title">Vaqt o'tishi bilan viral yuklanma</h2>
+    <p class="prose">ARVT boshlangandan 3–6 oy ichida viral yuklanma "aniqlanmaydigan" darajaga tushadi. Bu darajada virus boshqalarga yuqmaydi (U=U prinsipi).</p>
+    <div class="vcard">
+      <p class="vcard-label">Viral yuklanma grafigi (schematik)</p>
+      <svg viewBox="0 0 600 160" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="20" x2="580" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="60" y1="60" x2="580" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="60" y1="100" x2="580" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="60" y1="15" x2="60" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <line x1="60" y1="140" x2="585" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="54" y="24" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">yuqori</text>
+        <text x="54" y="64" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">o'rta</text>
+        <text x="54" y="104" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">past</text>
+        <rect x="61" y="126" width="523" height="14" fill="rgba(0,255,180,0.07)" rx="1"/>
+        <text x="300" y="136" text-anchor="middle" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.5)">aniqlanmaydigan daraja — U=U</text>
+        <line x1="130" y1="15" x2="130" y2="140" stroke="rgba(0,255,180,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="133" y="26" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.6)">ARVT boshlandi</text>
+        <polyline points="70,22 150,26 230,23 310,28 390,21 470,26 550,22" fill="none" stroke="rgba(255,80,80,0.5)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="#00ffb4" stroke-width="2"/>
+        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="rgba(0,255,180,0.15)" stroke-width="7"/>
+        <rect x="400" y="33" width="12" height="2" fill="rgba(255,80,80,0.5)" rx="1"/>
+        <text x="416" y="37" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.3)">ARVT'siz</text>
+        <rect x="400" y="48" width="12" height="2" fill="#00ffb4" rx="1"/>
+        <text x="416" y="52" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.7)">ARVT bilan</text>
+      </svg>
+      <div class="chart-xl"><span>1-oy</span><span>3-oy</span><span>6-oy</span><span>12-oy</span><span>2-yil</span></div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <p class="eyebrow">04 — Jarayon</p>
+    <h2 class="section-title">Qabul tartibi</h2>
+    <div>
+      <div class="tl-item"><div class="tl-dot done">01</div><div><div class="tl-title">Shifokorga murojaat</div><div class="tl-desc">CD4 soni va viral yuklanma tahlili olinadi</div></div></div>
+      <div class="tl-item"><div class="tl-dot done">02</div><div><div class="tl-title">Dori rejimi tanlanadi</div><div class="tl-desc">Ko'pincha 1 tabletka — 3 ta dori birga kombinatsiyada</div></div></div>
+      <div class="tl-item"><div class="tl-dot now">03</div><div><div class="tl-title">Kunlik qabul boshlanadi</div><div class="tl-desc">Har kuni bir vaqtda, tushirib qolmasdan — eng muhim qoida</div></div></div>
+      <div class="tl-item"><div class="tl-dot">04</div><div><div class="tl-title">3–6 oy — tekshiruv</div><div class="tl-desc">Viral yuklanma aniqlanmaydigan bo'ladi, CD4 tiklana boshlaydi</div></div></div>
+      <div class="tl-item"><div class="tl-dot">05</div><div><div class="tl-title">Uzoq muddatli hayot</div><div class="tl-desc">ARVT bilan odamlar to'laqonli va uzoq yashaydi</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="next-section">
+  <div>
+    <div class="next-label">Keyingi maqola</div>
+    <div style="font-size:14px;color:rgba(232,237,242,0.5);margin-top:4px;">CD4 va Viral Load — farqi nima?</div>
+  </div>
+  <a href="./index.html" class="next-link">Barcha maqolalar →</a>
+</div>
+
+<div class="footnote">Bu maqola umumiy ma'lumot uchun tayyorlangan. Dori va davolash masalasida shifokor bilan maslahatlashing.<br>Muallif: hiv.hikmatillo.uz · 2025</div>
+
+<script>
+const mechInfo = [
+  "HIV CD4 hujayrasiga kirish uchun maxsus CCR5 retseptoridan foydalanadi. Maravirok shu retseptorni bloklaydi — virus eshikni topa olmaydi va hujayra ichiga kira olmaydi.",
+  "HIV o'z RNK'sini DNK'ga aylantirishi kerak (reverse transkriptsiya). Tenofovir va Lamivudin bu fermentni bloklaydi — virusning genetik kodi yozila olmaydi.",
+  "Virus DNK'si hujayra yadrosi DNK'siga kirib olishi kerak. Dolutegravir — eng zamonaviy sinf — shu integratsiyani to'xtatadi. Kuchli, yon ta'sirlari kam.",
+  "Yangi virus zarrachalari yig'ilganda 'yetilishi' kerak. Darunavir bu fermentni bloklaydi — hosil bo'lgan zarralar infeksiyasiz bo'ladi."
+];
+
+document.getElementById('mg').addEventListener('click', e => {
+  const c = e.target.closest('.mcard');
+  if (!c) return;
+  document.querySelectorAll('.mcard').forEach(x => x.classList.remove('on'));
+  c.classList.add('on');
+  const d = document.getElementById('md');
+  d.textContent = mechInfo[+c.dataset.i];
+  d.classList.add('on');
+});
+
+const scene = document.getElementById('scene');
+const sl = document.getElementById('sl');
+const slv = document.getElementById('slv');
+const sstat = document.getElementById('sstat');
+let parts = [], raf;
+
+function rnd(a,b){return a+Math.random()*(b-a);}
+
+function buildScene(pct) {
+  scene.querySelectorAll('.sp').forEach(e => e.remove());
+  parts = [];
+  const W = scene.offsetWidth || 300, H = 200;
+  const nCD4 = 7;
+  const nHIV = Math.round(14 * (1 - pct / 100));
+  const nShield = pct > 20 ? Math.round(5 * (pct / 100)) : 0;
+
+  for (let i = 0; i < nCD4; i++) {
+    const el = document.createElement('div');
+    el.className = 'sp';
+    Object.assign(el.style, {position:'absolute',width:'34px',height:'34px',borderRadius:'50%',background:'rgba(0,180,255,0.1)',border:'1.5px solid rgba(0,180,255,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'9px',fontFamily:"'DM Mono',monospace",color:'rgba(0,180,255,0.8)',boxShadow:'0 0 8px rgba(0,180,255,0.2)'});
+    el.textContent = 'CD4';
+    const x = rnd(5,W-40), y = rnd(5,H-40);
+    el.style.left = x+'px'; el.style.top = y+'px';
+    scene.appendChild(el);
+    parts.push({el,x,y,vx:(Math.random()-.5)*.7,vy:(Math.random()-.5)*.7,w:34,h:34});
+  }
+
+  for (let i = 0; i < nHIV; i++) {
+    const el = document.createElement('div');
+    el.className = 'sp';
+    Object.assign(el.style, {position:'absolute',width:'18px',height:'18px',borderRadius:'50%',background:'rgba(255,60,60,0.1)',border:'1.5px solid rgba(255,60,60,0.6)',boxShadow:'0 0 6px rgba(255,60,60,0.25)'});
+    const x = rnd(5,W-22), y = rnd(5,H-22);
+    el.style.left = x+'px'; el.style.top = y+'px';
+    scene.appendChild(el);
+    parts.push({el,x,y,vx:(Math.random()-.5)*1.4,vy:(Math.random()-.5)*1.4,w:18,h:18});
+  }
+
+  for (let i = 0; i < nShield; i++) {
+    const el = document.createElement('div');
+    el.className = 'sp';
+    Object.assign(el.style, {position:'absolute',width:'28px',height:'28px',borderRadius:'50%',background:'rgba(0,255,180,0.08)',border:'1.5px solid rgba(0,255,180,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'13px',boxShadow:'0 0 10px rgba(0,255,180,0.3)'});
+    el.textContent = '◈';
+    const x = rnd(5,W-32), y = rnd(5,H-32);
+    el.style.left = x+'px'; el.style.top = y+'px';
+    scene.appendChild(el);
+    parts.push({el,x,y,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,w:28,h:28});
+  }
+}
+
+function tick() {
+  const W = scene.offsetWidth || 300, H = 200;
+  parts.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W-p.w) p.vx *= -1;
+    if (p.y < 0 || p.y > H-p.h) p.vy *= -1;
+    p.x = Math.max(0,Math.min(W-p.w,p.x));
+    p.y = Math.max(0,Math.min(H-p.h,p.y));
+    p.el.style.left = p.x+'px';
+    p.el.style.top = p.y+'px';
+  });
+  raf = requestAnimationFrame(tick);
+}
+
+sl.addEventListener('input', () => {
+  const v = +sl.value;
+  slv.textContent = v + '%';
+  if (raf) cancelAnimationFrame(raf);
+  buildScene(v);
+  tick();
+  if (v === 0) sstat.textContent = '— HIV zarrachalari erkin, CD4 hujayralarga hujum qilyapti';
+  else if (v < 40) sstat.textContent = '— ARVT boshlandi, ba\'zi zarralar bloklandi';
+  else if (v < 80) sstat.textContent = '— Yaxshi natija — immunitet tiklanyapti';
+  else sstat.textContent = '— Aniqlanmaydigan daraja! ARVT to\'liq ishlayapti ✓';
+});
+
+buildScene(0); tick();
+</script>
+</body>
+</html>
