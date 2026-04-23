@@ -6,7 +6,7 @@
     "tag": "Asoslar",
     "date": "2026-04-21",
     "readTime": "6 daqiqa",
-    "summary": "HIV — odam immuniteti tanqisligi virusi. U qanday tuzilgan, qonga qanday kiradi va CD4 hujayralarini qanday zabt etadi — 3D animatsiya va interaktiv hayot sikli bilan.",
+    "summary": "HIV — odam immuniteti tanqisligi virusi. U qanday tuzilgan, qonga qanday kiradi va CD4 hujayralarini qanday zabt etadi.",
     "file": "hiv-nima.html"
   },
   {
@@ -26,7 +26,7 @@
     "tag": "Amaliy",
     "date": "2026-04-21",
     "readTime": "6 daqiqa",
-    "summary": "HIV testi qadam-baqadam: qayerga borish, nima olib borish, oyna davri va natija nima degani. O'zbekistonda bepul va anonim.",
+    "summary": "HIV testi qadam-baqadam: qayerga borish, nima olib borish, oyna davri va natija nima degani.",
     "file": "test-qanday-topshiriladi.html"
   },
   {
@@ -36,8 +36,38 @@
     "tag": "Tibbiy",
     "date": "2026-04-21",
     "readTime": "7 daqiqa",
-    "summary": "CD4 hujayralari va viral yuk (virus nagruzka) — bu raqamlar nima degani, qanday o'qiladi va ARVT boshlanganida qanday o'zgaradi.",
+    "summary": "CD4 hujayralari va viral yuk (virus nagruzka) — bu raqamlar nima degani va ARVT boshlanganida qanday o'zgaradi.",
     "file": "cd4-va-viral-yuk.html"
+  },
+  {
+    "id": "u-equals-u",
+    "title": "U=U nima degani?",
+    "subtitle": "Aniqlanmaydi = Yuqtirmaydi — ilmiy haqiqat",
+    "tag": "Ilmiy",
+    "date": "2026-04-21",
+    "readTime": "6 daqiqa",
+    "summary": "U=U — 58,000+ juft tekshirildi, nol yuqtirish. WHO tomonidan tasdiqlangan ilmiy haqiqat.",
+    "file": "u-equals-u.html"
+  },
+  {
+    "id": "hiv-bilan-oila",
+    "title": "HIV bilan oila qurish mumkinmi?",
+    "subtitle": "Nikoh, homiladorlik va sog'lom bola",
+    "tag": "Hayot",
+    "date": "2026-04-21",
+    "readTime": "7 daqiqa",
+    "summary": "HIV bilan nikoh qurish, bola ko'rish va sog'lom oila — raqamlar va amaliy yo'riqnoma bilan.",
+    "file": "hiv-bilan-oila.html"
+  },
+  {
+    "id": "hiv-bilan-hayot",
+    "title": "HIV bilan kundalik hayot",
+    "subtitle": "Ish, sport, sayohat, do'stlar — hammasi davom etadi",
+    "tag": "Hayot",
+    "date": "2026-04-21",
+    "readTime": "7 daqiqa",
+    "summary": "HIV bilan ish, sport, sayohat, ovqat, do'stlar va ruhiy sog'liq — kundalik hayot qanday davom etadi.",
+    "file": "hiv-bilan-hayot.html"
   },
   {
     "id": "arvt-qanday-ishlaydi",
