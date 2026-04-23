@@ -1,10 +1,20 @@
 [
   {
+    "id": "hiv-nima",
+    "title": "HIV nima?",
+    "subtitle": "Virus tuzilishi va hayot sikli — vizual tushuntirish",
+    "tag": "Asoslar",
+    "date": "2026-04-21",
+    "readTime": "6 daqiqa",
+    "summary": "HIV — odam immuniteti tanqisligi virusi. U qanday tuzilgan, qonga qanday kiradi va CD4 hujayralarini qanday zabt etadi — 3D animatsiya va interaktiv hayot sikli bilan.",
+    "file": "hiv-nima.html"
+  },
+  {
     "id": "arvt-qanday-ishlaydi",
     "title": "ARVT dorilar qanday ishlaydi?",
     "subtitle": "Vizual va interaktiv tushuntirish",
     "tag": "Davolash",
-    "date": "2025-04-21",
+    "date": "2026-04-21",
     "readTime": "5 daqiqa",
     "summary": "Antiretroviral terapiya HIV virusining ko'payishini qanday to'xtatadi — animatsiya va grafiklar orqali.",
     "file": "arvt-qanday-ishlaydi.html"
