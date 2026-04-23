@@ -10,6 +10,36 @@
     "file": "hiv-nima.html"
   },
   {
+    "id": "hiv-qanday-yuqadi",
+    "title": "HIV qanday yuqadi?",
+    "subtitle": "Interaktiv stsenariylar va mif/haqiqat",
+    "tag": "Asoslar",
+    "date": "2026-04-21",
+    "readTime": "7 daqiqa",
+    "summary": "HIV yuqishi haqida aniq ma'lumot — xavf darajasi, kundalik holatlar va ko'p tarqalgan noto'g'ri tushunchalar.",
+    "file": "hiv-qanday-yuqadi.html"
+  },
+  {
+    "id": "test-qanday-topshiriladi",
+    "title": "Test qanday topshiriladi?",
+    "subtitle": "Qadam-baqadam yo'riqnoma",
+    "tag": "Amaliy",
+    "date": "2026-04-21",
+    "readTime": "6 daqiqa",
+    "summary": "HIV testi qadam-baqadam: qayerga borish, nima olib borish, oyna davri va natija nima degani. O'zbekistonda bepul va anonim.",
+    "file": "test-qanday-topshiriladi.html"
+  },
+  {
+    "id": "cd4-va-viral-yuk",
+    "title": "CD4 va Viral Yuk nima?",
+    "subtitle": "Bu raqamlar nima degani — interaktiv simulyator",
+    "tag": "Tibbiy",
+    "date": "2026-04-21",
+    "readTime": "7 daqiqa",
+    "summary": "CD4 hujayralari va viral yuk (virus nagruzka) — bu raqamlar nima degani, qanday o'qiladi va ARVT boshlanganida qanday o'zgaradi.",
+    "file": "cd4-va-viral-yuk.html"
+  },
+  {
     "id": "arvt-qanday-ishlaydi",
     "title": "ARVT dorilar qanday ishlaydi?",
     "subtitle": "Vizual va interaktiv tushuntirish",
