@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIV bilan kundalik hayot — hiv.hikmatillo.work</title>
+<meta name="description" content="HIV bilan ish, sport, sayohat, do'stlar, ovqat — kundalik hayot qanday davom etadi. Amaliy maslahatlar va real tajriba.">
+<link rel="canonical" href="https://hiv.hikmatillo.work/blog/hiv-bilan-hayot.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://hiv.hikmatillo.work/blog/hiv-bilan-hayot.html","name":"HIV bilan kundalik hayot","description":"HIV bilan ish, sport, sayohat, do'stlar — kundalik hayot qanday davom etadi.","inLanguage":"uz","about":{"@type":"MedicalCondition","name":"HIV/AIDS","alternateName":["OIV","OITS"]}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#00ffb4;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;}
+.nav-back:hover{color:#00ffb4;}
+.hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:#00ffb4;}
+.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+.content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
+.section{padding:2.5rem 0;}
+.section+.section{border-top:1px solid rgba(255,255,255,0.06);}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
+.prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
+.prose b{color:#e8edf2;}
+.vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
+.hl{background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
+.hl b{color:#00ffb4;}
+
+/* LIFE AREAS */
+.life-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:3px;overflow-x:auto;margin-bottom:1rem;}
+.life-tab{flex:1;min-width:80px;padding:10px 8px;background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.08);color:rgba(232,237,242,0.3);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;text-align:center;white-space:nowrap;letter-spacing:0.04em;}
+.life-tab:last-child{border-right:none;}
+.life-tab:hover{background:rgba(255,255,255,0.03);color:rgba(232,237,242,0.6);}
+.life-tab.on{background:rgba(0,255,180,0.07);color:#00ffb4;border-bottom:1px solid #00ffb4;}
+.life-tab-icon{font-size:16px;display:block;margin-bottom:3px;}
+
+.life-panel{display:none;}
+.life-panel.on{display:block;}
+
+/* CANVAS */
+.life-canvas{width:100%;height:180px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
+.life-canvas canvas{display:block;width:100%;height:100%;}
+.life-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.4);}
+
+.life-content{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px 16px;}
+.life-title{font-size:15px;font-weight:700;color:#e8edf2;margin-bottom:8px;}
+.life-desc{font-size:13px;color:rgba(232,237,242,0.5);line-height:1.7;}
+.life-desc b{color:#e8edf2;}
+.life-desc .g{color:#00ffb4;}
+.life-tips{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.life-tip{display:flex;gap:8px;font-size:12px;color:rgba(232,237,242,0.45);line-height:1.4;align-items:flex-start;}
+.life-tip::before{content:'→';color:rgba(0,255,180,0.5);flex-shrink:0;margin-top:1px;}
+
+/* ROUTINE */
+.routine{display:flex;flex-direction:column;gap:0;position:relative;}
+.routine::before{content:'';position:absolute;left:32px;top:20px;bottom:20px;width:1px;background:rgba(0,255,180,0.1);}
+.routine-item{display:flex;gap:14px;align-items:flex-start;padding:10px 0;}
+.routine-time{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.5);width:52px;flex-shrink:0;padding-top:2px;text-align:right;}
+.routine-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px;border:1.5px solid rgba(0,255,180,0.4);background:rgba(0,255,180,0.1);}
+.routine-body{}
+.routine-title{font-size:13px;font-weight:600;color:#e8edf2;margin-bottom:2px;}
+.routine-desc{font-size:12px;color:rgba(232,237,242,0.38);line-height:1.4;}
+.routine-pill{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;padding:2px 7px;border-radius:2px;margin-top:4px;background:rgba(0,255,180,0.08);border:1px solid rgba(0,255,180,0.2);color:rgba(0,255,180,0.6);}
+
+/* MYTH QUICK */
+.quick-myths{display:flex;flex-direction:column;gap:8px;margin:1rem 0;}
+.qm{display:flex;gap:12px;align-items:flex-start;background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:12px 14px;}
+.qm-badge{font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:2px;flex-shrink:0;margin-top:2px;font-weight:600;letter-spacing:0.06em;}
+.qm-badge.myth{background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.2);color:rgba(255,100,100,0.8);}
+.qm-badge.fact{background:rgba(0,255,180,0.08);border:1px solid rgba(0,255,180,0.2);color:rgba(0,255,180,0.7);}
+.qm-text{font-size:13px;color:rgba(232,237,242,0.55);line-height:1.5;}
+.qm-text b{color:#e8edf2;}
+.qm-text .g{color:#00ffb4;}
+
+/* SHARE */
+.share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;}
+.s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;cursor:pointer;border:none;transition:all .2s;}
+.s-tg{background:#2481cc;color:#fff;}
+.s-tg:hover{background:#1a6aaa;}
+.s-cp{background:rgba(255,255,255,0.05);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.1);}
+.s-cp:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
+.nxt{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.nxt-t{font-size:14px;color:rgba(232,237,242,0.45);}
+.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;white-space:nowrap;}
+.nxt-a:hover{color:#00ffb4;}
+.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);}
+@media(max-width:600px){.content{padding:0 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">HIV.<span>HIKMATILLO</span>.UZ</a>
+  <a href="./index.html" class="nav-back">← Blog</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Hayot · Amaliy</div>
+  <h1 class="hero-title">HIV bilan <em>kundalik hayot</em></h1>
+  <div class="hero-meta">
+    <span>21 Aprel 2026</span><span>7 daqiqa</span><span>Amaliy</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <p class="prose">HIV diagnozi — hayotning oxiri emas. Bu — yangi tartib. Kuniga bitta tabletka, har 3–6 oyda tahlil. Qolgan hamma narsa — <b>avvalgidek davom etadi.</b></p>
+    <p class="prose">Ish, sport, sayohat, do'stlar, ovqat — bularning hech biri o'zgarmaydi. Faqat bir narsani qo'shasiz: har kuni bir xil vaqtda dori.</p>
+  </div>
+
+  <!-- HAYOT SOHALARI -->
+  <div class="section">
+    <p class="eyebrow">01 — Hayot sohalari</p>
+    <h2 class="section-title">Har bir soha haqida</h2>
+    <p class="prose">Tabni bosib, kerakli ma'lumotni oling:</p>
+
+    <div class="vcard">
+      <p class="vcard-label">Soha tanlang</p>
+      <div class="life-tabs">
+        <button class="life-tab on" onclick="showLife('lf1',this)"><span class="life-tab-icon">💼</span>Ish</button>
+        <button class="life-tab" onclick="showLife('lf2',this)"><span class="life-tab-icon">🏃</span>Sport</button>
+        <button class="life-tab" onclick="showLife('lf3',this)"><span class="life-tab-icon">✈️</span>Sayohat</button>
+        <button class="life-tab" onclick="showLife('lf4',this)"><span class="life-tab-icon">🍽️</span>Ovqat</button>
+        <button class="life-tab" onclick="showLife('lf5',this)"><span class="life-tab-icon">👥</span>Do'stlar</button>
+        <button class="life-tab" onclick="showLife('lf6',this)"><span class="life-tab-icon">🧠</span>Ruhiyat</button>
+      </div>
+
+      <!-- IŠ -->
+      <div class="life-panel on" id="lf1">
+        <div class="life-canvas"><canvas id="cv_ish"></canvas><div class="life-badge">💼 Ish hayoti</div></div>
+        <div class="life-content">
+          <div class="life-title">Ish — to'liq davom etadi</div>
+          <div class="life-desc">HIV bilan ishlash mumkin. Ish joyingiz sizning statusingizni bilishi <b>shart emas</b>. Tibbiy sir qonun bilan himoyalangan.<br><br>
+          ARVT ichayotgan odam <span class="g">sog'lom odamdan farq qilmaydi</span> — ish qobiliyati, diqqat, kuch hamma narsa saqlanadi.</div>
+          <div class="life-tips">
+            <div class="life-tip">Dori vaqtini ish jadvalingizga moslang — ertalab nonushta bilan yoki kechki ovqat bilan</div>
+            <div class="life-tip">Tahlil uchun har 3–6 oyda bir yarim soat kerak — ish jadvalingizga qo'shing</div>
+            <div class="life-tip">Stress immunitetga ta'sir qiladi — dam olish ham "dori" hisoblanadi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPORT -->
+      <div class="life-panel" id="lf2">
+        <div class="life-canvas"><canvas id="cv_sport"></canvas><div class="life-badge">🏃 Sport</div></div>
+        <div class="life-content">
+          <div class="life-title">Sport — tavsiya etiladi</div>
+          <div class="life-desc">HIV bilan sport qilish nafaqat mumkin — bu <span class="g">foydali</span>. Muntazam jismoniy faollik CD4 ni ko'taradi va umumiy sog'liqni yaxshilaydi.<br><br>
+          Futbol, suzish, yugurish, gym — hammasi mumkin. Cheklov yo'q.</div>
+          <div class="life-tips">
+            <div class="life-tip">Kontakt sport (boks, kurash) da qon chiqishi mumkin — o'rtoqlaringizni oldindan ogohlantirishingiz mumkin, lekin majburiy emas</div>
+            <div class="life-tip">Jismoniy zo'riqish dori ta'siriga xalaqit bermaydi</div>
+            <div class="life-tip">Charchoq bo'lsa — bu normal, ARVT boshida bo'lishi mumkin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAYOHAT -->
+      <div class="life-panel" id="lf3">
+        <div class="life-canvas"><canvas id="cv_say"></canvas><div class="life-badge">✈️ Sayohat</div></div>
+        <div class="life-content">
+          <div class="life-title">Sayohat — mumkin</div>
+          <div class="life-desc">HIV bilan sayohat qilish mumkin. Lekin bir nechta narsa bilish kerak:<br><br>
+          Ba'zi mamlakatlar HIV+ odamlarni kiritmaslik qoidasini <b>bekor qildi</b> — O'zbekiston ham 2024 yilda bu cheklovni olib tashladi.</div>
+          <div class="life-tips">
+            <div class="life-tip">Dorini ko'tarilgan miqdorda oling — yo'lda yetishmay qolmasin</div>
+            <div class="life-tip">Dori original qutisida bo'lsin — bojxonada savol bo'lsa</div>
+            <div class="life-tip">Bormoqchi bo'lgan mamlakatning HIV kirish qoidasini oldindan tekshiring</div>
+            <div class="life-tip">Sovuq saqlash kerak bo'ladigan dorilar uchun sovutgichli sumka</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVQAT -->
+      <div class="life-panel" id="lf4">
+        <div class="life-canvas"><canvas id="cv_ovq"></canvas><div class="life-badge">🍽️ Ovqat</div></div>
+        <div class="life-content">
+          <div class="life-title">Ovqat — deyarli hamma narsa</div>
+          <div class="life-desc">HIV bilan maxsus dieta kerak emas. Odatdagi sog'lom ovqatlanish yetarli. Ba'zi ARVT dorilor ovqat bilan yoki ovqatsiz ichiladi — shifokor aytadi.<br><br>
+          Alkogol va dori — ba'zi kombinatsiyalarda <span class="g">ehtiyot bo'lish kerak</span>.</div>
+          <div class="life-tips">
+            <div class="life-tip">Dori ovqat bilan ichadigan bo'lsa — shu vaqtda ichish odat qiling</div>
+            <div class="life-tip">Immunitetni kuchaytirish uchun meva-sabzavot ko'proq iste'mol qiling</div>
+            <div class="life-tip">Alkogol jigarni zaiflashtiradi — dori ham jigardan o'tadi, shuning uchun kamroq</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DO'STLAR -->
+      <div class="life-panel" id="lf5">
+        <div class="life-canvas"><canvas id="cv_dos"></canvas><div class="life-badge">👥 Do'stlar va munosabatlar</div></div>
+        <div class="life-content">
+          <div class="life-title">Do'stlarga aytish — sizning tanlovingiz</div>
+          <div class="life-desc">Statusingizni do'stlaringizga aytish <b>majburiy emas</b>. Bu — sizning shaxsiy qaroringiz. Hech kim sizni majburlay olmaydi.<br><br>
+          Lekin yaqin odamlar bilan ochiq bo'lish — <span class="g">yuk yengillashtiradi</span>. Ko'pchilik kutganingizdan ko'ra tushunuvchan bo'ladi.</div>
+          <div class="life-tips">
+            <div class="life-tip">Birinchi bo'lib eng ishonchli do'stingizga ayting — qanday qabul qilishini ko'ring</div>
+            <div class="life-tip">Yaqinlarga aytmaslikning ham huquqi bor — bu sizning sirningiz</div>
+            <div class="life-tip">Hamroh bot @HIVUzBot — yaqinlaringizga aytishdan oldin gaplashib olishingiz mumkin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RUHIYAT -->
+      <div class="life-panel" id="lf6">
+        <div class="life-canvas"><canvas id="cv_ruh"></canvas><div class="life-badge">🧠 Ruhiy sog'liq</div></div>
+        <div class="life-content">
+          <div class="life-title">Ruhiy sog'liq — eng muhim</div>
+          <div class="life-desc">Diagnoz olgandan keyin tushkunlik, qo'rquv, g'azab — bular normal his-tuyg'ular. Ko'pchilik bu yo'ldan o'tgan.<br><br>
+          Lekin uzoq davom etsa — <span class="g">psixolog yoki qo'llab-quvvatlash guruhiga murojaat qiling</span>. Bu kuchsizlik emas — bu aql bovar qilmaslik belgisi.</div>
+          <div class="life-tips">
+            <div class="life-tip">Depressiya — ARVT ning yon ta'siri bo'lishi mumkin. Shifokorga ayting</div>
+            <div class="life-tip">HIV bilan yashovchilar guruhi — o'zingiz kabi odamlar bilan gaplashing</div>
+            <div class="life-tip">Har kuni bitta yaxshi narsa qiling — kichik maqsadlar katta o'zgarish qiladi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KUNDALIK TARTIB -->
+  <div class="section">
+    <p class="eyebrow">02 — Tartib</p>
+    <h2 class="section-title">Kundalik tartib qanday ko'rinadi?</h2>
+    <p class="prose">ARVT bilan yashayotgan odamning oddiy kuni — farqi bitta: dori vaqti:</p>
+
+    <div class="vcard">
+      <p class="vcard-label">Namunaviy kun tartibi</p>
+      <div class="routine">
+        <div class="routine-item">
+          <div class="routine-time">07:30</div>
+          <div class="routine-dot"></div>
+          <div class="routine-body">
+            <div class="routine-title">Uyg'onish + dori</div>
+            <div class="routine-desc">Nonushta bilan birga ARVT. Har kuni bir xil vaqt — eng muhimi shu.</div>
+            <span class="routine-pill">💊 ARVT vaqti</span>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="routine-time">09:00</div>
+          <div class="routine-dot"></div>
+          <div class="routine-body">
+            <div class="routine-title">Ish yoki o'qish</div>
+            <div class="routine-desc">Sog'lom odamdek — to'liq ish kuni. Diqqat, fikrlash, kuch — hammasi bor.</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="routine-time">13:00</div>
+          <div class="routine-dot"></div>
+          <div class="routine-body">
+            <div class="routine-title">Tushlik + dam olish</div>
+            <div class="routine-desc">Oddiy tushlik. Maxsus ovqat kerak emas.</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="routine-time">18:00</div>
+          <div class="routine-dot"></div>
+          <div class="routine-body">
+            <div class="routine-title">Sport yoki yurish</div>
+            <div class="routine-desc">Jismoniy faollik CD4 ni ko'taradi. Haftada 3-4 marta tavsiya etiladi.</div>
+          </div>
+        </div>
+        <div class="routine-item">
+          <div class="routine-time">22:00</div>
+          <div class="routine-dot"></div>
+          <div class="routine-body">
+            <div class="routine-title">Uxlash</div>
+            <div class="routine-desc">Yetarli uyqu — immunitet uchun muhim. 7-8 soat.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEZKOR JAVOBLAR -->
+  <div class="section">
+    <p class="eyebrow">03 — Tezkor javoblar</p>
+    <h2 class="section-title">Ko'p so'raladigan savollar</h2>
+
+    <div class="quick-myths">
+      <div class="qm">
+        <span class="qm-badge myth">Mif</span>
+        <div class="qm-text">"HIV bilan sport qilish mumkin emas"<br><b>→ Noto'g'ri.</b> <span class="g">Sport foydali — CD4 ni ko'taradi.</span></div>
+      </div>
+      <div class="qm">
+        <span class="qm-badge myth">Mif</span>
+        <div class="qm-text">"Har kuni dori ichsam — doim kasal bo'laman"<br><b>→ Noto'g'ri.</b> <span class="g">Ko'pchilik hech qanday yon ta'sirsiz yillab ichadi.</span></div>
+      </div>
+      <div class="qm">
+        <span class="qm-badge myth">Mif</span>
+        <div class="qm-text">"HIV bilan sayohtat qilish taqiqlangan"<br><b>→ Ko'p mamlakatda — yo'q.</b> <span class="g">O'zbekiston ham 2024 yilda cheklovni olib tashladi.</span></div>
+      </div>
+      <div class="qm">
+        <span class="qm-badge fact">Haqiqat</span>
+        <div class="qm-text"><b>ARVT bilan hayot sog'lom odamnikidan farq qilmaydi.</b> <span class="g">Kuniga bitta tabletka — va hayot davom etadi.</span></div>
+      </div>
+      <div class="qm">
+        <span class="qm-badge fact">Haqiqat</span>
+        <div class="qm-text"><b>Dori tushirib qolsa — panic qilmang.</b> <span class="g">Eslaganingizda iching. Ikki dozani birga ichmang.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARE -->
+  <div class="section">
+    <p class="eyebrow">Ulashing</p>
+    <h2 class="section-title">Hayot davom etadi</h2>
+    <p class="prose">Bu maqolani diagnoz olgan birovga yuboring — hayot o'zgarmaydi degan umid kerak.</p>
+    <div class="share-row">
+      <a href="https://t.me/share/url?url=https://hiv.hikmatillo.work/blog/hiv-bilan-hayot.html&text=HIV%20bilan%20kundalik%20hayot%20%E2%80%94%20hamma%20narsa%20davom%20etadi" target="_blank" class="s-btn s-tg">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.9 13.9l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.248.659z"/></svg>
+        Telegram'da ulashish
+      </a>
+      <button class="s-btn s-cp" onclick="copyLink()">🔗 Linkni nusxalash</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="nxt">
+  <div>
+    <div class="nxt-l">Keyingi maqola</div>
+    <div class="nxt-t">ARVT yon ta'sirlari — nima normal?</div>
+  </div>
+  <a href="./index.html" class="nxt-a">Blogga qaytish →</a>
+</div>
+
+<div class="foot">Bu maqola umumiy ma'lumot uchun. Manba: WHO, UNAIDS, CDC.<br>Tibbiy maslahat uchun shifokorga murojaat qiling. — hiv.hikmatillo.uz · 2026</div>
+
+<script>
+function copyLink(){navigator.clipboard.writeText('https://hiv.hikmatillo.work/blog/hiv-bilan-hayot.html').then(()=>{const b=document.querySelector('.s-cp');b.textContent='✓ Nusxalandi!';setTimeout(()=>b.textContent='🔗 Linkni nusxalash',2000);});}
+
+function showLife(id,tab){
+  document.querySelectorAll('.life-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.life-tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  tab.classList.add('on');
+}
+
+function grid(ctx,W,H){
+  ctx.strokeStyle='rgba(0,255,180,0.022)';ctx.lineWidth=1;
+  for(let i=0;i<W;i+=26){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,H);ctx.stroke();}
+  for(let i=0;i<H;i+=26){ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(W,i);ctx.stroke();}
+}
+
+function person(ctx,cx,cy,col){
+  ctx.beginPath();ctx.arc(cx,cy-20,8,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+  ctx.strokeStyle=col;ctx.lineWidth=2.2;
+  ctx.beginPath();ctx.moveTo(cx,cy-12);ctx.lineTo(cx,cy+8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx-9,cy-4);ctx.lineTo(cx+9,cy-4);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,cy+8);ctx.lineTo(cx-8,cy+22);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,cy+8);ctx.lineTo(cx+8,cy+22);ctx.stroke();
+}
+
+// Init all canvases BEFORE panels hide — use parentElement width at load time
+// Key fix: set explicit pixel dimensions from the vcard container width
+window.addEventListener('DOMContentLoaded', ()=>{
+  const W = document.querySelector('.vcard').clientWidth - 48;
+  const H = 180;
+
+  const draws = {};
+
+  // ── IŠ ──
+  (function(){
+    const c=document.getElementById('cv_ish'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    draws['cv_ish']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(W*.3,H*.55,W*.4,6);
+      ctx.strokeStyle='rgba(0,180,255,0.2)';ctx.lineWidth=1;ctx.strokeRect(W*.42,H*.4,W*.16,H*.14);
+      ctx.fillStyle='rgba(0,180,255,0.08)';ctx.fillRect(W*.42,H*.4,W*.16,H*.14);
+      const p=Math.sin(t*2)*.1+.9;
+      ctx.fillStyle=`rgba(0,180,255,${p*.15})`;ctx.fillRect(W*.43,H*.41,W*.14,H*.12);
+      person(ctx,W*.5,H*.48,'rgba(0,180,255,0.7)');
+      ctx.fillStyle='rgba(0,255,180,0.15)';
+      if(ctx.roundRect){ctx.beginPath();ctx.roundRect(W*.68,H*.3,36,14,7);ctx.fill();}
+      else{ctx.fillRect(W*.68,H*.3,36,14);}
+      ctx.strokeStyle='rgba(0,255,180,0.35)';ctx.lineWidth=1;ctx.strokeRect(W*.68,H*.3,36,14);
+      ctx.font='8px DM Mono,monospace';ctx.fillStyle='rgba(0,255,180,0.55)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('ARVT',W*.68+18,H*.3+7);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_ish']);
+    };draws['cv_ish']();
+  })();
+
+  // ── SPORT ──
+  (function(){
+    const c=document.getElementById('cv_sport'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    draws['cv_sport']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      ctx.strokeStyle='rgba(255,255,255,0.05)';ctx.lineWidth=1;ctx.setLineDash([8,6]);
+      ctx.beginPath();ctx.moveTo(0,H*.65);ctx.lineTo(W,H*.65);ctx.stroke();ctx.setLineDash([]);
+      const rx=W*.15+(t*25)%(W*.65);
+      person(ctx,rx,H*.52,'rgba(0,255,180,0.7)');
+      const cd4=Math.round(520+Math.sin(t*.4)*30);
+      ctx.font='10px DM Mono,monospace';ctx.fillStyle='rgba(0,180,255,0.5)';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('CD4: '+cd4+' ↑',W-10,10);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_sport']);
+    };draws['cv_sport']();
+  })();
+
+  // ── SAYOHAT ──
+  (function(){
+    const c=document.getElementById('cv_say'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    draws['cv_say']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      const px=W*.08+(t*16)%(W*.75);
+      ctx.save();ctx.translate(px,H*.35);
+      ctx.fillStyle='rgba(0,180,255,0.45)';
+      ctx.beginPath();ctx.moveTo(20,0);ctx.lineTo(-10,-6);ctx.lineTo(-10,6);ctx.closePath();ctx.fill();
+      ctx.fillRect(-10,-2,8,4);
+      ctx.restore();
+      ctx.strokeStyle='rgba(0,180,255,0.1)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+      ctx.beginPath();ctx.moveTo(W*.08,H*.35);ctx.lineTo(px,H*.35);ctx.stroke();ctx.setLineDash([]);
+      ctx.font='18px serif';ctx.fillStyle='rgba(255,255,255,0.35)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('💊',W*.8,H*.48);
+      ctx.font='8px DM Mono,monospace';ctx.fillStyle='rgba(0,255,180,0.35)';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('dori bilan',W*.8,H*.62);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_say']);
+    };draws['cv_say']();
+  })();
+
+  // ── OVQAT ──
+  (function(){
+    const c=document.getElementById('cv_ovq'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    const items=['🍎','🥦','🍗','🥛','🍞'];
+    draws['cv_ovq']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      ctx.fillStyle='rgba(255,255,255,0.04)';ctx.fillRect(W*.1,H*.62,W*.8,6);
+      items.forEach((f,i)=>{
+        const fx=W*.15+i*(W*.16),fy=H*.5+Math.sin(t*2+i)*.8;
+        ctx.font='20px serif';ctx.fillStyle='rgba(255,255,255,0.65)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(f,fx,fy);
+      });
+      const pp=Math.sin(t*2)*.1+.9;
+      ctx.fillStyle=`rgba(0,255,180,${pp*.12})`;ctx.fillRect(W*.38,H*.28,44,16);
+      ctx.strokeStyle=`rgba(0,255,180,${pp*.4})`;ctx.lineWidth=1;ctx.strokeRect(W*.38,H*.28,44,16);
+      ctx.font='8px DM Mono,monospace';ctx.fillStyle=`rgba(0,255,180,${pp*.65})`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+ ARVT',W*.38+22,H*.28+8);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_ovq']);
+    };draws['cv_ovq']();
+  })();
+
+  // ── DO'STLAR ──
+  (function(){
+    const c=document.getElementById('cv_dos'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    const cols=['rgba(255,100,100,0.65)','rgba(0,180,255,0.65)','rgba(0,255,180,0.65)','rgba(255,170,48,0.65)'];
+    const pos=[[W*.2,H*.5],[W*.38,H*.5],[W*.6,H*.5],[W*.8,H*.5]];
+    draws['cv_dos']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      pos.forEach((p,i)=>person(ctx,p[0],p[1],cols[i]));
+      const pp=Math.sin(t*2)*.15+.85;
+      for(let i=0;i<pos.length-1;i++){
+        ctx.beginPath();ctx.moveTo(pos[i][0],pos[i][1]-20);ctx.lineTo(pos[i+1][0],pos[i+1][1]-20);
+        ctx.strokeStyle=`rgba(0,255,180,${pp*.18})`;ctx.lineWidth=1;ctx.stroke();
+      }
+      ctx.font='10px DM Mono,monospace';ctx.fillStyle='rgba(0,255,180,0.3)';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('Sizning tanlovingiz',W*.5,H-8);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_dos']);
+    };draws['cv_dos']();
+  })();
+
+  // ── RUHIYAT ──
+  (function(){
+    const c=document.getElementById('cv_ruh'); if(!c)return;
+    c.width=W; c.height=H;
+    const ctx=c.getContext('2d'); let t=0;
+    draws['cv_ruh']=function draw(){
+      ctx.fillStyle='#06090d';ctx.fillRect(0,0,W,H);grid(ctx,W,H);
+      const p=Math.sin(t*3)*.2+.8;
+      ctx.font='34px serif';ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillStyle=`rgba(0,255,180,${p*.45})`;ctx.fillText('🧠',W*.32,H*.44);
+      ctx.fillStyle=`rgba(255,100,100,${p*.45})`;ctx.fillText('❤️',W*.68,H*.46);
+      ctx.beginPath();
+      for(let i=0;i<W;i++){
+        const y=H*.76+Math.sin((i*.05)+t*4)*10*Math.exp(-Math.pow((i-W*.5)/(W*.22),2));
+        i===0?ctx.moveTo(i,y):ctx.lineTo(i,y);
+      }
+      ctx.strokeStyle='rgba(0,255,180,0.38)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.font='9px DM Mono,monospace';ctx.fillStyle='rgba(0,255,180,0.3)';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText("Ruhiy sog'liq ham muhim",W*.5,H-8);
+      ctx.fillStyle='rgba(0,255,180,0.18)';ctx.fillRect(0,H-3,W,3);
+      t+=.02;requestAnimationFrame(draws['cv_ruh']);
+    };draws['cv_ruh']();
+  })();
+
+});
+</script>
+</body>
+</html>
