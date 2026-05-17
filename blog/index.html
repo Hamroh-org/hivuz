@@ -9,14 +9,12 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;}
 
-  /* NAV */
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
   .nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
   .nav-logo span{color:#00ffb4;}
   .nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;letter-spacing:0.06em;display:flex;align-items:center;gap:6px;}
   .nav-back:hover{color:#00ffb4;}
 
-  /* HEADER */
   .header{padding:3rem 2rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden;}
   .header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 90% 50%,rgba(0,255,160,0.05) 0%,transparent 70%);pointer-events:none;}
   .header-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.5);text-transform:uppercase;margin-bottom:1rem;}
@@ -24,7 +22,15 @@
   .header-title em{font-style:italic;color:#00ffb4;}
   .header-desc{font-size:14px;color:rgba(232,237,242,0.45);max-width:480px;line-height:1.7;}
 
-  /* POSTS GRID */
+  /* FILTER */
+  .filter-bar{padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .filter-label{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.1em;margin-right:4px;}
+  .f-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;padding:5px 12px;border-radius:2px;cursor:pointer;border:1px solid rgba(255,255,255,0.08);background:transparent;color:rgba(232,237,242,0.4);transition:all .15s;}
+  .f-btn:hover{border-color:rgba(0,255,180,0.3);color:rgba(0,255,180,0.7);}
+  .f-btn.active{background:rgba(0,255,180,0.1);border-color:rgba(0,255,180,0.4);color:#00ffb4;}
+  .count-badge{font-family:'DM Mono',monospace;font-size:10px;color:rgba(232,237,242,0.2);margin-left:auto;}
+
+  /* GRID */
   .posts{padding:2rem;}
   .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 
@@ -33,9 +39,9 @@
     padding:1.5rem;text-decoration:none;color:inherit;
     display:flex;flex-direction:column;gap:12px;
     transition:border-color 0.2s,transform 0.2s;
-    cursor:pointer;
   }
   .post-card:hover{border-color:rgba(0,255,180,0.3);transform:translateY(-2px);}
+  .post-card.hidden{display:none;}
 
   .post-tag{
     display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;
@@ -47,8 +53,10 @@
   .post-meta{display:flex;gap:12px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;margin-top:auto;}
   .post-arrow{font-size:14px;color:rgba(0,255,180,0.4);align-self:flex-end;}
 
-  /* Loading */
+  .empty{padding:3rem 2rem;font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.2);text-align:center;}
   .loading{padding:4rem 2rem;font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.2);}
+
+  @media(max-width:600px){.filter-bar{padding:1rem 1.25rem;}.posts{padding:1.25rem;}}
 </style>
 </head>
 <body>
@@ -64,38 +72,95 @@
   <p class="header-desc">HIV, ARVT va sog'lom hayot haqida — animatsiyalar va interaktiv grafiklar orqali.</p>
 </div>
 
+<div class="filter-bar" id="filterBar">
+  <span class="filter-label">FILTER:</span>
+  <button class="f-btn active" onclick="filter('all')">Hammasi</button>
+</div>
+
 <div class="posts">
   <div class="posts-grid" id="grid">
     <div class="loading">Yuklanmoqda...</div>
   </div>
+  <div class="empty" id="empty" style="display:none;">Bu tagda maqola topilmadi.</div>
 </div>
 
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;">
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  1003 — Bepul yordam
+</a>
+
 <script>
+let allPosts = [];
+let activeTag = 'all';
+
+const TAGS = ['Asoslar','Amaliy','Tibbiy','Ilmiy','Hayot','Davolash','Profilaktika','Huquq','Shaxsiy','Ruhiy sog\'liq','Yoshlar'];
+
 fetch('posts.json')
   .then(r => r.json())
   .then(posts => {
-    const grid = document.getElementById('grid');
-    grid.innerHTML = '';
-    posts.forEach(p => {
-      const card = document.createElement('a');
-      card.href = './' + p.file;
-      card.className = 'post-card';
-      card.innerHTML = `
-        <span class="post-tag">${p.tag}</span>
-        <h2 class="post-title">${p.title}</h2>
-        <p class="post-summary">${p.summary}</p>
-        <div class="post-meta">
-          <span>${p.date}</span>
-          <span>${p.readTime}</span>
-        </div>
-        <span class="post-arrow">→</span>
-      `;
-      grid.appendChild(card);
-    });
+    allPosts = posts;
+    buildFilters(posts);
+    renderPosts(posts);
   })
   .catch(() => {
     document.getElementById('grid').innerHTML = '<div class="loading">Xatolik yuz berdi.</div>';
   });
+
+function buildFilters(posts) {
+  const bar = document.getElementById('filterBar');
+  const usedTags = [...new Set(posts.map(p => p.tag))];
+  const ordered = TAGS.filter(t => usedTags.includes(t));
+
+  ordered.forEach(tag => {
+    const count = posts.filter(p => p.tag === tag).length;
+    const btn = document.createElement('button');
+    btn.className = 'f-btn';
+    btn.textContent = tag;
+    btn.onclick = () => filter(tag);
+    bar.appendChild(btn);
+  });
+
+  const badge = document.createElement('span');
+  badge.className = 'count-badge';
+  badge.id = 'countBadge';
+  badge.textContent = posts.length + ' ta maqola';
+  bar.appendChild(badge);
+}
+
+function filter(tag) {
+  activeTag = tag;
+  document.querySelectorAll('.f-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === (tag === 'all' ? 'Hammasi' : tag));
+  });
+  const filtered = tag === 'all' ? allPosts : allPosts.filter(p => p.tag === tag);
+  document.getElementById('countBadge').textContent = filtered.length + ' ta maqola';
+  document.querySelectorAll('.post-card').forEach(card => {
+    card.classList.toggle('hidden', tag !== 'all' && card.dataset.tag !== tag);
+  });
+  document.getElementById('empty').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderPosts(posts) {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  posts.forEach(p => {
+    const card = document.createElement('a');
+    card.href = './' + p.file;
+    card.className = 'post-card';
+    card.dataset.tag = p.tag;
+    card.innerHTML = `
+      <span class="post-tag">${p.tag}</span>
+      <h2 class="post-title">${p.title}</h2>
+      <p class="post-summary">${p.summary}</p>
+      <div class="post-meta">
+        <span>${p.date}</span>
+        <span>${p.readTime}</span>
+      </div>
+      <span class="post-arrow">→</span>
+    `;
+    grid.appendChild(card);
+  });
+}
 </script>
 </body>
 </html>

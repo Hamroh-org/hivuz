@@ -78,5 +78,125 @@
     "readTime": "5 daqiqa",
     "summary": "Antiretroviral terapiya HIV virusining ko'payishini qanday to'xtatadi — animatsiya va grafiklar orqali.",
     "file": "arvt-qanday-ishlaydi.html"
+  },
+  {
+    "id": "prep-nima",
+    "title": "PrEP nima?",
+    "subtitle": "HIV dan himoya dorisi — kim uchun va qanday ishlaydi",
+    "tag": "Profilaktika",
+    "date": "2026-05-17",
+    "readTime": "7 daqiqa",
+    "summary": "PrEP — HIV yuqmaslik uchun kunlik dori. To'g'ri ichilsa 99% himoya qiladi. Kim uchun, qanday boshlash va PEP bilan farqi.",
+    "file": "prep-nima.html"
+  },
+  {
+    "id": "prezervativ",
+    "title": "Prezervativ — to'g'ri ishlatish",
+    "subtitle": "Miflar, haqiqatlar va qadam-baqadam yo'riqnoma",
+    "tag": "Profilaktika",
+    "date": "2026-05-17",
+    "readTime": "5 daqiqa",
+    "summary": "Prezervativ to'g'ri ishlatilsa HIV va boshqa YTS dan 98% himoya qiladi. Noto'g'ri ishlatish xatarlarini bilib oling.",
+    "file": "prezervativ.html"
+  },
+  {
+    "id": "huquqlarim",
+    "title": "HIV bilan yashash — huquqlarim nima?",
+    "subtitle": "Ish, tibbiyot, maxfiylik va diskriminatsiyadan himoya",
+    "tag": "Huquq",
+    "date": "2026-05-17",
+    "readTime": "7 daqiqa",
+    "summary": "HIV diagnofi huquqlarni olmaydi. Ish, o'qish, tibbiy xizmat, maxfiylik — qonun tomonidan himoyalangan.",
+    "file": "huquqlarim.html"
+  },
+  {
+    "id": "stigma",
+    "title": "Stigma va diskriminatsiya",
+    "subtitle": "HIV stigmasi qanday kelib chiqadi va unga qanday qarshilik",
+    "tag": "Huquq",
+    "date": "2026-05-17",
+    "readTime": "6 daqiqa",
+    "summary": "Stigma virusdan ko'ra ko'proq zarar keltiradi. Nima deyish mumkin, nima emas va HIV bilan yashovchilarga to'g'ri munosabat.",
+    "file": "stigma.html"
+  },
+  {
+    "id": "disclosure",
+    "title": "Odamlarga aytishim kerakmi?",
+    "subtitle": "HIV statusini oshkor qilish — qaror sizniki",
+    "tag": "Shaxsiy",
+    "date": "2026-05-17",
+    "readTime": "7 daqiqa",
+    "summary": "Kim bilishi kerak, kim bilmasligi kerak va qanday aytish — disclosure haqida amaliy yo'riqnoma.",
+    "file": "disclosure.html"
+  },
+  {
+    "id": "arvt-unutsam",
+    "title": "ARVT dorini unutsam nima bo'ladi?",
+    "subtitle": "Bir kun, bir necha kun — qanday harakat qilish",
+    "tag": "Amaliy",
+    "date": "2026-05-17",
+    "readTime": "5 daqiqa",
+    "summary": "ARVT tabletka ichishni unutish — nima qilish kerak vaziyatga qarab. Bir kun xavfsiz, lekin doimiy uzilish xavfli.",
+    "file": "arvt-unutsam.html"
+  },
+  {
+    "id": "hiv-va-kasalliklar",
+    "title": "HIV va boshqa kasalliklar",
+    "subtitle": "Gepatit B/C, sil (TB) va YTS bilan birga",
+    "tag": "Tibbiy",
+    "date": "2026-05-17",
+    "readTime": "7 daqiqa",
+    "summary": "HIV bilan birga gepatit B/C, sil, YTS bo'lishi mumkin. Qo'shma infeksiyalar, xavflar va davolash xususiyatlari.",
+    "file": "hiv-va-kasalliklar.html"
+  },
+  {
+    "id": "test-turlari",
+    "title": "HIV testi turlari",
+    "subtitle": "Tez-test, ELISA, PCR — farqlari va aniqlik darajasi",
+    "tag": "Amaliy",
+    "date": "2026-05-17",
+    "readTime": "6 daqiqa",
+    "summary": "HIV test turlari: tez-test, ELISA, PCR, Western Blot — har birining oyna davri, aniqlik darajasi va qachon ishlatish kerak.",
+    "file": "test-turlari.html"
+  },
+  {
+    "id": "diagnoz-keyin",
+    "title": "Diagnoz olgandan keyin",
+    "subtitle": "Birinchi hafta — emotsional qo'llab-quvvatlash va amaliy qadamlar",
+    "tag": "Ruhiy sog'liq",
+    "date": "2026-05-17",
+    "readTime": "7 daqiqa",
+    "summary": "HIV diagnofi qo'yildi — birinchi haftada nima his qilish normal, nima qilish kerak va kimdan yordam so'rash.",
+    "file": "diagnoz-keyin.html"
+  },
+  {
+    "id": "yaqinlarimga-aytish",
+    "title": "Yaqinlarimga qanday aytaman?",
+    "subtitle": "Oila va do'stlarga gaplashishga tayyorgarlik",
+    "tag": "Ruhiy sog'liq",
+    "date": "2026-05-17",
+    "readTime": "6 daqiqa",
+    "summary": "Oila va do'stlarga HIV haqida aytish — tayyor jumlalar, turli reaksiyalarga tayyorgarlik va o'zni himoya qilish.",
+    "file": "yaqinlarimga-aytish.html"
+  },
+  {
+    "id": "yoshlar-hiv",
+    "title": "O'smirlar va HIV",
+    "subtitle": "Yoshlar uchun ochiq va sodda ma'lumot",
+    "tag": "Yoshlar",
+    "date": "2026-05-17",
+    "readTime": "6 daqiqa",
+    "summary": "Yoshlar ko'p so'raydigan savollar: test anonim ekanmi, bir martadan yuqadimi, HIV bor bo'lsa sevish mumkinmi.",
+    "file": "yoshlar-hiv.html"
+  },
+  {
+    "id": "ijtimoiy-tarmoq",
+    "title": "Ijtimoiy tarmoqlarda HIV — qaysi biri to'g'ri?",
+    "subtitle": "Noto'g'ri ma'lumotni qanday aniqlash",
+    "tag": "Yoshlar",
+    "date": "2026-05-17",
+    "readTime": "5 daqiqa",
+    "summary": "TikTok, Instagram, Telegram da HIV haqida ko'p yolg'on bor. Noto'g'ri ma'lumotni qanday tanish va ishonchli manbalar.",
+    "file": "ijtimoiy-tarmoq.html"
   }
 ]

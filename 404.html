@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Sahifa topilmadi | hiv.hikmatillo.work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#00ffb4;}
+.main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;}
+.code{font-family:'DM Serif Display',serif;font-size:clamp(80px,20vw,160px);line-height:1;color:rgba(0,255,180,0.08);position:relative;margin-bottom:2rem;}
+.code::after{content:'404';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(80px,20vw,160px);color:rgba(0,255,180,0.12);}
+.title{font-family:'DM Serif Display',serif;font-size:clamp(22px,4vw,36px);color:#f0f5f0;margin-bottom:1rem;}
+.desc{font-size:15px;color:rgba(232,237,242,0.45);max-width:400px;line-height:1.8;margin-bottom:2.5rem;}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.link-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;text-decoration:none;padding:11px 22px;border-radius:3px;transition:all .2s;}
+.link-btn.primary{background:rgba(0,255,180,0.1);color:#00ffb4;border:1px solid rgba(0,255,180,0.3);}
+.link-btn.primary:hover{background:rgba(0,255,180,0.15);border-color:#00ffb4;}
+.link-btn.secondary{background:rgba(255,255,255,0.04);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.08);}
+.link-btn.secondary:hover{border-color:rgba(255,255,255,0.2);color:#e8edf2;}
+.suggestions{margin-top:3rem;max-width:600px;width:100%;}
+.sug-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(0,255,180,0.35);text-transform:uppercase;margin-bottom:1rem;}
+.sug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
+.sug-card{background:#0d1318;border:1px solid rgba(255,255,255,0.06);border-radius:3px;padding:12px;text-decoration:none;display:block;transition:border-color .2s;}
+.sug-card:hover{border-color:rgba(0,255,180,0.25);}
+.sug-tag{font-family:'DM Mono',monospace;font-size:9px;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:5px;}
+.sug-title{font-size:12px;color:rgba(232,237,242,0.55);line-height:1.4;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">HIV.<span>HIKMATILLO</span>.UZ</a>
+</nav>
+
+<div class="main">
+  <div class="code">404</div>
+  <h1 class="title">Sahifa topilmadi</h1>
+  <p class="desc">Siz qidirgan sahifa o'chirilgan, ko'chirilgan yoki hech qachon mavjud bo'lmagan.</p>
+  <div class="links">
+    <a href="/index.html" class="link-btn primary">← Bosh sahifaga</a>
+    <a href="/blog/index.html" class="link-btn secondary">Blogga o'tish</a>
+    <a href="tel:1003" class="link-btn secondary">📞 1003 yordam</a>
+  </div>
+
+  <div class="suggestions">
+    <p class="sug-label">Balki shu kerakdir</p>
+    <div class="sug-grid">
+      <a href="/blog/hiv-nima.html" class="sug-card"><div class="sug-tag">Asoslar</div><div class="sug-title">HIV nima?</div></a>
+      <a href="/blog/test-qanday-topshiriladi.html" class="sug-card"><div class="sug-tag">Amaliy</div><div class="sug-title">Test qanday topshiriladi?</div></a>
+      <a href="/blog/prep-nima.html" class="sug-card"><div class="sug-tag">Profilaktika</div><div class="sug-title">PrEP nima?</div></a>
+      <a href="/blog/diagnoz-keyin.html" class="sug-card"><div class="sug-tag">Ruhiy sog'liq</div><div class="sug-title">Diagnoz olgandan keyin</div></a>
+      <a href="/blog/huquqlarim.html" class="sug-card"><div class="sug-tag">Huquq</div><div class="sug-title">Huquqlarim nima?</div></a>
+      <a href="/faq.html" class="sug-card"><div class="sug-tag">FAQ</div><div class="sug-title">Ko'p so'raladigan savollar</div></a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

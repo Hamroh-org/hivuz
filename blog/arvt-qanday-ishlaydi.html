@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARVT dorilar qanday ishlaydi? — HIV.Hikmatillo.uz</title>
 <meta name="description" content="Antiretroviral terapiya HIV virusining ko'payishini qanday to'xtatadi — animatsiya va grafiklar orqali.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hiv.hikmatillo.work/blog/arvt-qanday-ishlaydi.html">
+<meta property="og:title" content="ARVT dorilar qanday ishlaydi? | hiv.hikmatillo.work">
+<meta property="og:description" content="Antiretroviral terapiya HIV virusining ko'payishini qanday to'xtatadi — animatsiya va interaktiv tushuntirish bilan.">
+<meta property="og:image" content="https://hiv.hikmatillo.work/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ARVT dorilar qanday ishlaydi?">
+<meta name="twitter:description" content="HIV virusining ko'payishini qanday to'xtatadi — vizual tushuntirish.">
+<link rel="canonical" href="https://hiv.hikmatillo.work/blog/arvt-qanday-ishlaydi.html">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap');
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -80,6 +89,14 @@
   .next-link{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;}
   .next-link:hover{color:#00ffb4;}
   .footnote{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.15);padding:0 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;}
+  .related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
+  .related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
+  .rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+  .rel-card:hover{border-color:rgba(0,255,180,0.3);}
+  .rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
+  .rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
+  .rel-card:hover .rel-title{color:#e8edf2;}
 </style>
 </head>
 <body>
@@ -198,6 +215,15 @@
   <a href="./index.html" class="next-link">Barcha maqolalar →</a>
 </div>
 
+<div class="related">
+  <div class="related-label">Bog'liq maqolalar</div>
+  <div class="related-grid">
+    <a href="./cd4-va-viral-yuk.html" class="rel-card"><div class="rel-tag">Tibbiy</div><div class="rel-title">CD4 va Viral Yuk nima?</div></a>
+    <a href="./arvt-unutsam.html" class="rel-card"><div class="rel-tag">Amaliy</div><div class="rel-title">ARVT dorini unutsam nima bo'ladi?</div></a>
+    <a href="./hiv-va-kasalliklar.html" class="rel-card"><div class="rel-tag">Tibbiy</div><div class="rel-title">HIV va boshqa kasalliklar</div></a>
+  </div>
+</div>
+
 <div class="footnote">Bu maqola umumiy ma'lumot uchun tayyorlangan. Dori va davolash masalasida shifokor bilan maslahatlashing.<br>Muallif: hiv.hikmatillo.uz · 2025</div>
 
 <script>
@@ -295,5 +321,8 @@ sl.addEventListener('input', () => {
 
 buildScene(0); tick();
 </script>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>
