@@ -190,6 +190,26 @@
     "file": "yoshlar-hiv.html"
   },
   {
+    "id": "arvt-yon-tasirlari",
+    "title": "ARVT dori yon ta'sirlari nima?",
+    "subtitle": "Qaysilari normal, qaysilari shifokorga ko'rsatish kerak",
+    "tag": "Davolash",
+    "date": "2026-05-18",
+    "readTime": "6 daqiqa",
+    "summary": "ARVT boshlaganda ko'ngil aynishi, charchoq, tush ko'rish — normal. Qaysi belgilar darhol shifokorga murojaat qilishni talab qiladi.",
+    "file": "arvt-yon-tasirlari.html"
+  },
+  {
+    "id": "hiv-va-sport",
+    "title": "HIV bilan sport mumkinmi?",
+    "subtitle": "Jismoniy faollik immunitetni mustahkamlaydi",
+    "tag": "Hayot",
+    "date": "2026-05-18",
+    "readTime": "6 daqiqa",
+    "summary": "HIV bilan yashovchilar sport qila oladi va qilishi kerak. Qanday mashqlar foydali, ehtiyot choralar va qanday boshlash.",
+    "file": "hiv-va-sport.html"
+  },
+  {
     "id": "ijtimoiy-tarmoq",
     "title": "Ijtimoiy tarmoqlarda HIV — qaysi biri to'g'ri?",
     "subtitle": "Noto'g'ri ma'lumotni qanday aniqlash",

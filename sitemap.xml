@@ -149,6 +149,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog maqolalari — Yangi -->
+  <url>
+    <loc>https://hiv.hikmatillo.work/blog/arvt-yon-tasirlari.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://hiv.hikmatillo.work/blog/hiv-va-sport.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog maqolalari — Yoshlar -->
   <url>
     <loc>https://hiv.hikmatillo.work/blog/yoshlar-hiv.html</loc>
