@@ -197,9 +197,9 @@ function renderPosts(posts) {
     const postDate = new Date(p.date);
     const now = new Date();
     const isNew = (now - postDate) < 60 * 24 * 60 * 60 * 1000;
-    const newBadge = isNew ? '<span style="display:inline-block;font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.1em;color:#080c10;background:#00ffb4;padding:2px 7px;border-radius:2px;margin-left:6px;">NEW</span>' : '';
+    const newBadge = isNew ? '<span style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.1em;color:#080c10;background:#00ffb4;padding:2px 7px;border-radius:2px;">NEW</span>' : '';
     card.innerHTML = `
-      <span class="post-tag">${p.tag}</span>${newBadge}
+      <div style="display:flex;align-items:center;gap:8px;"><span class="post-tag">${p.tag}</span>${newBadge}</div>
       <h2 class="post-title">${p.title}</h2>
       <p class="post-summary">${p.summary}</p>
       <div class="post-meta">
