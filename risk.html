@@ -432,6 +432,68 @@
       box-shadow: 0 4px 20px rgba(0,255,180,0.25);
       z-index: 100;
     }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      nav {
+        padding: 0.875rem 1rem;
+      }
+      .nav-logo {
+        font-size: 10px;
+      }
+      nav > div {
+        gap: 0.75rem;
+      }
+      .nav-back {
+        font-size: 10px;
+      }
+      .hero {
+        padding: 2rem 1rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .progress-wrap {
+        padding: 0 1rem;
+        margin-top: 1.5rem;
+      }
+      .quiz-wrap {
+        padding: 0 1rem 3rem;
+      }
+      .q-text {
+        font-size: 1.2rem;
+      }
+      .option-btn {
+        padding: 0.875rem 1rem;
+        font-size: 13px;
+      }
+      .nav-btns {
+        flex-direction: column-reverse;
+        gap: 8px;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+      #result-screen {
+        padding: 1.5rem 1rem 4rem;
+      }
+      .result-title {
+        font-size: 1.5rem;
+      }
+      .nearest-center {
+        padding: 1rem;
+      }
+      .action-card {
+        padding: 1rem;
+      }
+      .float-btn {
+        bottom: 16px;
+        right: 16px;
+        font-size: 10px;
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -505,7 +567,7 @@
   <div class="question-card" data-q="2">
     <div class="q-num">03 / 08</div>
     <div class="q-text">Jinsiy sherigingiz HIV statusi sizga ma'lummi?</div>
-    <div class="q-hint">Sherikning statusi noma'lum bo'lsa xavf ortadi.</div>
+    <div class="q-hint">Sherik holati haqidagi ma'lumot umumiy tasvirni aniqroq ko'rsatishga yordam beradi.</div>
     <div class="options">
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Ha, manfiy (HIV yo'q)</button>
       <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, musbat (HIV bor, dori ichadi)</button>
@@ -522,7 +584,7 @@
   <div class="question-card" data-q="3">
     <div class="q-num">04 / 08</div>
     <div class="q-text">Oxirgi 12 oyda necha nafar sherik bilan jinsiy aloqada bo'ldingiz?</div>
-    <div class="q-hint">Ko'p sherik — ko'p xavf.</div>
+    <div class="q-hint">Sheriklar soni xavfni tushunishda muhim omillardan biri.</div>
     <div class="options">
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Bitta doimiy sherik</button>
       <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> 2 — 3 nafar</button>
@@ -700,22 +762,22 @@
     if (totalScore <= 3) {
       level = 'low';
       badge = '✓ PAST XAVF';
-      title = 'Xavf darajangiz past.';
-      desc = 'Hozircha xavf omillari kam. Ammo yiliga bir marta test topshirish tavsiya etiladi — bu o\'zingizni va yaqinlaringizni himoya qiladi.';
+      title = 'Ko\'rsatkichlar yaxshi ko\'rinyapti.';
+      desc = 'Hozircha ko\'p xavf omili yo\'q ekan. Yiliga bir marta test — bu o\'zing haqida g\'amxo\'rlik qilishning eng oddiy yo\'li, xolos.';
       fillClass = 'fill-low';
       fillPct = Math.max(15, pct);
     } else if (totalScore <= 7) {
       level = 'mid';
       badge = '⚡ O\'RTA XAVF';
-      title = 'Xavf darajangiz o\'rta.';
-      desc = 'Ba\'zi xavf omillari bor. Test topshirish va shifokor bilan gaplashish tavsiya etiladi. Test bepul va anonim.';
+      title = 'Ba\'zi omillar bor ekan.';
+      desc = 'Test — bu hukm uchun emas, bilish uchun. O\'z holatini bilish — kuchning o\'zi. Test bepul va anonim.';
       fillClass = 'fill-mid';
       fillPct = Math.max(40, pct);
     } else {
       level = 'high';
       badge = '⚠ YUQORI XAVF';
-      title = 'Test topshirish tavsiya etiladi.';
-      desc = 'Bir necha xavf omili aniqlandi. Bu tashxis emas — lekin imkon qadar tezroq test topshirishni maslahat beramiz. Test bepul, anonim va 20 daqiqa oladi.';
+      title = 'Bir necha omil bor ekan.';
+      desc = 'Bu tashxis emas — shunchaki ma\'lumot. Agar o\'z holatini bilmoqchi bo\'lsang, test bepul, anonim va 20 daqiqa oladi.';
       fillClass = 'fill-high';
       fillPct = Math.max(70, pct);
     }
