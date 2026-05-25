@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIV Xavf Baholash — Hamroh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080c10;
+      --bg2: #06090d;
+      --accent: #00ffb4;
+      --accent-dim: rgba(0,255,180,0.15);
+      --accent-border: rgba(0,255,180,0.3);
+      --text: #e8eaed;
+      --muted: rgba(232,234,237,0.45);
+      --border: rgba(255,255,255,0.07);
+      --red: #ff6b6b;
+      --yellow: #ffd166;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    }
+    .nav-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: rgba(0,255,180,0.5);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 0.75rem;
+    }
+    .hero-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(0,255,180,0.4);
+      letter-spacing: 0.08em;
+    }
+
+    /* PROGRESS */
+    .progress-wrap {
+      max-width: 680px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .progress-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .progress-bar-bg {
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    /* QUIZ */
+    .quiz-wrap {
+      max-width: 680px;
+      margin: 2rem auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .question-card {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .question-card.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .q-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(0,255,180,0.4);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .q-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .q-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-btn {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color .2s, background .2s, transform .1s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .option-btn:hover {
+      border-color: var(--accent-border);
+      background: rgba(0,255,180,0.04);
+    }
+    .option-btn.selected {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .option-btn:active { transform: scale(0.99); }
+
+    .opt-key {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      min-width: 20px;
+    }
+    .option-btn.selected .opt-key { color: var(--accent); }
+
+    .nav-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 2rem;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 0.75rem 1.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+      border: none;
+      transition: opacity .2s, transform .1s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+    .btn-primary {
+      background: var(--accent);
+      color: #080c10;
+      font-weight: 500;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    /* RESULT */
+    #result-screen {
+      display: none;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .badge-low { background: rgba(0,255,180,0.12); color: var(--accent); border: 1px solid rgba(0,255,180,0.3); }
+    .badge-mid { background: rgba(255,209,102,0.12); color: var(--yellow); border: 1px solid rgba(255,209,102,0.3); }
+    .badge-high { background: rgba(255,107,107,0.12); color: var(--red); border: 1px solid rgba(255,107,107,0.3); }
+
+    .result-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .result-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+
+    .result-score-wrap {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .score-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+    .score-bar-bg {
+      height: 6px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 1s ease;
+      width: 0%;
+    }
+    .fill-low { background: var(--accent); }
+    .fill-mid { background: var(--yellow); }
+    .fill-high { background: var(--red); }
+
+    .score-nums {
+      display: flex;
+      justify-content: space-between;
+    }
+    .score-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* Actions */
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+    .action-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .2s;
+    }
+    .action-card:hover { border-color: var(--accent-border); }
+    .action-icon {
+      font-size: 1.25rem;
+      min-width: 28px;
+      margin-top: 2px;
+    }
+    .action-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .action-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .action-arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 16px;
+      align-self: center;
+    }
+
+    .nearest-center {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .nc-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(0,255,180,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .nc-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .nc-phone {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .nc-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .result-restart {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      padding: 0;
+      transition: color .2s;
+    }
+    .result-restart:hover { color: var(--text); }
+
+    /* Disclaimer */
+    .disclaimer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .disclaimer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(232,234,237,0.25);
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+
+    /* Floating 1003 */
+    .float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #080c10;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      box-shadow: 0 4px 20px rgba(0,255,180,0.25);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">HIV.HIKMATILLO.UZ</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="faq.html" class="nav-back">FAQ</a>
+    <a href="glossariy.html" class="nav-back">Lug'at</a>
+    <a href="blog/index.html" class="nav-back">Blog</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">// AI · XAVF BAHOLASH</div>
+  <h1>Xavf darajangizni<br>bilib oling</h1>
+  <p>8 ta savol, 3 daqiqa. Natija anonim — hech qayerda saqlanmaydi.</p>
+  <div class="hero-note">ANONIM · BEPUL · O'ZBEK TILIDA</div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-wrap" id="progress-section">
+  <div class="progress-header">
+    <span class="progress-label" id="progress-text">SAVOL 1 / 8</span>
+    <span class="progress-label" id="progress-pct">0%</span>
+  </div>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progress-fill"></div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="quiz-wrap" id="quiz-section">
+
+  <!-- Q1 -->
+  <div class="question-card active" data-q="0">
+    <div class="q-num">01 / 08</div>
+    <div class="q-text">Yoshingiz qancha?</div>
+    <div class="q-hint">Ba'zi yosh guruhlari HIV yuqishi uchun ko'proq xavf ostida bo'ladi.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> 16 yoshdan kichik</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">B</span> 16 — 30 yosh</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">C</span> 31 — 49 yosh</button>
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">D</span> 50 va undan katta</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-primary" id="next-btn-0" onclick="nextQ(0)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-card" data-q="1">
+    <div class="q-num">02 / 08</div>
+    <div class="q-text">Oxirgi 12 oyda jinsiy aloqa bo'ldimi?</div>
+    <div class="q-hint">Prezervativsiz jinsiy aloqa HIV yuqishining asosiy yo'li.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Yo'q</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, doim prezervativ bilan</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> Ha, ba'zan prezervativsiz</button>
+      <button class="option-btn" data-score="3" onclick="selectOption(this)"><span class="opt-key">D</span> Ha, asosan prezervativsiz</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(1)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-1" onclick="nextQ(1)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-card" data-q="2">
+    <div class="q-num">03 / 08</div>
+    <div class="q-text">Jinsiy sherigingiz HIV statusi sizga ma'lummi?</div>
+    <div class="q-hint">Sherikning statusi noma'lum bo'lsa xavf ortadi.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Ha, manfiy (HIV yo'q)</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, musbat (HIV bor, dori ichadi)</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> Bilmayman</button>
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">D</span> Jinsiy sherigim yo'q</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(2)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-2" onclick="nextQ(2)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-card" data-q="3">
+    <div class="q-num">04 / 08</div>
+    <div class="q-text">Oxirgi 12 oyda necha nafar sherik bilan jinsiy aloqada bo'ldingiz?</div>
+    <div class="q-hint">Ko'p sherik — ko'p xavf.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Bitta doimiy sherik</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> 2 — 3 nafar</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> 4 va undan ko'p</button>
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">D</span> Hech kim bilan bo'lmadim</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(3)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-3" onclick="nextQ(3)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-card" data-q="4">
+    <div class="q-num">05 / 08</div>
+    <div class="q-text">Qon orqali yuqish xavfi bo'lganmi?</div>
+    <div class="q-hint">Umumiy igna, steril bo'lmagan asbob yoki qon quyish.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Yo'q, hech qachon</button>
+      <button class="option-btn" data-score="3" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, umumiy igna/shprits ishlatganman</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> Ha, steril bo'lmagan joyda tatuyaj/teshik qildirganman</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Ishonchim komil emas</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(4)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-4" onclick="nextQ(4)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-card" data-q="5">
+    <div class="q-num">06 / 08</div>
+    <div class="q-text">Oxirgi marta HIV testidan o'tganingiz qachon?</div>
+    <div class="q-hint">Muntazam test — o'z holatini bilishning yagona yo'li.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Oxirgi 6 oy ichida</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> 6 oy — 2 yil oldin</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> 2 yildan ko'proq oldin</button>
+      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">D</span> Hech qachon test qildirmaganman</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(5)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-5" onclick="nextQ(5)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question-card" data-q="6">
+    <div class="q-num">07 / 08</div>
+    <div class="q-text">Quyidagi belgilardan birortasi bor yoki bo'lganmi?</div>
+    <div class="q-hint">Bu belgilar ko'plab kasalliklarda uchraydi — faqat ko'rsatkich.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Yo'q, hech qanday belgi yo'q</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Uzoq davom etgan isitma, charchash</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">C</span> Tushunarsiz vazn yo'qotish, tungi ter</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Tez-tez kasallaning, uzoq tuzalasiz</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(6)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-6" onclick="nextQ(6)" disabled>Keyingisi →</button>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question-card" data-q="7">
+    <div class="q-num">08 / 08</div>
+    <div class="q-text">Hozir qaysi hududda yashaяsiz?</div>
+    <div class="q-hint">Eng yaqin bepul test markazini ko'rsatish uchun kerak.</div>
+    <div class="options">
+      <button class="option-btn" data-score="0" data-region="tashkent" onclick="selectOption(this)"><span class="opt-key">A</span> Toshkent shahri / viloyati</button>
+      <button class="option-btn" data-score="0" data-region="samarkand" onclick="selectOption(this)"><span class="opt-key">B</span> Samarqand / Qashqadaryo / Surxondaryo</button>
+      <button class="option-btn" data-score="0" data-region="fergana" onclick="selectOption(this)"><span class="opt-key">C</span> Farg'ona / Andijon / Namangan</button>
+      <button class="option-btn" data-score="0" data-region="other" onclick="selectOption(this)"><span class="opt-key">D</span> Boshqa hudud</button>
+    </div>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="prevQ(7)">← Orqaga</button>
+      <button class="btn btn-primary" id="next-btn-7" onclick="showResult()" disabled>Natijani ko'rish →</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- RESULT -->
+<div id="result-screen">
+  <div id="result-badge" class="result-badge"></div>
+  <div class="result-title" id="result-title"></div>
+  <div class="result-desc" id="result-desc"></div>
+
+  <div class="result-score-wrap">
+    <div class="score-label">XAVF DARAJASI</div>
+    <div class="score-bar-bg">
+      <div class="score-bar-fill" id="score-fill"></div>
+    </div>
+    <div class="score-nums">
+      <span class="score-num">PAST</span>
+      <span class="score-num">O'RTA</span>
+      <span class="score-num">YUQORI</span>
+    </div>
+  </div>
+
+  <div class="nearest-center" id="nearest-center"></div>
+
+  <div class="result-actions" id="result-actions"></div>
+
+  <button class="result-restart" onclick="restart()">← Qaytadan boshlash</button>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p>⚠️ Bu vosita tibbiy tashxis emas. Natija faqat yo'naltiruvchi xarakterga ega. Aniq ma'lumot uchun yaqiningizda bepul OITS markaziga murojaat qiling yoki 1003 ga qo'ng'iroq qiling.</p>
+</div>
+
+<!-- FLOATING BTN -->
+<a href="tel:1003" class="float-btn">📞 1003 — Bepul</a>
+
+<script>
+  const answers = new Array(8).fill(null);
+  let currentQ = 0;
+
+  const centers = {
+    tashkent: { name: 'Respublika OITS Markazi', phone: '+998 71 268-68-24', note: 'Mirzo Ulug\'bek tumani, Toshkent' },
+    samarkand: { name: 'Samarqand viloyati OITS Markazi', phone: '+998 66 239-34-44', note: 'Samarqand shahri' },
+    fergana: { name: 'Farg\'ona viloyati OITS Markazi', phone: '+998 73 244-51-44', note: 'Farg\'ona shahri' },
+    other: { name: 'Respublika OITS Markazi (Toshkent)', phone: '+998 71 268-68-24', note: 'Yaqin viloyat markazi uchun 1003 ga qo\'ng\'iroq qiling' },
+  };
+
+  function selectOption(btn) {
+    const card = btn.closest('.question-card');
+    card.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const q = parseInt(card.dataset.q);
+    answers[q] = { score: parseInt(btn.dataset.score), region: btn.dataset.region || null };
+    document.getElementById('next-btn-' + q).disabled = false;
+  }
+
+  function updateProgress(q) {
+    const pct = Math.round((q / 8) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-pct').textContent = pct + '%';
+    document.getElementById('progress-text').textContent = 'SAVOL ' + (q + 1) + ' / 8';
+  }
+
+  function nextQ(current) {
+    document.querySelector('[data-q="' + current + '"]').classList.remove('active');
+    const next = current + 1;
+    if (next < 8) {
+      document.querySelector('[data-q="' + next + '"]').classList.add('active');
+      currentQ = next;
+      updateProgress(next);
+    }
+  }
+
+  function prevQ(current) {
+    document.querySelector('[data-q="' + current + '"]').classList.remove('active');
+    const prev = current - 1;
+    document.querySelector('[data-q="' + prev + '"]').classList.add('active');
+    currentQ = prev;
+    updateProgress(prev);
+  }
+
+  function showResult() {
+    const totalScore = answers.reduce((sum, a) => sum + (a ? a.score : 0), 0);
+    const region = answers[7]?.region || 'other';
+    const maxScore = 14;
+    const pct = Math.round((totalScore / maxScore) * 100);
+
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('progress-section').style.display = 'none';
+
+    const rs = document.getElementById('result-screen');
+    rs.style.display = 'block';
+
+    let level, badge, title, desc, fillClass, fillPct;
+
+    if (totalScore <= 3) {
+      level = 'low';
+      badge = '✓ PAST XAVF';
+      title = 'Xavf darajangiz past.';
+      desc = 'Hozircha xavf omillari kam. Ammo yiliga bir marta test topshirish tavsiya etiladi — bu o\'zingizni va yaqinlaringizni himoya qiladi.';
+      fillClass = 'fill-low';
+      fillPct = Math.max(15, pct);
+    } else if (totalScore <= 7) {
+      level = 'mid';
+      badge = '⚡ O\'RTA XAVF';
+      title = 'Xavf darajangiz o\'rta.';
+      desc = 'Ba\'zi xavf omillari bor. Test topshirish va shifokor bilan gaplashish tavsiya etiladi. Test bepul va anonim.';
+      fillClass = 'fill-mid';
+      fillPct = Math.max(40, pct);
+    } else {
+      level = 'high';
+      badge = '⚠ YUQORI XAVF';
+      title = 'Test topshirish tavsiya etiladi.';
+      desc = 'Bir necha xavf omili aniqlandi. Bu tashxis emas — lekin imkon qadar tezroq test topshirishni maslahat beramiz. Test bepul, anonim va 20 daqiqa oladi.';
+      fillClass = 'fill-high';
+      fillPct = Math.max(70, pct);
+    }
+
+    document.getElementById('result-badge').className = 'result-badge badge-' + level;
+    document.getElementById('result-badge').textContent = badge;
+    document.getElementById('result-title').textContent = title;
+    document.getElementById('result-desc').textContent = desc;
+
+    const fill = document.getElementById('score-fill');
+    fill.className = 'score-bar-fill ' + fillClass;
+    setTimeout(() => fill.style.width = fillPct + '%', 100);
+
+    // Nearest center
+    const c = centers[region];
+    document.getElementById('nearest-center').innerHTML = `
+      <div class="nc-label">// ENG YAQIN BEPUL TEST MARKAZI</div>
+      <div class="nc-name">${c.name}</div>
+      <div class="nc-phone">${c.phone}</div>
+      <div class="nc-note">${c.note}</div>
+    `;
+
+    // Actions
+    const actions = [
+      { icon: '🤖', title: 'Hamroh bilan gaplash', desc: 'Anonim, hukmsiz AI companion — 24/7', href: 'https://t.me/HIVUzBot' },
+      { icon: '📖', title: 'HIV haqida o\'qing', desc: 'O\'zbek tilidagi ishonchli ma\'lumot bazasi', href: '/blog/index.html' },
+      { icon: '📋', title: 'Test qanday topshiriladi?', desc: 'Qadam-baqadam yo\'riqnoma', href: '/blog/test-qanday-topshiriladi.html' },
+    ];
+
+    document.getElementById('result-actions').innerHTML = actions.map(a => `
+      <a class="action-card" href="${a.href}" target="${a.href.startsWith('http') ? '_blank' : '_self'}">
+        <div class="action-icon">${a.icon}</div>
+        <div>
+          <div class="action-title">${a.title}</div>
+          <div class="action-desc">${a.desc}</div>
+        </div>
+        <div class="action-arrow">→</div>
+      </a>
+    `).join('');
+  }
+
+  function restart() {
+    answers.fill(null);
+    currentQ = 0;
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('[id^="next-btn-"]').forEach(b => b.disabled = true);
+    document.getElementById('result-screen').style.display = 'none';
+    document.getElementById('quiz-section').style.display = 'block';
+    document.getElementById('progress-section').style.display = 'block';
+    document.querySelectorAll('.question-card').forEach(c => c.classList.remove('active'));
+    document.querySelector('[data-q="0"]').classList.add('active');
+    updateProgress(0);
+  }
+
+  updateProgress(0);
+</script>
+</body>
+</html>

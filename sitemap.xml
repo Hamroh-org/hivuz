@@ -27,6 +27,14 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Risk Kalkulyator -->
+  <url>
+    <loc>https://hiv.hikmatillo.work/risk.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Blog maqolalari — Asoslar -->
   <url>
     <loc>https://hiv.hikmatillo.work/blog/hiv-nima.html</loc>
