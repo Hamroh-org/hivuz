@@ -50,20 +50,23 @@ body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;over
 
 /* ── NAV ── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 28px;
-  background:rgba(7,9,15,0.9);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(30,34,53,0.5);
-  overflow:hidden;
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;
+  display:flex;align-items:center;gap:6px;
+  padding:6px 8px 6px 16px;
+  background:rgba(10,12,20,0.85);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:100px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  white-space:nowrap;
 }
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.14em;background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:20px;align-items:center;}
-.nav-links a{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-decoration:none;font-family:'Space Mono',monospace;text-transform:uppercase;transition:color .2s;}
-.nav-links a:hover{color:var(--text);}
-.nav-cta{padding:7px 16px;border-radius:6px;background:var(--green-d);border:1px solid var(--green);color:var(--green)!important;font-size:11px!important;transition:all .2s!important;}
-.nav-cta:hover{background:rgba(60,216,112,.2)!important;}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.12em;background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;padding-right:10px;border-right:1px solid rgba(255,255,255,0.08);margin-right:4px;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(200,205,220,0.55);text-decoration:none;font-family:'Space Mono',monospace;text-transform:uppercase;transition:color .2s,background .2s;padding:6px 12px;border-radius:100px;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.06);}
+.nav-cta{padding:7px 16px !important;border-radius:100px !important;background:var(--green-d) !important;border:1px solid rgba(60,216,112,0.5) !important;color:var(--green) !important;font-size:11px !important;transition:all .2s !important;margin-left:4px;}
+.nav-cta:hover{background:rgba(60,216,112,.15) !important;border-color:var(--green) !important;}
 
 /* ── HERO ── */
 .hero{
@@ -1136,9 +1139,11 @@ footer a{color:var(--blue-l);text-decoration:none;}
 .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .fi.vis{opacity:1;transform:none;}
 @media(max-width:640px){
-  nav{padding:10px 14px;}
-  .nav-links{gap:8px;}
-  .nav-hide-sm{display:none;}
+  nav{top:10px;padding:5px 6px 5px 12px;gap:4px;}
+  .nav-logo{font-size:13px;padding-right:8px;margin-right:2px;}
+  .nav-links{gap:0;}
+  .nav-links a{font-size:10px;padding:5px 8px;}
+  .nav-links a:not([href="#hamroh"]):not([href="./risk.html"]):not(.nav-cta){display:none;}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:8px;max-width:100%;}
   .hstat{padding:14px 12px;border-radius:10px!important;}
   .hstat-num{font-size:28px;}
@@ -1343,19 +1348,13 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <!-- NAV -->
 
 <nav>
-  <div class="nav-logo">Sog'lom Hayot 🩸</div>
+  <div class="nav-logo">Sog'lom Hayot 🌿</div>
   <div class="nav-links">
-    <a href="#kimsiz" class="nav-hide-sm">Kim siz?</a>
-    <a href="#test" class="nav-hide-sm">Test</a>
-    <a href="#uzstat" class="nav-hide-sm">O'zbekiston</a>
-    <a href="#myth" class="nav-hide-sm">Mif/Haqiqat</a>
-    <a href="#hikoyalar" class="nav-hide-sm">Hikoyalar</a>
-    <a href="./faq.html" class="nav-hide-sm">FAQ</a>
-    <a href="./glossariy.html" class="nav-hide-sm">Lug'at</a>
-    <a href="./blog/index.html" class="nav-hide-sm">📝 Blog</a>
-    <a href="#faq">Savollar</a>
+    <a href="./blog/index.html">Blog</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./glossariy.html">Lug'at</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
-    <a href="./risk.html" style="color:#00ffb4;font-weight:800;">⚡ Xavf test</a>
+    <a href="./risk.html" style="color:#3cd870;">⚡ Xavf test</a>
     <a href="#hotline" class="nav-cta">Yordam →</a>
   </div>
 </nav>
