@@ -1139,11 +1139,14 @@ footer a{color:var(--blue-l);text-decoration:none;}
 .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .fi.vis{opacity:1;transform:none;}
 @media(max-width:640px){
-  nav{top:10px;padding:5px 6px 5px 12px;gap:4px;}
-  .nav-logo{font-size:13px;padding-right:8px;margin-right:2px;}
-  .nav-links{gap:0;}
-  .nav-links a{font-size:10px;padding:5px 8px;}
-  .nav-links a:not([href="#hamroh"]):not([href="./risk.html"]):not(.nav-cta){display:none;}
+  nav{top:10px;left:12px;right:12px;transform:none;width:auto;padding:5px 6px 5px 12px;gap:4px;}
+  .nav-logo{font-size:13px;padding-right:8px;margin-right:2px;flex-shrink:0;}
+  .nav-links{gap:0;flex:1;justify-content:flex-end;}
+  .nav-links a{font-size:10px;padding:5px 9px;}
+  .nav-links a[href="./blog/index.html"],
+  .nav-links a[href="./faq.html"],
+  .nav-links a[href="./glossariy.html"],
+  .nav-links a[href="#hamroh"]{display:none;}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:8px;max-width:100%;}
   .hstat{padding:14px 12px;border-radius:10px!important;}
   .hstat-num{font-size:28px;}
