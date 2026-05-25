@@ -570,7 +570,7 @@
     <div class="q-hint">Sherik holati haqidagi ma'lumot umumiy tasvirni aniqroq ko'rsatishga yordam beradi.</div>
     <div class="options">
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Ha, manfiy (HIV yo'q)</button>
-      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, musbat (HIV bor, dori ichadi)</button>
+      <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, musbat — dori ichadi, viral yuki aniqlanmaydi (U=U)</button>
       <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> Bilmayman</button>
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">D</span> Jinsiy sherigim yo'q</button>
     </div>
@@ -605,8 +605,8 @@
     <div class="options">
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Yo'q, hech qachon</button>
       <button class="option-btn" data-score="3" onclick="selectOption(this)"><span class="opt-key">B</span> Ha, umumiy igna/shprits ishlatganman</button>
-      <button class="option-btn" data-score="2" onclick="selectOption(this)"><span class="opt-key">C</span> Ha, steril bo'lmagan joyda tatuyaj/teshik qildirganman</button>
-      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Ishonchim komil emas</button>
+      <button class="option-btn" data-score="3" onclick="selectOption(this)"><span class="opt-key">C</span> Ha, tekshirilmagan qon quyish yoki jarrohlik bo'lgan</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Ha, steril bo'lmagan tatuyaj/teshik yoki ishonchim yo'q</button>
     </div>
     <div class="nav-btns">
       <button class="btn btn-ghost" onclick="prevQ(4)">← Orqaga</button>
@@ -638,9 +638,9 @@
     <div class="q-hint">Bu belgilar ko'plab kasalliklarda uchraydi — faqat ko'rsatkich.</div>
     <div class="options">
       <button class="option-btn" data-score="0" onclick="selectOption(this)"><span class="opt-key">A</span> Yo'q, hech qanday belgi yo'q</button>
-      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Uzoq davom etgan isitma, charchash</button>
-      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">C</span> Tushunarsiz vazn yo'qotish, tungi ter</button>
-      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Tez-tez kasallaning, uzoq tuzalasiz</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">B</span> Isitma, toshma, bo'yin yoki qo'ltiq bezlari shishishi</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">C</span> Tushunarsiz vazn yo'qotish, tungi ter, charchash</button>
+      <button class="option-btn" data-score="1" onclick="selectOption(this)"><span class="opt-key">D</span> Tez-tez kasallaning, uzoq tuzalasiz, og'iz yaralari</button>
     </div>
     <div class="nav-btns">
       <button class="btn btn-ghost" onclick="prevQ(6)">← Orqaga</button>
@@ -748,7 +748,7 @@
   function showResult() {
     const totalScore = answers.reduce((sum, a) => sum + (a ? a.score : 0), 0);
     const region = answers[7]?.region || 'other';
-    const maxScore = 14;
+    const maxScore = 15;
     const pct = Math.round((totalScore / maxScore) * 100);
 
     document.getElementById('quiz-section').style.display = 'none';
