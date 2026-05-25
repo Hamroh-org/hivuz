@@ -74,6 +74,7 @@
   <div style="display:flex;align-items:center;gap:1.25rem;">
     <a href="../faq.html" class="nav-back">FAQ</a>
     <a href="../glossariy.html" class="nav-back">Lug'at</a>
+    <a href="../risk.html" class="nav-back" style="color:#00ffb4;font-weight:700;">⚡ Xavf test</a>
     <a href="../index.html" class="nav-back">← Bosh sahifa</a>
   </div>
 </nav>
@@ -84,9 +85,28 @@
   <p class="header-desc">HIV, ARVT va sog'lom hayot haqida — animatsiyalar va interaktiv grafiklar orqali.</p>
 </div>
 
+<div style="padding:1rem 2rem 0;max-width:600px;">
+  <div style="position:relative;">
+    <input id="searchInput" type="text" placeholder="Maqola qidiring... (masalan: ARVT, test, PrEP)"
+      style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:3px;padding:10px 16px 10px 40px;font-family:'DM Mono',monospace;font-size:12px;color:#e8edf2;outline:none;letter-spacing:0.04em;"
+      oninput="searchPosts(this.value)"
+      onfocus="this.style.borderColor='rgba(0,255,180,0.4)'"
+      onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+    <svg style="position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.3;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00ffb4" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </div>
+</div>
+
 <div class="filter-bar" id="filterBar">
   <span class="filter-label">FILTER:</span>
   <button class="f-btn active" onclick="filter('all')">Hammasi</button>
+</div>
+
+<div style="margin:0 2rem 0;padding:20px 28px;background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.12);border-radius:4px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <div>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:4px;">// YANGI</div>
+    <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;">HIV xavf darajangizni bilib oling — 8 savol, 3 daqiqa</div>
+  </div>
+  <a href="../risk.html" style="flex-shrink:0;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.06em;padding:10px 22px;border-radius:3px;text-decoration:none;white-space:nowrap;">⚡ Sinab ko'rish →</a>
 </div>
 
 <div class="posts">
@@ -139,6 +159,20 @@ function buildFilters(posts) {
   bar.appendChild(badge);
 }
 
+function searchPosts(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.post-card').forEach(card => {
+    const title = card.querySelector('.post-title')?.textContent.toLowerCase() || '';
+    const summary = card.querySelector('.post-summary')?.textContent.toLowerCase() || '';
+    const tag = (card.dataset.tag || '').toLowerCase();
+    card.classList.toggle('hidden', q.length > 0 && !title.includes(q) && !summary.includes(q) && !tag.includes(q));
+  });
+  const visible = document.querySelectorAll('.post-card:not(.hidden)').length;
+  const badge = document.getElementById('countBadge');
+  if (badge) badge.textContent = (q ? visible : allPosts.length) + ' ta maqola';
+  document.getElementById('empty').style.display = (q && visible === 0) ? 'block' : 'none';
+}
+
 function filter(tag) {
   activeTag = tag;
   document.querySelectorAll('.f-btn').forEach(b => {
@@ -160,8 +194,12 @@ function renderPosts(posts) {
     card.href = './' + p.file;
     card.className = 'post-card';
     card.dataset.tag = p.tag;
+    const postDate = new Date(p.date);
+    const now = new Date();
+    const isNew = (now - postDate) < 60 * 24 * 60 * 60 * 1000;
+    const newBadge = isNew ? '<span style="display:inline-block;font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:0.1em;color:#080c10;background:#00ffb4;padding:2px 7px;border-radius:2px;margin-left:6px;">NEW</span>' : '';
     card.innerHTML = `
-      <span class="post-tag">${p.tag}</span>
+      <span class="post-tag">${p.tag}</span>${newBadge}
       <h2 class="post-title">${p.title}</h2>
       <p class="post-summary">${p.summary}</p>
       <div class="post-meta">
