@@ -24,7 +24,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://hiv.hikmatillo.work/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --bg:#07090f;
@@ -65,7 +67,7 @@ nav{
 .nav-links{display:flex;gap:2px;align-items:center;}
 .nav-links a{font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(200,205,220,0.55);text-decoration:none;font-family:'Space Mono',monospace;text-transform:uppercase;transition:color .2s,background .2s;padding:6px 12px;border-radius:100px;}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.06);}
-.nav-cta{padding:7px 16px !important;border-radius:100px !important;background:var(--green-d) !important;border:1px solid rgba(60,216,112,0.5) !important;color:var(--green) !important;font-size:11px !important;transition:all .2s !important;margin-left:4px;}
+.nav-cta{padding:7px 16px !important;border-radius:100px !important;background:rgba(60,216,112,0.12) !important;border:1px solid rgba(60,216,112,0.5) !important;color:#52e888 !important;font-size:11px !important;transition:all .2s !important;margin-left:4px;}
 .nav-cta:hover{background:rgba(60,216,112,.15) !important;border-color:var(--green) !important;}
 
 /* ── HERO ── */
@@ -241,7 +243,7 @@ canvas.blood{display:block;width:100%;height:110px;}
 .cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0;}
 
 /* ── FOOTER ── */
-footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--muted);font-size:12px;font-weight:600;}
+footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:#8a8892;font-size:12px;font-weight:600;}
 .f-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.12em;background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:8px;}
 footer a{color:var(--blue-l);text-decoration:none;}
 
@@ -1124,8 +1126,8 @@ footer a{color:var(--blue-l);text-decoration:none;}
 .bot-cta-row{padding:20px 28px;border-top:1px solid rgba(64,128,255,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:rgba(0,0,0,.15);}
 .bot-cta-text{font-size:13px;color:#8a8790;font-weight:600;}
 .bot-cta-text b{color:var(--text);}
-.btn-telegram{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;background:#2481cc;color:#fff;font-weight:800;font-size:14px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif;}
-.btn-telegram:hover{background:#1a6aaa;transform:translateY(-1px);}
+.btn-telegram{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;background:#1565b0;color:#fff;font-weight:800;font-size:14px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif;}
+.btn-telegram:hover{background:#0d4f8e;transform:translateY(-1px);}
 .btn-telegram svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
 .bot-stats-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;}
 .bstat{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted);}
@@ -1239,7 +1241,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 .story-body .g{color:var(--green);}
 .story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
 .story-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
-.story-note{margin-top:24px;font-size:12px;color:var(--muted);text-align:center;font-family:'Space Mono',monospace;letter-spacing:.06em;opacity:.7;}
+.story-note{margin-top:24px;font-size:12px;color:#9a9aa2;text-align:center;font-family:'Space Mono',monospace;letter-spacing:.06em;}
 @media(max-width:600px){
   .story-card{padding:24px 20px;}
   .story-pullquote{font-size:15px;}
@@ -2036,7 +2038,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
       <div class="sl-head">CD4 hujayralari soni</div>
       <div class="sl-badge"><span class="sl-val" id="slVal">500</span><span class="sl-unit">hujayra/mm³</span></div>
     </div>
-    <input type="range" id="slRange" min="0" max="1200" value="500" step="10">
+    <input type="range" id="slRange" min="0" max="1200" value="500" step="10" aria-label="ARVT oy xarajati (so'm)">
     <div class="range-marks">
       <span class="rm r">0 — AIDS</span>
       <span class="rm a">200 — Xavfli</span>
@@ -2535,9 +2537,9 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <footer>
   <span class="f-logo">Sog'lom Hayot</span>
   <p>Bu sahifa faqat <b>ta'lim maqsadida</b> yaratilgan. Aniq tibbiy maslahat uchun shifokoringizga murojaat qiling.</p>
-  <p style="margin-top:6px;opacity:.55;font-size:11px;">🔒 Maxfiy &nbsp;·&nbsp; 📚 <a href="#" onclick="document.querySelector('.sources-section').scrollIntoView({behavior:'smooth'});return false;" style="color:inherit;opacity:.7;">Manbalar</a> &nbsp;·&nbsp; 🔒 Shaxsiy ma'lumotlar saqlanmaydi &nbsp;·&nbsp; Yashirin rejim uchun: Ctrl+Shift+N
+  <p style="margin-top:6px;color:#7a7882;font-size:11px;">🔒 Maxfiy &nbsp;·&nbsp; 📚 <a href="#" onclick="document.querySelector('.sources-section').scrollIntoView({behavior:'smooth'});return false;" style="color:#9a9aa8;text-decoration:underline;">Manbalar</a> &nbsp;·&nbsp; 🔒 Shaxsiy ma'lumotlar saqlanmaydi &nbsp;·&nbsp; Yashirin rejim uchun: Ctrl+Shift+N
   </p>
-  <p style="margin-top:6px;opacity:.4;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
+  <p style="margin-top:6px;color:#6a6872;font-size:11px;">© 2024 — HIV/ARVT Ta'lim Platformasi | O'zbekiston</p>
 </footer>
 
 <script>
