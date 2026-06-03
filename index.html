@@ -74,11 +74,20 @@ nav{
 .hero{
   min-height:100vh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden;
+  padding:70px 24px 50px;text-align:center;position:relative;overflow:hidden;
 }
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(40,80,200,.13) 0%,transparent 70%),radial-gradient(ellipse 35% 30% at 80% 70%,rgba(60,216,112,.07) 0%,transparent 60%);}
 .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(64,128,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(64,128,255,.04) 1px,transparent 1px);background-size:38px 38px;}
-.hero-content{position:relative;z-index:1;max-width:700px;}
+.hero-content{position:relative;z-index:1;max-width:960px;width:100%;}
+.hero-seg-divider{display:flex;align-items:center;gap:12px;margin:20px 0 14px;}
+.hero-seg-divider::before,.hero-seg-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
+.hero-seg-lbl{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,205,220,.35);white-space:nowrap;}
+.hero-proof{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:16px;}
+.hero-proof-item{font-family:'Space Mono',monospace;font-size:10px;color:rgba(200,205,220,.3);letter-spacing:.06em;display:flex;align-items:center;gap:5px;}
+.hero-proof-item b{color:rgba(200,205,220,.55);}
+.hero-risk-link{display:inline-block;margin-top:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:rgba(60,216,112,.55);text-decoration:none;transition:color .2s;}
+.hero-risk-link:hover{color:var(--green);}
+.hero-content .segment-grid{grid-template-columns:repeat(2,1fr);}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:var(--green);text-transform:uppercase;margin-bottom:24px;padding:6px 14px;border:1px solid rgba(60,216,112,.3);border-radius:20px;background:rgba(60,216,112,.06);}
 .hero-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.5s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
@@ -1383,32 +1392,39 @@ footer a{color:var(--blue-l);text-decoration:none;}
       Siz ham shunday yashay olasiz.
     </p>
 
-    <div class="hero-stats">
-      <div class="hstat">
-        <div class="hstat-num" style="color:var(--green);">40.8M</div>
-        <div class="hstat-lbl">Dunyo bo'ylab HIV bilan yashamoqda <span style="font-size:8px;display:block;opacity:.6;"><a href="https://www.unaids.org/en/resources/fact-sheet" target="_blank" style="color:inherit;text-decoration:underline;opacity:.7;">UNAIDS 2024</a></span></div>
+    <div class="hero-seg-divider">
+      <span class="hero-seg-lbl">Bugun kimga yordam kerak?</span>
+    </div>
+
+    <div class="segment-grid" style="text-align:left;">
+      <div class="seg-card s1" onclick="window.showSeg('s-qorquv')">
+        <span class="seg-icon">😔</span>
+        <div class="seg-title">Test topshirishdan qo'rqyapman</div>
+        <div class="seg-desc">Nima bo'lishini bilmoqchiman, lekin qo'rqaman</div>
       </div>
-      <div class="hstat">
-        <div class="hstat-num" style="color:var(--blue);">94%</div>
-        <div class="hstat-lbl">ARVT ichuvchilarda virus aniqlanmaydi <span style="font-size:8px;display:block;opacity:.6;"><a href="https://www.unaids.org/en/resources/fact-sheet" target="_blank" style="color:inherit;text-decoration:underline;opacity:.7;">UNAIDS 2024</a></span></div>
+      <div class="seg-card s2" onclick="window.showSeg('s-diagnoz')">
+        <span class="seg-icon">📋</span>
+        <div class="seg-title">Yangi diagnoz oldim</div>
+        <div class="seg-desc">HIV aniqlandi — endi nima qilishni bilmayman</div>
       </div>
-      <div class="hstat">
-        <div class="hstat-num" style="color:var(--amber);">77%</div>
-        <div class="hstat-lbl">Dunyoda ARVT qamrovi <span style="font-size:8px;display:block;opacity:.6;">UNAIDS 2024</span></div>
+      <div class="seg-card s3" onclick="window.showSeg('s-yaqin')">
+        <span class="seg-icon">🤝</span>
+        <div class="seg-title">Yaqinim kasallangan</div>
+        <div class="seg-desc">Sevgim / do'stim / oila a'zomga qanday yordam beraman</div>
       </div>
-      <div class="hstat">
-        <div class="hstat-num" style="color:#c0c0ff;">U=U</div>
-        <div class="hstat-lbl">Aniqlanmaydi = Yuqtirmaydi <span style="font-size:8px;display:block;opacity:.6;">WHO tasdiqlagan</span></div>
+      <div class="seg-card s4" onclick="window.showSeg('s-arvt')">
+        <span class="seg-icon">💊</span>
+        <div class="seg-title">ARVT ichyapman</div>
+        <div class="seg-desc">Davolanmoqdaman — ma'lumot va motivatsiya kerak</div>
       </div>
     </div>
 
-    <div class="hero-btns">
-      <a href="risk.html" class="btn-main" style="background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;box-shadow:0 0 28px rgba(0,255,180,.3);">⚡ Xavf darajangizni biling</a>
-      <a href="#bilish" class="btn-ghost">Ko'proq o'qish</a>
+    <div class="hero-proof">
+      <span class="hero-proof-item"><b>40.8M</b> kishi HIV bilan yashayapti</span>
+      <span class="hero-proof-item"><b>94%</b> ARVT bilan virus aniqlanmaydi</span>
+      <span class="hero-proof-item"><b>U=U</b> — WHO tasdiqlagan</span>
     </div>
-    <div style="margin-top:10px;text-align:center;">
-      <span style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">8 savol · 3 daqiqa · anonim · bepul</span>
-    </div>
+    <a href="risk.html" class="hero-risk-link">⚡ Statusingizni bilmaysizmi? Xavf testini topshiring →</a>
   </div>
   <a href="#bilish" class="scroll-hint">
     <span>Ko'proq</span>
