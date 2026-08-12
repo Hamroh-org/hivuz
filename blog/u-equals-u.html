@@ -30,108 +30,108 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
-.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-.nav-logo span{color:#00ffb4;}
-.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;}
-.nav-back:hover{color:#00ffb4;}
+body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);position:sticky;top:0;background:#FAF6F1;z-index:100;}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#3E6B57;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);text-decoration:none;}
+.nav-back:hover{color:#3E6B57;}
 
 /* HERO - maxsus katta */
 .hero{padding:4rem 2rem 3rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;text-align:center;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(0,255,160,0.08) 0%,transparent 70%);pointer-events:none;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:2rem;}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(62,107,87,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#3E6B57;border:1px solid rgba(62,107,87,0.3);padding:4px 12px;border-radius:2px;margin-bottom:2rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#3E6B57;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
 
 /* BIG U=U */
-.uu-display{font-family:'DM Serif Display',serif;font-size:clamp(60px,15vw,120px);line-height:1;color:#f0f5f0;margin-bottom:1rem;position:relative;}
-.uu-display span{color:#00ffb4;font-style:italic;}
-.uu-sub{font-family:'DM Mono',monospace;font-size:clamp(11px,2vw,14px);color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:1.5rem;}
-.hero-desc{font-size:15px;color:rgba(232,237,242,0.55);line-height:1.8;max-width:520px;margin:0 auto;}
-.hero-desc b{color:#e8edf2;}
-.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.25);letter-spacing:0.06em;margin-top:1.5rem;justify-content:center;}
-.hero-border{border-bottom:1px solid rgba(0,255,180,0.1);}
+.uu-display{font-family:'DM Serif Display',serif;font-size:clamp(60px,15vw,120px);line-height:1;color:#2D2A26;margin-bottom:1rem;position:relative;}
+.uu-display span{color:#3E6B57;font-style:italic;}
+.uu-sub{font-family:'DM Mono',monospace;font-size:clamp(11px,2vw,14px);color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:1.5rem;}
+.hero-desc{font-size:15px;color:rgba(45,42,38,0.55);line-height:1.8;max-width:520px;margin:0 auto;}
+.hero-desc b{color:#2D2A26;}
+.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.25);letter-spacing:0.06em;margin-top:1.5rem;justify-content:center;}
+.hero-border{border-bottom:1px solid rgba(62,107,87,0.1);}
 
 .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
 .section{padding:2.5rem 0;}
-.section+.section{border-top:1px solid rgba(255,255,255,0.06);}
-.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
-.prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
-.prose b{color:#e8edf2;}
-.vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
-.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
-.hl{background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl b{color:#00ffb4;}
+.section+.section{border-top:1px solid rgba(45,42,38,0.06);}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#3E6B57;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#2D2A26;margin-bottom:1rem;line-height:1.25;}
+.prose{font-size:15px;line-height:1.8;color:rgba(45,42,38,0.6);margin-bottom:1rem;}
+.prose b{color:#2D2A26;}
+.vcard{background:#FFFFFF;border:1px solid rgba(62,107,87,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);margin-bottom:1rem;text-transform:uppercase;}
+.hl{background:rgba(62,107,87,0.04);border:1px solid rgba(62,107,87,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl b{color:#3E6B57;}
 
 /* FORMULA */
-.formula{display:flex;align-items:center;justify-content:center;gap:16px;padding:2rem;background:#06090d;border:1px solid rgba(0,255,180,0.15);border-radius:3px;margin:1.5rem 0;flex-wrap:wrap;}
+.formula{display:flex;align-items:center;justify-content:center;gap:16px;padding:2rem;background:#F3EDE6;border:1px solid rgba(62,107,87,0.15);border-radius:3px;margin:1.5rem 0;flex-wrap:wrap;}
 .formula-part{text-align:center;}
 .formula-letter{font-family:'DM Serif Display',serif;font-size:clamp(36px,8vw,64px);font-style:italic;line-height:1;}
 .formula-meaning{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;margin-top:6px;opacity:0.6;}
-.formula-eq{font-family:'DM Mono',monospace;font-size:clamp(24px,5vw,40px);color:rgba(0,255,180,0.5);}
+.formula-eq{font-family:'DM Mono',monospace;font-size:clamp(24px,5vw,40px);color:rgba(62,107,87,0.5);}
 
 /* CANVAS DEMO */
-.demo-canvas{width:100%;height:220px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;position:relative;}
+.demo-canvas{width:100%;height:220px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;position:relative;}
 .demo-canvas canvas{display:block;width:100%;height:100%;}
-.demo-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.4);letter-spacing:0.08em;}
+.demo-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.4);letter-spacing:0.08em;}
 
 /* TOGGLE */
 .toggle-row{display:flex;align-items:center;gap:14px;margin-bottom:1rem;}
-.toggle-label{font-family:'DM Mono',monospace;font-size:12px;color:rgba(232,237,242,0.5);}
+.toggle-label{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.5);}
 .toggle{position:relative;width:48px;height:26px;cursor:pointer;}
 .toggle input{opacity:0;width:0;height:0;}
-.toggle-track{position:absolute;inset:0;background:rgba(255,255,255,0.08);border-radius:13px;border:1px solid rgba(255,255,255,0.1);transition:all .3s;}
-.toggle input:checked~.toggle-track{background:rgba(0,255,180,0.2);border-color:rgba(0,255,180,0.4);}
-.toggle-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;background:rgba(255,255,255,0.3);border-radius:50%;transition:all .3s;}
-.toggle input:checked~.toggle-track~.toggle-thumb{left:25px;background:#00ffb4;}
+.toggle-track{position:absolute;inset:0;background:rgba(45,42,38,0.08);border-radius:13px;border:1px solid rgba(45,42,38,0.1);transition:all .3s;}
+.toggle input:checked~.toggle-track{background:rgba(62,107,87,0.2);border-color:rgba(62,107,87,0.4);}
+.toggle-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;background:rgba(45,42,38,0.3);border-radius:50%;transition:all .3s;}
+.toggle input:checked~.toggle-track~.toggle-thumb{left:25px;background:#3E6B57;}
 .toggle-val{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;min-width:120px;}
 
 /* STUDY CARDS */
 .studies{display:flex;flex-direction:column;gap:10px;margin:1rem 0;}
-.study{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;}
-.study-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:rgba(0,255,180,0.08);border:1px solid rgba(0,255,180,0.2);}
+.study{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;}
+.study-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;background:rgba(62,107,87,0.08);border:1px solid rgba(62,107,87,0.2);}
 .study-body{}
-.study-name{font-size:13px;font-weight:600;color:#e8edf2;margin-bottom:3px;}
-.study-desc{font-size:12px;color:rgba(232,237,242,0.4);line-height:1.5;}
-.study-result{font-family:'DM Mono',monospace;font-size:11px;color:#00ffb4;margin-top:5px;}
+.study-name{font-size:13px;font-weight:600;color:#2D2A26;margin-bottom:3px;}
+.study-desc{font-size:12px;color:rgba(45,42,38,0.4);line-height:1.5;}
+.study-result{font-family:'DM Mono',monospace;font-size:11px;color:#3E6B57;margin-top:5px;}
 
 /* LIFE CARDS */
 .life-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:1rem 0;}
-.life-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;}
+.life-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;}
 .life-icon{font-size:22px;margin-bottom:8px;}
-.life-title{font-size:13px;font-weight:600;color:#e8edf2;margin-bottom:4px;}
-.life-desc{font-size:12px;color:rgba(232,237,242,0.4);line-height:1.5;}
-.life-desc .g{color:#00ffb4;}
+.life-title{font-size:13px;font-weight:600;color:#2D2A26;margin-bottom:4px;}
+.life-desc{font-size:12px;color:rgba(45,42,38,0.4);line-height:1.5;}
+.life-desc .g{color:#3E6B57;}
 
 /* BIG QUOTE */
-.big-quote{border-left:3px solid #00ffb4;padding:1rem 1.5rem;margin:1.5rem 0;}
-.big-quote p{font-family:'DM Serif Display',serif;font-size:clamp(16px,2.5vw,22px);color:#f0f5f0;line-height:1.5;font-style:italic;}
-.big-quote cite{font-family:'DM Mono',monospace;font-size:10px;color:rgba(232,237,242,0.3);display:block;margin-top:8px;letter-spacing:0.06em;}
+.big-quote{border-left:3px solid #3E6B57;padding:1rem 1.5rem;margin:1.5rem 0;}
+.big-quote p{font-family:'DM Serif Display',serif;font-size:clamp(16px,2.5vw,22px);color:#2D2A26;line-height:1.5;font-style:italic;}
+.big-quote cite{font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.3);display:block;margin-top:8px;letter-spacing:0.06em;}
 
 /* SHARE */
 .share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;}
 .s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;cursor:pointer;border:none;transition:all .2s;}
-.s-tg{background:#2481cc;color:#fff;}
+.s-tg{background:#2481cc;color:#2D2A26;}
 .s-tg:hover{background:#1a6aaa;}
-.s-cp{background:rgba(255,255,255,0.05);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.1);}
-.s-cp:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
+.s-cp{background:rgba(45,42,38,0.05);color:rgba(45,42,38,0.5);border:1px solid rgba(45,42,38,0.1);}
+.s-cp:hover{border-color:rgba(62,107,87,0.3);color:#3E6B57;}
 
-.nxt{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
-.nxt-t{font-size:14px;color:rgba(232,237,242,0.45);}
-.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;white-space:nowrap;}
-.nxt-a:hover{color:#00ffb4;}
-.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
-.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+.nxt{padding:2rem;border-top:1px solid rgba(45,42,38,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.nxt-t{font-size:14px;color:rgba(45,42,38,0.45);}
+.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(62,107,87,0.6);text-decoration:none;white-space:nowrap;}
+.nxt-a:hover{color:#3E6B57;}
+.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(45,42,38,0.06);}
+.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:1rem;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
-.rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
-.rel-card:hover{border-color:rgba(0,255,180,0.3);}
-.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
-.rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
-.rel-card:hover .rel-title{color:#e8edf2;}
-.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);}
+.rel-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+.rel-card:hover{border-color:rgba(62,107,87,0.3);}
+.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:6px;}
+.rel-title{font-size:13px;color:rgba(45,42,38,0.6);line-height:1.4;}
+.rel-card:hover .rel-title{color:#2D2A26;}
+.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(45,42,38,0.04);}
 @media(max-width:600px){.content{padding:0 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}.formula{gap:10px;padding:1.25rem;}}
 </style>
 </head>
@@ -166,13 +166,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 
     <div class="formula">
       <div class="formula-part">
-        <div class="formula-letter" style="color:#00b4ff;">U</div>
-        <div class="formula-meaning" style="color:rgba(0,180,255,0.6);">UNDETECTABLE<br>Aniqlanmaydi</div>
+        <div class="formula-letter" style="color:#E8896B;">U</div>
+        <div class="formula-meaning" style="color:rgba(232,137,107,0.6);">UNDETECTABLE<br>Aniqlanmaydi</div>
       </div>
       <div class="formula-eq">=</div>
       <div class="formula-part">
-        <div class="formula-letter" style="color:#00ffb4;">U</div>
-        <div class="formula-meaning" style="color:rgba(0,255,180,0.6);">UNTRANSMITTABLE<br>Yuqtirmaydi</div>
+        <div class="formula-letter" style="color:#3E6B57;">U</div>
+        <div class="formula-meaning" style="color:rgba(62,107,87,0.6);">UNTRANSMITTABLE<br>Yuqtirmaydi</div>
       </div>
     </div>
 
@@ -195,16 +195,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
           <div class="toggle-track"></div>
           <div class="toggle-thumb"></div>
         </label>
-        <span class="toggle-val" id="arvtLabel" style="color:rgba(255,80,80,0.7);">O'chirilgan</span>
+        <span class="toggle-val" id="arvtLabel" style="color:rgba(224,147,125,0.7);">O'chirilgan</span>
       </div>
       <div class="demo-canvas">
         <canvas id="demoCanvas"></canvas>
         <div class="demo-badge" id="demoBadge">Viral yuk: yuqori</div>
       </div>
       <div style="display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:11px;margin-top:8px;">
-        <span id="demoCD4" style="color:rgba(0,180,255,0.6);">CD4: past</span>
-        <span id="demoVL" style="color:rgba(255,80,80,0.6);">Viral yuk: yuqori</span>
-        <span id="demoUU" style="color:rgba(232,237,242,0.2);">U=U: yo'q</span>
+        <span id="demoCD4" style="color:rgba(232,137,107,0.6);">CD4: past</span>
+        <span id="demoVL" style="color:rgba(224,147,125,0.6);">Viral yuk: yuqori</span>
+        <span id="demoUU" style="color:rgba(45,42,38,0.2);">U=U: yo'q</span>
       </div>
     </div>
   </div>
@@ -354,20 +354,20 @@ function buildDemo(arvt){
 }
 
 function drawDemo(){
-  dctx.fillStyle='#06090d';dctx.fillRect(0,0,dW,dH);
-  dctx.strokeStyle=`rgba(0,255,180,0.022)`;dctx.lineWidth=1;
+  dctx.fillStyle='#F3EDE6';dctx.fillRect(0,0,dW,dH);
+  dctx.strokeStyle=`rgba(62,107,87,0.022)`;dctx.lineWidth=1;
   for(let i=0;i<dW;i+=26){dctx.beginPath();dctx.moveTo(i,0);dctx.lineTo(i,dH);dctx.stroke();}
   for(let i=0;i<dH;i+=26){dctx.beginPath();dctx.moveTo(0,i);dctx.lineTo(dW,i);dctx.stroke();}
 
   // shields
   shields.forEach(s=>{
     dctx.save();dctx.translate(s.x,s.y);dctx.rotate(dT*.3+s.ph);
-    dctx.strokeStyle='rgba(0,255,180,0.2)';dctx.lineWidth=1.5;dctx.setLineDash([5,4]);
+    dctx.strokeStyle='rgba(62,107,87,0.2)';dctx.lineWidth=1.5;dctx.setLineDash([5,4]);
     dctx.beginPath();dctx.arc(0,0,22,0,Math.PI*2);dctx.stroke();dctx.setLineDash([]);dctx.restore();
-    dctx.beginPath();dctx.arc(s.x,s.y,18,0,Math.PI*2);dctx.fillStyle='rgba(0,255,180,0.06)';dctx.fill();
-    dctx.strokeStyle='rgba(0,255,180,0.35)';dctx.lineWidth=1.5;dctx.stroke();
-    dctx.font='10px Syne';dctx.fillStyle='rgba(0,255,180,0.7)';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('✓',s.x,s.y);
-    dctx.font='8px DM Mono,monospace';dctx.fillStyle='rgba(0,255,180,0.4)';dctx.fillText('ARVT',s.x,s.y+26);
+    dctx.beginPath();dctx.arc(s.x,s.y,18,0,Math.PI*2);dctx.fillStyle='rgba(62,107,87,0.06)';dctx.fill();
+    dctx.strokeStyle='rgba(62,107,87,0.35)';dctx.lineWidth=1.5;dctx.stroke();
+    dctx.font='10px Syne';dctx.fillStyle='rgba(62,107,87,0.7)';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('✓',s.x,s.y);
+    dctx.font='8px DM Mono,monospace';dctx.fillStyle='rgba(62,107,87,0.4)';dctx.fillText('ARVT',s.x,s.y+26);
   });
 
   // cd4
@@ -389,9 +389,9 @@ function drawDemo(){
     const alpha=v.fading?0.25:1;
     dctx.save();dctx.globalAlpha=alpha;
     const g=dctx.createRadialGradient(v.x-v.r*.3,v.y-v.r*.3,0,v.x,v.y,v.r);
-    g.addColorStop(0,'rgba(200,50,50,0.8)');g.addColorStop(1,'rgba(90,10,10,0.7)');
+    g.addColorStop(0,'rgba(200,50,50,0.8)');g.addColorStop(1,'rgba(122,46,34,0.7)');
     dctx.beginPath();dctx.arc(v.x,v.y,v.r,0,Math.PI*2);dctx.fillStyle=g;dctx.fill();
-    dctx.strokeStyle='rgba(255,65,65,0.4)';dctx.lineWidth=1;dctx.stroke();
+    dctx.strokeStyle='rgba(194,86,56,0.4)';dctx.lineWidth=1;dctx.stroke();
     for(let i=0;i<5;i++){const a=(i/5)*Math.PI*2+dT*.4;dctx.beginPath();dctx.moveTo(v.x+Math.cos(a)*v.r,v.y+Math.sin(a)*v.r);dctx.lineTo(v.x+Math.cos(a)*(v.r+3),v.y+Math.sin(a)*(v.r+3));dctx.strokeStyle='rgba(255,140,40,0.45)';dctx.lineWidth=1.2;dctx.stroke();}
     dctx.restore();
   });
@@ -400,27 +400,27 @@ function drawDemo(){
   if(arvtOn){
     const p=Math.sin(dT*2)*.15+.85;
     dctx.save();dctx.globalAlpha=p;
-    dctx.font='bold 18px DM Serif Display,serif';dctx.fillStyle='rgba(0,255,180,0.5)';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('U = U',dW/2,dH/2);
+    dctx.font='bold 18px DM Serif Display,serif';dctx.fillStyle='rgba(62,107,87,0.5)';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('U = U',dW/2,dH/2);
     dctx.restore();
   }
 
   // bottom bar
-  dctx.fillStyle=arvtOn?'rgba(0,255,180,0.15)':'rgba(255,60,60,0.1)';dctx.fillRect(0,dH-3,dW,3);
+  dctx.fillStyle=arvtOn?'rgba(62,107,87,0.15)':'rgba(212,105,90,0.1)';dctx.fillRect(0,dH-3,dW,3);
   dT+=.018;requestAnimationFrame(drawDemo);
 }
 
 function toggleARVT(on){
   arvtOn=on;
   document.getElementById('arvtLabel').textContent=on?'Yoqilgan — U=U':'O\'chirilgan';
-  document.getElementById('arvtLabel').style.color=on?'rgba(0,255,180,0.8)':'rgba(255,80,80,0.7)';
+  document.getElementById('arvtLabel').style.color=on?'rgba(62,107,87,0.8)':'rgba(224,147,125,0.7)';
   document.getElementById('demoBadge').textContent=on?'Viral yuk: aniqlanmaydi ✓':'Viral yuk: yuqori';
-  document.getElementById('demoBadge').style.color=on?'rgba(0,255,180,0.5)':'rgba(255,80,80,0.5)';
+  document.getElementById('demoBadge').style.color=on?'rgba(62,107,87,0.5)':'rgba(224,147,125,0.5)';
   document.getElementById('demoCD4').textContent=on?'CD4: yuqori ↑':'CD4: past';
-  document.getElementById('demoCD4').style.color=on?'rgba(0,180,255,0.7)':'rgba(0,180,255,0.4)';
+  document.getElementById('demoCD4').style.color=on?'rgba(232,137,107,0.7)':'rgba(232,137,107,0.4)';
   document.getElementById('demoVL').textContent=on?'Viral yuk: <50 ✓':'Viral yuk: yuqori';
-  document.getElementById('demoVL').style.color=on?'rgba(0,255,180,0.7)':'rgba(255,80,80,0.6)';
+  document.getElementById('demoVL').style.color=on?'rgba(62,107,87,0.7)':'rgba(224,147,125,0.6)';
   document.getElementById('demoUU').textContent=on?'U=U: HA ✓':'U=U: yo\'q';
-  document.getElementById('demoUU').style.color=on?'rgba(0,255,180,0.7)':'rgba(232,237,242,0.2)';
+  document.getElementById('demoUU').style.color=on?'rgba(62,107,87,0.7)':'rgba(45,42,38,0.2)';
   buildDemo(on);
 }
 
@@ -430,17 +430,17 @@ buildDemo(false);
 drawDemo();
 </script>
 <div style="max-width:760px;margin:48px auto 0;padding:0 20px 64px;">
-  <div style="background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
-    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
-    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
+  <div style="background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#2D2A26;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
+    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(45,42,38,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
+    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#2C4A3D,#3E6B57);color:#FAF6F1;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
   </div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="hiv-bilan-oila.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Hayot</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">HIV bilan oila qurish mumkinmi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="prezervativ.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Profilaktika</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">Prezervativ — to'g'ri ishlatish</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="hiv-bilan-oila.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Hayot</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">HIV bilan oila qurish mumkinmi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="prezervativ.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Profilaktika</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">Prezervativ — to'g'ri ishlatish</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a></div>
 </div>
-<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
-<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#3E6B57;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#3E6B57;color:#FAF6F1;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(62,107,87,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
 <script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>

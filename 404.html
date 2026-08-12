@@ -16,28 +16,28 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
-.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-.nav-logo span{color:#00ffb4;}
+body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#3E6B57;}
 .main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;}
-.code{font-family:'DM Serif Display',serif;font-size:clamp(80px,20vw,160px);line-height:1;color:rgba(0,255,180,0.08);position:relative;margin-bottom:2rem;}
-.code::after{content:'404';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(80px,20vw,160px);color:rgba(0,255,180,0.12);}
-.title{font-family:'DM Serif Display',serif;font-size:clamp(22px,4vw,36px);color:#f0f5f0;margin-bottom:1rem;}
-.desc{font-size:15px;color:rgba(232,237,242,0.45);max-width:400px;line-height:1.8;margin-bottom:2.5rem;}
+.code{font-family:'DM Serif Display',serif;font-size:clamp(80px,20vw,160px);line-height:1;color:rgba(62,107,87,0.08);position:relative;margin-bottom:2rem;}
+.code::after{content:'404';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(80px,20vw,160px);color:rgba(62,107,87,0.12);}
+.title{font-family:'DM Serif Display',serif;font-size:clamp(22px,4vw,36px);color:#2D2A26;margin-bottom:1rem;}
+.desc{font-size:15px;color:rgba(45,42,38,0.45);max-width:400px;line-height:1.8;margin-bottom:2.5rem;}
 .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
 .link-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;text-decoration:none;padding:11px 22px;border-radius:3px;transition:all .2s;}
-.link-btn.primary{background:rgba(0,255,180,0.1);color:#00ffb4;border:1px solid rgba(0,255,180,0.3);}
-.link-btn.primary:hover{background:rgba(0,255,180,0.15);border-color:#00ffb4;}
-.link-btn.secondary{background:rgba(255,255,255,0.04);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.08);}
-.link-btn.secondary:hover{border-color:rgba(255,255,255,0.2);color:#e8edf2;}
+.link-btn.primary{background:rgba(62,107,87,0.1);color:#3E6B57;border:1px solid rgba(62,107,87,0.3);}
+.link-btn.primary:hover{background:rgba(62,107,87,0.15);border-color:#3E6B57;}
+.link-btn.secondary{background:rgba(45,42,38,0.04);color:rgba(45,42,38,0.5);border:1px solid rgba(45,42,38,0.08);}
+.link-btn.secondary:hover{border-color:rgba(45,42,38,0.2);color:#2D2A26;}
 .suggestions{margin-top:3rem;max-width:600px;width:100%;}
-.sug-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(0,255,180,0.35);text-transform:uppercase;margin-bottom:1rem;}
+.sug-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:rgba(62,107,87,0.35);text-transform:uppercase;margin-bottom:1rem;}
 .sug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
-.sug-card{background:#0d1318;border:1px solid rgba(255,255,255,0.06);border-radius:3px;padding:12px;text-decoration:none;display:block;transition:border-color .2s;}
-.sug-card:hover{border-color:rgba(0,255,180,0.25);}
-.sug-tag{font-family:'DM Mono',monospace;font-size:9px;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:5px;}
-.sug-title{font-size:12px;color:rgba(232,237,242,0.55);line-height:1.4;}
+.sug-card{background:#FFFFFF;border:1px solid rgba(45,42,38,0.06);border-radius:3px;padding:12px;text-decoration:none;display:block;transition:border-color .2s;}
+.sug-card:hover{border-color:rgba(62,107,87,0.25);}
+.sug-tag{font-family:'DM Mono',monospace;font-size:9px;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:5px;}
+.sug-title{font-size:12px;color:rgba(45,42,38,0.55);line-height:1.4;}
 </style>
 </head>
 <body>

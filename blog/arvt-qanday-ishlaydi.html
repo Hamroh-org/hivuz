@@ -28,86 +28,86 @@
 <style>
   
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;}
+  body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;}
 
   /* NAV */
-  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
-  .nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-  .nav-logo span{color:#00ffb4;}
-  .nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;letter-spacing:0.06em;}
-  .nav-back:hover{color:#00ffb4;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);position:sticky;top:0;background:#FAF6F1;z-index:100;}
+  .nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+  .nav-logo span{color:#3E6B57;}
+  .nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);text-decoration:none;letter-spacing:0.06em;}
+  .nav-back:hover{color:#3E6B57;}
 
   /* HERO */
-  .hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
-  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(0,180,255,0.05) 0%,transparent 60%);pointer-events:none;}
-  .hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
-  .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+  .hero{border-bottom:1px solid rgba(62,107,87,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(62,107,87,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(232,137,107,0.05) 0%,transparent 60%);pointer-events:none;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#3E6B57;border:1px solid rgba(62,107,87,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+  .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#3E6B57;animation:blink 2s infinite;}
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
-  .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
-  .hero-title em{font-style:italic;color:#00ffb4;}
-  .hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+  .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#2D2A26;margin-bottom:1rem;}
+  .hero-title em{font-style:italic;color:#3E6B57;}
+  .hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
 
   /* CONTENT */
   .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
   .section{padding:2.5rem 0;}
-  .section+.section{border-top:1px solid rgba(255,255,255,0.06);}
-  .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
-  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
-  .prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
+  .section+.section{border-top:1px solid rgba(45,42,38,0.06);}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#3E6B57;text-transform:uppercase;margin-bottom:1rem;}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#2D2A26;margin-bottom:1rem;line-height:1.25;}
+  .prose{font-size:15px;line-height:1.8;color:rgba(45,42,38,0.6);margin-bottom:1rem;}
 
   /* VISUAL CARD */
-  .vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
-  .vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
+  .vcard{background:#FFFFFF;border:1px solid rgba(62,107,87,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+  .vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);margin-bottom:1rem;text-transform:uppercase;}
 
   /* SCENE */
-  .scene{position:relative;width:100%;height:200px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
-  .scene-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,180,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,180,0.03) 1px,transparent 1px);background-size:32px 32px;}
+  .scene{position:relative;width:100%;height:200px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+  .scene-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(62,107,87,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(62,107,87,0.03) 1px,transparent 1px);background-size:32px 32px;}
 
   /* SLIDER */
   .sl-row{display:flex;align-items:center;gap:12px;margin-bottom:.75rem;}
-  .sl-row label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);white-space:nowrap;}
-  .sl-row input[type=range]{flex:1;-webkit-appearance:none;height:2px;background:rgba(255,255,255,0.1);border-radius:1px;outline:none;}
-  .sl-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#00ffb4;cursor:pointer;border:2px solid #080c10;box-shadow:0 0 8px rgba(0,255,180,0.6);}
-  .sl-val{font-family:'DM Mono',monospace;font-size:13px;color:#00ffb4;min-width:40px;text-align:right;}
-  .scene-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.5);min-height:18px;}
+  .sl-row label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);white-space:nowrap;}
+  .sl-row input[type=range]{flex:1;-webkit-appearance:none;height:2px;background:rgba(45,42,38,0.1);border-radius:1px;outline:none;}
+  .sl-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#3E6B57;cursor:pointer;border:2px solid #FAF6F1;box-shadow:0 0 8px rgba(62,107,87,0.6);}
+  .sl-val{font-family:'DM Mono',monospace;font-size:13px;color:#3E6B57;min-width:40px;text-align:right;}
+  .scene-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.5);min-height:18px;}
 
   /* MECH CARDS */
   .mech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:1rem 0;}
-  .mcard{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px 12px;cursor:pointer;transition:border-color .2s,background .2s;}
-  .mcard:hover{border-color:rgba(0,255,180,0.25);}
-  .mcard.on{border-color:#00ffb4;background:rgba(0,255,180,0.05);}
+  .mcard{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px 12px;cursor:pointer;transition:border-color .2s,background .2s;}
+  .mcard:hover{border-color:rgba(62,107,87,0.25);}
+  .mcard.on{border-color:#3E6B57;background:rgba(62,107,87,0.05);}
   .mcard-icon{font-size:20px;margin-bottom:8px;}
-  .mcard-name{font-size:12px;font-weight:600;color:#e8edf2;margin-bottom:3px;line-height:1.3;}
-  .mcard-drug{font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.5);}
-  .mcard-detail{background:#06090d;border:1px solid rgba(0,255,180,0.2);border-radius:3px;padding:14px;margin-top:8px;font-size:13px;color:rgba(232,237,242,0.7);line-height:1.7;display:none;}
+  .mcard-name{font-size:12px;font-weight:600;color:#2D2A26;margin-bottom:3px;line-height:1.3;}
+  .mcard-drug{font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.5);}
+  .mcard-detail{background:#F3EDE6;border:1px solid rgba(62,107,87,0.2);border-radius:3px;padding:14px;margin-top:8px;font-size:13px;color:rgba(45,42,38,0.7);line-height:1.7;display:none;}
   .mcard-detail.on{display:block;}
 
   /* CHART */
-  .chart-xl{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.2);margin-top:6px;}
+  .chart-xl{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.2);margin-top:6px;}
 
   /* TIMELINE */
   .tl-item{display:flex;gap:16px;padding:0 0 1.5rem;position:relative;}
-  .tl-item:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:1px;background:rgba(255,255,255,0.08);}
-  .tl-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);background:#0d1318;z-index:1;}
-  .tl-dot.done{border-color:#00ffb4;color:#00ffb4;background:rgba(0,255,180,0.08);}
-  .tl-dot.now{border-color:#00b4ff;color:#00b4ff;background:rgba(0,180,255,0.08);box-shadow:0 0 10px rgba(0,180,255,0.25);}
-  .tl-title{font-size:14px;font-weight:600;color:#e8edf2;margin-bottom:3px;}
-  .tl-desc{font-size:13px;color:rgba(232,237,242,0.4);line-height:1.6;}
+  .tl-item:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:1px;background:rgba(45,42,38,0.08);}
+  .tl-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;border:1px solid rgba(45,42,38,0.1);color:rgba(45,42,38,0.3);background:#FFFFFF;z-index:1;}
+  .tl-dot.done{border-color:#3E6B57;color:#3E6B57;background:rgba(62,107,87,0.08);}
+  .tl-dot.now{border-color:#E8896B;color:#E8896B;background:rgba(232,137,107,0.08);box-shadow:0 0 10px rgba(232,137,107,0.25);}
+  .tl-title{font-size:14px;font-weight:600;color:#2D2A26;margin-bottom:3px;}
+  .tl-desc{font-size:13px;color:rgba(45,42,38,0.4);line-height:1.6;}
 
   /* NEXT/FOOTER */
-  .next-section{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  .next-label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25);}
-  .next-link{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;}
-  .next-link:hover{color:#00ffb4;}
-  .footnote{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.15);padding:0 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;}
-  .related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
-  .related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+  .next-section{padding:2rem;border-top:1px solid rgba(45,42,38,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .next-label{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.25);}
+  .next-link{font-family:'DM Mono',monospace;font-size:12px;color:rgba(62,107,87,0.6);text-decoration:none;}
+  .next-link:hover{color:#3E6B57;}
+  .footnote{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.15);padding:0 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;}
+  .related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(45,42,38,0.06);}
+  .related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:1rem;}
   .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
-  .rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
-  .rel-card:hover{border-color:rgba(0,255,180,0.3);}
-  .rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
-  .rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
-  .rel-card:hover .rel-title{color:#e8edf2;}
+  .rel-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+  .rel-card:hover{border-color:rgba(62,107,87,0.3);}
+  .rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:6px;}
+  .rel-title{font-size:13px;color:rgba(45,42,38,0.6);line-height:1.4;}
+  .rel-card:hover .rel-title{color:#2D2A26;}
 </style>
 </head>
 <body>
@@ -179,25 +179,25 @@
     <div class="vcard">
       <p class="vcard-label">Viral yuklanma grafigi (schematik)</p>
       <svg viewBox="0 0 600 160" width="100%" xmlns="http://www.w3.org/2000/svg">
-        <line x1="60" y1="20" x2="580" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="60" y1="60" x2="580" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="60" y1="100" x2="580" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="60" y1="15" x2="60" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <line x1="60" y1="140" x2="585" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="54" y="24" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">yuqori</text>
-        <text x="54" y="64" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">o'rta</text>
-        <text x="54" y="104" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.25)">past</text>
-        <rect x="61" y="126" width="523" height="14" fill="rgba(0,255,180,0.07)" rx="1"/>
-        <text x="300" y="136" text-anchor="middle" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.5)">aniqlanmaydigan daraja — U=U</text>
-        <line x1="130" y1="15" x2="130" y2="140" stroke="rgba(0,255,180,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
-        <text x="133" y="26" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.6)">ARVT boshlandi</text>
-        <polyline points="70,22 150,26 230,23 310,28 390,21 470,26 550,22" fill="none" stroke="rgba(255,80,80,0.5)" stroke-width="1.5" stroke-dasharray="5,3"/>
-        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="#00ffb4" stroke-width="2"/>
-        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="rgba(0,255,180,0.15)" stroke-width="7"/>
-        <rect x="400" y="33" width="12" height="2" fill="rgba(255,80,80,0.5)" rx="1"/>
-        <text x="416" y="37" font-size="9" font-family="monospace" fill="rgba(255,255,255,0.3)">ARVT'siz</text>
-        <rect x="400" y="48" width="12" height="2" fill="#00ffb4" rx="1"/>
-        <text x="416" y="52" font-size="9" font-family="monospace" fill="rgba(0,255,180,0.7)">ARVT bilan</text>
+        <line x1="60" y1="20" x2="580" y2="20" stroke="rgba(45,42,38,0.05)" stroke-width="1"/>
+        <line x1="60" y1="60" x2="580" y2="60" stroke="rgba(45,42,38,0.05)" stroke-width="1"/>
+        <line x1="60" y1="100" x2="580" y2="100" stroke="rgba(45,42,38,0.05)" stroke-width="1"/>
+        <line x1="60" y1="15" x2="60" y2="140" stroke="rgba(45,42,38,0.15)" stroke-width="1"/>
+        <line x1="60" y1="140" x2="585" y2="140" stroke="rgba(45,42,38,0.15)" stroke-width="1"/>
+        <text x="54" y="24" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(45,42,38,0.25)">yuqori</text>
+        <text x="54" y="64" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(45,42,38,0.25)">o'rta</text>
+        <text x="54" y="104" text-anchor="end" font-size="9" font-family="monospace" fill="rgba(45,42,38,0.25)">past</text>
+        <rect x="61" y="126" width="523" height="14" fill="rgba(62,107,87,0.07)" rx="1"/>
+        <text x="300" y="136" text-anchor="middle" font-size="9" font-family="monospace" fill="rgba(62,107,87,0.5)">aniqlanmaydigan daraja — U=U</text>
+        <line x1="130" y1="15" x2="130" y2="140" stroke="rgba(62,107,87,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="133" y="26" font-size="9" font-family="monospace" fill="rgba(62,107,87,0.6)">ARVT boshlandi</text>
+        <polyline points="70,22 150,26 230,23 310,28 390,21 470,26 550,22" fill="none" stroke="rgba(224,147,125,0.5)" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="#3E6B57" stroke-width="2"/>
+        <polyline points="70,22 130,40 200,70 290,100 370,118 450,124 550,126" fill="none" stroke="rgba(62,107,87,0.15)" stroke-width="7"/>
+        <rect x="400" y="33" width="12" height="2" fill="rgba(224,147,125,0.5)" rx="1"/>
+        <text x="416" y="37" font-size="9" font-family="monospace" fill="rgba(45,42,38,0.3)">ARVT'siz</text>
+        <rect x="400" y="48" width="12" height="2" fill="#3E6B57" rx="1"/>
+        <text x="416" y="52" font-size="9" font-family="monospace" fill="rgba(62,107,87,0.7)">ARVT bilan</text>
       </svg>
       <div class="chart-xl"><span>1-oy</span><span>3-oy</span><span>6-oy</span><span>12-oy</span><span>2-yil</span></div>
     </div>
@@ -221,7 +221,7 @@
 <div class="next-section">
   <div>
     <div class="next-label">Keyingi maqola</div>
-    <div style="font-size:14px;color:rgba(232,237,242,0.5);margin-top:4px;">CD4 va Viral Load — farqi nima?</div>
+    <div style="font-size:14px;color:rgba(45,42,38,0.5);margin-top:4px;">CD4 va Viral Load — farqi nima?</div>
   </div>
   <a href="./index.html" class="next-link">Barcha maqolalar →</a>
 </div>
@@ -274,7 +274,7 @@ function buildScene(pct) {
   for (let i = 0; i < nCD4; i++) {
     const el = document.createElement('div');
     el.className = 'sp';
-    Object.assign(el.style, {position:'absolute',width:'34px',height:'34px',borderRadius:'50%',background:'rgba(0,180,255,0.1)',border:'1.5px solid rgba(0,180,255,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'9px',fontFamily:"'DM Mono',monospace",color:'rgba(0,180,255,0.8)',boxShadow:'0 0 8px rgba(0,180,255,0.2)'});
+    Object.assign(el.style, {position:'absolute',width:'34px',height:'34px',borderRadius:'50%',background:'rgba(232,137,107,0.1)',border:'1.5px solid rgba(232,137,107,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'9px',fontFamily:"'DM Mono',monospace",color:'rgba(232,137,107,0.8)',boxShadow:'0 0 8px rgba(232,137,107,0.2)'});
     el.textContent = 'CD4';
     const x = rnd(5,W-40), y = rnd(5,H-40);
     el.style.left = x+'px'; el.style.top = y+'px';
@@ -285,7 +285,7 @@ function buildScene(pct) {
   for (let i = 0; i < nHIV; i++) {
     const el = document.createElement('div');
     el.className = 'sp';
-    Object.assign(el.style, {position:'absolute',width:'18px',height:'18px',borderRadius:'50%',background:'rgba(255,60,60,0.1)',border:'1.5px solid rgba(255,60,60,0.6)',boxShadow:'0 0 6px rgba(255,60,60,0.25)'});
+    Object.assign(el.style, {position:'absolute',width:'18px',height:'18px',borderRadius:'50%',background:'rgba(212,105,90,0.1)',border:'1.5px solid rgba(212,105,90,0.6)',boxShadow:'0 0 6px rgba(212,105,90,0.25)'});
     const x = rnd(5,W-22), y = rnd(5,H-22);
     el.style.left = x+'px'; el.style.top = y+'px';
     scene.appendChild(el);
@@ -295,7 +295,7 @@ function buildScene(pct) {
   for (let i = 0; i < nShield; i++) {
     const el = document.createElement('div');
     el.className = 'sp';
-    Object.assign(el.style, {position:'absolute',width:'28px',height:'28px',borderRadius:'50%',background:'rgba(0,255,180,0.08)',border:'1.5px solid rgba(0,255,180,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'13px',boxShadow:'0 0 10px rgba(0,255,180,0.3)'});
+    Object.assign(el.style, {position:'absolute',width:'28px',height:'28px',borderRadius:'50%',background:'rgba(62,107,87,0.08)',border:'1.5px solid rgba(62,107,87,0.5)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'13px',boxShadow:'0 0 10px rgba(62,107,87,0.3)'});
     el.textContent = '◈';
     const x = rnd(5,W-32), y = rnd(5,H-32);
     el.style.left = x+'px'; el.style.top = y+'px';
@@ -333,17 +333,17 @@ sl.addEventListener('input', () => {
 buildScene(0); tick();
 </script>
 <div style="max-width:760px;margin:48px auto 0;padding:0 20px 64px;">
-  <div style="background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
-    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
-    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
+  <div style="background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#2D2A26;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
+    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(45,42,38,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
+    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#2C4A3D,#3E6B57);color:#FAF6F1;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
   </div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="arvt-unutsam.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Davolash</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">ARVT dorini unutsam nima bo'ladi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="arvt-yon-tasirlari.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Davolash</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">ARVT dori yon ta'sirlari</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="arvt-unutsam.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Davolash</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">ARVT dorini unutsam nima bo'ladi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="arvt-yon-tasirlari.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Davolash</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">ARVT dori yon ta'sirlari</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a></div>
 </div>
-<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
-<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#3E6B57;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#3E6B57;color:#FAF6F1;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(62,107,87,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
 <script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>

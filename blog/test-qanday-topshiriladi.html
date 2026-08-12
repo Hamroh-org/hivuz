@@ -30,136 +30,136 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
-.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-.nav-logo span{color:#00ffb4;}
-.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;}
-.nav-back:hover{color:#00ffb4;}
+body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);position:sticky;top:0;background:#FAF6F1;z-index:100;}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#3E6B57;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);text-decoration:none;}
+.nav-back:hover{color:#3E6B57;}
 
-.hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%);pointer-events:none;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+.hero{border-bottom:1px solid rgba(62,107,87,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(62,107,87,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#3E6B57;border:1px solid rgba(62,107,87,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#3E6B57;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
-.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
-.hero-title em{font-style:italic;color:#00ffb4;}
-.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#2D2A26;margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:#3E6B57;}
+.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
 
 /* PILLS */
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:1rem 0;}
 .pill{font-family:'DM Mono',monospace;font-size:11px;padding:5px 14px;border-radius:20px;font-weight:500;}
-.pill-green{background:rgba(0,255,180,0.1);border:1px solid rgba(0,255,180,0.25);color:#00ffb4;}
-.pill-blue{background:rgba(0,180,255,0.1);border:1px solid rgba(0,180,255,0.25);color:#00b4ff;}
-.pill-amber{background:rgba(255,170,48,0.1);border:1px solid rgba(255,170,48,0.25);color:#ffaa30;}
+.pill-green{background:rgba(62,107,87,0.1);border:1px solid rgba(62,107,87,0.25);color:#3E6B57;}
+.pill-blue{background:rgba(232,137,107,0.1);border:1px solid rgba(232,137,107,0.25);color:#E8896B;}
+.pill-amber{background:rgba(255,170,48,0.1);border:1px solid rgba(255,170,48,0.25);color:#B8823A;}
 
 .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
 .section{padding:2.5rem 0;}
-.section+.section{border-top:1px solid rgba(255,255,255,0.06);}
-.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
-.prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
-.prose b{color:#e8edf2;}
-.vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
-.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
-.hl{background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl b{color:#00ffb4;}
-.hl-red{background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl-red b{color:#ff6060;}
+.section+.section{border-top:1px solid rgba(45,42,38,0.06);}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#3E6B57;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#2D2A26;margin-bottom:1rem;line-height:1.25;}
+.prose{font-size:15px;line-height:1.8;color:rgba(45,42,38,0.6);margin-bottom:1rem;}
+.prose b{color:#2D2A26;}
+.vcard{background:#FFFFFF;border:1px solid rgba(62,107,87,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);margin-bottom:1rem;text-transform:uppercase;}
+.hl{background:rgba(62,107,87,0.04);border:1px solid rgba(62,107,87,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl b{color:#3E6B57;}
+.hl-red{background:rgba(212,105,90,0.04);border:1px solid rgba(212,105,90,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl-red b{color:#C25638;}
 
 /* STEPS */
 .steps-wrap{position:relative;}
 .step-progress{display:flex;gap:6px;margin-bottom:1.5rem;align-items:center;}
-.step-dot{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25);cursor:pointer;transition:all .25s;flex-shrink:0;}
-.step-dot.done{border-color:rgba(0,255,180,0.4);color:rgba(0,255,180,0.5);background:rgba(0,255,180,0.05);}
-.step-dot.active{border-color:#00ffb4;color:#00ffb4;background:rgba(0,255,180,0.1);box-shadow:0 0 10px rgba(0,255,180,0.2);}
-.step-line{flex:1;height:1px;background:rgba(255,255,255,0.06);}
-.step-line.done{background:rgba(0,255,180,0.2);}
+.step-dot{width:28px;height:28px;border-radius:50%;border:1px solid rgba(45,42,38,0.1);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.25);cursor:pointer;transition:all .25s;flex-shrink:0;}
+.step-dot.done{border-color:rgba(62,107,87,0.4);color:rgba(62,107,87,0.5);background:rgba(62,107,87,0.05);}
+.step-dot.active{border-color:#3E6B57;color:#3E6B57;background:rgba(62,107,87,0.1);box-shadow:0 0 10px rgba(62,107,87,0.2);}
+.step-line{flex:1;height:1px;background:rgba(45,42,38,0.06);}
+.step-line.done{background:rgba(62,107,87,0.2);}
 
-.step-canvas-wrap{width:100%;height:200px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
+.step-canvas-wrap{width:100%;height:200px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
 .step-canvas-wrap canvas{display:block;width:100%;height:100%;}
-.step-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.45);letter-spacing:0.08em;}
+.step-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.45);letter-spacing:0.08em;}
 
-.step-content{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:16px;margin-bottom:1rem;}
-.step-num-big{font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.35);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-.step-title-big{font-family:'DM Serif Display',serif;font-size:18px;color:#f0f5f0;margin-bottom:8px;}
-.step-desc-big{font-size:13px;color:rgba(232,237,242,0.5);line-height:1.7;}
-.step-desc-big b{color:#e8edf2;}
-.step-desc-big .g{color:#00ffb4;}
-.step-desc-big .a{color:#ffaa30;}
-.step-desc-big .r{color:#ff6060;}
+.step-content{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:16px;margin-bottom:1rem;}
+.step-num-big{font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.35);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.step-title-big{font-family:'DM Serif Display',serif;font-size:18px;color:#2D2A26;margin-bottom:8px;}
+.step-desc-big{font-size:13px;color:rgba(45,42,38,0.5);line-height:1.7;}
+.step-desc-big b{color:#2D2A26;}
+.step-desc-big .g{color:#3E6B57;}
+.step-desc-big .a{color:#B8823A;}
+.step-desc-big .r{color:#C25638;}
 
 .step-nav{display:flex;gap:10px;margin-top:1rem;}
-.step-btn{padding:9px 20px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(232,237,242,0.5);transition:all .2s;letter-spacing:0.05em;}
-.step-btn:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
-.step-btn.primary{background:rgba(0,255,180,0.08);border-color:rgba(0,255,180,0.3);color:#00ffb4;}
-.step-btn.primary:hover{background:rgba(0,255,180,0.14);}
+.step-btn{padding:9px 20px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;border:1px solid rgba(45,42,38,0.1);background:transparent;color:rgba(45,42,38,0.5);transition:all .2s;letter-spacing:0.05em;}
+.step-btn:hover{border-color:rgba(62,107,87,0.3);color:#3E6B57;}
+.step-btn.primary{background:rgba(62,107,87,0.08);border-color:rgba(62,107,87,0.3);color:#3E6B57;}
+.step-btn.primary:hover{background:rgba(62,107,87,0.14);}
 .step-btn:disabled{opacity:0.3;cursor:not-allowed;}
 
 /* WINDOW PERIOD */
-.window-canvas{width:100%;height:140px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+.window-canvas{width:100%;height:140px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
 .window-canvas canvas{display:block;width:100%;height:100%;}
-.window-timeline{display:flex;gap:0;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
-.wt-item{flex:1;padding:10px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);}
+.window-timeline{display:flex;gap:0;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+.wt-item{flex:1;padding:10px 8px;text-align:center;border-right:1px solid rgba(45,42,38,0.06);}
 .wt-item:last-child{border-right:none;}
 .wt-day{font-family:'DM Mono',monospace;font-size:16px;font-weight:500;margin-bottom:3px;}
-.wt-lbl{font-size:10px;color:rgba(232,237,242,0.3);line-height:1.3;}
-.wt-item.danger .wt-day{color:#ff6060;}
-.wt-item.warn .wt-day{color:#ffaa30;}
-.wt-item.safe .wt-day{color:#00ffb4;}
+.wt-lbl{font-size:10px;color:rgba(45,42,38,0.3);line-height:1.3;}
+.wt-item.danger .wt-day{color:#C25638;}
+.wt-item.warn .wt-day{color:#B8823A;}
+.wt-item.safe .wt-day{color:#3E6B57;}
 
 /* RESULT CARDS */
-.result-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
-.rt-tab{flex:1;padding:10px;background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.08);color:rgba(232,237,242,0.3);font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .2s;text-align:center;}
+.result-tabs{display:flex;gap:0;border:1px solid rgba(45,42,38,0.08);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+.rt-tab{flex:1;padding:10px;background:transparent;border:none;border-right:1px solid rgba(45,42,38,0.08);color:rgba(45,42,38,0.3);font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .2s;text-align:center;}
 .rt-tab:last-child{border-right:none;}
-.rt-tab.on.neg{background:rgba(0,255,180,0.08);color:#00ffb4;}
-.rt-tab.on.pos{background:rgba(255,100,60,0.08);color:#ff6060;}
+.rt-tab.on.neg{background:rgba(62,107,87,0.08);color:#3E6B57;}
+.rt-tab.on.pos{background:rgba(255,100,60,0.08);color:#C25638;}
 .result-panel{display:none;}
 .result-panel.on{display:block;}
 .result-box{padding:16px;border-radius:3px;margin-bottom:10px;}
-.result-box.neg{background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.18);}
+.result-box.neg{background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.18);}
 .result-box.pos{background:rgba(255,80,60,0.05);border:1px solid rgba(255,80,60,0.18);}
 .result-icon{font-size:24px;margin-bottom:8px;}
 .result-title{font-size:16px;font-weight:700;margin-bottom:8px;}
-.result-box.neg .result-title{color:#00ffb4;}
+.result-box.neg .result-title{color:#3E6B57;}
 .result-box.pos .result-title{color:#ff7060;}
 .result-steps{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
-.rs-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(232,237,242,0.5);line-height:1.5;}
+.rs-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(45,42,38,0.5);line-height:1.5;}
 .rs-num{font-family:'DM Mono',monospace;font-size:10px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.result-box.neg .rs-num{background:rgba(0,255,180,0.1);color:#00ffb4;border:1px solid rgba(0,255,180,0.2);}
+.result-box.neg .rs-num{background:rgba(62,107,87,0.1);color:#3E6B57;border:1px solid rgba(62,107,87,0.2);}
 .result-box.pos .rs-num{background:rgba(255,80,60,0.1);color:#ff7060;border:1px solid rgba(255,80,60,0.2);}
 
 /* CENTERS */
 .centers{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:1rem 0;}
-.center{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;}
-.center-city{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,237,242,0.25);margin-bottom:5px;}
-.center-name{font-size:13px;font-weight:600;color:#e8edf2;margin-bottom:6px;line-height:1.3;}
-.center-phone{font-family:'DM Mono',monospace;font-size:12px;color:#00ffb4;text-decoration:none;display:block;margin-bottom:3px;}
+.center{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;}
+.center-city{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(45,42,38,0.25);margin-bottom:5px;}
+.center-name{font-size:13px;font-weight:600;color:#2D2A26;margin-bottom:6px;line-height:1.3;}
+.center-phone{font-family:'DM Mono',monospace;font-size:12px;color:#3E6B57;text-decoration:none;display:block;margin-bottom:3px;}
 .center-phone:hover{color:#00e0a0;}
-.center-note{font-size:10px;color:rgba(232,237,242,0.25);line-height:1.4;}
+.center-note{font-size:10px;color:rgba(45,42,38,0.25);line-height:1.4;}
 
 /* SHARE */
 .share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;}
 .s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;cursor:pointer;border:none;transition:all .2s;}
-.s-tg{background:#2481cc;color:#fff;}
+.s-tg{background:#2481cc;color:#2D2A26;}
 .s-tg:hover{background:#1a6aaa;}
-.s-cp{background:rgba(255,255,255,0.05);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.1);}
-.s-cp:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
+.s-cp{background:rgba(45,42,38,0.05);color:rgba(45,42,38,0.5);border:1px solid rgba(45,42,38,0.1);}
+.s-cp:hover{border-color:rgba(62,107,87,0.3);color:#3E6B57;}
 
-.nxt{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
-.nxt-t{font-size:14px;color:rgba(232,237,242,0.45);}
-.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;white-space:nowrap;}
-.nxt-a:hover{color:#00ffb4;}
-.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
-.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+.nxt{padding:2rem;border-top:1px solid rgba(45,42,38,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.nxt-t{font-size:14px;color:rgba(45,42,38,0.45);}
+.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(62,107,87,0.6);text-decoration:none;white-space:nowrap;}
+.nxt-a:hover{color:#3E6B57;}
+.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(45,42,38,0.06);}
+.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:1rem;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
-.rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
-.rel-card:hover{border-color:rgba(0,255,180,0.3);}
-.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
-.rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
-.rel-card:hover .rel-title{color:#e8edf2;}
-.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);}
+.rel-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+.rel-card:hover{border-color:rgba(62,107,87,0.3);}
+.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:6px;}
+.rel-title{font-size:13px;color:rgba(45,42,38,0.6);line-height:1.4;}
+.rel-card:hover .rel-title{color:#2D2A26;}
+.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(45,42,38,0.04);}
 @media(max-width:600px){.content{padding:0 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}.window-timeline{flex-wrap:wrap;}.wt-item{min-width:50%;}}
 </style>
 </head>
@@ -283,7 +283,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
             <div class="rs-item"><div class="rs-num">2</div><span>AIDS markazida <b>CD4 va viral yuk</b> tahlili topshiring — holatingizni aniq ko'rasiz.</span></div>
             <div class="rs-item"><div class="rs-num">3</div><span><b>ARVT boshlang</b> — imkon qadar tezroq. Kuniga 1 tabletka. O'zbekistonda bepul.</span></div>
             <div class="rs-item"><div class="rs-num">4</div><span>6 oy ichida <b>U=U</b> — virus aniqlanmaydi. Hayot avvalgidek davom etadi.</span></div>
-            <div class="rs-item"><div class="rs-num">5</div><span>Yolg'iz emas — <a href="https://t.me/HIVUzBot" target="_blank" style="color:#00ffb4;text-decoration:none;">@HIVUzBot</a> doim yonida.</span></div>
+            <div class="rs-item"><div class="rs-num">5</div><span>Yolg'iz emas — <a href="https://t.me/HIVUzBot" target="_blank" style="color:#3E6B57;text-decoration:none;">@HIVUzBot</a> doim yonida.</span></div>
           </div>
         </div>
       </div>
@@ -367,11 +367,11 @@ function showResult(id,tab,type){document.querySelectorAll('.result-panel').forE
 
 // STEPS DATA
 const STEPS=[
-  {badge:'01 · AIDS markaziga boring',title:'AIDS markaziga boring',desc:'Yaqinidagi AIDS markazini toping. <b>Hech narsa olib borish shart emas</b> — hatto pasport ham majburiy emas. Qo\'rqsangiz — <span class="g">ertalab erta boring</span>, odam kam bo\'ladi. Birinchi tashrif anonim.',col:'#00b4ff'},
-  {badge:"02 · 'Test topshirmoqchiman' deng",title:"'HIV testi topshirmoqchiman' deng",desc:'Xolos. Boshqa tushuntirish kerak emas. Shifokor sizdan <b>qo\'shimcha savol so\'ramaydi</b>. Qon yoki og\'iz suyuqligi olinadi — <span class="g">og\'riq yo\'q</span>, 2 daqiqa.',col:'#00ffb4'},
-  {badge:'03 · Natijani kuting',title:'20–30 daqiqa kuting',desc:'Tez test natijalari <b>20–30 daqiqada</b> tayyor bo\'ladi. Ba\'zi markazlarda 15 daqiqa. <span class="a">Muhim:</span> oxirgi 6 hafta ichida xavfli holat bo\'lgan bo\'lsa — natija hali aniq bo\'lmasligi mumkin.',col:'#ffaa30'},
-  {badge:'04 · Manfiy natija',title:'Manfiy natija — xavfsiz',desc:'<span class="g">Manfiy = HIV yo\'q.</span> Agar oyna davrida bo\'lmagan bo\'lsangiz — siz xavfsiz. Oyna davrida bo\'lgan bo\'lsangiz — <b>6 hafta o\'tib qayta test</b> topshiring. Himoyalanish uchun PrEP haqida so\'rang.',col:'#00ffb4'},
-  {badge:'05 · Ijobiy natija',title:'Ijobiy natija — sakin bo\'ling',desc:'Bu <b>hayotning oxiri emas</b>. Shifokor CD4 va viral yuk tahlillarini tayinlaydi. <b>ARVT boshlanadi.</b> <span class="g">6 oy ichida virus aniqlanmaydi.</span> Hayot avvalgidek davom etadi. Siz yolg\'iz emassiz.',col:'#c080ff'},
+  {badge:'01 · AIDS markaziga boring',title:'AIDS markaziga boring',desc:'Yaqinidagi AIDS markazini toping. <b>Hech narsa olib borish shart emas</b> — hatto pasport ham majburiy emas. Qo\'rqsangiz — <span class="g">ertalab erta boring</span>, odam kam bo\'ladi. Birinchi tashrif anonim.',col:'#E8896B'},
+  {badge:"02 · 'Test topshirmoqchiman' deng",title:"'HIV testi topshirmoqchiman' deng",desc:'Xolos. Boshqa tushuntirish kerak emas. Shifokor sizdan <b>qo\'shimcha savol so\'ramaydi</b>. Qon yoki og\'iz suyuqligi olinadi — <span class="g">og\'riq yo\'q</span>, 2 daqiqa.',col:'#3E6B57'},
+  {badge:'03 · Natijani kuting',title:'20–30 daqiqa kuting',desc:'Tez test natijalari <b>20–30 daqiqada</b> tayyor bo\'ladi. Ba\'zi markazlarda 15 daqiqa. <span class="a">Muhim:</span> oxirgi 6 hafta ichida xavfli holat bo\'lgan bo\'lsa — natija hali aniq bo\'lmasligi mumkin.',col:'#B8823A'},
+  {badge:'04 · Manfiy natija',title:'Manfiy natija — xavfsiz',desc:'<span class="g">Manfiy = HIV yo\'q.</span> Agar oyna davrida bo\'lmagan bo\'lsangiz — siz xavfsiz. Oyna davrida bo\'lgan bo\'lsangiz — <b>6 hafta o\'tib qayta test</b> topshiring. Himoyalanish uchun PrEP haqida so\'rang.',col:'#3E6B57'},
+  {badge:'05 · Ijobiy natija',title:'Ijobiy natija — sakin bo\'ling',desc:'Bu <b>hayotning oxiri emas</b>. Shifokor CD4 va viral yuk tahlillarini tayinlaydi. <b>ARVT boshlanadi.</b> <span class="g">6 oy ichida virus aniqlanmaydi.</span> Hayot avvalgidek davom etadi. Siz yolg\'iz emassiz.',col:'#8A6B2E'},
 ];
 
 let curStep=0;
@@ -404,8 +404,8 @@ function buildAnim(s){
     animParts.push({t:'building',x:cW*.72,y:cy});
   }
   if(s===1){
-    animParts.push({t:'person',x:cx-30,y:cy,col:'rgba(0,180,255,0.6)'});
-    animParts.push({t:'doctor',x:cx+30,y:cy,col:'rgba(0,255,180,0.6)'});
+    animParts.push({t:'person',x:cx-30,y:cy,col:'rgba(232,137,107,0.6)'});
+    animParts.push({t:'doctor',x:cx+30,y:cy,col:'rgba(62,107,87,0.6)'});
     animParts.push({t:'drop',x:cx,y:cy-10,life:1,vy:.5});
   }
   if(s===2){
@@ -414,12 +414,12 @@ function buildAnim(s){
     for(let i=0;i<8;i++)animParts.push({t:'dot',x:cx+Math.cos((i/8)*Math.PI*2)*50,y:cy+Math.sin((i/8)*Math.PI*2)*50,r:3,col:'rgba(255,170,48,0.4)'});
   }
   if(s===3){
-    animParts.push({t:'result',x:cx,y:cy,col:'#00ffb4',text:'MANFIY',sub:'HIV yo\'q'});
-    for(let i=0;i<12;i++){const a=(i/12)*Math.PI*2;animParts.push({t:'spark',x:cx,y:cy,vx:Math.cos(a)*1.8,vy:Math.sin(a)*1.8,life:1,col:'rgba(0,255,180,0.6)'});}
+    animParts.push({t:'result',x:cx,y:cy,col:'#3E6B57',text:'MANFIY',sub:'HIV yo\'q'});
+    for(let i=0;i<12;i++){const a=(i/12)*Math.PI*2;animParts.push({t:'spark',x:cx,y:cy,vx:Math.cos(a)*1.8,vy:Math.sin(a)*1.8,life:1,col:'rgba(62,107,87,0.6)'});}
   }
   if(s===4){
     animParts.push({t:'pill',x:cx,y:cy-10});
-    animParts.push({t:'result',x:cx,y:cy+30,col:'#c080ff',text:'ARVT',sub:'Hayot davom etadi'});
+    animParts.push({t:'result',x:cx,y:cy+30,col:'#8A6B2E',text:'ARVT',sub:'Hayot davom etadi'});
     for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2;animParts.push({t:'orbit',x:0,y:0,a:a,sp:.03,r:50,pr:8,col:'rgba(192,128,255,0.6)'});}
   }
 }
@@ -433,34 +433,34 @@ function drawPerson(x,cx,cy,col){
 }
 
 function drawBuilding(cx,cy){
-  ctx.fillStyle='rgba(0,255,180,0.06)';ctx.fillRect(cx-30,cy-40,60,50);
-  ctx.strokeStyle='rgba(0,255,180,0.2)';ctx.lineWidth=1;ctx.strokeRect(cx-30,cy-40,60,50);
-  ctx.fillStyle='rgba(0,255,180,0.15)';ctx.fillRect(cx-8,cy-6,16,16);
-  ctx.font='8px DM Mono,monospace';ctx.fillStyle='rgba(0,255,180,0.4)';ctx.textAlign='center';ctx.fillText('AIDS',cx,cy-44);ctx.fillText('MARKAZI',cx,cy-34);
+  ctx.fillStyle='rgba(62,107,87,0.06)';ctx.fillRect(cx-30,cy-40,60,50);
+  ctx.strokeStyle='rgba(62,107,87,0.2)';ctx.lineWidth=1;ctx.strokeRect(cx-30,cy-40,60,50);
+  ctx.fillStyle='rgba(62,107,87,0.15)';ctx.fillRect(cx-8,cy-6,16,16);
+  ctx.font='8px DM Mono,monospace';ctx.fillStyle='rgba(62,107,87,0.4)';ctx.textAlign='center';ctx.fillText('AIDS',cx,cy-44);ctx.fillText('MARKAZI',cx,cy-34);
 }
 
 function drawStep(){
-  ctx.fillStyle='#06090d';ctx.fillRect(0,0,cW,cH);
-  ctx.strokeStyle='rgba(0,255,180,0.022)';ctx.lineWidth=1;
+  ctx.fillStyle='#F3EDE6';ctx.fillRect(0,0,cW,cH);
+  ctx.strokeStyle='rgba(62,107,87,0.022)';ctx.lineWidth=1;
   for(let i=0;i<cW;i+=26){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,cH);ctx.stroke();}
   for(let i=0;i<cH;i+=26){ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(cW,i);ctx.stroke();}
 
-  const col=STEPS[curStep]?.col||'#00ffb4';
+  const col=STEPS[curStep]?.col||'#3E6B57';
   const cx=cW/2,cy=cH/2;
 
   animParts.forEach(p=>{
     if(p.t==='walker'){
       if(p.x<p.target)p.x+=p.vx;
-      drawPerson(ctx,p.x,p.y,'rgba(0,180,255,0.65)');
+      drawPerson(ctx,p.x,p.y,'rgba(232,137,107,0.65)');
       // walking dots
-      if(Math.floor(aT*10)%4<2){ctx.beginPath();ctx.arc(p.x-12,p.y+26,3,0,Math.PI*2);ctx.fillStyle='rgba(0,180,255,0.3)';ctx.fill();}
+      if(Math.floor(aT*10)%4<2){ctx.beginPath();ctx.arc(p.x-12,p.y+26,3,0,Math.PI*2);ctx.fillStyle='rgba(232,137,107,0.3)';ctx.fill();}
     }
     if(p.t==='building') drawBuilding(p.x,p.y);
     if(p.t==='person') drawPerson(ctx,p.x,p.y,p.col);
     if(p.t==='doctor'){
       drawPerson(ctx,p.x,p.y,p.col);
       // stethoscope
-      ctx.beginPath();ctx.arc(p.x-2,p.y-5,4,0,Math.PI*2);ctx.strokeStyle='rgba(0,255,180,0.4)';ctx.lineWidth=1;ctx.stroke();
+      ctx.beginPath();ctx.arc(p.x-2,p.y-5,4,0,Math.PI*2);ctx.strokeStyle='rgba(62,107,87,0.4)';ctx.lineWidth=1;ctx.stroke();
     }
     if(p.t==='drop'){
       p.y+=p.vy;p.life-=0.008;
@@ -516,17 +516,17 @@ const wctx=wc.getContext('2d');
 let wW,wH,wT=0;
 function resizeW(){wW=wc.parentElement.clientWidth;wH=wc.parentElement.clientHeight;wc.width=wW;wc.height=wH;}
 function drawWindow(){
-  wctx.fillStyle='#06090d';wctx.fillRect(0,0,wW,wH);
-  wctx.strokeStyle='rgba(0,255,180,0.022)';wctx.lineWidth=1;
+  wctx.fillStyle='#F3EDE6';wctx.fillRect(0,0,wW,wH);
+  wctx.strokeStyle='rgba(62,107,87,0.022)';wctx.lineWidth=1;
   for(let i=0;i<wW;i+=26){wctx.beginPath();wctx.moveTo(i,0);wctx.lineTo(i,wH);wctx.stroke();}
 
   const pad=20,w=wW-pad*2,h=wH-pad*2;
   // axes
-  wctx.strokeStyle='rgba(255,255,255,0.1)';wctx.lineWidth=1;
+  wctx.strokeStyle='rgba(45,42,38,0.1)';wctx.lineWidth=1;
   wctx.beginPath();wctx.moveTo(pad,pad);wctx.lineTo(pad,pad+h);wctx.lineTo(pad+w,pad+h);wctx.stroke();
 
   // labels
-  wctx.font='9px DM Mono,monospace';wctx.fillStyle='rgba(255,255,255,0.2)';wctx.textAlign='left';wctx.textBaseline='top';wctx.fillText('Virus miqdori',pad+2,pad+2);
+  wctx.font='9px DM Mono,monospace';wctx.fillStyle='rgba(45,42,38,0.2)';wctx.textAlign='left';wctx.textBaseline='top';wctx.fillText('Virus miqdori',pad+2,pad+2);
   wctx.textAlign='center';wctx.textBaseline='bottom';
   ['0','2 hafta','4 hafta','6 hafta','3 oy','6 oy'].forEach((l,i)=>{const x=pad+i*(w/5);wctx.fillText(l,x,pad+h+14);});
 
@@ -540,23 +540,23 @@ function drawWindow(){
     const x=pad+t*w,y=pad+h-(v*h*.85);
     i===0?wctx.moveTo(x,y):wctx.lineTo(x,y);
   });
-  wctx.strokeStyle='rgba(255,80,80,0.5)';wctx.lineWidth=2;wctx.stroke();
+  wctx.strokeStyle='rgba(224,147,125,0.5)';wctx.lineWidth=2;wctx.stroke();
 
   // detectability line
   const detY=pad+h-h*.12;
   wctx.beginPath();wctx.moveTo(pad,detY);wctx.lineTo(pad+w,detY);
-  wctx.strokeStyle='rgba(0,255,180,0.25)';wctx.lineWidth=1;wctx.setLineDash([6,4]);wctx.stroke();wctx.setLineDash([]);
-  wctx.font='8px DM Mono,monospace';wctx.fillStyle='rgba(0,255,180,0.35)';wctx.textAlign='right';wctx.textBaseline='bottom';wctx.fillText('aniqlanish chegarasi',pad+w,detY-2);
+  wctx.strokeStyle='rgba(62,107,87,0.25)';wctx.lineWidth=1;wctx.setLineDash([6,4]);wctx.stroke();wctx.setLineDash([]);
+  wctx.font='8px DM Mono,monospace';wctx.fillStyle='rgba(62,107,87,0.35)';wctx.textAlign='right';wctx.textBaseline='bottom';wctx.fillText('aniqlanish chegarasi',pad+w,detY-2);
 
   // window zone
   const wx1=pad,wx2=pad+w*.35;
-  wctx.fillStyle='rgba(255,60,60,0.05)';wctx.fillRect(wx1,pad,wx2-wx1,h);
-  wctx.font='8px DM Mono,monospace';wctx.fillStyle='rgba(255,80,80,0.35)';wctx.textAlign='center';wctx.textBaseline='top';wctx.fillText('OYNA DAVRI',  (wx1+wx2)/2,pad+4);
+  wctx.fillStyle='rgba(212,105,90,0.05)';wctx.fillRect(wx1,pad,wx2-wx1,h);
+  wctx.font='8px DM Mono,monospace';wctx.fillStyle='rgba(224,147,125,0.35)';wctx.textAlign='center';wctx.textBaseline='top';wctx.fillText('OYNA DAVRI',  (wx1+wx2)/2,pad+4);
 
   // safe zone
   const sx1=pad+w*.5;
-  wctx.fillStyle='rgba(0,255,180,0.03)';wctx.fillRect(sx1,pad,pad+w-sx1,h);
-  wctx.fillStyle='rgba(0,255,180,0.25)';wctx.textAlign='center';wctx.fillText("6 haftada to'liq aniq",(sx1+pad+w)/2,pad+4);
+  wctx.fillStyle='rgba(62,107,87,0.03)';wctx.fillRect(sx1,pad,pad+w-sx1,h);
+  wctx.fillStyle='rgba(62,107,87,0.25)';wctx.textAlign='center';wctx.fillText("6 haftada to'liq aniq",(sx1+pad+w)/2,pad+4);
 
   wT+=.02;requestAnimationFrame(drawWindow);
 }
@@ -568,17 +568,17 @@ drawStep();
 drawWindow();
 </script>
 <div style="max-width:760px;margin:48px auto 0;padding:0 20px 64px;">
-  <div style="background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
-    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
-    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
+  <div style="background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#2D2A26;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
+    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(45,42,38,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
+    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#2C4A3D,#3E6B57);color:#FAF6F1;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
   </div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="test-turlari.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Test</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">HIV testi turlari</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="diagnoz-keyin.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ruhiy sog'liq</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">Diagnoz olgandan keyin</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="hiv-va-kasalliklar.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Salomatlik</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">HIV va boshqa kasalliklar</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="test-turlari.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Test</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">HIV testi turlari</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="diagnoz-keyin.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ruhiy sog'liq</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">Diagnoz olgandan keyin</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="hiv-va-kasalliklar.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Salomatlik</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">HIV va boshqa kasalliklar</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a></div>
 </div>
-<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
-<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#3E6B57;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#3E6B57;color:#FAF6F1;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(62,107,87,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
 <script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>

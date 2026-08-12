@@ -30,110 +30,110 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
-.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-.nav-logo span{color:#00ffb4;}
-.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;}
-.nav-back:hover{color:#00ffb4;}
-.hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(0,180,255,0.05) 0%,transparent 60%);pointer-events:none;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);position:sticky;top:0;background:#FAF6F1;z-index:100;}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#3E6B57;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);text-decoration:none;}
+.nav-back:hover{color:#3E6B57;}
+.hero{border-bottom:1px solid rgba(62,107,87,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(62,107,87,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(232,137,107,0.05) 0%,transparent 60%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#3E6B57;border:1px solid rgba(62,107,87,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#3E6B57;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
-.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
-.hero-title em{font-style:italic;color:#00ffb4;}
-.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#2D2A26;margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:#3E6B57;}
+.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
 .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
 .section{padding:2.5rem 0;}
-.section+.section{border-top:1px solid rgba(255,255,255,0.06);}
-.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
-.prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
-.prose b{color:#e8edf2;}
-.vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
-.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
+.section+.section{border-top:1px solid rgba(45,42,38,0.06);}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#3E6B57;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#2D2A26;margin-bottom:1rem;line-height:1.25;}
+.prose{font-size:15px;line-height:1.8;color:rgba(45,42,38,0.6);margin-bottom:1rem;}
+.prose b{color:#2D2A26;}
+.vcard{background:#FFFFFF;border:1px solid rgba(62,107,87,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);margin-bottom:1rem;text-transform:uppercase;}
 
 /* SIZE COMPARE */
-.size-wrap{display:flex;align-items:flex-end;gap:0;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;padding:1.25rem 1rem 1rem;justify-content:center;}
+.size-wrap{display:flex;align-items:flex-end;gap:0;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;padding:1.25rem 1rem 1rem;justify-content:center;}
 .sc-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 12px;}
 .sc-bar{border-radius:2px 2px 0 0;}
 .sc-val{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;text-align:center;margin-top:4px;}
-.sc-lbl{font-family:'DM Mono',monospace;font-size:9px;color:rgba(232,237,242,0.3);text-align:center;line-height:1.4;}
-.sc-div{width:1px;height:40px;background:rgba(255,255,255,0.06);align-self:center;}
+.sc-lbl{font-family:'DM Mono',monospace;font-size:9px;color:rgba(45,42,38,0.3);text-align:center;line-height:1.4;}
+.sc-div{width:1px;height:40px;background:rgba(45,42,38,0.06);align-self:center;}
 
 /* VIRUS */
-.virus-scene{width:100%;height:260px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+.virus-scene{width:100%;height:260px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
 .virus-scene canvas{display:block;width:100%;height:100%;}
 .terms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:8px;margin:1rem 0;}
-.term-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:12px;}
+.term-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:12px;}
 .term-dot{width:8px;height:8px;border-radius:50%;margin-bottom:8px;}
-.term-name{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:#e8edf2;margin-bottom:4px;}
-.term-simple{font-size:12px;color:rgba(232,237,242,0.4);line-height:1.5;}
+.term-name{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:#2D2A26;margin-bottom:4px;}
+.term-simple{font-size:12px;color:rgba(45,42,38,0.4);line-height:1.5;}
 
 /* LIFECYCLE */
-.lc-scene{width:100%;height:210px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
+.lc-scene{width:100%;height:210px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
 .lc-scene canvas{display:block;width:100%;height:100%;}
-.lc-badge{position:absolute;top:10px;left:12px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.45);letter-spacing:0.08em;}
-.lc-desc{background:#06090d;border:1px solid rgba(0,255,180,0.12);border-radius:3px;padding:12px 14px;margin-bottom:1rem;min-height:50px;font-size:13px;color:rgba(232,237,242,0.55);line-height:1.65;}
-.lc-desc b{color:#00ffb4;}
+.lc-badge{position:absolute;top:10px;left:12px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.45);letter-spacing:0.08em;}
+.lc-desc{background:#F3EDE6;border:1px solid rgba(62,107,87,0.12);border-radius:3px;padding:12px 14px;margin-bottom:1rem;min-height:50px;font-size:13px;color:rgba(45,42,38,0.55);line-height:1.65;}
+.lc-desc b{color:#3E6B57;}
 .lc-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
 @media(max-width:480px){.lc-btns{grid-template-columns:repeat(2,1fr);}}
-.lc-btn{background:#06090d;border:1px solid rgba(255,255,255,0.08);border-radius:3px;padding:10px 8px;cursor:pointer;text-align:center;transition:all 0.2s;font-family:'Syne',sans-serif;}
-.lc-btn:hover{border-color:rgba(0,255,180,0.3);}
-.lc-btn.on{border-color:#00ffb4;background:rgba(0,255,180,0.05);}
-.lc-btn.done{border-color:rgba(0,255,180,0.18);}
-.lc-btn-n{font-family:'DM Mono',monospace;font-size:9px;color:rgba(0,255,180,0.35);margin-bottom:3px;}
-.lc-btn-t{font-size:11px;font-weight:600;color:rgba(232,237,242,0.5);line-height:1.3;}
-.lc-btn.on .lc-btn-t{color:#00ffb4;}
-.lc-btn.done .lc-btn-t{color:rgba(0,255,180,0.45);}
+.lc-btn{background:#F3EDE6;border:1px solid rgba(45,42,38,0.08);border-radius:3px;padding:10px 8px;cursor:pointer;text-align:center;transition:all 0.2s;font-family:'Syne',sans-serif;}
+.lc-btn:hover{border-color:rgba(62,107,87,0.3);}
+.lc-btn.on{border-color:#3E6B57;background:rgba(62,107,87,0.05);}
+.lc-btn.done{border-color:rgba(62,107,87,0.18);}
+.lc-btn-n{font-family:'DM Mono',monospace;font-size:9px;color:rgba(62,107,87,0.35);margin-bottom:3px;}
+.lc-btn-t{font-size:11px;font-weight:600;color:rgba(45,42,38,0.5);line-height:1.3;}
+.lc-btn.on .lc-btn-t{color:#3E6B57;}
+.lc-btn.done .lc-btn-t{color:rgba(62,107,87,0.45);}
 
 /* COMPARE */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1rem 0;}
 @media(max-width:460px){.compare{grid-template-columns:1fr;}}
-.cmp{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;}
+.cmp{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;}
 .cmp-h{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;}
-.cmp-h.r{color:rgba(255,80,80,0.65);}
-.cmp-h.g{color:rgba(0,255,180,0.65);}
+.cmp-h.r{color:rgba(224,147,125,0.65);}
+.cmp-h.g{color:rgba(62,107,87,0.65);}
 .cmp ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.cmp ul li{font-size:12px;color:rgba(232,237,242,0.45);display:flex;gap:7px;line-height:1.4;align-items:flex-start;}
+.cmp ul li{font-size:12px;color:rgba(45,42,38,0.45);display:flex;gap:7px;line-height:1.4;align-items:flex-start;}
 .cmp ul li span{flex-shrink:0;margin-top:1px;}
-.cmp ul li span.r{color:rgba(255,80,80,0.55);}
-.cmp ul li span.g{color:rgba(0,255,180,0.55);}
+.cmp ul li span.r{color:rgba(224,147,125,0.55);}
+.cmp ul li span.g{color:rgba(62,107,87,0.55);}
 
 /* FACTS */
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;margin:1rem 0;}
-.fact{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;}
-.fact-n{font-family:'DM Mono',monospace;font-size:19px;font-weight:500;color:#00ffb4;margin-bottom:4px;}
-.fact-l{font-size:11px;color:rgba(232,237,242,0.38);line-height:1.4;}
+.fact{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;}
+.fact-n{font-family:'DM Mono',monospace;font-size:19px;font-weight:500;color:#3E6B57;margin-bottom:4px;}
+.fact-l{font-size:11px;color:rgba(45,42,38,0.38);line-height:1.4;}
 
 /* HIGHLIGHT */
-.hl{background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl b{color:#00ffb4;}
+.hl{background:rgba(62,107,87,0.04);border:1px solid rgba(62,107,87,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl b{color:#3E6B57;}
 
 /* SHARE */
 .share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;}
 .s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s;}
-.s-tg{background:#2481cc;color:#fff;}
+.s-tg{background:#2481cc;color:#2D2A26;}
 .s-tg:hover{background:#1a6aaa;}
-.s-cp{background:rgba(255,255,255,0.05);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.1);}
-.s-cp:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
+.s-cp{background:rgba(45,42,38,0.05);color:rgba(45,42,38,0.5);border:1px solid rgba(45,42,38,0.1);}
+.s-cp:hover{border-color:rgba(62,107,87,0.3);color:#3E6B57;}
 
 /* NEXT */
-.nxt{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
-.nxt-t{font-size:14px;color:rgba(232,237,242,0.45);}
-.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;white-space:nowrap;}
-.nxt-a:hover{color:#00ffb4;}
-.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
-.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+.nxt{padding:2rem;border-top:1px solid rgba(45,42,38,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.nxt-t{font-size:14px;color:rgba(45,42,38,0.45);}
+.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(62,107,87,0.6);text-decoration:none;white-space:nowrap;}
+.nxt-a:hover{color:#3E6B57;}
+.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(45,42,38,0.06);}
+.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:1rem;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
-.rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
-.rel-card:hover{border-color:rgba(0,255,180,0.3);}
-.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
-.rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
-.rel-card:hover .rel-title{color:#e8edf2;}
-.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);}
+.rel-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+.rel-card:hover{border-color:rgba(62,107,87,0.3);}
+.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:6px;}
+.rel-title{font-size:13px;color:rgba(45,42,38,0.6);line-height:1.4;}
+.rel-card:hover .rel-title{color:#2D2A26;}
+.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(45,42,38,0.04);}
 @media(max-width:600px){.content{padding:0 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}}
 </style>
 </head>
@@ -174,24 +174,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
         </div>
         <div class="sc-div"></div>
         <div class="sc-item">
-          <div class="sc-bar" style="width:30px;height:36px;background:rgba(80,140,255,0.25);border:1px solid rgba(80,140,255,0.35);border-radius:50% 50% 2px 2px;"></div>
-          <div class="sc-val" style="color:rgba(80,140,255,0.7);">7,000 nm</div>
+          <div class="sc-bar" style="width:30px;height:36px;background:rgba(232,137,107,0.25);border:1px solid rgba(232,137,107,0.35);border-radius:50% 50% 2px 2px;"></div>
+          <div class="sc-val" style="color:rgba(232,137,107,0.7);">7,000 nm</div>
           <div class="sc-lbl">Qizil qon<br>hujayra</div>
         </div>
         <div class="sc-div"></div>
         <div class="sc-item">
-          <div style="width:18px;height:18px;background:rgba(255,70,70,0.45);border:1px solid rgba(255,70,70,0.6);border-radius:50%;"></div>
-          <div class="sc-val" style="color:rgba(255,70,70,0.9);">120 nm</div>
+          <div style="width:18px;height:18px;background:rgba(194,86,56,0.45);border:1px solid rgba(194,86,56,0.6);border-radius:50%;"></div>
+          <div class="sc-val" style="color:rgba(194,86,56,0.9);">120 nm</div>
           <div class="sc-lbl">HIV<br>virusi</div>
         </div>
         <div class="sc-div"></div>
         <div class="sc-item">
-          <div style="width:4px;height:4px;background:rgba(0,255,180,0.6);border-radius:50%;"></div>
-          <div class="sc-val" style="color:rgba(0,255,180,0.6);">2 nm</div>
+          <div style="width:4px;height:4px;background:rgba(62,107,87,0.6);border-radius:50%;"></div>
+          <div class="sc-val" style="color:rgba(62,107,87,0.6);">2 nm</div>
           <div class="sc-lbl">DNK<br>zanjiri</div>
         </div>
       </div>
-      <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(232,237,242,0.2);margin-top:10px;">HIV — soch kengligi bilan solishtirsak, 583 barobarga kichik.</p>
+      <p style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.2);margin-top:10px;">HIV — soch kengligi bilan solishtirsak, 583 barobarga kichik.</p>
     </div>
   </div>
 
@@ -206,7 +206,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
     </div>
     <div class="terms-grid">
       <div class="term-card">
-        <div class="term-dot" style="background:rgba(255,80,80,0.8);"></div>
+        <div class="term-dot" style="background:rgba(224,147,125,0.8);"></div>
         <div class="term-name">Lipid qobiq</div>
         <div class="term-simple">Tashqi parda — hujayra membranasidan o'g'irlangan</div>
       </div>
@@ -216,12 +216,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
         <div class="term-simple">CD4 hujayraga yopishuvchi "kalit" — asosiy qurol</div>
       </div>
       <div class="term-card">
-        <div class="term-dot" style="background:rgba(80,160,255,0.8);"></div>
+        <div class="term-dot" style="background:rgba(232,137,107,0.8);"></div>
         <div class="term-name">Kapsid</div>
         <div class="term-simple">Ichki himoya qobiq — genetik materialini saqlaydi</div>
       </div>
       <div class="term-card">
-        <div class="term-dot" style="background:rgba(0,255,180,0.8);"></div>
+        <div class="term-dot" style="background:rgba(62,107,87,0.8);"></div>
         <div class="term-name">RNK</div>
         <div class="term-simple">Virusning "ko'rsatmalar kitobi" — ko'payish uchun zarur</div>
       </div>
@@ -290,10 +290,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
     <h2 class="section-title">HIV va AIDS — bu bir narsa emas</h2>
     <p class="prose">Ko'pchilik bu ikki so'zni bir xil deb o'ylaydi. Lekin katta farq bor.</p>
     <div class="facts">
-      <div class="fact"><div class="fact-n" style="color:#ff5050;">HIV</div><div class="fact-l">Virus — diagnoz. Hayot davom etadi.</div></div>
-      <div class="fact"><div class="fact-n" style="color:#ffaa30;">AIDS</div><div class="fact-l">CD4 &lt; 200 yoki og'ir kasallik. ARVT bilan kelmaydi.</div></div>
-      <div class="fact"><div class="fact-n" style="color:#00b4ff;">ARVT</div><div class="fact-l">Kuniga 1 tabletka — AIDSga yo'l qo'ymaydi.</div></div>
-      <div class="fact"><div class="fact-n" style="color:#00ffb4;">U=U</div><div class="fact-l">Aniqlanmaydi = Yuqtirmaydi.</div></div>
+      <div class="fact"><div class="fact-n" style="color:#C25638;">HIV</div><div class="fact-l">Virus — diagnoz. Hayot davom etadi.</div></div>
+      <div class="fact"><div class="fact-n" style="color:#B8823A;">AIDS</div><div class="fact-l">CD4 &lt; 200 yoki og'ir kasallik. ARVT bilan kelmaydi.</div></div>
+      <div class="fact"><div class="fact-n" style="color:#E8896B;">ARVT</div><div class="fact-l">Kuniga 1 tabletka — AIDSga yo'l qo'ymaydi.</div></div>
+      <div class="fact"><div class="fact-n" style="color:#3E6B57;">U=U</div><div class="fact-l">Aniqlanmaydi = Yuqtirmaydi.</div></div>
     </div>
     <div class="hl">ARVT bilan boshlagan odamlar <b>70–80 yoshgacha</b> yashaydi — xuddi sog'lom odamdek.</div>
   </div>
@@ -345,20 +345,20 @@ function drawV(){
   const cx=vW/2,cy=vH/2,R=Math.min(vW,vH)*0.28;
   // glow
   const gl=vx.createRadialGradient(cx,cy,R*.6,cx,cy,R*1.5);
-  gl.addColorStop(0,'rgba(255,60,60,0.07)');gl.addColorStop(1,'rgba(0,0,0,0)');
+  gl.addColorStop(0,'rgba(212,105,90,0.07)');gl.addColorStop(1,'rgba(0,0,0,0)');
   vx.beginPath();vx.arc(cx,cy,R*1.5,0,Math.PI*2);vx.fillStyle=gl;vx.fill();
   // shell
   const sh=vx.createRadialGradient(cx-R*.3,cy-R*.3,0,cx,cy,R);
-  sh.addColorStop(0,'rgba(155,30,30,0.75)');sh.addColorStop(1,'rgba(65,8,8,0.9)');
+  sh.addColorStop(0,'rgba(155,30,30,0.75)');sh.addColorStop(1,'rgba(106,40,30,0.9)');
   vx.beginPath();vx.arc(cx,cy,R,0,Math.PI*2);vx.fillStyle=sh;vx.fill();
-  vx.strokeStyle='rgba(255,65,65,0.32)';vx.lineWidth=1.5;vx.stroke();
+  vx.strokeStyle='rgba(194,86,56,0.32)';vx.lineWidth=1.5;vx.stroke();
   // spikes
   for(let i=0;i<14;i++){
     const a=(i/14)*Math.PI*2+vT*.22;
     const sx=cx+Math.cos(a)*R,sy=cy+Math.sin(a)*R;
     const ex=cx+Math.cos(a)*(R+20),ey=cy+Math.sin(a)*(R+20);
     vx.beginPath();vx.moveTo(sx,sy);vx.lineTo(ex,ey);
-    vx.strokeStyle='rgba(255,145,45,0.6)';vx.lineWidth=2;vx.stroke();
+    vx.strokeStyle='rgba(184,130,58,0.6)';vx.lineWidth=2;vx.stroke();
     vx.beginPath();vx.arc(ex,ey,6.5,0,Math.PI*2);
     vx.fillStyle='rgba(255,150,50,0.85)';vx.fill();
     vx.strokeStyle='rgba(255,210,75,0.35)';vx.lineWidth=1;vx.stroke();
@@ -368,9 +368,9 @@ function drawV(){
   // capsid
   vx.save();vx.translate(cx,cy);vx.rotate(vT*.16);
   const capR=R*.48,cap=vx.createLinearGradient(-capR,-capR,capR,capR);
-  cap.addColorStop(0,'rgba(45,95,195,0.5)');cap.addColorStop(1,'rgba(18,50,130,0.38)');
+  cap.addColorStop(0,'rgba(168,80,58,0.5)');cap.addColorStop(1,'rgba(18,50,130,0.38)');
   vx.beginPath();vx.moveTo(0,-capR);vx.lineTo(capR*.58,capR*.63);vx.lineTo(-capR*.58,capR*.63);vx.closePath();
-  vx.fillStyle=cap;vx.fill();vx.strokeStyle='rgba(70,155,255,0.35)';vx.lineWidth=1;vx.stroke();
+  vx.fillStyle=cap;vx.fill();vx.strokeStyle='rgba(232,137,107,0.35)';vx.lineWidth=1;vx.stroke();
   vx.restore();
   // RNA
   for(let s=0;s<2;s++){
@@ -379,15 +379,15 @@ function drawV(){
       const r=R*.3,x=cx+Math.cos(t*.72+vT+s*Math.PI)*r*.78,y=cy+Math.sin(t+s*.5)*r*.52+Math.cos(t*.38)*r*.28;
       t<0.01?vx.moveTo(x,y):vx.lineTo(x,y);
     }
-    vx.strokeStyle=`rgba(0,255,180,${.52-s*.1})`;vx.lineWidth=1.4;vx.stroke();
+    vx.strokeStyle=`rgba(62,107,87,${.52-s*.1})`;vx.lineWidth=1.4;vx.stroke();
   }
   // labels
   vx.font='9px DM Mono,monospace';vx.textAlign='center';vx.textBaseline='middle';
-  vx.fillStyle='rgba(255,145,45,0.45)';vx.fillText('← gp120',cx+R+26,cy-8);
-  vx.fillStyle='rgba(255,60,60,0.3)';vx.fillText('lipid qobiq',cx,cy+R+14);
-  vx.fillStyle='rgba(70,155,255,0.38)';vx.fillText('kapsid',cx,cy-3);
-  vx.fillStyle='rgba(0,255,180,0.32)';vx.fillText('RNK',cx,cy+12);
-  vx.fillStyle='rgba(255,255,255,0.1)';vx.fillText('HIV · 120 nm · aylanmoqda',cx,vH-9);
+  vx.fillStyle='rgba(184,130,58,0.45)';vx.fillText('← gp120',cx+R+26,cy-8);
+  vx.fillStyle='rgba(212,105,90,0.3)';vx.fillText('lipid qobiq',cx,cy+R+14);
+  vx.fillStyle='rgba(232,137,107,0.38)';vx.fillText('kapsid',cx,cy-3);
+  vx.fillStyle='rgba(62,107,87,0.32)';vx.fillText('RNK',cx,cy+12);
+  vx.fillStyle='rgba(45,42,38,0.1)';vx.fillText('HIV · 120 nm · aylanmoqda',cx,vH-9);
   vT+=0.011;requestAnimationFrame(drawV);
 }
 
@@ -395,12 +395,12 @@ function drawV(){
 const lcc=document.getElementById('lc'),lctx=lcc.getContext('2d');
 let lW,lH,lT=0,curStep=-1,pts=[];
 const SD=[
-  {badge:'01 · Birikish',desc:'<b>gp120 oqsili</b> CD4 hujayraning retseptoriga yopishadi — xuddi kalit qulfga o\'xshab. HIV o\'z nishonini topdi.',col:'#00b4ff'},
-  {badge:'02 · Kirish',desc:'Virus <b>hujayra membranasi bilan qo\'shiladi</b> va ichkariga kiradi. Uning RNK\'si hujayraga o\'tadi.',col:'#00ffb4'},
-  {badge:'03 · RNK → DNK',desc:'<b>Reverse transkriptaza</b> fermenti virus RNK\'sini DNK\'ga aylantiradi. ARVT ning bir turi shu fermentni bloklaydi.',col:'#ffaa30'},
-  {badge:'04 · Integratsiya',desc:'Virus DNK\'si <b>hujayra yadrosi DNK\'siga kirib oladi</b>. Endi virus hujayraning bir qismi. Integraz inhibitorlari shu bosqichni bloklaydi.',col:'#c080ff'},
-  {badge:"05 · Ko'payish",desc:"Hujayra <b>yangi viruslar ishlab chiqara boshlaydi</b>. Bu bosqichda minglab yangi HIV zarralari hosil bo'ladi.",col:'#ff8060'},
-  {badge:'06 · Tarqalish',desc:'Yangi viruslar hujayrani tark etib, <b>boshqa CD4 hujayralarni zabt etishga ketadi</b>. Proteaz inhibitorlari shu bosqichni bloklaydi.',col:'#ff4040'}
+  {badge:'01 · Birikish',desc:'<b>gp120 oqsili</b> CD4 hujayraning retseptoriga yopishadi — xuddi kalit qulfga o\'xshab. HIV o\'z nishonini topdi.',col:'#E8896B'},
+  {badge:'02 · Kirish',desc:'Virus <b>hujayra membranasi bilan qo\'shiladi</b> va ichkariga kiradi. Uning RNK\'si hujayraga o\'tadi.',col:'#3E6B57'},
+  {badge:'03 · RNK → DNK',desc:'<b>Reverse transkriptaza</b> fermenti virus RNK\'sini DNK\'ga aylantiradi. ARVT ning bir turi shu fermentni bloklaydi.',col:'#B8823A'},
+  {badge:'04 · Integratsiya',desc:'Virus DNK\'si <b>hujayra yadrosi DNK\'siga kirib oladi</b>. Endi virus hujayraning bir qismi. Integraz inhibitorlari shu bosqichni bloklaydi.',col:'#8A6B2E'},
+  {badge:"05 · Ko'payish",desc:"Hujayra <b>yangi viruslar ishlab chiqara boshlaydi</b>. Bu bosqichda minglab yangi HIV zarralari hosil bo'ladi.",col:'#E0937D'},
+  {badge:'06 · Tarqalish',desc:'Yangi viruslar hujayrani tark etib, <b>boshqa CD4 hujayralarni zabt etishga ketadi</b>. Proteaz inhibitorlari shu bosqichni bloklaydi.',col:'#D4695A'}
 ];
 
 function rsL(){lW=lcc.parentElement.clientWidth;lH=lcc.parentElement.clientHeight;lcc.width=lW;lcc.height=lH;}
@@ -423,7 +423,7 @@ function buildPts(s){
   if(s===1){
     pts.push({t:'cd4',x:cx,y:cy,r:cr});
     pts.push({t:'hiv',x:cx-cr-8,y:cy,vx:.65,vy:0,r:12});
-    for(let i=0;i<5;i++){const a=(i/5)*Math.PI*2;pts.push({t:'dot',x:cx-cr+Math.cos(a)*7,y:cy+Math.sin(a)*7,vx:Math.cos(a)*.35,vy:Math.sin(a)*.35,r:2.5,c:'rgba(0,255,180,0.7)'});}
+    for(let i=0;i<5;i++){const a=(i/5)*Math.PI*2;pts.push({t:'dot',x:cx-cr+Math.cos(a)*7,y:cy+Math.sin(a)*7,vx:Math.cos(a)*.35,vy:Math.sin(a)*.35,r:2.5,c:'rgba(62,107,87,0.7)'});}
   }
   if(s===2){
     pts.push({t:'cd4',x:cx,y:cy,r:cr});
@@ -446,39 +446,39 @@ function buildPts(s){
 
 function drawCell(x,y,r,dead=false,factory=false){
   const g=lctx.createRadialGradient(x-r*.3,y-r*.3,0,x,y,r);
-  if(dead){g.addColorStop(0,'rgba(70,15,15,0.4)');g.addColorStop(1,'rgba(35,8,8,0.3)');}
+  if(dead){g.addColorStop(0,'rgba(106,40,30,0.4)');g.addColorStop(1,'rgba(90,30,22,0.3)');}
   else{g.addColorStop(0,'rgba(0,95,195,0.42)');g.addColorStop(1,'rgba(0,45,130,0.32)');}
   lctx.beginPath();lctx.arc(x,y,r,0,Math.PI*2);lctx.fillStyle=g;lctx.fill();
-  lctx.strokeStyle=dead?'rgba(255,55,55,0.22)':'rgba(0,155,255,0.45)';lctx.lineWidth=1.5;
+  lctx.strokeStyle=dead?'rgba(184,67,46,0.22)':'rgba(0,155,255,0.45)';lctx.lineWidth=1.5;
   if(dead)lctx.setLineDash([4,4]);lctx.stroke();lctx.setLineDash([]);
-  for(let i=0;i<8;i++){const a=(i/8)*Math.PI*2+lT*.18;lctx.beginPath();lctx.arc(x+Math.cos(a)*r,y+Math.sin(a)*r,2.2,0,Math.PI*2);lctx.fillStyle=dead?'rgba(255,55,55,0.28)':'rgba(0,175,255,0.65)';lctx.fill();}
-  if(factory){lctx.beginPath();lctx.arc(x,y,r+10+Math.sin(lT*3)*5,0,Math.PI*2);lctx.strokeStyle='rgba(255,95,55,0.12)';lctx.lineWidth=2;lctx.stroke();}
+  for(let i=0;i<8;i++){const a=(i/8)*Math.PI*2+lT*.18;lctx.beginPath();lctx.arc(x+Math.cos(a)*r,y+Math.sin(a)*r,2.2,0,Math.PI*2);lctx.fillStyle=dead?'rgba(184,67,46,0.28)':'rgba(232,137,107,0.65)';lctx.fill();}
+  if(factory){lctx.beginPath();lctx.arc(x,y,r+10+Math.sin(lT*3)*5,0,Math.PI*2);lctx.strokeStyle='rgba(194,86,56,0.12)';lctx.lineWidth=2;lctx.stroke();}
   lctx.font='9px DM Mono,monospace';lctx.textAlign='center';lctx.textBaseline='middle';
-  lctx.fillStyle=dead?'rgba(255,55,55,0.35)':'rgba(0,175,255,0.55)';
+  lctx.fillStyle=dead?'rgba(184,67,46,0.35)':'rgba(232,137,107,0.55)';
   lctx.fillText(dead?'halok':factory?'fabrika':'CD4',x,y);
 }
 
 function drawHIV2(x,y,r){
   const g=lctx.createRadialGradient(x-r*.3,y-r*.3,0,x,y,r);
-  g.addColorStop(0,'rgba(195,48,48,0.8)');g.addColorStop(1,'rgba(95,12,12,0.7)');
+  g.addColorStop(0,'rgba(195,48,48,0.8)');g.addColorStop(1,'rgba(122,46,34,0.7)');
   lctx.beginPath();lctx.arc(x,y,r,0,Math.PI*2);lctx.fillStyle=g;lctx.fill();
-  lctx.strokeStyle='rgba(255,65,65,0.45)';lctx.lineWidth=1;lctx.stroke();
-  for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2+lT*.38;const sx=x+Math.cos(a)*r,sy=y+Math.sin(a)*r,ex=x+Math.cos(a)*(r+4.5),ey=y+Math.sin(a)*(r+4.5);lctx.beginPath();lctx.moveTo(sx,sy);lctx.lineTo(ex,ey);lctx.strokeStyle='rgba(255,145,45,0.55)';lctx.lineWidth=1.5;lctx.stroke();}
+  lctx.strokeStyle='rgba(194,86,56,0.45)';lctx.lineWidth=1;lctx.stroke();
+  for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2+lT*.38;const sx=x+Math.cos(a)*r,sy=y+Math.sin(a)*r,ex=x+Math.cos(a)*(r+4.5),ey=y+Math.sin(a)*(r+4.5);lctx.beginPath();lctx.moveTo(sx,sy);lctx.lineTo(ex,ey);lctx.strokeStyle='rgba(184,130,58,0.55)';lctx.lineWidth=1.5;lctx.stroke();}
 }
 
 function drawLC(){
-  lctx.fillStyle='#06090d';lctx.fillRect(0,0,lW,lH);
-  lctx.strokeStyle='rgba(0,255,180,0.022)';lctx.lineWidth=1;
+  lctx.fillStyle='#F3EDE6';lctx.fillRect(0,0,lW,lH);
+  lctx.strokeStyle='rgba(62,107,87,0.022)';lctx.lineWidth=1;
   for(let x=0;x<lW;x+=26){lctx.beginPath();lctx.moveTo(x,0);lctx.lineTo(x,lH);lctx.stroke();}
   for(let y=0;y<lH;y+=26){lctx.beginPath();lctx.moveTo(0,y);lctx.lineTo(lW,y);lctx.stroke();}
-  if(curStep<0){lctx.font='11px DM Mono,monospace';lctx.textAlign='center';lctx.textBaseline='middle';lctx.fillStyle='rgba(0,255,180,0.2)';lctx.fillText('Bosqich tanlang →',lW/2,lH/2);lT+=.02;requestAnimationFrame(drawLC);return;}
-  const col=SD[curStep]?.col||'#00ffb4';
+  if(curStep<0){lctx.font='11px DM Mono,monospace';lctx.textAlign='center';lctx.textBaseline='middle';lctx.fillStyle='rgba(62,107,87,0.2)';lctx.fillText('Bosqich tanlang →',lW/2,lH/2);lT+=.02;requestAnimationFrame(drawLC);return;}
+  const col=SD[curStep]?.col||'#3E6B57';
   const cx=lW/2,cy=lH/2;
   pts.forEach(p=>{
     if(p.t==='cd4')drawCell(p.x,p.y,p.r);
     if(p.t==='factory')drawCell(p.x,p.y,p.r,false,true);
     if(p.t==='dead')drawCell(p.x,p.y,p.r,true);
-    if(p.t==='nuc'){lctx.beginPath();lctx.arc(p.x,p.y,p.r,0,Math.PI*2);lctx.fillStyle='rgba(130,55,220,0.16)';lctx.fill();lctx.strokeStyle='rgba(155,75,245,0.4)';lctx.lineWidth=1;lctx.stroke();lctx.font='8px DM Mono,monospace';lctx.textAlign='center';lctx.textBaseline='middle';lctx.fillStyle='rgba(155,75,245,0.55)';lctx.fillText('yadro',p.x,p.y);}
+    if(p.t==='nuc'){lctx.beginPath();lctx.arc(p.x,p.y,p.r,0,Math.PI*2);lctx.fillStyle='rgba(130,55,220,0.16)';lctx.fill();lctx.strokeStyle='rgba(138,107,46,0.4)';lctx.lineWidth=1;lctx.stroke();lctx.font='8px DM Mono,monospace';lctx.textAlign='center';lctx.textBaseline='middle';lctx.fillStyle='rgba(138,107,46,0.55)';lctx.fillText('yadro',p.x,p.y);}
     if(p.t==='hiv'){p.x+=p.vx||0;p.y+=p.vy||0;if(p.x<p.r||p.x>lW-p.r)p.vx*=-1;if(p.y<p.r||p.y>lH-p.r)p.vy*=-1;drawHIV2(p.x,p.y,p.r);}
     if(p.t==='dot'){p.x+=p.vx||0;p.y+=p.vy||0;const pl=Math.sin(lT*3)*0.3+0.7;lctx.beginPath();lctx.arc(p.x,p.y,p.r,0,Math.PI*2);lctx.fillStyle=p.c;lctx.globalAlpha=pl;lctx.fill();lctx.globalAlpha=1;}
     if(p.t==='spin'){p.a+=p.sp;const nx=cx+Math.cos(p.a)*20,ny=cy+Math.sin(p.a)*20,pl=Math.sin(lT*4+p.a)*.3+.7;lctx.beginPath();lctx.arc(nx,ny,p.r,0,Math.PI*2);lctx.fillStyle=p.c;lctx.globalAlpha=pl;lctx.fill();lctx.globalAlpha=1;}
@@ -493,17 +493,17 @@ window.setStep=setStep;
 setTimeout(()=>setStep(0),500);
 </script>
 <div style="max-width:760px;margin:48px auto 0;padding:0 20px 64px;">
-  <div style="background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
-    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
-    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
+  <div style="background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#2D2A26;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
+    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(45,42,38,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
+    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#2C4A3D,#3E6B57);color:#FAF6F1;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
   </div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="hiv-qanday-yuqadi.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Asoslar</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">HIV qanday yuqadi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="u-equals-u.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">U=U nima degani?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="hiv-qanday-yuqadi.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Asoslar</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">HIV qanday yuqadi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="cd4-va-viral-yuk.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">CD4 va Viral Yuk nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="u-equals-u.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Ilm</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">U=U nima degani?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a></div>
 </div>
-<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
-<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#3E6B57;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#3E6B57;color:#FAF6F1;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(62,107,87,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
 <script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>

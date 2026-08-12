@@ -30,131 +30,131 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080c10;color:#e8edf2;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#080c10;z-index:100;}
-.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.08em;}
-.nav-logo span{color:#00ffb4;}
-.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);text-decoration:none;}
-.nav-back:hover{color:#00ffb4;}
+body{background:#FAF6F1;color:#2D2A26;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(45,42,38,0.06);position:sticky;top:0;background:#FAF6F1;z-index:100;}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.4);text-decoration:none;letter-spacing:0.08em;}
+.nav-logo span{color:#3E6B57;}
+.nav-back{font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);text-decoration:none;}
+.nav-back:hover{color:#3E6B57;}
 
-.hero{border-bottom:1px solid rgba(0,255,180,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,255,160,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(0,180,255,0.05) 0%,transparent 60%);pointer-events:none;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#00ffb4;border:1px solid rgba(0,255,180,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#00ffb4;animation:blink 2s infinite;}
+.hero{border-bottom:1px solid rgba(62,107,87,0.1);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;max-width:800px;margin:0 auto;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(62,107,87,0.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(232,137,107,0.05) 0%,transparent 60%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;color:#3E6B57;border:1px solid rgba(62,107,87,0.3);padding:4px 12px;border-radius:2px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#3E6B57;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
-.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#f0f5f0;margin-bottom:1rem;}
-.hero-title em{font-style:italic;color:#00ffb4;}
-.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,48px);line-height:1.1;color:#2D2A26;margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:#3E6B57;}
+.hero-meta{display:flex;gap:1.5rem;font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.06em;margin-top:1.5rem;}
 
 .content{max-width:800px;margin:0 auto;padding:0 2rem 4rem;}
 .section{padding:2.5rem 0;}
-.section+.section{border-top:1px solid rgba(255,255,255,0.06);}
-.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#00ffb4;text-transform:uppercase;margin-bottom:1rem;}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#f0f5f0;margin-bottom:1rem;line-height:1.25;}
-.prose{font-size:15px;line-height:1.8;color:rgba(232,237,242,0.6);margin-bottom:1rem;}
-.prose b{color:#e8edf2;}
-.vcard{background:#0d1318;border:1px solid rgba(0,255,180,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
-.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);margin-bottom:1rem;text-transform:uppercase;}
-.hl{background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl b{color:#00ffb4;}
-.hl-red{background:rgba(255,60,60,0.04);border:1px solid rgba(255,60,60,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(232,237,242,0.65);line-height:1.7;}
-.hl-red b{color:#ff6060;}
+.section+.section{border-top:1px solid rgba(45,42,38,0.06);}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#3E6B57;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#2D2A26;margin-bottom:1rem;line-height:1.25;}
+.prose{font-size:15px;line-height:1.8;color:rgba(45,42,38,0.6);margin-bottom:1rem;}
+.prose b{color:#2D2A26;}
+.vcard{background:#FFFFFF;border:1px solid rgba(62,107,87,0.12);border-radius:4px;padding:1.5rem;margin:1.5rem 0;}
+.vcard-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);margin-bottom:1rem;text-transform:uppercase;}
+.hl{background:rgba(62,107,87,0.04);border:1px solid rgba(62,107,87,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl b{color:#3E6B57;}
+.hl-red{background:rgba(212,105,90,0.04);border:1px solid rgba(212,105,90,0.13);border-radius:3px;padding:14px 16px;margin:1rem 0;font-size:14px;color:rgba(45,42,38,0.65);line-height:1.7;}
+.hl-red b{color:#C25638;}
 
 /* RISK METER */
 .risk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:1rem 0;}
-.risk-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;cursor:pointer;transition:border-color .2s;}
-.risk-card:hover{border-color:rgba(255,255,255,0.15);}
+.risk-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;cursor:pointer;transition:border-color .2s;}
+.risk-card:hover{border-color:rgba(45,42,38,0.15);}
 .risk-card.open{border-color:var(--rc);}
 .risk-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
 .risk-icon{font-size:20px;flex-shrink:0;}
-.risk-title{font-size:13px;font-weight:600;color:#e8edf2;line-height:1.3;}
-.risk-bar-bg{height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-bottom:6px;}
+.risk-title{font-size:13px;font-weight:600;color:#2D2A26;line-height:1.3;}
+.risk-bar-bg{height:4px;background:rgba(45,42,38,0.06);border-radius:2px;overflow:hidden;margin-bottom:6px;}
 .risk-bar{height:100%;border-radius:2px;transition:width .6s ease;}
 .risk-level{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.06em;}
-.risk-detail{font-size:12px;color:rgba(232,237,242,0.45);line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);display:none;}
+.risk-detail{font-size:12px;color:rgba(45,42,38,0.45);line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px solid rgba(45,42,38,0.06);display:none;}
 .risk-card.open .risk-detail{display:block;}
 
 /* SCENARIO */
-.scenario-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
-.sc-tab{flex:1;padding:10px 6px;background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.08);color:rgba(232,237,242,0.35);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;text-align:center;letter-spacing:0.04em;}
+.scenario-tabs{display:flex;gap:0;border:1px solid rgba(45,42,38,0.08);border-radius:3px;overflow:hidden;margin-bottom:1rem;}
+.sc-tab{flex:1;padding:10px 6px;background:transparent;border:none;border-right:1px solid rgba(45,42,38,0.08);color:rgba(45,42,38,0.35);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;text-align:center;letter-spacing:0.04em;}
 .sc-tab:last-child{border-right:none;}
-.sc-tab:hover{background:rgba(255,255,255,0.03);color:rgba(232,237,242,0.6);}
-.sc-tab.on{color:#e8edf2;}
-.sc-tab.on.safe{background:rgba(0,255,180,0.08);color:#00ffb4;}
-.sc-tab.on.risk{background:rgba(255,60,60,0.08);color:#ff6060;}
-.sc-tab.on.med{background:rgba(255,170,48,0.08);color:#ffaa30;}
+.sc-tab:hover{background:rgba(45,42,38,0.03);color:rgba(45,42,38,0.6);}
+.sc-tab.on{color:#2D2A26;}
+.sc-tab.on.safe{background:rgba(62,107,87,0.08);color:#3E6B57;}
+.sc-tab.on.risk{background:rgba(212,105,90,0.08);color:#C25638;}
+.sc-tab.on.med{background:rgba(255,170,48,0.08);color:#B8823A;}
 
 .scenario-panel{display:none;}
 .scenario-panel.on{display:block;}
 
-.sc-canvas-wrap{width:100%;height:180px;background:#06090d;border:1px solid rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
+.sc-canvas-wrap{width:100%;height:180px;background:#F3EDE6;border:1px solid rgba(45,42,38,0.06);border-radius:3px;overflow:hidden;position:relative;margin-bottom:1rem;}
 .sc-canvas-wrap canvas{display:block;width:100%;height:100%;}
 .sc-badge{position:absolute;top:8px;left:10px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;}
 .sc-result{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:3px;margin-bottom:10px;}
-.sc-result.safe{background:rgba(0,255,180,0.06);border:1px solid rgba(0,255,180,0.2);}
-.sc-result.risk{background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.2);}
+.sc-result.safe{background:rgba(62,107,87,0.06);border:1px solid rgba(62,107,87,0.2);}
+.sc-result.risk{background:rgba(212,105,90,0.06);border:1px solid rgba(212,105,90,0.2);}
 .sc-result.med{background:rgba(255,170,48,0.06);border:1px solid rgba(255,170,48,0.2);}
 .sc-result-icon{font-size:20px;flex-shrink:0;}
 .sc-result-text{font-size:13px;font-weight:600;line-height:1.4;}
-.sc-result.safe .sc-result-text{color:#00ffb4;}
-.sc-result.risk .sc-result-text{color:#ff6060;}
-.sc-result.med .sc-result-text{color:#ffaa30;}
-.sc-desc{font-size:13px;color:rgba(232,237,242,0.5);line-height:1.65;}
-.sc-desc b{color:#e8edf2;}
+.sc-result.safe .sc-result-text{color:#3E6B57;}
+.sc-result.risk .sc-result-text{color:#C25638;}
+.sc-result.med .sc-result-text{color:#B8823A;}
+.sc-desc{font-size:13px;color:rgba(45,42,38,0.5);line-height:1.65;}
+.sc-desc b{color:#2D2A26;}
 
 /* MYTH/FACT */
 .myth-list{display:flex;flex-direction:column;gap:10px;margin:1rem 0;}
-.myth-item{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;cursor:pointer;transition:border-color .2s;}
-.myth-item:hover{border-color:rgba(255,255,255,0.14);}
-.myth-item.open{border-color:rgba(0,255,180,0.2);}
+.myth-item{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;overflow:hidden;cursor:pointer;transition:border-color .2s;}
+.myth-item:hover{border-color:rgba(45,42,38,0.14);}
+.myth-item.open{border-color:rgba(62,107,87,0.2);}
 .myth-q{display:flex;align-items:center;gap:12px;padding:14px 16px;}
-.myth-badge{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;flex-shrink:0;background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.22);color:rgba(255,100,100,0.8);}
-.myth-text{font-size:13px;font-weight:600;color:#e8edf2;flex:1;line-height:1.4;}
-.myth-arrow{font-size:14px;color:rgba(232,237,242,0.25);transition:transform .3s;flex-shrink:0;}
+.myth-badge{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:2px;flex-shrink:0;background:rgba(212,105,90,0.1);border:1px solid rgba(212,105,90,0.22);color:rgba(255,100,100,0.8);}
+.myth-text{font-size:13px;font-weight:600;color:#2D2A26;flex:1;line-height:1.4;}
+.myth-arrow{font-size:14px;color:rgba(45,42,38,0.25);transition:transform .3s;flex-shrink:0;}
 .myth-item.open .myth-arrow{transform:rotate(180deg);}
-.myth-a{display:none;padding:0 16px 14px;border-top:1px solid rgba(0,255,180,0.08);}
+.myth-a{display:none;padding:0 16px 14px;border-top:1px solid rgba(62,107,87,0.08);}
 .myth-item.open .myth-a{display:block;}
 .myth-verdict{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:2px;margin:12px 0 10px;}
-.myth-verdict.false{background:rgba(255,60,60,0.07);border:1px solid rgba(255,60,60,0.18);}
-.myth-verdict.true{background:rgba(0,255,180,0.06);border:1px solid rgba(0,255,180,0.18);}
+.myth-verdict.false{background:rgba(212,105,90,0.07);border:1px solid rgba(212,105,90,0.18);}
+.myth-verdict.true{background:rgba(62,107,87,0.06);border:1px solid rgba(62,107,87,0.18);}
 .myth-verdict-icon{font-size:16px;}
 .myth-verdict-text{font-size:12px;font-weight:700;}
 .myth-verdict.false .myth-verdict-text{color:#ff7070;}
-.myth-verdict.true .myth-verdict-text{color:#00ffb4;}
-.myth-explain{font-size:13px;color:rgba(232,237,242,0.5);line-height:1.65;}
-.myth-explain b{color:#e8edf2;}
-.myth-explain .g{color:#00ffb4;}
+.myth-verdict.true .myth-verdict-text{color:#3E6B57;}
+.myth-explain{font-size:13px;color:rgba(45,42,38,0.5);line-height:1.65;}
+.myth-explain b{color:#2D2A26;}
+.myth-explain .g{color:#3E6B57;}
 .myth-explain .r{color:#ff7070;}
 
 /* SCORE */
-.score-bar{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(0,255,180,0.04);border:1px solid rgba(0,255,180,0.12);border-radius:3px;margin-bottom:1rem;}
-.score-lbl{font-family:'DM Mono',monospace;font-size:11px;color:rgba(232,237,242,0.35);white-space:nowrap;}
-.score-track{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;}
-.score-fill{height:100%;background:#00ffb4;border-radius:2px;transition:width .5s ease;width:0%;}
-.score-num{font-family:'DM Mono',monospace;font-size:16px;font-weight:500;color:#00ffb4;min-width:32px;text-align:right;}
+.score-bar{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(62,107,87,0.04);border:1px solid rgba(62,107,87,0.12);border-radius:3px;margin-bottom:1rem;}
+.score-lbl{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.35);white-space:nowrap;}
+.score-track{flex:1;height:4px;background:rgba(45,42,38,0.06);border-radius:2px;overflow:hidden;}
+.score-fill{height:100%;background:#3E6B57;border-radius:2px;transition:width .5s ease;width:0%;}
+.score-num{font-family:'DM Mono',monospace;font-size:16px;font-weight:500;color:#3E6B57;min-width:32px;text-align:right;}
 
 /* SHARE */
 .share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;}
 .s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:3px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.05em;text-decoration:none;cursor:pointer;border:none;transition:all .2s;}
-.s-tg{background:#2481cc;color:#fff;}
+.s-tg{background:#2481cc;color:#2D2A26;}
 .s-tg:hover{background:#1a6aaa;}
-.s-cp{background:rgba(255,255,255,0.05);color:rgba(232,237,242,0.5);border:1px solid rgba(255,255,255,0.1);}
-.s-cp:hover{border-color:rgba(0,255,180,0.3);color:#00ffb4;}
+.s-cp{background:rgba(45,42,38,0.05);color:rgba(45,42,38,0.5);border:1px solid rgba(45,42,38,0.1);}
+.s-cp:hover{border-color:rgba(62,107,87,0.3);color:#3E6B57;}
 
-.nxt{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
-.nxt-t{font-size:14px;color:rgba(232,237,242,0.45);}
-.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,255,180,0.6);text-decoration:none;white-space:nowrap;}
-.nxt-a:hover{color:#00ffb4;}
-.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
-.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:1rem;}
+.nxt{padding:2rem;border-top:1px solid rgba(45,42,38,0.06);max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.nxt-l{font-family:'DM Mono',monospace;font-size:10px;color:rgba(45,42,38,0.18);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.nxt-t{font-size:14px;color:rgba(45,42,38,0.45);}
+.nxt-a{font-family:'DM Mono',monospace;font-size:12px;color:rgba(62,107,87,0.6);text-decoration:none;white-space:nowrap;}
+.nxt-a:hover{color:#3E6B57;}
+.related{max-width:800px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(45,42,38,0.06);}
+.related-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:1rem;}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
-.rel-card{background:#06090d;border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
-.rel-card:hover{border-color:rgba(0,255,180,0.3);}
-.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(0,255,180,0.4);text-transform:uppercase;margin-bottom:6px;}
-.rel-title{font-size:13px;color:rgba(232,237,242,0.6);line-height:1.4;}
-.rel-card:hover .rel-title{color:#e8edf2;}
-.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);}
+.rel-card{background:#F3EDE6;border:1px solid rgba(45,42,38,0.07);border-radius:3px;padding:14px;text-decoration:none;display:block;transition:border-color .2s;}
+.rel-card:hover{border-color:rgba(62,107,87,0.3);}
+.rel-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:rgba(62,107,87,0.4);text-transform:uppercase;margin-bottom:6px;}
+.rel-title{font-size:13px;color:rgba(45,42,38,0.6);line-height:1.4;}
+.rel-card:hover .rel-title{color:#2D2A26;}
+.foot{font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.13);padding:1rem 2rem 2rem;max-width:800px;margin:0 auto;line-height:1.7;border-top:1px solid rgba(45,42,38,0.04);}
 @media(max-width:600px){.content{padding:0 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}.scenario-tabs{flex-wrap:wrap;}.sc-tab{min-width:80px;}}
 </style>
 </head>
@@ -188,23 +188,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 
     <div class="risk-grid">
 
-      <div class="risk-card" style="--rc:rgba(255,40,40,0.5);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(184,67,46,0.5);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">⚠️</span>
           <div class="risk-title">Himoyalanmagan jinsiy aloqa</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:85%;background:linear-gradient(90deg,#ff4040,#ff6060);"></div></div>
-        <div class="risk-level" style="color:#ff6060;">Yuqori xavf</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:85%;background:linear-gradient(90deg,#D4695A,#C25638);"></div></div>
+        <div class="risk-level" style="color:#C25638;">Yuqori xavf</div>
         <div class="risk-detail">Anal aloqa eng xavfli (yuqtirish xavfi 1.4%). Vaginal aloqa kamroq xavfli (0.08%). Prezervativ to'g'ri ishlatilsa — xavf 99% kamayadi. ARVT + U=U bo'lsa — xavf nol.</div>
       </div>
 
-      <div class="risk-card" style="--rc:rgba(255,40,40,0.5);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(184,67,46,0.5);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">💉</span>
           <div class="risk-title">Umumiy igna / shprits</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:90%;background:linear-gradient(90deg,#ff2020,#ff5050);"></div></div>
-        <div class="risk-level" style="color:#ff4040;">Juda yuqori xavf</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:90%;background:linear-gradient(90deg,#ff2020,#C25638);"></div></div>
+        <div class="risk-level" style="color:#D4695A;">Juda yuqori xavf</div>
         <div class="risk-detail">Yuqtirish xavfi 0.63% — har 159 marta umumiy igna ishlatilganda 1 ta yuqishi mumkin. Faqat steril igna ishlating. Giyohvand moddadan uzoq bo'ling.</div>
       </div>
 
@@ -213,8 +213,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
           <span class="risk-icon">🤱</span>
           <div class="risk-title">Ona sutidan bolaga</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:40%;background:linear-gradient(90deg,#ffaa30,#ffcc60);"></div></div>
-        <div class="risk-level" style="color:#ffaa30;">O'rtacha xavf</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:40%;background:linear-gradient(90deg,#B8823A,#ffcc60);"></div></div>
+        <div class="risk-level" style="color:#B8823A;">O'rtacha xavf</div>
         <div class="risk-detail">ARVT bo'lmasa xavf 15-45%. ARVT bilan — 1% dan past. O'zbekistonda onalar 98% da ARVT oladi. Homiladorlikda ARVT ichish shart.</div>
       </div>
 
@@ -223,48 +223,48 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
           <span class="risk-icon">🩸</span>
           <div class="risk-title">Qon quyish / organ</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:35%;background:linear-gradient(90deg,#ffaa30,#ffcc60);"></div></div>
-        <div class="risk-level" style="color:#ffaa30;">Nazorat ostida</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:35%;background:linear-gradient(90deg,#B8823A,#ffcc60);"></div></div>
+        <div class="risk-level" style="color:#B8823A;">Nazorat ostida</div>
         <div class="risk-detail">Zamonaviy tibbiyotda barcha qon mahsulotlari tekshiriladi. O'zbekiston kasalxonalarida xavf deyarli nol. Lekin norasmiy donordan qon olish — xavfli.</div>
       </div>
 
-      <div class="risk-card" style="--rc:rgba(0,255,180,0.3);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(62,107,87,0.3);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">💋</span>
           <div class="risk-title">O'pish va quchoqlash</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#00ffb4;"></div></div>
-        <div class="risk-level" style="color:#00ffb4;">Xavfsiz — yuqmaydi</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#3E6B57;"></div></div>
+        <div class="risk-level" style="color:#3E6B57;">Xavfsiz — yuqmaydi</div>
         <div class="risk-detail">HIV so'lakda bo'lsa ham, miqdori juda oz — yuqtira olmaydi. Og'iz orqali yuqish deyarli imkonsiz (0.04% dan past). Quchoqlash, o'pish — mutlaqo xavfsiz.</div>
       </div>
 
-      <div class="risk-card" style="--rc:rgba(0,255,180,0.3);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(62,107,87,0.3);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">🍽️</span>
           <div class="risk-title">Birgalikda ovqatlanish</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#00ffb4;"></div></div>
-        <div class="risk-level" style="color:#00ffb4;">Xavfsiz — yuqmaydi</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#3E6B57;"></div></div>
+        <div class="risk-level" style="color:#3E6B57;">Xavfsiz — yuqmaydi</div>
         <div class="risk-detail">HIV oshqozon kislotasida nobud bo'ladi. Ovqat, suv, idish-tovoq orqali yuqishi ilmiy jihatdan imkonsiz. Bir xonada yashash, bir dasturxonda ovqatlanish — xavfsiz.</div>
       </div>
 
-      <div class="risk-card" style="--rc:rgba(0,255,180,0.3);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(62,107,87,0.3);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">🦟</span>
           <div class="risk-title">Chivin va hasharotlar</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#00ffb4;"></div></div>
-        <div class="risk-level" style="color:#00ffb4;">Xavfsiz — yuqmaydi</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#3E6B57;"></div></div>
+        <div class="risk-level" style="color:#3E6B57;">Xavfsiz — yuqmaydi</div>
         <div class="risk-detail">Chivin HIV ni o'z ichida ko'paytira olmaydi. Hasharot tishlashidan yuqish ilmiy jihatdan imkonsiz. Bu dunyo bo'yicha minglab tadqiqotda isbotlangan.</div>
       </div>
 
-      <div class="risk-card" style="--rc:rgba(0,255,180,0.3);" onclick="toggleRisk(this)">
+      <div class="risk-card" style="--rc:rgba(62,107,87,0.3);" onclick="toggleRisk(this)">
         <div class="risk-top">
           <span class="risk-icon">🚿</span>
           <div class="risk-title">Hojatxona, havuz, hammom</div>
         </div>
-        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#00ffb4;"></div></div>
-        <div class="risk-level" style="color:#00ffb4;">Xavfsiz — yuqmaydi</div>
+        <div class="risk-bar-bg"><div class="risk-bar" style="width:0%;background:#3E6B57;"></div></div>
+        <div class="risk-level" style="color:#3E6B57;">Xavfsiz — yuqmaydi</div>
         <div class="risk-detail">HIV suv va havo orqali yuqmaydi. Umumiy hojatxona, hammom, havuz — mutlaqo xavfsiz. Virus tana tashqarisida tez nobud bo'ladi.</div>
       </div>
 
@@ -292,7 +292,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
       <div class="scenario-panel on" id="sc1">
         <div class="sc-canvas-wrap">
           <canvas id="cvSc1"></canvas>
-          <div class="sc-badge" style="color:rgba(0,255,180,0.5);">✓ Xavfsiz holat</div>
+          <div class="sc-badge" style="color:rgba(62,107,87,0.5);">✓ Xavfsiz holat</div>
         </div>
         <div class="sc-result safe">
           <span class="sc-result-icon">✅</span>
@@ -318,7 +318,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
       <div class="scenario-panel" id="sc3">
         <div class="sc-canvas-wrap">
           <canvas id="cvSc3"></canvas>
-          <div class="sc-badge" style="color:rgba(255,60,60,0.6);">⛔ Xavfli holat</div>
+          <div class="sc-badge" style="color:rgba(212,105,90,0.6);">⛔ Xavfli holat</div>
         </div>
         <div class="sc-result risk">
           <span class="sc-result-icon">❌</span>
@@ -331,7 +331,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
       <div class="scenario-panel" id="sc4">
         <div class="sc-canvas-wrap">
           <canvas id="cvSc4"></canvas>
-          <div class="sc-badge" style="color:rgba(0,255,180,0.5);">✓ Xavfsiz holat</div>
+          <div class="sc-badge" style="color:rgba(62,107,87,0.5);">✓ Xavfsiz holat</div>
         </div>
         <div class="sc-result safe">
           <span class="sc-result-icon">✅</span>
@@ -344,7 +344,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
       <div class="scenario-panel" id="sc5">
         <div class="sc-canvas-wrap">
           <canvas id="cvSc5"></canvas>
-          <div class="sc-badge" style="color:rgba(255,60,60,0.6);">⛔ Xavfli holat</div>
+          <div class="sc-badge" style="color:rgba(212,105,90,0.6);">⛔ Xavfli holat</div>
         </div>
         <div class="sc-result risk">
           <span class="sc-result-icon">⚠️</span>
@@ -357,7 +357,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
       <div class="scenario-panel" id="sc6">
         <div class="sc-canvas-wrap">
           <canvas id="cvSc6"></canvas>
-          <div class="sc-badge" style="color:rgba(0,255,180,0.5);">✓ Xavfsiz holat</div>
+          <div class="sc-badge" style="color:rgba(62,107,87,0.5);">✓ Xavfsiz holat</div>
         </div>
         <div class="sc-result safe">
           <span class="sc-result-icon">✅</span>
@@ -540,13 +540,13 @@ function makeCanvas(id){
   return{c,x:c.getContext('2d'),W,H};
 }
 
-function drawGrid(x,W,H,col='rgba(0,255,180,0.025)'){
+function drawGrid(x,W,H,col='rgba(62,107,87,0.025)'){
   x.strokeStyle=col;x.lineWidth=1;
   for(let i=0;i<W;i+=26){x.beginPath();x.moveTo(i,0);x.lineTo(i,H);x.stroke();}
   for(let i=0;i<H;i+=26){x.beginPath();x.moveTo(0,i);x.lineTo(W,i);x.stroke();}
 }
 
-function drawHuman(x,cx,cy,col='rgba(0,180,255,0.6)',label=''){
+function drawHuman(x,cx,cy,col='rgba(232,137,107,0.6)',label=''){
   // body
   x.beginPath();x.arc(cx,cy-28,10,0,Math.PI*2);x.fillStyle=col;x.fill();
   x.beginPath();x.moveTo(cx,cy-18);x.lineTo(cx,cy+10);x.strokeStyle=col;x.lineWidth=3;x.stroke();
@@ -558,9 +558,9 @@ function drawHuman(x,cx,cy,col='rgba(0,180,255,0.6)',label=''){
 
 function drawVirus(x,vx,vy,r,t){
   const g=x.createRadialGradient(vx-r*.3,vy-r*.3,0,vx,vy,r);
-  g.addColorStop(0,'rgba(200,50,50,0.8)');g.addColorStop(1,'rgba(90,10,10,0.7)');
+  g.addColorStop(0,'rgba(200,50,50,0.8)');g.addColorStop(1,'rgba(122,46,34,0.7)');
   x.beginPath();x.arc(vx,vy,r,0,Math.PI*2);x.fillStyle=g;x.fill();
-  x.strokeStyle='rgba(255,65,65,0.45)';x.lineWidth=1;x.stroke();
+  x.strokeStyle='rgba(194,86,56,0.45)';x.lineWidth=1;x.stroke();
   for(let i=0;i<6;i++){const a=(i/6)*Math.PI*2+t*.4;x.beginPath();x.moveTo(vx+Math.cos(a)*r,vy+Math.sin(a)*r);x.lineTo(vx+Math.cos(a)*(r+4),vy+Math.sin(a)*(r+4));x.strokeStyle='rgba(255,140,40,0.5)';x.lineWidth=1.5;x.stroke();}
 }
 
@@ -569,17 +569,17 @@ function drawVirus(x,vx,vy,r,t){
   const cv=makeCanvas('cvSc1');if(!cv)return;
   const {x,W,H}=cv;let t=0;
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
     drawGrid(x,W,H);
     // table
-    x.fillStyle='rgba(255,255,255,0.06)';x.fillRect(W/2-50,H/2-5,100,8);
-    drawHuman(x,W/2-40,H/2-10,'rgba(0,180,255,0.6)','Siz');
-    drawHuman(x,W/2+40,H/2-10,'rgba(0,255,180,0.6)','Do\'stingiz');
+    x.fillStyle='rgba(45,42,38,0.06)';x.fillRect(W/2-50,H/2-5,100,8);
+    drawHuman(x,W/2-40,H/2-10,'rgba(232,137,107,0.6)','Siz');
+    drawHuman(x,W/2+40,H/2-10,'rgba(62,107,87,0.6)','Do\'stingiz');
     // safe glow
     x.beginPath();x.arc(W/2,H/2-8,55+Math.sin(t*2)*3,0,Math.PI*2);
-    x.strokeStyle='rgba(0,255,180,0.1)';x.lineWidth=2;x.stroke();
+    x.strokeStyle='rgba(62,107,87,0.1)';x.lineWidth=2;x.stroke();
     // no virus
-    x.font='11px DM Mono,monospace';x.fillStyle='rgba(0,255,180,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Xavfsiz — yuqmaydi',W/2,H-8);
+    x.font='11px DM Mono,monospace';x.fillStyle='rgba(62,107,87,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Xavfsiz — yuqmaydi',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
 })();
@@ -589,14 +589,14 @@ function drawVirus(x,vx,vy,r,t){
   const cv=makeCanvas('cvSc2');if(!cv)return;
   const {x,W,H}=cv;let t=0;
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
     drawGrid(x,W,H,'rgba(255,170,48,0.02)');
     // syringe icon
-    x.fillStyle='rgba(255,255,255,0.08)';x.fillRect(W/2-30,H/2-6,60,12);x.beginPath();x.moveTo(W/2+30,H/2);x.lineTo(W/2+42,H/2);x.strokeStyle='rgba(255,255,255,0.15)';x.lineWidth=3;x.stroke();
+    x.fillStyle='rgba(45,42,38,0.08)';x.fillRect(W/2-30,H/2-6,60,12);x.beginPath();x.moveTo(W/2+30,H/2);x.lineTo(W/2+42,H/2);x.strokeStyle='rgba(45,42,38,0.15)';x.lineWidth=3;x.stroke();
     // steril badge
     const pulse=Math.sin(t*2)*0.2+0.7;
-    x.beginPath();x.arc(W/2-50,H/2,16,0,Math.PI*2);x.strokeStyle=`rgba(0,255,180,${pulse*0.4})`;x.lineWidth=1.5;x.stroke();
-    x.font='8px DM Mono,monospace';x.fillStyle=`rgba(0,255,180,${pulse*0.6})`;x.textAlign='center';x.textBaseline='middle';x.fillText('STERIL',W/2-50,H/2);
+    x.beginPath();x.arc(W/2-50,H/2,16,0,Math.PI*2);x.strokeStyle=`rgba(62,107,87,${pulse*0.4})`;x.lineWidth=1.5;x.stroke();
+    x.font='8px DM Mono,monospace';x.fillStyle=`rgba(62,107,87,${pulse*0.6})`;x.textAlign='center';x.textBaseline='middle';x.fillText('STERIL',W/2-50,H/2);
     x.font='11px DM Mono,monospace';x.fillStyle='rgba(255,170,48,0.4)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Rasmiy klinika — xavfsiz',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
@@ -608,13 +608,13 @@ function drawVirus(x,vx,vy,r,t){
   const {x,W,H}=cv;let t=0,viruses=[];
   for(let i=0;i<6;i++)viruses.push({x:W/2+Math.cos((i/6)*Math.PI*2)*30,y:H/2+Math.sin((i/6)*Math.PI*2)*30,vx:(Math.random()-.5)*1.2,vy:(Math.random()-.5)*1.2});
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
-    drawGrid(x,W,H,'rgba(255,60,60,0.02)');
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
+    drawGrid(x,W,H,'rgba(212,105,90,0.02)');
     viruses.forEach(v=>{v.x+=v.vx;v.y+=v.vy;if(v.x<8||v.x>W-8)v.vx*=-1;if(v.y<8||v.y>H-8)v.vy*=-1;drawVirus(x,v.x,v.y,9,t);});
     // needle
-    x.beginPath();x.moveTo(W/2-40,H/2);x.lineTo(W/2+40,H/2);x.strokeStyle='rgba(255,60,60,0.4)';x.lineWidth=3;x.stroke();
-    x.beginPath();x.moveTo(W/2+40,H/2-5);x.lineTo(W/2+55,H/2);x.lineTo(W/2+40,H/2+5);x.fillStyle='rgba(255,60,60,0.4)';x.fill();
-    x.font='11px DM Mono,monospace';x.fillStyle='rgba(255,60,60,0.5)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Xavfli! Darhol murojaat qiling',W/2,H-8);
+    x.beginPath();x.moveTo(W/2-40,H/2);x.lineTo(W/2+40,H/2);x.strokeStyle='rgba(212,105,90,0.4)';x.lineWidth=3;x.stroke();
+    x.beginPath();x.moveTo(W/2+40,H/2-5);x.lineTo(W/2+55,H/2);x.lineTo(W/2+40,H/2+5);x.fillStyle='rgba(212,105,90,0.4)';x.fill();
+    x.font='11px DM Mono,monospace';x.fillStyle='rgba(212,105,90,0.5)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Xavfli! Darhol murojaat qiling',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
 })();
@@ -624,17 +624,17 @@ function drawVirus(x,vx,vy,r,t){
   const cv=makeCanvas('cvSc4');if(!cv)return;
   const {x,W,H}=cv;let t=0;
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
     drawGrid(x,W,H);
-    drawHuman(x,W/2-30,H/2-5,'rgba(0,180,255,0.6)','Siz');
-    drawHuman(x,W/2+30,H/2-5,'rgba(0,255,180,0.6)','U');
+    drawHuman(x,W/2-30,H/2-5,'rgba(232,137,107,0.6)','Siz');
+    drawHuman(x,W/2+30,H/2-5,'rgba(62,107,87,0.6)','U');
     // home outline
-    x.beginPath();x.moveTo(W/2-70,H/2+35);x.lineTo(W/2,H/2-30);x.lineTo(W/2+70,H/2+35);x.strokeStyle='rgba(255,255,255,0.06)';x.lineWidth=1.5;x.stroke();
-    x.beginPath();x.rect(W/2-55,H/2+35-45,110,45);x.strokeStyle='rgba(255,255,255,0.06)';x.stroke();
+    x.beginPath();x.moveTo(W/2-70,H/2+35);x.lineTo(W/2,H/2-30);x.lineTo(W/2+70,H/2+35);x.strokeStyle='rgba(45,42,38,0.06)';x.lineWidth=1.5;x.stroke();
+    x.beginPath();x.rect(W/2-55,H/2+35-45,110,45);x.strokeStyle='rgba(45,42,38,0.06)';x.stroke();
     // shield
     const p=Math.sin(t*2)*0.15+0.85;
-    x.beginPath();x.arc(W/2,H/2-5,55,0,Math.PI*2);x.strokeStyle=`rgba(0,255,180,${p*0.12})`;x.lineWidth=2;x.stroke();
-    x.font='11px DM Mono,monospace';x.fillStyle='rgba(0,255,180,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Birgalikda yashash — xavfsiz',W/2,H-8);
+    x.beginPath();x.arc(W/2,H/2-5,55,0,Math.PI*2);x.strokeStyle=`rgba(62,107,87,${p*0.12})`;x.lineWidth=2;x.stroke();
+    x.font='11px DM Mono,monospace';x.fillStyle='rgba(62,107,87,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Birgalikda yashash — xavfsiz',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
 })();
@@ -644,12 +644,12 @@ function drawVirus(x,vx,vy,r,t){
   const cv=makeCanvas('cvSc5');if(!cv)return;
   const {x,W,H}=cv;let t=0;
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
-    drawGrid(x,W,H,'rgba(255,60,60,0.02)');
-    drawHuman(x,W/2-30,H/2-5,'rgba(0,180,255,0.5)','Siz');
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
+    drawGrid(x,W,H,'rgba(212,105,90,0.02)');
+    drawHuman(x,W/2-30,H/2-5,'rgba(232,137,107,0.5)','Siz');
     drawHuman(x,W/2+30,H/2-5,'rgba(255,100,100,0.5)','?');
     const p=Math.sin(t*3)*0.3+0.5;
-    x.beginPath();x.moveTo(W/2-18,H/2-5);x.lineTo(W/2+18,H/2-5);x.strokeStyle=`rgba(255,60,60,${p})`;x.lineWidth=2;x.setLineDash([4,3]);x.stroke();x.setLineDash([]);
+    x.beginPath();x.moveTo(W/2-18,H/2-5);x.lineTo(W/2+18,H/2-5);x.strokeStyle=`rgba(212,105,90,${p})`;x.lineWidth=2;x.setLineDash([4,3]);x.stroke();x.setLineDash([]);
     x.font='11px DM Mono,monospace';x.fillStyle='rgba(255,100,60,0.45)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Prezervativ + ARVT = himoya',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
@@ -660,15 +660,15 @@ function drawVirus(x,vx,vy,r,t){
   const cv=makeCanvas('cvSc6');if(!cv)return;
   const {x,W,H}=cv;let t=0;
   function draw(){
-    x.fillStyle='#06090d';x.fillRect(0,0,W,H);
+    x.fillStyle='#F3EDE6';x.fillRect(0,0,W,H);
     drawGrid(x,W,H);
-    drawHuman(x,W/2-22,H/2-5,'rgba(0,180,255,0.65)','Siz');
-    drawHuman(x,W/2+22,H/2-5,'rgba(0,255,180,0.65)','U');
+    drawHuman(x,W/2-22,H/2-5,'rgba(232,137,107,0.65)','Siz');
+    drawHuman(x,W/2+22,H/2-5,'rgba(62,107,87,0.65)','U');
     const p=Math.sin(t*2)*0.2+0.7;
     x.beginPath();x.arc(W/2,H/2-5,40+Math.sin(t*2)*4,0,Math.PI*2);
-    x.strokeStyle=`rgba(0,255,180,${p*0.18})`;x.lineWidth=3;x.stroke();
-    x.font='12px',x.fillStyle='rgba(255,255,255,0.15)';x.textAlign='center';x.textBaseline='middle';x.fillText('❤️',W/2,H/2-5);
-    x.font='11px DM Mono,monospace';x.fillStyle='rgba(0,255,180,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Quchoqlash — mutlaqo xavfsiz',W/2,H-8);
+    x.strokeStyle=`rgba(62,107,87,${p*0.18})`;x.lineWidth=3;x.stroke();
+    x.font='12px',x.fillStyle='rgba(45,42,38,0.15)';x.textAlign='center';x.textBaseline='middle';x.fillText('❤️',W/2,H/2-5);
+    x.font='11px DM Mono,monospace';x.fillStyle='rgba(62,107,87,0.3)';x.textAlign='center';x.textBaseline='bottom';x.fillText('Quchoqlash — mutlaqo xavfsiz',W/2,H-8);
     t+=.02;requestAnimationFrame(draw);
   }draw();
 })();
@@ -676,17 +676,17 @@ function drawVirus(x,vx,vy,r,t){
 window.setStep=()=>{};
 </script>
 <div style="max-width:760px;margin:48px auto 0;padding:0 20px 64px;">
-  <div style="background:rgba(0,255,180,0.05);border:1px solid rgba(0,255,180,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,255,180,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
-    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
-    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#00c896,#00ffb4);color:#080c10;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
+  <div style="background:rgba(62,107,87,0.05);border:1px solid rgba(62,107,87,0.15);border-radius:4px;padding:28px 32px;margin-bottom:40px;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(62,107,87,0.6);letter-spacing:0.12em;margin-bottom:12px;">// KEYINGI QADAM</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#2D2A26;margin-bottom:8px;">Xavf darajangizni bilib oling</div>
+    <div style="font-family:'DM Mono',monospace;font-size:13px;color:rgba(45,42,38,0.5);margin-bottom:20px;">8 savol · 3 daqiqa · anonim · bepul</div>
+    <a href="/risk.html" style="display:inline-block;background:linear-gradient(135deg,#2C4A3D,#3E6B57);color:#FAF6F1;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:0.06em;padding:12px 28px;border-radius:3px;text-decoration:none;">⚡ Xavf kalkulyatorini ochish →</a>
   </div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="hiv-nima.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Asoslar</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">HIV nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="test-qanday-topshiriladi.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Test</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">Test qanday topshiriladi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a><a href="prezervativ.html" style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(0,255,180,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(0,255,180,0.6);letter-spacing:0.1em;margin-bottom:6px;">Profilaktika</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;line-height:1.4;">Prezervativ — to'g'ri ishlatish</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;">→</div></a></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.3);letter-spacing:0.12em;margin-bottom:16px;">// O'QISHNI DAVOM ETTIRING</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;"><a href="hiv-nima.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Asoslar</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">HIV nima?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="test-qanday-topshiriladi.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Test</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">Test qanday topshiriladi?</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a><a href="prezervativ.html" style="display:block;background:rgba(45,42,38,0.03);border:1px solid rgba(45,42,38,0.07);border-radius:4px;padding:18px 20px;text-decoration:none;" onmouseover="this.style.borderColor='rgba(62,107,87,0.3)'" onmouseout="this.style.borderColor='rgba(45,42,38,0.07)'"><div style="font-family:'DM Mono',monospace;font-size:10px;color:rgba(62,107,87,0.6);letter-spacing:0.1em;margin-bottom:6px;">Profilaktika</div><div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#2D2A26;line-height:1.4;">Prezervativ — to'g'ri ishlatish</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(45,42,38,0.4);margin-top:6px;">→</div></a></div>
 </div>
-<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#00ffb4;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
-<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#00ffb4;color:#080c10;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(0,255,180,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c10" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
+<div id="rdpg" style="position:fixed;top:0;left:0;height:2px;background:#3E6B57;z-index:999;width:0;transition:width .08s linear;pointer-events:none;"></div>
+<a href="tel:1003" style="position:fixed;bottom:24px;right:24px;background:#3E6B57;color:#FAF6F1;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:11px 20px;border-radius:3px;text-decoration:none;z-index:200;box-shadow:0 4px 24px rgba(62,107,87,0.3);display:flex;align-items:center;gap:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>1003 — Bepul yordam</a>
 <script>(function(){var p=document.getElementById('rdpg');window.addEventListener('scroll',function(){var s=document.documentElement;p.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';},{passive:true});})();</script>
 </body>
 </html>
