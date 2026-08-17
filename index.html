@@ -859,6 +859,70 @@ footer a{color:var(--blue-l);text-decoration:none;}
   color: var(--blue-l); margin-top: 4px;
   display: block; text-transform: uppercase;
 }
+/* ══════════════════════════════════
+   DONATE
+══════════════════════════════════ */
+.donate-section {
+  padding: 0 24px 60px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.donate-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.donate-icon { font-size: 26px; margin-bottom: 8px; }
+.donate-title {
+  font-size: 16px; font-weight: 800;
+  color: var(--text); margin-bottom: 8px;
+}
+.donate-desc {
+  font-size: 12px; color: var(--muted);
+  font-weight: 600; line-height: 1.6;
+  margin-bottom: 16px;
+}
+.donate-card-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 16px; font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--blue);
+  background: rgba(204,106,74,.08);
+  border: 1px solid rgba(204,106,74,.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 4px;
+}
+.donate-card-holder {
+  font-size: 11px; color: var(--muted);
+  font-weight: 700; letter-spacing: .04em;
+  margin-bottom: 14px;
+}
+.donate-tg-btn {
+  display: block;
+  background: var(--blue-l);
+  color: #fff;
+  font-size: 12px; font-weight: 800;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: background .2s;
+}
+.donate-tg-btn:hover { background: var(--blue); }
+.donate-note {
+  font-size: 11px; color: var(--muted);
+  font-weight: 600; line-height: 1.5;
+}
+.donate-note a { color: var(--blue-l); text-decoration: underline; }
+.donate-note code {
+  font-family: 'Space Mono', monospace;
+  background: var(--bg3);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
 .disclaimer-box {
   background: rgba(184,130,58,.05);
   border: 1px solid rgba(184,130,58,.2);
@@ -2555,6 +2619,18 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <span class="source-tag">O'zbekiston · Rasmiy</span>
       </div>
     </a>
+  </div>
+</section>
+
+<section class="donate-section">
+  <div class="donate-card">
+    <div class="donate-icon">💛</div>
+    <h3 class="donate-title">Loyihani qo'llab-quvvatlash</h3>
+    <p class="donate-desc">Bu sayt va Hamroh community — mustaqil, shaxsiy loyiha. Server, AI xizmatlari va domen xarajatlarini qoplashda yordam bersangiz, minnatdor bo'lardik.</p>
+    <div class="donate-card-number">9860 0803 8291 4101</div>
+    <div class="donate-card-holder">M.X.</div>
+    <a class="donate-tg-btn" href="https://t.me/HIVUzBot?start=donate" target="_blank" rel="noopener">🤖 Telegram botda ochish</a>
+    <p class="donate-note">To'lovdan so'ng screenshotni shu yerda yuboring — tasdiqlaymiz.</p>
   </div>
 </section>
 
