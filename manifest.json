@@ -1,0 +1,18 @@
+{
+  "name": "Hamroh — OIV va ARVT Bo'yicha Maxfiy Yo'ldosh",
+  "short_name": "Hamroh",
+  "description": "OIV diagnozi hayot oxiri emas. ARVT, U=U, dori intizomi va bepul tibbiy ko'mak.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FAF6F1",
+  "theme_color": "#3E6B57",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
