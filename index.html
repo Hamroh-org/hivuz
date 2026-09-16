@@ -70,6 +70,81 @@ nav{
 .nav-cta{padding:7px 16px !important;border-radius:100px !important;background:rgba(62,107,87,0.12) !important;border:1px solid rgba(62,107,87,0.5) !important;color:#3E6B57 !important;font-size:11px !important;transition:all .2s !important;margin-left:4px;}
 .nav-cta:hover{background:rgba(62,107,87,.15) !important;border-color:var(--green) !important;}
 
+/* ── QUICK EXIT & HOTLINE ── */
+.quick-exit-btn {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  z-index: 1001;
+  background: #C04D38;
+  color: #FFFFFF !important;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 18px rgba(192, 77, 56, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.quick-exit-btn:hover {
+  background: #A03B28;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(192, 77, 56, 0.45);
+}
+.exit-hint {
+  font-size: 9px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+.floating-hotline-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #3E6B57;
+  color: #FAF6F1 !important;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 20px;
+  border-radius: 100px;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(62, 107, 87, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+.floating-hotline-btn:hover {
+  background: #2E5343;
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .quick-exit-btn {
+    top: auto;
+    bottom: 24px;
+    left: 16px;
+    right: auto;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+  .floating-hotline-btn {
+    bottom: 24px;
+    right: 16px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+}
+
 /* ── HERO ── */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;
@@ -1425,6 +1500,10 @@ footer a{color:var(--blue-l);text-decoration:none;}
 </script>
 </head>
 <body>
+
+<!-- QUICK EXIT & 1003 FLOATING BUTTONS -->
+<a href="https://www.google.com" class="quick-exit-btn" id="quickExitBtn" title="Sahifani darhol yopish (Google ga o'tish)">✕ Tezkor Chiqish <span class="exit-hint">(ESC)</span></a>
+<a href="tel:1003" class="floating-hotline-btn" title="1003 — Bepul, anonim ishonch telefoni"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 1003 — Bepul yordam</a>
 
 <!-- NAV -->
 
@@ -2942,8 +3021,25 @@ document.fonts.ready.then(()=>{
   document.getElementById('ePhase').textContent=cfg.phase;document.getElementById('ePhase').style.color=cfg.phaseColor;
   document.getElementById('eTitle').textContent=cfg.title;document.getElementById('eBody').innerHTML=cfg.body;
   tick();
-});
-
+// Emergency Quick Exit (ESC key & Button click)
+(function() {
+  function quickExit(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    window.location.replace('https://www.google.com');
+  }
+  var exitBtn = document.getElementById('quickExitBtn');
+  if (exitBtn) {
+    exitBtn.addEventListener('click', quickExit);
+  }
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      quickExit(e);
+    }
+  });
+})();
 
 </script>
 

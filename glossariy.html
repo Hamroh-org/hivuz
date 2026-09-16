@@ -76,10 +76,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 .term-link:hover{color:#3E6B57;text-decoration:underline;}
 .tag-pill{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;padding:2px 8px;border-radius:2px;border:1px solid rgba(62,107,87,0.2);color:rgba(62,107,87,0.5);margin-right:6px;margin-bottom:8px;}
 .no-results{font-family:'DM Mono',monospace;font-size:12px;color:rgba(45,42,38,0.2);text-align:center;padding:3rem;display:none;}
-@media(max-width:600px){.content{padding:1rem 1.25rem 4rem;}.hero{padding:2.5rem 1.25rem 1.5rem;}.search-wrap,.alpha-nav{padding-left:1.25rem;padding-right:1.25rem;}.term-name{min-width:130px;}}
+.quick-exit-btn{position:fixed;top:14px;right:18px;z-index:1001;background:#D4695A;color:#FAF6F1 !important;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.05em;padding:7px 14px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(212,105,90,0.35);border:1px solid rgba(255,255,255,0.25);cursor:pointer;transition:all .2s ease;}
+.quick-exit-btn:hover{background:#B85042;transform:translateY(-1px);}
+.exit-hint{font-size:9px;opacity:0.8;}
+@media(max-width:600px){.content{padding:1.5rem 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}.search-wrap,.alpha-nav{padding-left:1.25rem;padding-right:1.25rem;}.term-name{min-width:130px;}.quick-exit-btn{top:auto;bottom:24px;left:16px;right:auto;padding:9px 13px;font-size:10px;}}
 </style>
 </head>
 <body>
+
+<a href="https://www.google.com" class="quick-exit-btn" id="quickExitBtn" title="Sahifani darhol yopish (Google ga o'tish)">✕ Tezkor Chiqish <span class="exit-hint">(ESC)</span></a>
 
 <nav>
   <a href="./index.html" class="nav-logo">HIV.<span>HIKMATILLO</span>.UZ</a>
@@ -484,6 +489,26 @@ function search(q){
   });
   document.getElementById('noResults').style.display = visible===0 ? 'block' : 'none';
 }
+
+// Emergency Quick Exit (ESC key & Button click)
+(function() {
+  function quickExit(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    window.location.replace('https://www.google.com');
+  }
+  var exitBtn = document.getElementById('quickExitBtn');
+  if (exitBtn) {
+    exitBtn.addEventListener('click', quickExit);
+  }
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      quickExit(e);
+    }
+  });
+})();
 </script>
 </body>
 </html>
