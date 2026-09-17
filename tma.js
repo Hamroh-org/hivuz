@@ -26,13 +26,6 @@
       tg.ready();
       tg.expand();
 
-      // Auto-redirect from desktop landing page to Patient Cabinet inside Telegram
-      const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
-      if (isRootPage && !window.location.search.includes('noredirect=1')) {
-        window.location.replace('/app.html' + window.location.hash);
-        return;
-      }
-
       // Adapt colors to Telegram theme
       const params = tg.themeParams;
       if (params) {

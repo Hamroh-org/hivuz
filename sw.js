@@ -1,5 +1,5 @@
 // Hamroh Telegram Mini App — Service Worker (Offline Caching)
-const CACHE_NAME = 'hamroh-tma-v1.1';
+const CACHE_NAME = 'hamroh-tma-v1.2';
 
 const PRECACHE_URLS = [
   '/',
