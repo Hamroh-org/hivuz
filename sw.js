@@ -1,5 +1,5 @@
 // Hamroh Telegram Mini App — Service Worker (Offline Caching)
-const CACHE_NAME = 'hamroh-tma-v1.3';
+const CACHE_NAME = 'hamroh-tma-v2.0';
 
 const PRECACHE_URLS = [
   '/',
@@ -14,24 +14,25 @@ const PRECACHE_URLS = [
   '/og-image.png'
 ];
 
-// Install: Precache all essential medical assets
+// Install: Skip waiting immediately & precache essential assets
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[ServiceWorker] Pre-caching offline pages');
+      console.log('[ServiceWorker] Pre-caching v2.0 pages');
       return cache.addAll(PRECACHE_URLS);
-    }).then(() => self.skipWaiting())
+    })
   );
 });
 
-// Activate: Clean up old caches
+// Activate: Clean up ALL old caches and claim clients immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((name) => {
           if (name !== CACHE_NAME) {
-            console.log('[ServiceWorker] Removing old cache:', name);
+            console.log('[ServiceWorker] Purging old cache:', name);
             return caches.delete(name);
           }
         })
@@ -40,7 +41,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: Stale-While-Revalidate for local pages & Cache-First for static assets
+// Fetch: Network-First for HTML navigation, Cache-First for static assets
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
@@ -50,11 +51,32 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Handle same-origin requests
+  // HTML Navigation: Network-First strategy (ensures fresh site while online)
+  if (request.mode === 'navigate' || (request.headers.get('accept') && request.headers.get('accept').includes('text/html'))) {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(request).then((cached) => {
+            return cached || caches.match('/offline.html');
+          });
+        })
+    );
+    return;
+  }
+
+  // Handle same-origin static assets
   if (url.origin === self.location.origin) {
     event.respondWith(
       caches.match(request).then((cachedResponse) => {
-        // Fetch from network in background to revalidate cache
         const fetchPromise = fetch(request).then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const responseToCache = networkResponse.clone();
@@ -63,15 +85,8 @@ self.addEventListener('fetch', (event) => {
             });
           }
           return networkResponse;
-        }).catch((err) => {
-          console.log('[ServiceWorker] Network fetch failed, falling back to cache');
-          // If offline and request is navigation, show offline fallback if not in cache
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        });
+        }).catch(() => null);
 
-        // Return cached response immediately if present, otherwise wait for network
         return cachedResponse || fetchPromise;
       })
     );

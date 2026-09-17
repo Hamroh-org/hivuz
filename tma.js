@@ -6,11 +6,36 @@
 (function () {
   'use strict';
 
-  // 1. Service Worker Registration
+  // Purge legacy caches on startup
+  if ('caches' in window) {
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        if (name !== 'hamroh-tma-v2.0') {
+          console.log('[TMA] Purging legacy cache:', name);
+          caches.delete(name);
+        }
+      });
+    });
+  }
+
+  // 1. Service Worker Registration & Auto-Reload on Update
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then((reg) => {
+      navigator.serviceWorker.register('/sw.js?v=2.0').then((reg) => {
         console.log('[TMA] Service Worker registered:', reg.scope);
+        reg.update();
+
+        reg.addEventListener('updatefound', () => {
+          const installingWorker = reg.installing;
+          if (installingWorker) {
+            installingWorker.addEventListener('statechange', () => {
+              if (installingWorker.state === 'activated' && navigator.serviceWorker.controller) {
+                console.log('[TMA] New SW activated, refreshing page...');
+                window.location.reload();
+              }
+            });
+          }
+        });
       }).catch((err) => {
         console.warn('[TMA] Service Worker registration failed:', err);
       });
