@@ -19,7 +19,7 @@
 
   // 2. Telegram WebApp Integration
   const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
-  const isTMA = !!tg;
+  const isTMA = !!(tg && tg.initData && tg.initData.length > 0);
 
   if (isTMA) {
     try {
@@ -181,54 +181,9 @@
     if (modal) modal.style.display = 'none';
   };
 
-  // 5. Inject Floating TMA Quick Nav Bar on mobile / TMA
+  // 5. Clean up any legacy tma-quick-bar if present
   document.addEventListener('DOMContentLoaded', () => {
-    if (!document.getElementById('tma-quick-bar')) {
-      const bar = document.createElement('nav');
-      bar.id = 'tma-quick-bar';
-      bar.style.cssText = `
-        position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
-        background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(0,0,0,0.08); border-radius: 28px;
-        padding: 6px 12px; display: flex; align-items: center; gap: 4px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12); z-index: 9999;
-        font-family: 'Nunito', -apple-system, sans-serif;
-      `;
-      bar.innerHTML = `
-        <a href="/" onclick="window.tmaHaptic('light')" style="
-          display:flex; flex-direction:column; align-items:center; padding:6px 8px;
-          text-decoration:none; color:#2D2A26; font-size:11px; font-weight:700; gap:2px;
-        ">
-          <span style="font-size:16px;">📖</span> Qo'llanma
-        </a>
-        <button onclick="window.openMissedDoseModal()" style="
-          display:flex; flex-direction:column; align-items:center; padding:6px 8px;
-          background:none; border:none; color:#D4695A; font-size:11px; font-weight:800; gap:2px; cursor:pointer;
-        ">
-          <span style="font-size:16px;">⚠️</span> Unutdim
-        </button>
-        <a href="/risk.html" onclick="window.tmaHaptic('light')" style="
-          display:flex; flex-direction:column; align-items:center; padding:6px 8px;
-          text-decoration:none; color:#2D2A26; font-size:11px; font-weight:700; gap:2px;
-        ">
-          <span style="font-size:16px;">🧪</span> Test
-        </a>
-        <a href="/faq.html" onclick="window.tmaHaptic('light')" style="
-          display:flex; flex-direction:column; align-items:center; padding:6px 8px;
-          text-decoration:none; color:#2D2A26; font-size:11px; font-weight:700; gap:2px;
-        ">
-          <span style="font-size:16px;">❓</span> FAQ
-        </a>
-        <a href="tel:1003" onclick="window.tmaHaptic('medium')" style="
-          display:flex; flex-direction:column; align-items:center; padding:6px 12px;
-          background:#3E6B57; color:#FFFFFF; border-radius:20px; text-decoration:none;
-          font-size:11px; font-weight:800; gap:2px;
-        ">
-          <span style="font-size:14px;">📞</span> 1003
-        </a>
-      `;
-      document.body.appendChild(bar);
-    }
+    const legacy = document.getElementById('tma-quick-bar');
+    if (legacy) legacy.remove();
   });
 })();
