@@ -93,7 +93,7 @@
     function send() {
       submitBtn.disabled = true;
       submitFeedback({
-        p_page_url: location.href,
+        p_page_url: location.origin + location.pathname,
         p_rating: rating,
         p_reason: reason,
         p_comment: textarea.value.trim() || null,
