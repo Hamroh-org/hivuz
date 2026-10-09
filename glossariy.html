@@ -11,23 +11,27 @@
   gtag('config', 'G-728QDN469S');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HIV atamalari lug'ati — Glossariy | hiv.hikmatillo.work</title>
-<meta name="description" content="HIV, ARVT, CD4, PrEP, U=U va boshqa tibbiy atamalar — o'zbekcha sodda tushuntirish bilan.">
+<title>OIV atamalari lug'ati — Glossariy | hiv.hikmatillo.work</title>
+<meta name="description" content="OIV, ARV, CD4, PrEP, A=U va boshqa tibbiy atamalar — o'zbekcha sodda tushuntirish bilan.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hiv.hikmatillo.work/glossariy.html">
-<meta property="og:title" content="HIV atamalari lug'ati — hiv.hikmatillo.work">
-<meta property="og:description" content="HIV, ARVT, CD4, PrEP, U=U va 30+ tibbiy atama — o'zbekcha sodda tushuntirish bilan.">
+<meta property="og:title" content="OIV atamalari lug'ati — hiv.hikmatillo.work">
+<meta property="og:description" content="OIV, ARV, CD4, PrEP, A=U va 30+ tibbiy atama — o'zbekcha sodda tushuntirish bilan.">
 <meta property="og:image" content="https://hiv.hikmatillo.work/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://hiv.hikmatillo.work/glossariy.html">
+<link rel="alternate" hreflang="uz" href="https://hiv.hikmatillo.work/glossariy.html">
+<link rel="alternate" hreflang="ru" href="https://hiv.hikmatillo.work/ru/glossariy.html">
+<link rel="alternate" hreflang="kk" href="https://hiv.hikmatillo.work/kk/glossariy.html">
+<link rel="alternate" hreflang="x-default" href="https://hiv.hikmatillo.work/glossariy.html">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#3E6B57">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="/tma.js?v=2.0" defer></script>
+<script src="/tma.js?v=2.1" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"DefinedTermSet","name":"HIV atamalari lug'ati","description":"HIV va ARVT bilan bog'liq tibbiy atamalar — o'zbekcha tushuntirish bilan","inLanguage":"uz","url":"https://hiv.hikmatillo.work/glossariy.html"}
+{"@context":"https://schema.org","@type":"DefinedTermSet","name":"OIV atamalari lug'ati","description":"OIV va ARV bilan bog'liq tibbiy atamalar — o'zbekcha tushuntirish bilan","inLanguage":"uz","url":"https://hiv.hikmatillo.work/glossariy.html"}
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -84,6 +88,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 .quick-exit-btn:hover{background:#B85042;transform:translateY(-1px);}
 .exit-hint{font-size:9px;opacity:0.8;}
 @media(max-width:600px){.content{padding:1.5rem 1.25rem 3rem;}.hero{padding:2.5rem 1.25rem 2rem;}.search-wrap,.alpha-nav{padding-left:1.25rem;padding-right:1.25rem;}.term-name{min-width:130px;}.quick-exit-btn{top:auto;bottom:24px;left:16px;right:auto;padding:9px 13px;font-size:10px;}}
+@media(max-width:600px){.term-head{flex-wrap:wrap;gap:6px 14px}.term-name{flex:1 1 calc(100% - 40px);min-width:0}.term-icon{order:2}.term-short{order:3;flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -101,12 +106,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 
 <div class="hero">
   <div class="hero-tag">Lug'at · Glossariy</div>
-  <h1 class="hero-title">HIV atamalari <em>lug'ati</em></h1>
-  <p class="hero-desc">Tibbiy so'zlar tushunarsiz bo'lsa — bu yerda. Sodda, o'zbekcha, aniq.</p>
+  <h1 class="hero-title">OIV atamalari <em>lug'ati</em></h1>
+  <p class="hero-desc">Tibbiy atamalar sodda, tushunarli, o'zbekcha va odob me'yorlari bilan tushuntirilgan.</p>
 </div>
 
 <div class="search-wrap">
-  <input type="text" class="search-box" id="searchBox" placeholder="Atamani qidiring... (masalan: ARVT, CD4, PrEP)" oninput="search(this.value)">
+  <input type="text" class="search-box" id="searchBox" placeholder="Atamani qidiring... (masalan: ARV, A=U, CD4, Himoya vositasi)" oninput="search(this.value)">
 </div>
 
 <div class="alpha-nav" id="alphNav"></div>
@@ -124,191 +129,201 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1.25re
 <script>
 const TERMS = [
   {
-    name: "ARVT",
-    full_name: "Antiretroviral terapiya",
+    name: "ARV",
+    full_name: "Antiretrovirus terapiya (ARV)",
     letter: "A",
-    short: "HIV ni bostirish uchun ichiladigan dorilar majmuasi",
-    full: "<b>Antiretroviral terapiya</b> — HIV virusining ko'payishini to'xtatuvchi dorilar. Odatda kuniga 1 tabletka. ARVT HIV ni yo'q qilmaydi, lekin virusni aniqlanmaydigan darajaga tushiradi. Bu immunitetni saqlaydi va hayot sifatini keskin yaxshilaydi.",
+    short: "OIV ni bostirish uchun qabul qilinadigan zamonaviy muolaja",
+    full: "<b>Antiretrovirus terapiya (ARV)</b> — OIV virusining ko'payishini to'xtatuvchi dorilar majmuasi. Odatda kuniga 1 tabletka qabul qilinadi. ARV OIV ni to'liq yo'qotmaydi, lekin virusni qonda aniqlanmaydigan darajaga (A=U) tushiradi. Bu immunitetni saqlaydi va insonning sog'lom, uzoq umr kechirishini ta'minlaydi.",
     tag: "Davolash",
     link: "./blog/arvt-qanday-ishlaydi.html",
-    link_text: "ARVT qanday ishlaydi?"
+    link_text: "ARV qanday ishlaydi?"
   },
   {
-    name: "AIDS / OITS",
-    full_name: "Acquired Immunodeficiency Syndrome",
+    name: "A=U (Aniqlanmaydi = Yuqmaydi)",
+    full_name: "Undetectable = Untransmittable (A=U)",
     letter: "A",
-    short: "HIV davolanmay qolsa keladigan og'ir holat (CD4 <200)",
-    full: "<b>Orttirilgan immunitet tanqisligi sindromi</b>. HIV uzoq vaqt davolanmay qolsa rivojlanadi — CD4 200 dan pastga tushsa yoki og'ir infeksiya bo'lsa. <b>ARVT bilan AIDS kelmaydi.</b> Bugun HIV bilan yashovchilarning aksariyati AIDS bosqichiga o'tmaydi.",
-    tag: "Asoslar",
-    link: "./blog/hiv-nima.html",
-    link_text: "HIV nima?"
+    short: "Aniqlanmaydi = Yuqmaydi — JSST tasdiqlagan xalqaro haqiqat",
+    full: "<b>Aniqlanmaydi = Yuqmaydi (A=U)</b>. Muntazam ARV muolajasi bilan virus yuklamasi aniqlanmaydigan darajaga tushganda (<200 nusxa/mL), OIV yaqin munosabatlarda boshqalarga aslo yuqmaydi. Bu JSST va CDC tomonidan tasdiqlangan ilmiy haqiqatdir. 135,000+ ta holatda nol yuqtirish qayd etilgan.",
+    tag: "Ilmiy",
+    link: "./blog/u-equals-u.html",
+    link_text: "A=U haqida batafsil"
   },
   {
-    name: "Aniqlanmaydi",
-    full_name: "Undetectable",
+    name: "Aniqlanmaydigan daraja",
+    full_name: "Undetectable viral load",
     letter: "A",
-    short: "Viral yuk <50 kopiya/mL — U=U ning asosi",
-    full: "Viral yuk <b>50 kopiya/mL dan past</b> bo'lsa «aniqlanmaydi» deyiladi. Bu ARVT samarali ishlayapti degani. Aniqlanmaydigan darajada HIV jinsiy yo'l bilan <b>yuqtira olmaydi</b> — bu U=U qoidasi.",
+    short: "Virus yuklamasi <50 nusxa/mL — A=U ning asosi",
+    full: "Qondagi virus yuklamasi <b>50 nusxa/mL dan past</b> bo'lsa «aniqlanmaydigan daraja» deyiladi. Bu ARV muolajasi yuqori samara berayotganidan dalolat beradi. Aniqlanmaydigan darajada virus yaqinlikda <b>boshqalarga aslo o'tmaydi</b>.",
     tag: "Tibbiy",
     link: "./blog/u-equals-u.html",
-    link_text: "U=U nima degani?"
+    link_text: "A=U nima degani?"
   },
   {
     name: "CD4 hujayra",
     full_name: "CD4+ T-limfotsit",
     letter: "C",
-    short: "Organizmning asosiy himoyachilari — HIV shu hujayralarni yo'q qiladi",
-    full: "<b>CD4+ T-limfotsitlar</b> — immunitet tizimining asosiy «komandiri». Sog'lom odamda 500–1500 kl/mm³. HIV shu hujayralarni zabt etib ko'payadi va ularni yo'q qiladi. CD4 qanchalik past bo'lsa — immunitet shuncha zaif. ARVT CD4 ni tiklaydi.",
+    short: "Organizmning asosiy himoyachilari — immunitet asosi",
+    full: "<b>CD4+ T-limfotsitlar</b> — immunitet tizimining asosiy «qo'riqchilari». Sog'lom insonda 500–1500 kl/mm³ bo'ladi. OIV shu hujayralarga ta'sir etadi. Muntazam ARV muolajasi CD4 hujayralarini asraydi va immunitetni to'liq tiklaydi.",
     tag: "Tibbiy",
     link: "./blog/cd4-va-viral-yuk.html",
     link_text: "CD4 va Viral Yuk haqida"
   },
   {
-    name: "Disclosure",
-    full_name: "Statusni oshkor qilish",
-    letter: "D",
-    short: "HIV statusini birovga aytish — ixtiyoriy qaror",
-    full: "HIV statusini boshqalarga aytish. Bu — <b>faqat sizning qaroringiz</b>. Hech kim sizni bunga majburlay olmaydi. Kimga, qachon, qanday aytish — hammasini siz hal qilasiz. Jinsiy sherikkagina axloqiy majburiyat mavjud.",
-    tag: "Shaxsiy",
-    link: "./blog/disclosure.html",
-    link_text: "Odamlarga aytishim kerakmi?"
-  },
-  {
     name: "ELISA",
     full_name: "Enzyme-Linked Immunosorbent Assay",
     letter: "E",
-    short: "4-avlod HIV antitelo/antigen testi — laboratoriya standarti",
-    full: "<b>Ferment bog'langan immunosorbent tahlil</b>. HIV antitelolari va p24 antigenini birga aniqlaydi (4-avlod). Oyna davri: 18–45 kun. Aniqlik: >99.5%. Standart laboratoriya testi.",
+    short: "4-avlod OIV antitelo/antigen testi — laboratoriya standarti",
+    full: "<b>Ferment bog'langan immunosorbent tahlil</b>. OIV antitelolari va p24 antigenini birgalikda aniqlaydi (4-avlod). Oyna davri: 18–45 kun. Aniqlik darajasi: >99.5%. Standart laboratoriya tahlili.",
     tag: "Test",
     link: "./blog/test-turlari.html",
-    link_text: "HIV testi turlari"
+    link_text: "OIV testi turlari"
   },
   {
     name: "Gepatit B",
     full_name: "Gepatit B virusi (HBV)",
     letter: "G",
-    short: "Jigar kasalligi — HIV bilan bir yo'l bilan yuqadi",
-    full: "<b>Jigar yallig'lanishi</b> B virusi. HIV bilan bir xil yo'l bilan yuqadi — qon va jinsiy aloqa. HIV bilan yashovchilarning ~10% Gepatit B ham bor. Ba'zi ARVT dorilar (tenofovir) ikkalasini ham davolaydi. Gepatit B uchun emlash mavjud.",
+    short: "Jigar salomatligi — OIV bilan bir xil yo'llar orqali o'tishi mumkin",
+    full: "<b>Gepatit B virusi</b> — jigar to'qimalariga ta'sir qiluvchi virus. OIV kabi biologik suyuqliklar va steril bo'lmagan asboblar orqali o'tadi. Ba'zi ARV preparatlari har ikki holatda ham yordam beradi. Gepatit B ga qarshi emlash mavjud.",
     tag: "Tibbiy",
     link: "./blog/hiv-va-kasalliklar.html",
-    link_text: "HIV va boshqa kasalliklar"
+    link_text: "OIV va boshqa kasalliklar"
   },
   {
     name: "Gepatit C",
     full_name: "Gepatit C virusi (HCV)",
     letter: "G",
-    short: "Jigar kasalligi — bugun to'liq davolanadi",
-    full: "<b>Gepatit C</b> asosan igna orqali yuqadi. Bugun 8–12 haftalik kurs bilan <b>to'liq davolanadi</b>. HIV bilan birga bo'lsa ham davolash mumkin. Har yili Gepatit C tekshiruvi o'tkazish tavsiya etiladi.",
+    short: "Jigar salomatligi — bugungi kunda to'liq shifo topadi",
+    full: "<b>Gepatit C</b> asosan steril bo'lmagan tibbiy asboblar orqali o'tadi. Hozirgi kunda 8–12 haftalik muolaja kursi bilan <b>to'liq davolanadi</b>. OIV bilan birga bo'lsa ham samarali muolaja qilinadi.",
     tag: "Tibbiy",
     link: "./blog/hiv-va-kasalliklar.html",
-    link_text: "HIV va boshqa kasalliklar"
+    link_text: "OIV va boshqa kasalliklar"
   },
   {
-    name: "HIV / OIV",
-    full_name: "Human Immunodeficiency Virus",
+    name: "Himoya vositasi",
+    full_name: "To'siq vositasi (shaxsiy himoya)",
     letter: "H",
-    short: "Odam immuniteti tanqisligi virusi — ARVT bilan boshqariladi",
-    full: "<b>Odam immuniteti tanqisligi virusi</b>. CD4 hujayralarini zabt etib, immunitetni zaiflashtiradi. ARVT bilan HIV boshqariladigan surunkali kasallikka aylanadi — xuddi diabet yoki gipertoniya kabi. <b>HIV = AIDS emas.</b>",
-    tag: "Asoslar",
-    link: "./blog/hiv-nima.html",
-    link_text: "HIV nima?"
+    short: "Yaqin munosabatlarda OIV va infeksiyalardan ishonchli shaxsiy to'siq",
+    full: "<b>Himoya vositasi (to'siq vositasi)</b> — yaqin munosabatlarda OIV va boshqa infeksiyalarning o'tishidan 98% gacha samarali asraydi. Ehtiyotkorlik va to'g'ri foydalanish orqali salomatlikni to'liq himoyalash imkonini beradi.",
+    tag: "Profilaktika",
+    link: "./blog/prezervativ.html",
+    link_text: "Himoya vositasidan foydalanish"
   },
   {
     name: "Immun tizim",
     full_name: "Immunitet tizimi",
     letter: "I",
-    short: "Organizmning kasalliklardan himoya qiluvchi tizimi",
-    full: "Organizmni infeksiya, virus va bakteriyalardan himoya qiladigan murakkab tizim. CD4 hujayralari bu tizimning asosiy qismi. HIV immunitetni asta-sekin zaiflashtiradi — ARVT bu jarayonni to'xtatadi.",
+    short: "Organizmning kasalliklardan himoya qiluvchi ichki qalqoni",
+    full: "Organizmni turli infeksiya, virus va tashqi omillardan himoya qiluvchi murakkab tizim. CD4 hujayralari bu tizimning yetakchi bo'g'inidir. ARV muolajasi ushbu qalqonni mustahkam saqlaydi.",
     tag: "Asoslar",
     link: "./blog/hiv-nima.html",
-    link_text: "HIV nima?"
+    link_text: "OIV nima?"
   },
   {
     name: "Integraz",
     full_name: "Integraz fermenti",
     letter: "I",
-    short: "HIV DNK sini hujayra yadrosi DNK siga kirituvchi ferment",
-    full: "<b>Integraz</b> — HIV ning ko'payish siklida 4-bosqichda ishlaydigan ferment. Virus DNK sini hujayra yadrosi DNK siga kiritadi. ARVT ning bir guruhi — <b>integraz inhibitorlari</b> — shu jarayonni bloklaydi.",
+    short: "OIV ning hujayra ichiga kirib joylashishiga ta'sir qiluvchi ferment",
+    full: "<b>Integraz</b> — OIV ning ko'payish zanjirida ishlaydigan ferment. ARV ning zamonaviy guruhi — <b>integraz inhibitorlari</b> — ushbu jarayonni to'xtatib, virusning ko'payishiga yo'l qo'ymaydi.",
     tag: "Ilmiy",
     link: "./blog/arvt-qanday-ishlaydi.html",
-    link_text: "ARVT qanday ishlaydi?"
+    link_text: "ARV qanday ishlaydi?"
+  },
+  {
+    name: "Jamiyat munosabati (Stigma)",
+    full_name: "Stigma va tushunmovchiliklar",
+    letter: "J",
+    short: "OIV bilan yashovchilarga nisbatan asossiz xavotir va kamsitish",
+    full: "<b>Stigma</b> — OIV haqida yetarli ma'lumotga ega bo'lmaslik oqibatidagi noo'rin qo'rquv. Bu tibbiy jihatdan asossizdir. <b>ARV qabul qiluvchi inson (A=U) jamiyat va yaqinlari uchun mutlaqo xavfsizdir.</b>",
+    tag: "Jamiyat",
+    link: "./blog/stigma.html",
+    link_text: "Jamiyat munosabati va huquqlar"
   },
   {
     name: "Kapsid",
     full_name: "Viral kapsid",
     letter: "K",
-    short: "HIV virusining ichki himoya qobig'i",
-    full: "<b>Kapsid</b> — virusning ichki qobig'i. HIV RNK va muhim fermentlarini saqlaydi. Kapsid shakli — konussimon. Ba'zi yangi ARVT dorilar kapsidni nishonga oladi.",
+    short: "OIV virusining ichki himoya qobig'i",
+    full: "<b>Kapsid</b> — virusning ichki qobig'i bo'lib, uning genetik materialini saqlaydi. Zamonaviy ARV vositalarining ayrim turlari aynan kapsidni zararsizlantirishga yo'naltirilgan.",
     tag: "Ilmiy",
     link: "./blog/hiv-nima.html",
-    link_text: "HIV nima?"
+    link_text: "OIV nima?"
   },
   {
     name: "Maxfiylik",
-    full_name: "Tibbiy maxfiylik",
+    full_name: "Tibbiy sir va shaxsiy daxlsizlik",
     letter: "M",
-    short: "HIV statusingiz — tibbiy sir, qonun bilan himoyalangan",
-    full: "O'zbekiston qonuni (№813-I, 8-modda): HIV statusingiz — <b>tibbiy sir</b>. Shifokor, hamshira yoki laboratoriya xodimi sizning ruxsatingizsiz hech kimga aytolmaydi. Buzgan xodim jinoiy javobgarlikka tortilishi mumkin.",
+    short: "OIV statusingiz — davlat qonuni bilan himoyalangan tibbiy sir",
+    full: "O'zbekiston Respublikasi Qonuni (№813-I, 8-modda): OIV tashxisi — <b>qat'iy tibbiy sir</b> hisoblanadi. Shifokor yoki tibbiyot xodimi sizning yozma ruxsatingizsiz bu ma'lumotni hech kimga oshkor qila olmaydi. Maxfiylikni buzish qonuniy javobgarlikka sabab bo'ladi.",
     tag: "Huquq",
     link: "./blog/huquqlarim.html",
     link_text: "Huquqlarim nima?"
   },
   {
     name: "№813-I Qonun",
-    full_name: "O'zR OITS qonuni",
+    full_name: "O'zR OITSga qarshi kurash to'g'risidagi qonuni",
     letter: "N",
-    short: "O'zbekistonda HIV bilan yashovchilarning huquqlarini belgilovchi asosiy qonun",
-    full: "<b>«OITS kasalligining oldini olish to'g'risida»gi Qonun</b> — 1999 yil 1-avgust. 4-modda: bepul ARVT, tibbiy yordam, ijtimoiy himoya. 8-modda: maxfiylik. HIV bilan yashovchilarning barcha asosiy huquqlari shu qonunda.",
+    short: "O'zbekistonda OIV bilan yashovchilarning huquqlarini kafolatlovchi qonun",
+    full: "<b>«Odamning immunitet tanqisligi virusi keltirib chiqaradigan kasallik (OIV infeksiyasi) tarqalishiga qarshi kurashish to'g'risida»gi Qonun</b>. 4-modda: bepul ARV muolajasi, tibbiy ko'mak va ijtimoiy himoyani kafolatlaydi.",
     tag: "Huquq",
     link: "./blog/huquqlarim.html",
-    link_text: "O'zbekistondagi huquqlar"
+    link_text: "O'zbekistondagi qonuniy huquqlar"
   },
   {
-    name: "Oyna davri",
-    full_name: "Window period",
+    name: "OIV / HIV",
+    full_name: "Odam immunitet tanqisligi virusi",
     letter: "O",
-    short: "HIV yuqqandan test musbat ko'rsatguniga qadar o'tadigan vaqt",
-    full: "<b>Oyna davri</b> — HIV yuqqandan keyin test aniqlay olguniga qadar o'tadigan vaqt. Har test turi uchun farq qiladi: tez-test (23–90 kun), ELISA (18–45 kun), PCR (10–33 kun). Bu davrda test manfiy bo'lsa ham HIV bo'lishi mumkin.",
-    tag: "Test",
-    link: "./blog/test-turlari.html",
-    link_text: "HIV testi turlari"
+    short: "Odam immunitet tanqisligi virusi — ARV bilan to'liq nazorat qilinadi",
+    full: "<b>Odam immunitet tanqisligi virusi (OIV)</b>. CD4 hujayralariga ta'sir qiladi. Zamonaviy ARV muolajasi yordamida OIV to'liq boshqariladigan surunkali holatga aylanadi — inson uzoq va farovon umr ko'radi. <b>OIV bu OITS emas.</b>",
+    tag: "Asoslar",
+    link: "./blog/hiv-nima.html",
+    link_text: "OIV nima?"
   },
   {
-    name: "Opportunistik infeksiya",
-    full_name: "Opportunistic infection",
+    name: "OITS / AIDS",
+    full_name: "Orttirilgan immunitet tanqisligi sindromi",
     letter: "O",
-    short: "Zaiflashgan immunitetda rivojlanadigan kasalliklar",
-    full: "Immunitet zaiflashganda keladigan kasalliklar — sog'lom odamda ular xavfli emas. Sil, pnevmoniya, kandidiaz va boshqalar. ARVT bilan CD4 ko'tarilsa, opportunistik infeksiyalar xavfi keskin kamayadi.",
+    short: "OIV o'z vaqtida davolanmaganda kelishi mumkin bo'lgan holat (CD4 <200)",
+    full: "<b>Orttirilgan immunitet tanqisligi sindromi (OITS)</b>. OIV uzoq yillar davolanmay qolgandagina yuzaga keladi. <b>ARV muolajasini o'z vaqtida olayotgan insonlarda OITS aslo rivojlanmaydi.</b>",
+    tag: "Asoslar",
+    link: "./blog/hiv-nima.html",
+    link_text: "OIV nima?"
+  },
+  {
+    name: "Opportunistik holatlar",
+    full_name: "Opportunistic infections",
+    letter: "O",
+    short: "Immunitet zaiflashganda yuzaga kelishi mumkin bo'lgan ikkilamchi holatlar",
+    full: "Immunitet kuchsizlangan paytda vujudga keladigan infeksiyalar. Muntazam ARV muolajasi va CD4 ko'tarilishi natijasida bunday holatlar xavfi mutlaqo yo'qoladi.",
     tag: "Tibbiy",
     link: null,
     link_text: null
   },
   {
-    name: "PCR / NAT",
-    full_name: "Polymerase Chain Reaction / Nucleic Acid Test",
-    letter: "P",
-    short: "HIV RNK sini to'g'ridan-to'g'ri aniqlaydi — eng erta test",
-    full: "<b>Polimeraz zanjir reaktsiyasi</b>. HIV ning o'zini (RNK) aniqlaydi — antitelolarga emas. Oyna davri: 10–33 kun. Aniqlik: >99.9%. Favqulodda holatlarda yoki yuqori xavfda ishlatiladi. Qimmat va faqat shifokor buyurtmasi bilan.",
+    name: "Oyna davri",
+    full_name: "Oyna (serologik) davri",
+    letter: "O",
+    short: "Virus organizmga tushgandan test aniqlaguncha bo'lgan vaqt oralig'i",
+    full: "<b>Oyna davri</b> — organizmda virusga qarshi antitelolar yetarli miqdorda shakllanishi uchun ketadigan vaqt. Tahlil turiga qarab: ekspress-test (23–90 kun), ELISA (18–45 kun), PZR (10–33 kun).",
     tag: "Test",
     link: "./blog/test-turlari.html",
-    link_text: "HIV testi turlari"
+    link_text: "Tahlil turlari"
   },
   {
-    name: "PEP",
+    name: "PEP (Favqulodda profilaktika)",
     full_name: "Post-Exposure Prophylaxis",
     letter: "P",
-    short: "Ta'sirgacha 72 soat ichida boshlanadigan favqulodda profilaktika",
-    full: "<b>Ta'sirgacha keyingi profilaktika</b>. HIV bilan kontakt bo'lgandan keyin <b>72 soat ichida</b> boshlanishi kerak. 28 kunlik kurs. Vaqtida boshlanmasa ishlamaydi. SPID markazi yoki shifoxonada olinadi.",
+    short: "Ehtimoliy xavfdan so'ng 72 soat ichida qabul qilinadigan shoshilinch kurs",
+    full: "<b>Favqulodda profilaktika (PEP)</b> — xavfli vaziyatdan so'ng <b>dastlabki 72 soat ichida</b> boshlanishi lozim bo'lgan 28 kunlik qisqa dori kursi. OITSga qarshi kurash markazlarida taqdim etiladi.",
     tag: "Profilaktika",
     link: "./blog/prep-nima.html",
-    link_text: "PrEP va PEP farqi"
+    link_text: "PrEP va PEP haqida"
   },
   {
-    name: "PrEP",
+    name: "PrEP (Doimiy profilaktika)",
     full_name: "Pre-Exposure Prophylaxis",
     letter: "P",
-    short: "HIV yuqmaslik uchun kunlik dori — 99% himoya",
-    full: "<b>Ta'sirgacha profilaktika</b>. Har kuni ichiladigan dori. HIV manfiy odamlar uchun. To'g'ri ichilsa HIV yuqish xavfini <b>99% gacha kamaytiradi</b>. Shifokordan retsept bilan olinadi. Har 3 oyda HIV testi topshiriladi.",
+    short: "OIV dan oldindan himoyalanish uchun qabul qilinadigan dori — 99% samara",
+    full: "<b>Ta'sirgacha profilaktika (PrEP)</b> — OIV manfiy bo'lgan insonlar salomatligini himoyalash uchun qabul qiladigan dori. To'g'ri qabul qilinganda xavfni <b>99% gacha kamaytiradi</b>.",
     tag: "Profilaktika",
     link: "./blog/prep-nima.html",
     link_text: "PrEP nima?"
@@ -317,111 +332,111 @@ const TERMS = [
     name: "Proteaz",
     full_name: "Proteaz fermenti",
     letter: "P",
-    short: "Yangi HIV zarrachalarini «yig'ish» uchun kerak bo'lgan ferment",
-    full: "<b>Proteaz</b> — HIV ko'payishining oxirgi bosqichida ishlaydi. Yangi viruslar hujayrani tark etayotganda ularni «pishitadi». <b>Proteaz inhibitorlari</b> shu jarayonni bloklaydi — yangi viruslar o'zidan keyin yuqtira olmaydi.",
+    short: "Virus zarralari shakllanishida ishtirok etuvchi ferment",
+    full: "<b>Proteaz</b> — virusning ko'payish bosqichida muhim ferment. Proteaz inhibitorlari ushbu fermentni to'xtatib, zararsizlantiradi.",
     tag: "Ilmiy",
     link: "./blog/arvt-qanday-ishlaydi.html",
-    link_text: "ARVT qanday ishlaydi?"
+    link_text: "ARV qanday ishlaydi?"
+  },
+  {
+    name: "PZR / NAT",
+    full_name: "Polimeraz zanjir reaksiyasi (PCR)",
+    letter: "P",
+    short: "Virus genetik kodini to'g'ridan-to'g'ri aniqlovchi eng erta tahlil",
+    full: "<b>PZR (PCR) tahlili</b> — OIV RNK sini to'g'ridan-to'g'ri yuqori aniqlik bilan aniqlaydi. Oyna davri: 10–33 kun.",
+    tag: "Test",
+    link: "./blog/test-turlari.html",
+    link_text: "Tahlil turlari"
   },
   {
     name: "Rezistentlik",
-    full_name: "Dori rezistentligi",
+    full_name: "Dori ta'siriga chidamlilik",
     letter: "R",
-    short: "Virus mutatsiya tufayli dorini engib o'tishi",
-    full: "HIV ARVT ni muntazam ichilmasa mutatsiyaga uchrab, dori ta'sirini qabul qilmaydigan bo'lishi mumkin. <b>Rezistentlik</b> — bu dori deyarli ishlamaydigan holat. Shuning uchun ARVT ni har kuni bir xil vaqtda ichish juda muhim.",
+    short: "Dorini o'z vaqtida qabul qilmaslik oqibatida samaraning pasayishi",
+    full: "Agar ARV dorilari belgilangan vaqtda muntazam qabul qilinmasa, virus dori ta'siriga o'rganib qolishi mumkin. Shuning uchun dori intizomiga qat'iy rioya qilish salomatlik garovidir.",
     tag: "Davolash",
     link: "./blog/arvt-unutsam.html",
-    link_text: "ARVT unutsam nima bo'ladi?"
+    link_text: "Dori qabul qilish intizomi"
   },
   {
     name: "Reverse transkriptaza",
     full_name: "Reverse transcriptase",
     letter: "R",
-    short: "HIV RNK sini DNK ga aylantiruvchi ferment",
-    full: "<b>Reverse transkriptaza</b> — HIV ning ko'payishida 3-bosqichda ishlaydigan ferment. Virus RNK sini hujayra DNK siga aylantiradi. NRTI va NNRTI ARVT guruhlari shu fermentni bloklaydi.",
+    short: "Virus genetik axborotini qayta ishlovchi ferment",
+    full: "<b>Reverse transkriptaza</b> — OIV ning ko'payish zanjirida ishlaydigan ferment. ARV preparatlari ushbu jarayonni bloklaydi.",
     tag: "Ilmiy",
     link: "./blog/arvt-qanday-ishlaydi.html",
-    link_text: "ARVT qanday ishlaydi?"
+    link_text: "ARV qanday ishlaydi?"
   },
   {
     name: "RNK",
     full_name: "Ribonuklein kislota",
     letter: "R",
-    short: "HIV ning genetik materiali — virus ko'payishi uchun zarur",
-    full: "<b>RNK</b> — HIV ning «ko'rsatmalar kitobi». Virus bu ma'lumotdan foydalanib CD4 hujayralarida minglab yangi nusxalar yaratadi. PCR testi shu RNK ni aniqlaydi.",
+    short: "Virusning genetik materiali",
+    full: "<b>RNK</b> — OIV ning irsiy ma'lumotlar to'plami. PZR tahlili qonda aynan shu RNK nusxalarini hisoblaydi.",
     tag: "Ilmiy",
     link: "./blog/hiv-nima.html",
-    link_text: "HIV nima?"
+    link_text: "OIV nima?"
   },
   {
-    name: "Sil / TB",
+    name: "Sil (Tuberkulyoz)",
     full_name: "Tuberkulyoz",
     letter: "S",
-    short: "HIV bilan eng tez-tez uchraydigan opportunistik infeksiya",
-    full: "<b>Tuberkulyoz (sil)</b> — HIV bilan yashovchilar uchun eng keng tarqalgan opportunistik infeksiya. HIV immunitetni zaiflashtirsa, yashirin sil aktivlashishi mumkin. Har yili sil tekshiruvi tavsiya etiladi. Ikkalasi ham davolash mumkin.",
+    short: "Nafas yo'llari salomatligi — profilaktik nazorat lozim",
+    full: "<b>Sil kasalligi</b> — OIV bilan yashovchilar salomatligida e'tibor qaratilishi zarur bo'lgan holat. Har yili profilaktik tekshiruv tavsiya etiladi. Bugungi kunda to'liq davolanadi.",
     tag: "Tibbiy",
     link: "./blog/hiv-va-kasalliklar.html",
-    link_text: "HIV va boshqa kasalliklar"
+    link_text: "OIV va boshqa kasalliklar"
   },
   {
-    name: "Stigma",
-    full_name: "HIV stigmasi",
-    letter: "S",
-    short: "HIV bilan yashovchilarga noto'g'ri munosabat va kamsitish",
-    full: "<b>Stigma</b> — HIV bor deb qo'rquv, nafrat yoki kamsitish. U tibbiy asossiz va zarar keltiradi: odamlarni test topshirishdan, dori olishdan to'sadi. <b>ARVT ichadigan odam — boshqalarga xavfli emas.</b>",
-    tag: "Jamiyat",
-    link: "./blog/stigma.html",
-    link_text: "Stigma va diskriminatsiya"
+    name: "Tashxisni bildirish (Disclosure)",
+    full_name: "OIV holatini yaqin insonlarga bildirish",
+    letter: "T",
+    short: "Tashxis haqida so'zlash — faqat sizning ixtiyoriy qaroringiz",
+    full: "OIV tashxisini yaqinlaringizga aytish — <b>faqat sizning shaxsiy xohishingiz</b>. Qonun bo'yicha hech kim sizni bunga majburlashga haqli emas. Kimga va qachon aytishni o'zingiz hal qilasiz.",
+    tag: "Shaxsiy",
+    link: "./blog/disclosure.html",
+    link_text: "Yaqinlarga qanday aytish kerak?"
   },
   {
     name: "Tez-test",
-    full_name: "Rapid HIV test",
+    full_name: "Ekspress-tahlil",
     letter: "T",
-    short: "20–30 daqiqada natija beradigan HIV testi",
-    full: "<b>Tez-test</b> — barmoq uchi yoki so'lakdan olinadi, 20–30 daqiqada natija beradi. SPID markazlarida bepul. Oyna davri: 23–90 kun. Aniqlik: >99%. Musbat natija — albatta Western Blot bilan tasdiqlanadi.",
+    short: "15–20 daqiqada dastlabki natijani ko'rsatuvchi tezkor test",
+    full: "<b>Tez-test</b> — barmoq uchidagi bir tomchi qondan 15–20 daqiqada dastlabki natijani ko'rsatadi. OITSga qarshi kurash markazlarida bepul va anonim o'tkaziladi.",
     tag: "Test",
     link: "./blog/test-turlari.html",
-    link_text: "Test turlari haqida"
+    link_text: "Tahlil turlari"
   },
   {
-    name: "U=U",
-    full_name: "Undetectable = Untransmittable",
-    letter: "U",
-    short: "Aniqlanmaydi = Yuqtirmaydi — WHO tasdiqlagan haqiqat",
-    full: "<b>Aniqlanmaydi = Yuqtirmaydi</b>. ARVT bilan viral yuk aniqlanmaydigan darajaga tushsa, HIV jinsiy yo'l bilan yuqtira olmaydi. 2019 yil WHO va CDC rasmiy tasdiqladilar. 135,000+ ta himoyalanmagan aloqada — 0 ta yuqtirish.",
-    tag: "Ilmiy",
-    link: "./blog/u-equals-u.html",
-    link_text: "U=U haqida batafsil"
-  },
-  {
-    name: "Viral yuk",
-    full_name: "Viral load",
+    name: "Viral yuklama",
+    full_name: "Virus yuklamasi (Viral load)",
     letter: "V",
-    short: "1 mL qondagi HIV zarrachalar soni",
-    full: "<b>Viral yuk</b> — qon zardobidagi HIV zarrachalar soni (kopiya/mL). Sog'lom boshlang'ich: yuz minglab. ARVT boshlanganidan 3–6 oyda «aniqlanmaydi» (&lt;50) darajaga tushadi. Har 3–6 oyda tekshiriladi.",
+    short: "1 mL qondagi OIV nusxalari miqdori",
+    full: "<b>Virus yuklamasi</b> — 1 mL qondagi virus nusxalari soni. ARV muolajasi boshlangach, 3–6 oy ichida virus yuklamasi «aniqlanmaydigan daraja»ga (<50 nusxa/mL) tushadi (A=U).",
     tag: "Tibbiy",
     link: "./blog/cd4-va-viral-yuk.html",
     link_text: "CD4 va Viral Yuk"
   },
   {
-    name: "Western Blot",
-    full_name: "Western Blot testi",
+    name: "Western Blot (Immunoblot)",
+    full_name: "Tasdiqlovchi tahlil",
     letter: "W",
-    short: "Musbat ELISA/tez-testni tasdiqlash uchun ishlatiladi",
-    full: "<b>Western Blot</b> — HIV tasdiqlash testi. Tez-test yoki ELISA musbat chiqqanda ishlatiladi. Aniqlik: >99.9%. 1–2 hafta ketadi. O'z-o'zidan topshirilmaydi — shifokor buyurtmasi bilan.",
+    short: "Dastlabki musbat natijani 100% aniqlikda tasdiqlash uchun qo'llaniladi",
+    full: "<b>Immunoblot</b> — OIV tahlilining yakuniy tasdiqlovchi bosqichi. Maxsus laboratoriya standarti.",
     tag: "Test",
     link: "./blog/test-turlari.html",
-    link_text: "HIV testi turlari"
+    link_text: "Tahlil turlari"
   },
   {
-    name: "YTS",
-    full_name: "Jinsiy yo'l bilan yuqadigan infeksiyalar",
+    name: "Yaqinlik orqali o'tuvchi infeksiyalar (YTS)",
+    full_name: "Reproduktiv salomatlik infeksiyalari",
     letter: "Y",
-    short: "Sifilis, gonoreya, xlamidiya — HIV xavfini oshiradi",
-    full: "<b>Jinsiy yo'l bilan yuqadigan kasalliklar</b> — sifilis, gonoreya, xlamidiya, genitаl gerpes. YTS bor bo'lsa HIV yuqish xavfi <b>2–5 barobarga oshadi</b> — yallig'lanish va shilliq parda shikastlanishi tufayli. Doimiy tekshiruv muhim.",
+    short: "Sifilis, xlamidiya va boshqa infeksiyalar — himoya vositasi muhim",
+    full: "<b>Yaqinlik orqali o'tuvchi infeksiyalar</b>. Bunday infeksiyalarning mavjudligi OIV o'tish ehtimolini oshirishi mumkin. Shuning uchun shaxsiy himoya vositalaridan foydalanish eng yaxshi profilaktika hisoblanadi.",
     tag: "Tibbiy",
     link: "./blog/hiv-va-kasalliklar.html",
-    link_text: "HIV va boshqa kasalliklar"
+    link_text: "Salomatlik va profilaktika"
   }
 ];
 
@@ -514,5 +529,6 @@ function search(q){
   });
 })();
 </script>
+<script src="/lang-switcher.js" defer></script>
 </body>
 </html>

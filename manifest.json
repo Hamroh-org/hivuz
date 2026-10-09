@@ -1,7 +1,7 @@
 {
-  "name": "Hamroh — OIV va ARVT Bo'yicha Maxfiy Yo'ldosh",
+  "name": "Hamroh — OIV va ARV Bo'yicha Maxfiy Hamroh",
   "short_name": "Hamroh",
-  "description": "OIV diagnozi hayot oxiri emas. ARVT, U=U, dori intizomi va bepul tibbiy ko'mak.",
+  "description": "OIV tashxisi hayot oxiri emas. ARV, A=U (U=U), dori intizomi va bepul tibbiy ko'mak.",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#FAF6F1",
