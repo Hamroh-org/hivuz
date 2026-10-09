@@ -6,7 +6,30 @@
 (() => {
   const SUPABASE_URL = 'https://wwawjyfrpdjgnxvzhkbx.supabase.co';
   const ANON_KEY = 'sb_publishable_md7EGOzln1PoeKOu4-cGUA_hvyKvyEp';
+  // REASONS — bazaga yoziladigan kanonik (o'zbekcha) qiymatlar; ko'rinadigan matn LABELS dan.
   const REASONS = ['Termin', "Tushuntirish yetarli emas", "Ko'proq misol kerak", 'Manba', 'Boshqa'];
+  const LANG = (document.documentElement.lang || 'uz').slice(0, 2);
+  const TEXTS = {
+    uz: {
+      q: "Bu maqola sizga foydali bo'ldimi?", up: '👍 Ha, foydali', down: '👎 Unchalik emas',
+      placeholder: "Yana biror narsa qo'shmoqchimisiz? (ixtiyoriy)", submit: 'Yuborish',
+      thanks: 'Fikringiz uchun rahmat — shu bilan maqolalarni yaxshilaymiz. 🙏',
+      reasons: REASONS
+    },
+    ru: {
+      q: 'Была ли эта статья вам полезна?', up: '👍 Да, полезна', down: '👎 Не совсем',
+      placeholder: 'Хотите что-то добавить? (необязательно)', submit: 'Отправить',
+      thanks: 'Спасибо за отзыв — он помогает нам улучшать статьи. 🙏',
+      reasons: ['Термин', 'Объяснения недостаточно', 'Нужно больше примеров', 'Источник', 'Другое']
+    },
+    kk: {
+      q: 'Бұл мақала сізге пайдалы болды ма?', up: '👍 Иә, пайдалы', down: '👎 Онша емес',
+      placeholder: 'Тағы бірдеңе қосқыңыз келе ме? (міндетті емес)', submit: 'Жіберу',
+      thanks: 'Пікіріңізге рахмет — осы арқылы мақалаларды жақсартамыз. 🙏',
+      reasons: ['Термин', 'Түсіндірме жеткіліксіз', 'Көбірек мысал керек', 'Дереккөз', 'Басқа']
+    }
+  };
+  const TX = TEXTS[LANG] || TEXTS.uz;
 
   function injectStyles() {
     if (document.getElementById('hfw-style')) return;
@@ -53,15 +76,15 @@
     wrap.className = 'hfw';
     wrap.innerHTML = `
 <div class="hfw-card">
-  <div class="hfw-q">Bu maqola sizga foydali bo'ldimi?</div>
+  <div class="hfw-q">${TX.q}</div>
   <div class="hfw-btns">
-    <button type="button" class="hfw-btn" data-r="up">👍 Ha, foydali</button>
-    <button type="button" class="hfw-btn" data-r="down">👎 Unchalik emas</button>
+    <button type="button" class="hfw-btn" data-r="up">${TX.up}</button>
+    <button type="button" class="hfw-btn" data-r="down">${TX.down}</button>
   </div>
   <div class="hfw-extra" style="display:none;">
     <div class="hfw-chips"></div>
-    <textarea class="hfw-text" placeholder="Yana biror narsa qo'shmoqchimisiz? (ixtiyoriy)"></textarea>
-    <button type="button" class="hfw-submit">Yuborish</button>
+    <textarea class="hfw-text" placeholder="${TX.placeholder}"></textarea>
+    <button type="button" class="hfw-submit">${TX.submit}</button>
   </div>
 </div>`;
     container.appendChild(wrap);
@@ -72,11 +95,11 @@
     const textarea = wrap.querySelector('.hfw-text');
     const submitBtn = wrap.querySelector('.hfw-submit');
 
-    REASONS.forEach(r => {
+    REASONS.forEach((r, i) => {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'hfw-chip';
-      chip.textContent = r;
+      chip.textContent = TX.reasons[i] || r;
       chip.onclick = () => {
         reason = reason === r ? null : r;
         chipsBox.querySelectorAll('.hfw-chip').forEach(c => c.classList.remove('on'));
@@ -87,7 +110,7 @@
 
     function finish() {
       wrap.querySelector('.hfw-card').innerHTML =
-        '<div class="hfw-thanks">Fikringiz uchun rahmat — shu bilan maqolalarni yaxshilaymiz. 🙏</div>';
+        '<div class="hfw-thanks">' + TX.thanks + '</div>';
     }
 
     function send() {

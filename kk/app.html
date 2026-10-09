@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Hamroh — Жеке кабинет</title>
+  <link rel="canonical" href="https://hiv.hikmatillo.work/kk/app.html">
+<link rel="alternate" hreflang="uz" href="https://hiv.hikmatillo.work/app.html">
+<link rel="alternate" hreflang="ru" href="https://hiv.hikmatillo.work/ru/app.html">
+<link rel="alternate" hreflang="kk" href="https://hiv.hikmatillo.work/kk/app.html">
+<link rel="alternate" hreflang="x-default" href="https://hiv.hikmatillo.work/app.html">
+<meta property="og:locale" content="kk_KZ">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3E6B57">
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: var(--tg-theme-bg-color, #FAF6F1);
+      --sec-bg: var(--tg-theme-secondary-bg-color, #F3EDE6);
+      --card-bg: #FFFFFF;
+      --text: var(--tg-theme-text-color, #2D2A26);
+      --muted: var(--tg-theme-hint-color, #8A7F73);
+      --primary: var(--tg-theme-button-color, #3E6B57);
+      --primary-text: var(--tg-theme-button-text-color, #FFFFFF);
+      --green: #2E7D32;
+      --green-bg: #E8F5E9;
+      --red: #D32F2F;
+      --red-bg: #FFEBEE;
+      --amber: #B8823A;
+      --amber-bg: #FFF8E1;
+      --border: rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --card-bg: var(--tg-theme-secondary-bg-color, #1E1E1E);
+        --border: rgba(255, 255, 255, 0.1);
+        --green-bg: rgba(46, 125, 50, 0.2);
+        --red-bg: rgba(211, 47, 47, 0.2);
+        --amber-bg: rgba(184, 130, 58, 0.2);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', -apple-system, sans-serif;
+      min-height: 100vh;
+      padding-bottom: 90px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Top Header */
+    header {
+      padding: 18px 20px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .user-greeting {
+      display: flex;
+      flex-direction: column;
+    }
+    .greeting-sub {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .greeting-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .sos-btn-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--red-bg);
+      color: var(--red);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(211, 47, 47, 0.2);
+    }
+
+    /* Main Container */
+    .container {
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Medication Flow */
+    .pill-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: var(--sec-bg);
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+    .pill-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pill-icon {
+      font-size: 20px;
+    }
+    .pill-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pill-time {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .btn-take {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: var(--primary-text);
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-taken {
+      background: var(--green-bg) !important;
+      color: var(--green) !important;
+      cursor: default;
+    }
+
+    /* Streak Bar */
+    .streak-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--amber-bg);
+      border-radius: 14px;
+      color: var(--amber);
+    }
+    .streak-icon { font-size: 24px; }
+    .streak-text {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .streak-highlight { font-weight: 900; font-size: 16px; }
+
+    /* Stock Banner */
+    .stock-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      background: var(--sec-bg);
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .stock-badge {
+      padding: 4px 10px;
+      background: var(--green-bg);
+      color: var(--green);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Labs / U=U Banner */
+    .u-banner {
+      background: #1A362B;
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      margin-bottom: 12px;
+    }
+    .u-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .u-title {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .u-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.4;
+    }
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .lab-item {
+      background: rgba(255,255,255,0.08);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .lab-label { font-size: 11px; opacity: 0.8; }
+    .lab-val { font-size: 18px; font-weight: 900; margin-top: 2px; }
+
+    /* JSST Decision Box */
+    .jsst-box {
+      border-left: 4px solid var(--red);
+      padding: 12px 14px;
+      background: var(--sec-bg);
+      border-radius: 0 14px 14px 0;
+      margin-bottom: 10px;
+    }
+    .jsst-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .jsst-text {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    /* Form Modal / Add Lab */
+    .btn-add-lab {
+      width: 100%;
+      padding: 12px;
+      background: var(--sec-bg);
+      border: 1px dashed var(--border);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    /* Native App Promo Card */
+    .app-promo-card {
+      background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .promo-badge {
+      align-self: flex-start;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .promo-title { font-size: 15px; font-weight: 800; }
+    .promo-desc { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+    .btn-download-promo {
+      align-self: flex-start;
+      padding: 10px 18px;
+      background: #3E6B57;
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    /* Floating Tab Bar */
+    nav.bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 100;
+    }
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-btn.active {
+      color: var(--primary);
+    }
+    .nav-btn span.icon {
+      font-size: 20px;
+    }
+
+    /* Offline Toast */
+    #offline-pill {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2D2A26;
+      color: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Lessons / Hamroh Maktabi */
+    .progress-card {
+      background: linear-gradient(135deg, #1A362B 0%, #2A5240 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .progress-title {
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .progress-fraction {
+      font-size: 13px;
+      font-weight: 800;
+      color: #4ADE80;
+    }
+    .progress-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #4ADE80;
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+    .lesson-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .lesson-item:hover {
+      border-color: rgba(62, 107, 87, 0.3);
+    }
+    .lesson-item.open {
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(62, 107, 87, 0.08);
+    }
+    .lesson-header-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .lesson-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--sec-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .lesson-title-area {
+      flex: 1;
+      min-width: 0;
+    }
+    .lesson-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .lesson-number {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .lesson-read-time {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .lesson-status-tag {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--sec-bg);
+      color: var(--muted);
+      margin-left: auto;
+    }
+    .lesson-status-tag.done {
+      background: var(--green-bg);
+      color: var(--green);
+    }
+    .lesson-title-text {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .lesson-preview-text {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .lesson-body {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .lesson-item.open .lesson-body {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .lesson-section {
+      margin-bottom: 12px;
+    }
+    .lesson-section-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lesson-section-p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.55;
+      opacity: 0.9;
+    }
+    .lesson-callout {
+      background: var(--sec-bg);
+      border-left: 3px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 0 10px 10px 0;
+      font-size: 12px;
+      line-height: 1.45;
+      margin: 10px 0;
+    }
+    .lesson-action-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-mark-read {
+      background: var(--primary);
+      color: var(--primary-text);
+    }
+    .btn-mark-completed {
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid rgba(46, 125, 50, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="offline-pill">
+    <span style="color:#D32F2F;">●</span> Офлайн режим — деректер сақталған
+  </div>
+
+  <header>
+    <div class="user-greeting">
+      <span class="greeting-sub">Денсаулық орталығы</span>
+      <span class="greeting-name" id="user-name">Hamroh</span>
+    </div>
+    <a href="tel:1003" class="sos-btn-header" onclick="haptic('medium')">
+      <span>📞</span> 1003 SOS
+    </a>
+  </header>
+
+  <div class="container" id="tab-today">
+    <!-- Daily Pill Flow -->
+    <div class="card">
+      <div class="card-title">
+        <span>💊 Бүгінгі дәрі тәртібі</span>
+        <span style="font-size: 12px; color: var(--muted);" id="current-date"></span>
+      </div>
+
+      <div class="pill-item">
+        <div class="pill-info">
+          <span class="pill-icon">🌅</span>
+          <div>
+            <div class="pill-name">1-доза (Таңертең)</div>
+            <div class="pill-time">Режим: 08:30</div>
+          </div>
+        </div>
+        <button class="btn-take" id="btn-morning" onclick="takeDose('morning')">Іштім</button>
+      </div>
+
+      <div class="pill-item">
+        <div class="pill-info">
+          <span class="pill-icon">🌙</span>
+          <div>
+            <div class="pill-name">2-доза (Кешке)</div>
+            <div class="pill-time">Режим: 20:30</div>
+          </div>
+        </div>
+        <button class="btn-take" id="btn-evening" onclick="takeDose('evening')">Іштім</button>
+      </div>
+    </div>
+
+    <!-- Streak -->
+    <div class="streak-container">
+      <span class="streak-icon">🔥</span>
+      <div class="streak-text">
+        Дәрі тәртібі: <span class="streak-highlight" id="streak-count">14 күн</span> қатарынан<br>
+        <span style="font-size:12px; opacity:0.85;">Вирустың көбеюіне мүмкіндік бермей жатырсыз!</span>
+      </div>
+    </div>
+
+    <!-- Stock Counter -->
+    <div class="card">
+      <div class="card-title">
+        <span>📦 Дәрі қоры</span>
+        <span class="stock-badge" id="stock-badge">Жеткілікті</span>
+      </div>
+      <div class="stock-box">
+        <span id="stock-days">30 күндік қалды</span>
+        <span style="color:var(--muted); font-size:13px;" id="stock-count">60 / 60 таблетка</span>
+      </div>
+      <p style="font-size:12px; color:var(--muted); margin-top:8px;">
+        💡 Қор 7 күнге жеткенде АИТС орталығына баруды жоспарлаңыз.
+      </p>
+    </div>
+
+    <!-- Bot Reminder Sync -->
+    <div class="card">
+      <div class="card-title">
+        <span>🤖 Telegram бот ескертуі</span>
+      </div>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:12px; line-height:1.4;">
+        Күн сайын дәрі ішетін уақытта @HIVUzBot чатына тыныш ескерту хабары келіп тұрсын ба?
+      </p>
+      <div style="display:flex; gap:10px;">
+        <button onclick="syncBotReminder()" style="
+          flex:1; padding:12px; background:var(--primary); color:var(--primary-text);
+          border:none; border-radius:12px; font-weight:800; font-size:13px; cursor:pointer;
+        ">
+          🔔 Ботта ескертуді қосу
+        </button>
+      </div>
+    </div>
+
+    <!-- Stealth Native App Promo -->
+    <div class="app-promo-card">
+      <span class="promo-badge">🔒 100% толық құпиялылық</span>
+      <div class="promo-title">Калькулятор бетпердесі & Офлайн оятқыш</div>
+      <div class="promo-desc">
+        Телефонда қарапайым калькулятор етіп жасыру, Face ID және интернетсіз жұмыс істейтін дербес оятқыш үшін Hamroh мобильді қолданбасын пайдаланыңыз.
+      </div>
+      <a href="https://hiv.hikmatillo.work" class="btn-download-promo" onclick="haptic('light')">
+        📲 Мобильді қолданбаны жүктеп алу
+      </a>
+    </div>
+  </div>
+
+  <!-- Tab: Lessons (Hamroh Maktabi) -->
+  <div class="container" id="tab-lessons" style="display:none;">
+    <div class="progress-card">
+      <div class="progress-top">
+        <span class="progress-title">🎓 Hamroh мектебі</span>
+        <span class="progress-fraction" id="lesson-progress-text">0 / 6 оқылды</span>
+      </div>
+      <div class="progress-desc">
+        АИТВ-мен сау, тыныш және толыққанды өмір сүрудің сырлары. Білім — ең жақсы дәрі.
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="lesson-progress-bar"></div>
+      </div>
+    </div>
+
+    <div id="lessons-list">
+      <!-- Populated dynamically via JS -->
+    </div>
+  </div>
+
+  <!-- Tab 2: Labs -->
+  <div class="container" id="tab-labs" style="display:none;">
+    <div class="u-banner">
+      <div class="u-badge">🛡️ ДДСҰ халықаралық стандарты</div>
+      <div class="u-title">А = Ж (Анықталмайды = Жұқтырмайды)</div>
+      <div class="u-desc">
+        Егер қандағы вирустық жүктеме 200 көшірме/мл-ден аз болса, вирус жақын қатынаста басқаларға ЕШҚАШАН ЖҰҚПАЙДЫ.
+      </div>
+      <div class="lab-grid">
+        <div class="lab-item">
+          <div class="lab-label">CD4 ЛИМФОЦИТ</div>
+          <div class="lab-val" id="val-cd4">450</div>
+        </div>
+        <div class="lab-item">
+          <div class="lab-label">ВИРУСТЫҚ ЖҮКТЕМЕ</div>
+          <div class="lab-val" id="val-vl">&lt; 20</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📋 Талдаулар динамикасы</span>
+      </div>
+      <div id="labs-list">
+        <!-- populated dynamically -->
+      </div>
+      <button class="btn-add-lab" onclick="addNewLabPrompt()">
+        ➕ Жаңа талдау нәтижесін енгізу
+      </button>
+    </div>
+  </div>
+
+  <!-- Tab 3: JSST Missed Dose -->
+  <div class="container" id="tab-jsst" style="display:none;">
+    <div class="card">
+      <div class="card-title">
+        <span>⚠️ Дәрі ішуді ұмытып кеттіңіз бе?</span>
+      </div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.4; margin-bottom:14px;">
+        ДДСҰ (Дүниежүзілік денсаулық сақтау ұйымы) хаттамасы бойынша дереу орындалуы тиіс қадамдар:
+      </p>
+
+      <div class="jsst-box" style="border-color:#2E7D32; background:var(--green-bg);">
+        <div class="jsst-title" style="color:#2E7D32;">⏳ 1. 12 сағаттан АЗ уақыт өткен болса:</div>
+        <div class="jsst-text">
+          👉 <b>Қазір дереу 1 дозаны ішіңіз!</b> Келесі дозаны әдеттегі кесте бойынша уақтылы жалғастырыңыз.
+        </div>
+      </div>
+
+      <div class="jsst-box">
+        <div class="jsst-title">⏳ 2. 12 сағаттан КӨП уақыт өткен болса:</div>
+        <div class="jsst-text">
+          👉 <b>Бұл дозаны өткізіп жіберіңіз!</b> Келесі дозаны уақтылы ішіңіз.<br>
+          ⛔ <b>МАҢЫЗДЫ: Ешқашан екі есе (2) доза ішпеңіз!</b>
+        </div>
+      </div>
+
+      <div class="jsst-box" style="border-color:#B8823A; background:var(--amber-bg);">
+        <div class="jsst-title" style="color:#B8823A;">🤢 3. Құсу жағдайы:</div>
+        <div class="jsst-text">
+          • Дәрі ішкеннен кейін <b>30 минут ішінде</b> құсып қалсаңыз — жаңа таблетка ішіңіз.<br>
+          • <b>1 сағаттан асқан болса</b> — қайта ішудің қажеті жоқ.
+        </div>
+      </div>
+
+      <a href="tel:1003" style="
+        display:flex; align-items:center; justify-content:center; gap:8px;
+        padding:14px; background:var(--red); color:#fff; border-radius:12px;
+        text-decoration:none; font-weight:800; font-size:14px; margin-top:8px;
+      ">
+        📞 Шұғыл 1003 сенім телефоны
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" id="nav-today" onclick="switchTab('today')">
+      <span class="icon">💊</span>
+      <span>Бүгін</span>
+    </button>
+    <button class="nav-btn" id="nav-lessons" onclick="switchTab('lessons')">
+      <span class="icon">📚</span>
+      <span>Сабақтар</span>
+    </button>
+    <button class="nav-btn" id="nav-labs" onclick="switchTab('labs')">
+      <span class="icon">📊</span>
+      <span>Талдаулар</span>
+    </button>
+    <button class="nav-btn" id="nav-jsst" onclick="switchTab('jsst')">
+      <span class="icon">⚠️</span>
+      <span>Ұмыттым</span>
+    </button>
+  </nav>
+
+  <script>
+    // 1. Telegram WebApp Init
+    const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+    if (tg) {
+      tg.ready();
+      tg.expand();
+      if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+        document.getElementById('user-name').textContent = tg.initDataUnsafe.user.first_name || 'Hamroh';
+      }
+    }
+
+    // Date display
+    const now = new Date();
+    const months = ['Қаңтар', 'Ақпан', 'Наурыз', 'Сәуір', 'Мамыр', 'Маусым', 'Шілде', 'Тамыз', 'Қыркүйек', 'Қазан', 'Қараша', 'Желтоқсан'];
+    document.getElementById('current-date').textContent = `${now.getDate()}-${months[now.getMonth()]}`;
+
+    // Haptic helper
+    function haptic(type = 'light') {
+      if (tg && tg.HapticFeedback) {
+        if (type === 'medium') tg.HapticFeedback.impactOccurred('medium');
+        else tg.HapticFeedback.impactOccurred('light');
+      }
+    }
+
+    // 2. Local Adherence State
+    const todayKey = `dose_${now.getFullYear()}_${now.getMonth()}_${now.getDate()}`;
+    let doseState = JSON.parse(localStorage.getItem(todayKey) || '{"morning": false, "evening": false}');
+
+    function updateDoseUI() {
+      const btnM = document.getElementById('btn-morning');
+      const btnE = document.getElementById('btn-evening');
+      if (doseState.morning) {
+        btnM.textContent = 'Ішілді ✅';
+        btnM.classList.add('btn-taken');
+      }
+      if (doseState.evening) {
+        btnE.textContent = 'Ішілді ✅';
+        btnE.classList.add('btn-taken');
+      }
+    }
+    updateDoseUI();
+
+    function takeDose(time) {
+      if (doseState[time]) return;
+      haptic('medium');
+      doseState[time] = true;
+      localStorage.setItem(todayKey, JSON.stringify(doseState));
+      updateDoseUI();
+      if (tg && tg.HapticFeedback) {
+        tg.HapticFeedback.notificationOccurred('success');
+      }
+    }
+
+    // Tab switcher
+    let currentTab = 'today';
+    function switchTab(tab) {
+      haptic('light');
+      currentTab = tab;
+      ['today', 'lessons', 'labs', 'jsst'].forEach(t => {
+        const el = document.getElementById(`tab-${t}`);
+        if (el) el.style.display = (t === tab) ? 'flex' : 'none';
+        const navBtn = document.getElementById(`nav-${t}`);
+        if (navBtn) {
+          if (t === tab) navBtn.classList.add('active');
+          else navBtn.classList.remove('active');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Telegram BackButton integration
+      if (tg && tg.BackButton) {
+        if (tab === 'today') {
+          tg.BackButton.hide();
+        } else {
+          tg.BackButton.show();
+          tg.BackButton.onClick(() => switchTab('today'));
+        }
+      }
+    }
+
+    // 3. Labs State
+    let labs = JSON.parse(localStorage.getItem('hamroh_labs') || '[{"date":"14-Қыркүйек, 2026","cd4":450,"vl":"< 20"}]');
+
+    function renderLabs() {
+      const container = document.getElementById('labs-list');
+      container.innerHTML = '';
+      labs.forEach(l => {
+        const item = document.createElement('div');
+        item.style.cssText = 'padding:12px; background:var(--sec-bg); border-radius:12px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;';
+        item.innerHTML = `
+          <div>
+            <div style="font-size:13px; color:var(--muted); font-weight:700;">${l.date}</div>
+            <div style="font-size:14px; font-weight:800; color:var(--text); margin-top:2px;">
+              CD4: <b>${l.cd4}</b> • Вирустық: <b>${l.vl}</b>
+            </div>
+          </div>
+          <span style="font-size:11px; padding:3px 8px; background:var(--green-bg); color:var(--green); border-radius:12px; font-weight:800;">
+            А=Ж
+          </span>
+        `;
+        container.appendChild(item);
+      });
+      if (labs.length > 0) {
+        document.getElementById('val-cd4').textContent = labs[0].cd4;
+        document.getElementById('val-vl').textContent = labs[0].vl;
+      }
+    }
+    renderLabs();
+
+    function addNewLabPrompt() {
+      haptic('light');
+      const cd4 = prompt('CD4 лимфоциттер санын енгізіңіз (мысалы: 480):');
+      if (!cd4) return;
+      const vl = prompt('Вирустық жүктеме (мысалы: < 20 немесе 0):', '< 20') || '< 20';
+      const entry = {
+        date: `${now.getDate()}-${months[now.getMonth()]}, ${now.getFullYear()}`,
+        cd4: parseInt(cd4) || 450,
+        vl: vl
+      };
+      labs.unshift(entry);
+      localStorage.setItem('hamroh_labs', JSON.stringify(labs));
+      renderLabs();
+      if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+    }
+
+    // 4. Lessons (Hamroh Maktabi) State & Controller
+    const LESSONS_DATA = [
+      {
+        id: 1,
+        icon: '💊',
+        number: '1-сабақ',
+        title: 'АРВ-терапия деген не және ол қалай әсер етеді?',
+        preview: 'Вирус тізбегін үзу және 70-80 жасқа дейін сау өмір сүру.',
+        time: '3 мин',
+        sections: [
+          {
+            title: '🦠 Вирус пен иммунитеттің арасындағы текетірес',
+            text: 'АИТВ ағзаға түскеннен кейін иммунитеттің негізгі күзетшілері — CD4 лимфоцит жасушаларын нысанаға алады. АРВ (антиретровирустық терапия) бұл вирусты өлтірмейді, бірақ оның көбею тізбегін қатаң тоқтатады. Нәтижесінде иммунитет өзін қайта қалпына келтіру мүмкіндігіне ие болады.'
+          },
+          {
+            title: '⏰ Неге күн сайын бір уақытта?',
+            text: 'Қандағы дәрі концентрациясы азайған сайын вирус қайта көбейе бастайды және дәрі әсер етпейтін (резистентті) штамдар пайда болуы мүмкін. Сондықтан күн сайын бір сағатта ішу — емделудің басты іргетасы.'
+          },
+          {
+            callout: '💡 <b>ДДСҰ клиникалық дерегі:</b> АРВ қабылдап жүрген адамдар сау адамдар сияқты 70-80 жасқа дейін толыққанды, бақытты және сау өмір сүреді.'
+          }
+        ]
+      },
+      {
+        id: 2,
+        icon: '🛡️',
+        number: '2-сабақ',
+        title: 'А = Ж: Анықталмайды = Жұқтырмайды',
+        preview: 'Вирустық жүктеме нөлге түскенде вирус басқаларға ешқашан жұқпайды.',
+        time: '3 мин',
+        sections: [
+          {
+            title: '🔬 Халықаралық ғылыми консенсус',
+            text: 'Анықталмайды = Жұқтырмайды — А=Ж (Undetectable = Untransmittable). Егер адам АРВ дәрілерін тұрақты қабылдап, қандағы вирус мөлшерін 200 көшірме/мл-ден төмен деңгейге түсірсе, вирус жақын қатынаста басқа адамға <b>ЕШҚАШАН ЖҰҚПАЙДЫ</b>.'
+          },
+          {
+            title: '👶 Сау отбасы және балалар',
+            text: 'А=Ж күйіндегі адамдар өмірлік серігімен ешбір қорқынышсыз отбасын құра алады. Жүктілік кезінде дәрі дұрыс қабылданса, 100% дені сау, вирусы жоқ нәресте дүниеге келеді.'
+          },
+          {
+            callout: '✨ Дәрі басталғаннан кейін орта есеппен 3-6 ай ішінде вирустық жүктеме анықталмайтын деңгейге түседі. Мұны талдау арқылы тексеріп тұру жеткілікті.'
+          }
+        ]
+      },
+      {
+        id: 3,
+        icon: '📊',
+        number: '3-сабақ',
+        title: 'Талдаулар әліпбиі: CD4 және вирустық жүктеме',
+        preview: 'Иммунитет әскері мен қандағы вирус санын бақылау.',
+        time: '3 мин',
+        sections: [
+          {
+            title: '🛡️ CD4 лимфоциттер — сіздің қалқаныңыз',
+            text: 'Бұлар сіздің иммунитетіңіздің күзетшілері. Сау адамда 500-ден 1500-ге дейін болады. Дәрі басталғанда бұл сан біртіндеп көтеріліп отырады және денеңіз кез келген инфекцияға қарсы мықты болады.'
+          },
+          {
+            title: '📉 Вирустық жүктеме (Вирус саны)',
+            text: '1 миллилитр қандағы вирус көшірмелерінің саны. Емделудің негізгі мақсаты — "&lt; 20 көшірме/мл" немесе "анықталмайтын" нәтижеге жету және оны сақтап тұру.'
+          },
+          {
+            callout: '🏥 Республикалық және облыстық АИТС-ке қарсы күрес орталықтарында талдаулар емделіп жүрген адамдар үшін <b>толығымен тегін</b> және <b>заң бойынша анонимді</b> өткізіледі.'
+          }
+        ]
+      },
+      {
+        id: 4,
+        icon: '🌿',
+        number: '4-сабақ',
+        title: 'Алғашқы жанама әсерлер және үйрену кезеңі',
+        preview: 'Дәрі басталған алғашқы апталарды қауіпсіз әрі тыныш өткізу.',
+        time: '2 мин',
+        sections: [
+          {
+            title: '🌱 Дененің үйрену үдерісі',
+            text: 'Терапия басталған алғашқы 2-4 аптада бас айналуы, жеңіл жүрек айну, ұйқышылдық немесе анық түстер көру мүмкін. Бұл ағзаның жаңа дәрілік заттарға бейімделіп жатқанын білдіреді.'
+          },
+          {
+            title: '⛔ Дәріні ешқашан тоқтатпаңыз!',
+            text: 'Жанама әсерлердің көпшілігі 2-3 аптадан кейін өздігінен толық жоғалып кетеді. Дәрігермен кеңеспей, дәріні өз бетіңізше ешқашан тоқтатпаңыз.'
+          },
+          {
+            callout: '⚠️ Егер қатты бөртпе, қышыну немесе сарғаю байқалса, дереу дәрігерге хабарлаңыз — дәрі сызбасы ауыстырылады.'
+          }
+        ]
+      },
+      {
+        id: 5,
+        icon: '⏰',
+        number: '5-сабақ',
+        title: 'Күнделікті режим және қор дәрі',
+        preview: 'Дәрі тәртібін бұзбау және сапарға дайындық.',
+        time: '3 мин',
+        sections: [
+          {
+            title: '🔔 Әдетке айналдыру әдісі',
+            text: 'Дәрі ішуді берік күнделікті әдетпен байланыстырыңыз: мысалы, күн сайын таңертең сағат 08:30-да таңғы астан кейін немесе кешке тіс жуу кезінде. Hamroh ботында дәрі ескертуін қосып қойыңыз.'
+          },
+          {
+            title: '🎒 Қалта қоры',
+            text: 'Үйден ешқашан тек бүгінгі дәріні алып шықпаңыз. Сөмкеңізде немесе әмияныңызда жеке герметикалық қорапшада 2-3 күндік қосымша қор алып жүріңіз.'
+          },
+          {
+            callout: '📦 Қорыңызда 7-10 күндік дәрі қалғанда АИТС-ке қарсы күрес орталығына жаңа қорапты алуға баруды әдетке айналдырыңыз.'
+          }
+        ]
+      },
+      {
+        id: 6,
+        icon: '⚖️',
+        number: '6-сабақ',
+        title: 'Адам құқықтары және құпиялылық заңы',
+        preview: 'Сізді мемлекет пен заң қалай қорғайды?',
+        time: '3 мин',
+        sections: [
+          {
+            title: '🔒 Дәрігерлік құпия — заң қорғауында',
+            text: 'Өзбекстан Республикасы Қылмыстық кодексінің 113-бабына сәйкес, тұлғаның АИТВ диагнозын оның келісімінсіз басқаларға жария еткен медицина қызметкерлері қылмыстық жауапкершілікке тартылады.'
+          },
+          {
+            title: '💼 Жұмыс және оқу құқығы',
+            text: 'Сізді АИТВ себепті жұмыстан босату, жұмысқа алмау немесе оқудан шеттету қатаң тыйым салынған. Сіз барлық азаматтармен бірдей еңбек құқығына ие боласыз.'
+          },
+          {
+            callout: '🤝 Егер құқықтарыңыз бұзылса, <b>1003</b> сенім телефонына немесе АИТС-ке қарсы күрес орталығының психологы мен заңгеріне жүгініңіз.'
+          }
+        ]
+      }
+    ];
+
+    let completedLessons = JSON.parse(localStorage.getItem('hamroh_lessons_progress') || '[]');
+    let openLessonId = null;
+
+    function renderLessons() {
+      const container = document.getElementById('lessons-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const progressCount = completedLessons.length;
+      const totalCount = LESSONS_DATA.length;
+      const progressPercent = Math.round((progressCount / totalCount) * 100);
+
+      const progText = document.getElementById('lesson-progress-text');
+      if (progText) progText.textContent = `${progressCount} / ${totalCount} оқылды (${progressPercent}%)`;
+      const progBar = document.getElementById('lesson-progress-bar');
+      if (progBar) progBar.style.width = `${progressPercent}%`;
+
+      LESSONS_DATA.forEach(lesson => {
+        const isDone = completedLessons.includes(lesson.id);
+        const isOpen = openLessonId === lesson.id;
+
+        const item = document.createElement('div');
+        item.className = `lesson-item ${isOpen ? 'open' : ''}`;
+        item.onclick = (e) => {
+          if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
+          toggleLesson(lesson.id);
+        };
+
+        let sectionsHtml = lesson.sections.map(s => {
+          if (s.callout) return `<div class="lesson-callout">${s.callout}</div>`;
+          return `
+            <div class="lesson-section">
+              <div class="lesson-section-title">${s.title}</div>
+              <div class="lesson-section-p">${s.text}</div>
+            </div>
+          `;
+        }).join('');
+
+        item.innerHTML = `
+          <div class="lesson-header-row">
+            <div class="lesson-icon-box">${lesson.icon}</div>
+            <div class="lesson-title-area">
+              <div class="lesson-meta-row">
+                <span class="lesson-number">${lesson.number}</span>
+                <span class="lesson-read-time">⏱️ ${lesson.time}</span>
+                <span class="lesson-status-tag ${isDone ? 'done' : ''}">
+                  ${isDone ? 'Оқылды ✅' : 'Оқу →'}
+                </span>
+              </div>
+              <div class="lesson-title-text">${lesson.title}</div>
+              <div class="lesson-preview-text">${lesson.preview}</div>
+            </div>
+          </div>
+          <div class="lesson-body">
+            ${sectionsHtml}
+            <button class="lesson-action-btn ${isDone ? 'btn-mark-completed' : 'btn-mark-read'}" onclick="markLesson(${lesson.id})">
+              ${isDone ? '✓ Қайта оқылды (Аяқталған)' : 'Түсіндім, аяқтау ✅'}
+            </button>
+          </div>
+        `;
+
+        container.appendChild(item);
+      });
+    }
+
+    function toggleLesson(id) {
+      haptic('light');
+      openLessonId = (openLessonId === id) ? null : id;
+      renderLessons();
+    }
+
+    function markLesson(id) {
+      haptic('medium');
+      if (completedLessons.includes(id)) {
+        completedLessons = completedLessons.filter(x => x !== id);
+      } else {
+        completedLessons.push(id);
+        if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+      }
+      localStorage.setItem('hamroh_lessons_progress', JSON.stringify(completedLessons));
+      renderLessons();
+    }
+    renderLessons();
+
+    // Bot Sync
+    function syncBotReminder() {
+      haptic('medium');
+      if (tg) {
+        tg.sendData(JSON.stringify({ action: 'set_reminder', time: '08:30, 20:30' }));
+      } else {
+        alert("Ескерту @HIVUzBot чатына жіберілді. Күн сайын 08:30 және 20:30-да ескерту келеді!");
+      }
+    }
+
+    // Offline Indicator
+    function checkOnline() {
+      const pill = document.getElementById('offline-pill');
+      if (!navigator.onLine) pill.style.display = 'block';
+      else pill.style.display = 'none';
+    }
+    window.addEventListener('online', checkOnline);
+    window.addEventListener('offline', checkOnline);
+    checkOnline();
+
+    // Service Worker registration
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+<script src="/lang-switcher.js" defer></script>
+</body>
+</html>

@@ -6,11 +6,61 @@
 (function () {
   'use strict';
 
+  // Til: yo'l prefiksi (/ru/, /kk/) bo'yicha; yo'q bo'lsa uz.
+  const LANG_MATCH = window.location.pathname.match(/^\/(ru|kk)(\/|$)/);
+  const LANG = LANG_MATCH ? LANG_MATCH[1] : 'uz';
+  const LANG_PREFIX = LANG === 'uz' ? '' : '/' + LANG;
+  const I18N = {
+    uz: {
+      offline: 'Oflayn rejim — keshdan ishlamoqda',
+      mdTitle: 'Dori ichishni unutdingizmi?',
+      mdIntro: "ARV davolanishida dori vaqtini o'tkazib yuborsangiz, vahimaga tushmang. Jahon Sog'liqni Saqlash Tashkiloti (JSST) ko'rsatmasiga amal qiling:",
+      mdLess12: "12 soatdan KAM vaqt o'tgan bo'lsa:",
+      mdLess12Do: "<b>Hozir darhol 1 dozani iching!</b> Keyingi dozani odatiy jadvalingiz bo'yicha davom ettiring.",
+      mdMore12: "12 soatdan KO'P vaqt o'tgan bo'lsa:",
+      mdMore12Do: "<b>Bu dozani o'tkazib yuboring!</b> Keyingi dozani o'z vaqtida iching.",
+      mdNoDouble: "<b>Aslo ikki barobar (2 ta) doza ichmang!</b>",
+      mdVomit: 'Qayt qilish (qusish) holati:',
+      mdVomit30: "Dori ichgach <b>30 daqiqa ichida</b> qussangiz — yangi tabletka iching.",
+      mdVomit60: "<b>1 soatdan oshgan bo'lsa</b> — qayta ichish shart emas.",
+      mdCall: '1003 — Bepul Ishonch Telefoni'
+    },
+    ru: {
+      offline: 'Офлайн-режим — работает из кеша',
+      mdTitle: 'Забыли принять лекарство?',
+      mdIntro: 'Если вы пропустили приём препарата при АРВ-терапии, не паникуйте. Следуйте рекомендациям Всемирной организации здравоохранения (ВОЗ):',
+      mdLess12: 'Если прошло МЕНЬШЕ 12 часов:',
+      mdLess12Do: '<b>Примите 1 дозу сразу же!</b> Следующую дозу принимайте по обычному графику.',
+      mdMore12: 'Если прошло БОЛЬШЕ 12 часов:',
+      mdMore12Do: '<b>Пропустите эту дозу!</b> Следующую дозу примите вовремя.',
+      mdNoDouble: '<b>Ни в коем случае не принимайте двойную дозу (2 таблетки)!</b>',
+      mdVomit: 'Если была рвота:',
+      mdVomit30: 'Если рвота началась <b>в течение 30 минут</b> после приёма — примите новую таблетку.',
+      mdVomit60: '<b>Если прошло больше 1 часа</b> — повторно принимать не нужно.',
+      mdCall: '1003 — бесплатный телефон доверия'
+    },
+    kk: {
+      offline: 'Офлайн режим — кештен жұмыс істеп тұр',
+      mdTitle: 'Дәріні ішуді ұмыттыңыз ба?',
+      mdIntro: 'АРВ-терапия кезінде дәріні ішуді ұмытып кетсеңіз, именбеңіз. Дүниежүзілік денсаулық сақтау ұйымының (ДДСҰ) нұсқауына сәйкес әрекет етіңіз:',
+      mdLess12: '12 сағаттан АЗ уақыт өтсе:',
+      mdLess12Do: '<b>Қазір бірден 1 дозаны ішіңіз!</b> Келесі дозаны әдеттегі кесте бойынша жалғастырыңыз.',
+      mdMore12: '12 сағаттан КӨП уақыт өтсе:',
+      mdMore12Do: '<b>Бұл дозаны өткізіп жіберіңіз!</b> Келесі дозаны уақытында ішіңіз.',
+      mdNoDouble: '<b>Ешқашан қос доза (2 таблетка) ішпеңіз!</b>',
+      mdVomit: 'Құсу жағдайы:',
+      mdVomit30: 'Дәрі ішкеннен кейін <b>30 минут ішінде</b> құссаңыз — жаңа таблетка ішіңіз.',
+      mdVomit60: '<b>1 сағаттан асып кетсе</b> — қайта ішудің қажеті жоқ.',
+      mdCall: '1003 — тегін сенім телефоны'
+    }
+  };
+  const T = I18N[LANG];
+
   // Purge legacy caches on startup
   if ('caches' in window) {
     caches.keys().then((names) => {
       names.forEach((name) => {
-        if (name !== 'hamroh-tma-v2.0') {
+        if (name !== 'hamroh-tma-v2.1') {
           console.log('[TMA] Purging legacy cache:', name);
           caches.delete(name);
         }
@@ -21,7 +71,7 @@
   // 1. Service Worker Registration & Auto-Reload on Update
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js?v=2.0').then((reg) => {
+      navigator.serviceWorker.register('/sw.js?v=2.1').then((reg) => {
         console.log('[TMA] Service Worker registered:', reg.scope);
         reg.update();
 
@@ -60,14 +110,15 @@
       }
 
       // Handle Telegram BackButton for sub-pages
-      const isSubPage = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
+      const basePath = window.location.pathname.replace(/^\/(ru|kk)(?=\/|$)/, '') || '/';
+      const isSubPage = basePath !== '/' && !basePath.endsWith('index.html');
       if (isSubPage && tg.BackButton) {
         tg.BackButton.show();
         tg.BackButton.onClick(() => {
           if (window.history.length > 1) {
             window.history.back();
           } else {
-            window.location.href = '/index.html';
+            window.location.href = LANG_PREFIX + '/index.html';
           }
         });
       } else if (tg.BackButton) {
@@ -106,7 +157,7 @@
             display: flex; align-items: center; gap: 8px; z-index: 99999;
             box-shadow: 0 4px 15px rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.15);
           ">
-            <span style="color: #D4695A; font-size: 16px;">●</span> Oflayn rejim — keshdan ishlamoqda
+            <span style="color: #D4695A; font-size: 16px;">●</span> ${T.offline}
           </div>
         `;
         document.body.appendChild(banner);
@@ -143,7 +194,7 @@
         ">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
             <div style="font-size:18px; font-weight:800; color:#2D2A26; display:flex; align-items:center; gap:8px;">
-              💊 Dori ichishni unutdingizmi?
+              💊 ${T.mdTitle}
             </div>
             <button onclick="window.closeMissedDoseModal()" style="
               background: #F3EDE6; border: none; border-radius: 50%;
@@ -152,35 +203,35 @@
           </div>
 
           <p style="font-size:14px; color:#666; line-height:1.5; margin-bottom:16px;">
-            ARVT davolanishida dori vaqtini o'tkazib yuborsangiz, vahimaga tushmang. Jahon Sog'liqni Saqlash Tashkiloti (JSST) ko'rsatmasiga amal qiling:
+            ${T.mdIntro}
           </p>
 
           <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:14px; padding:14px; margin-bottom:12px;">
             <div style="font-weight:800; color:#15803D; font-size:14px; margin-bottom:4px;">
-              ⏳ 12 soatdan KAM vaqt o'tgan bo'lsa:
+              ⏳ ${T.mdLess12}
             </div>
             <div style="font-size:13px; color:#166534; line-height:1.4;">
-              👉 <b>Hozir darhol 1 dozani iching!</b> Keyingi dozani odatiy jadvalingiz bo'yicha davom ettiring.
+              👉 ${T.mdLess12Do}
             </div>
           </div>
 
           <div style="background:#FEF2F2; border:1px solid #FECACA; border-radius:14px; padding:14px; margin-bottom:12px;">
             <div style="font-weight:800; color:#B91C1C; font-size:14px; margin-bottom:4px;">
-              ⏳ 12 soatdan KO'P vaqt o'tgan bo'lsa:
+              ⏳ ${T.mdMore12}
             </div>
             <div style="font-size:13px; color:#991B1B; line-height:1.4;">
-              👉 <b>Bu dozani o'tkazib yuboring!</b> Keyingi dozani o'z vaqtida iching.<br>
-              ⛔ <b>Aslo ikki barobar (2 ta) doza ichmang!</b>
+              👉 ${T.mdMore12Do}<br>
+              ⛔ ${T.mdNoDouble}
             </div>
           </div>
 
           <div style="background:#FFFBEB; border:1px solid #FDE68A; border-radius:14px; padding:14px; margin-bottom:16px;">
             <div style="font-weight:800; color:#B45309; font-size:14px; margin-bottom:4px;">
-              🤢 Qayt qilish (qusish) holati:
+              🤢 ${T.mdVomit}
             </div>
             <div style="font-size:13px; color:#92400E; line-height:1.4;">
-              • Dori ichgach <b>30 daqiqa ichida</b> qussangiz — yangi tabletka iching.<br>
-              • <b>1 soatdan oshgan bo'lsa</b> — qayta ichish shart emas.
+              • ${T.mdVomit30}<br>
+              • ${T.mdVomit60}
             </div>
           </div>
 
@@ -189,7 +240,7 @@
             background: #D4695A; color: #FFFFFF; padding: 14px; border-radius: 12px;
             text-decoration: none; font-weight: 700; font-size: 15px; margin-bottom: 8px;
           ">
-            📞 1003 — Bepul Ishonch Telefoni
+            📞 ${T.mdCall}
           </a>
         </div>
       `;

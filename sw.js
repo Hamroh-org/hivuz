@@ -1,5 +1,5 @@
 // Hamroh Telegram Mini App — Service Worker (Offline Caching)
-const CACHE_NAME = 'hamroh-tma-v2.0';
+const CACHE_NAME = 'hamroh-tma-v2.1';
 
 const PRECACHE_URLS = [
   '/',
@@ -9,6 +9,9 @@ const PRECACHE_URLS = [
   '/faq.html',
   '/glossariy.html',
   '/offline.html',
+  '/ru/offline.html',
+  '/kk/offline.html',
+  '/lang-switcher.js',
   '/manifest.json',
   '/tma.js',
   '/og-image.png'
@@ -19,7 +22,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[ServiceWorker] Pre-caching v2.0 pages');
+      console.log('[ServiceWorker] Pre-caching v2.1 pages');
       return cache.addAll(PRECACHE_URLS);
     })
   );
@@ -66,7 +69,9 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           return caches.match(request).then((cached) => {
-            return cached || caches.match('/offline.html');
+            if (cached) return cached;
+            const lang = (url.pathname.match(/^\/(ru|kk)(\/|$)/) || [])[1];
+            return caches.match(lang ? '/' + lang + '/offline.html' : '/offline.html');
           });
         })
     );
