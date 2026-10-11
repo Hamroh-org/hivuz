@@ -1,5 +1,5 @@
 // Hamroh Telegram Mini App — Service Worker (Offline Caching)
-const CACHE_NAME = 'hamroh-tma-v2.1';
+const CACHE_NAME = 'hamroh-tma-v2.2';
 
 const PRECACHE_URLS = [
   '/',
@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[ServiceWorker] Pre-caching v2.1 pages');
+      console.log('[ServiceWorker] Pre-caching v2.2 pages');
       return cache.addAll(PRECACHE_URLS);
     })
   );
