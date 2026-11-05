@@ -1316,6 +1316,17 @@ footer a{color:var(--blue-l);text-decoration:none;}
 }
 
 /* ── UTILS ── */
+/* home-articles */
+h2.sec-title,h2.segment-title,h2.hotline-title{font-weight:400;}
+.home-articles-section{padding:0 24px 72px;max-width:980px;margin:0 auto;}
+.home-articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;}
+.home-article{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;color:var(--text);text-decoration:none;transition:border-color .2s;}
+.home-article:hover{border-color:var(--blue-l);}
+.home-article-tag{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B6058;margin-bottom:8px;}
+.home-article-title{font-size:15px;font-weight:800;line-height:1.35;}
+.home-articles-all{display:block;width:fit-content;margin:24px auto 0;font-size:14px;font-weight:800;color:var(--blue);text-decoration:none;}
+@media(max-width:640px){.home-articles-section{padding-left:14px;padding-right:14px;}}
+/* /home-articles */
 .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .fi.vis{opacity:1;transform:none;}
 @media(max-width:640px){
@@ -1429,7 +1440,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
   <!-- Schema Markup - <head> ichiga qo'shing, </head> dan oldin -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiv.hikmatillo.work/#website","url":"https://hiv.hikmatillo.work/","name":"Hamroh — OIV va ARV haqida o'zbekcha platforma","description":"OIV nima, qanday yuqadi, qayerda tekshiriladi va ARV bilan qanday yashash mumkin — tushunarli, anonim, bepul. Maqolalar, xavf testi va Hamroh boti.","inLanguage":"uz","publisher":{"@id":"https://hiv.hikmatillo.work/#organization"},"alternateName":"Hamroh"},{"@type":"Organization","@id":"https://hiv.hikmatillo.work/#organization","name":"Hamroh","url":"https://hiv.hikmatillo.work/","description":"O'zbekistonda OIV va surunkali holatlar bo'yicha o'zbekcha ma'rifiy platforma","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"Uzbek","url":"https://t.me/HIVUzBot"},"logo":{"@type":"ImageObject","url":"https://hiv.hikmatillo.work/icon-512.png","width":512,"height":512},"sameAs":["https://t.me/HIVUzBot","https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social"]},{"@type":"MedicalWebPage","@id":"https://hiv.hikmatillo.work/#webpage","url":"https://hiv.hikmatillo.work/","name":"OIV haqida o'zbek tilida: ma'lumot, test va yordam | Hamroh","description":"OIV nima, qanday yuqadi, qayerda tekshiriladi va ARV bilan qanday yashash mumkin — tushunarli, anonim, bepul. Maqolalar, xavf testi va Hamroh boti.","inLanguage":"uz","isPartOf":{"@id":"https://hiv.hikmatillo.work/#website"},"about":{"@type":"MedicalCondition","name":"OIV","alternateName":["OITS","HIV","AIDS"],"relevantSpecialty":"https://schema.org/Infectious"},"audience":{"@type":"MedicalAudience","audienceType":"Patient"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"OIV testi qayerda topshiriladi?","acceptedAnswer":{"@type":"Answer","text":"O'zbekistonda OIV testi bepul va maxfiy ravishda ixtisoslashtirilgan OITSga qarshi kurash markazlarida topshiriladi. Toshkent shahrida: Respublika OITSga qarshi kurash markazi, +998 71 268-30-30."}},{"@type":"Question","name":"ARV dori vositalari O'zbekistonda bepulmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. O'zbekistonda ARV dori vositalari davlat tomonidan bepul ta'minlanadi. Dori olish uchun OITSga qarshi kurash markaziga murojaat qiling va ro'yxatdan o'ting."}},{"@type":"Question","name":"OIV qanday yo'llar bilan yuqmaydi?","acceptedAnswer":{"@type":"Answer","text":"OIV quchoqlash, so'rashish, birgalikda ovqatlanish, hojatxona, hovuz va havo orqali aslo yuqmaydi. Faqat qon, ona suti va himoyalanmagan yaqinlik orqali yuqishi mumkin."}},{"@type":"Question","name":"ARV qabul qilsam virus aniqlanmay qoladimi?","acceptedAnswer":{"@type":"Answer","text":"Ha. ARV bilan 6 oy ichida viral yuklama aniqlanmaydigan darajaga tushadi (A=U — Aniqlanmaydi = Yuqmaydi). Bu JSST (WHO) va CDC tomonidan tasdiqlangan."}},{"@type":"Question","name":"OIV bilan oila qurib farzand ko'rish mumkinmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. ARV bilan viral yuklama aniqlanmaydigan bo'lganda juftga o'tish xavfi nol (A=U). OIV bilan yashovchi ona sog'lom farzand dunyoga keltirishi mumkin — xavf 1% dan past."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiv.hikmatillo.work/#website","url":"https://hiv.hikmatillo.work/","name":"Hamroh — OIV va ARV haqida o'zbekcha platforma","description":"OIV nima, qanday yuqadi, qayerda tekshiriladi va ARV bilan qanday yashash mumkin — tushunarli, anonim, bepul. Maqolalar, xavf testi va Hamroh boti.","inLanguage":"uz","publisher":{"@id":"https://hiv.hikmatillo.work/#organization"},"alternateName":"Hamroh"},{"@type":"Organization","@id":"https://hiv.hikmatillo.work/#organization","name":"Hamroh","url":"https://hiv.hikmatillo.work/","description":"O'zbekistonda OIV va surunkali holatlar bo'yicha o'zbekcha ma'rifiy platforma","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"Uzbek","url":"https://t.me/HIVUzBot"},"logo":{"@type":"ImageObject","url":"https://hiv.hikmatillo.work/icon-512.png","width":512,"height":512},"sameAs":["https://t.me/HIVUzBot","https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social","https://apps.apple.com/app/hamroh-community/id6774913295"]},{"@type":"MedicalWebPage","@id":"https://hiv.hikmatillo.work/#webpage","url":"https://hiv.hikmatillo.work/","name":"OIV haqida o'zbek tilida: ma'lumot, test va yordam | Hamroh","description":"OIV nima, qanday yuqadi, qayerda tekshiriladi va ARV bilan qanday yashash mumkin — tushunarli, anonim, bepul. Maqolalar, xavf testi va Hamroh boti.","inLanguage":"uz","isPartOf":{"@id":"https://hiv.hikmatillo.work/#website"},"about":{"@type":"MedicalCondition","name":"OIV","alternateName":["OITS","HIV","AIDS"],"relevantSpecialty":"https://schema.org/Infectious"},"audience":{"@type":"MedicalAudience","audienceType":"Patient"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"OIV testi qayerda topshiriladi?","acceptedAnswer":{"@type":"Answer","text":"O'zbekistonda OIV testi bepul va maxfiy ravishda ixtisoslashtirilgan OITSga qarshi kurash markazlarida topshiriladi. Toshkent shahrida: Respublika OITSga qarshi kurash markazi, +998 71 268-30-30."}},{"@type":"Question","name":"ARV dori vositalari O'zbekistonda bepulmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. O'zbekistonda ARV dori vositalari davlat tomonidan bepul ta'minlanadi. Dori olish uchun OITSga qarshi kurash markaziga murojaat qiling va ro'yxatdan o'ting."}},{"@type":"Question","name":"OIV qanday yo'llar bilan yuqmaydi?","acceptedAnswer":{"@type":"Answer","text":"OIV quchoqlash, so'rashish, birgalikda ovqatlanish, hojatxona, hovuz va havo orqali aslo yuqmaydi. Faqat qon, ona suti va himoyalanmagan yaqinlik orqali yuqishi mumkin."}},{"@type":"Question","name":"ARV qabul qilsam virus aniqlanmay qoladimi?","acceptedAnswer":{"@type":"Answer","text":"Ha. ARV bilan 6 oy ichida viral yuklama aniqlanmaydigan darajaga tushadi (A=U — Aniqlanmaydi = Yuqmaydi). Bu JSST (WHO) va CDC tomonidan tasdiqlangan."}},{"@type":"Question","name":"OIV bilan oila qurib farzand ko'rish mumkinmi?","acceptedAnswer":{"@type":"Answer","text":"Ha. ARV bilan viral yuklama aniqlanmaydigan bo'lganda juftga o'tish xavfi nol (A=U). OIV bilan yashovchi ona sog'lom farzand dunyoga keltirishi mumkin — xavf 1% dan past."}}]}]}
 </script>
 </head>
 <body>
@@ -1448,7 +1459,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
     <a href="./glossariy.html">Lug'at</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
     <a href="./risk.html" style="color:#3E6B57;">⚡ Xavf test</a>
-    <a href="https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social" target="_blank" rel="noopener" style="color:#3E6B57;">📱 Ilova</a>
+    <a href="#ilova" style="color:#3E6B57;">📱 Ilova</a>
     <a href="#hotline" class="nav-cta">Yordam →</a>
   </div>
 </nav>
@@ -1516,7 +1527,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="kimsiz" class="segment-section">
   <div class="sec-header fi">
     <span class="segment-label">Siz uchun</span>
-    <div class="segment-title">Bugun sizga qanday yordam bera olaman?</div>
+    <h2 class="segment-title">Bugun sizga qanday yordam bera olaman?</h2>
     <p class="segment-sub">Vaziyatingizga mos ma'lumot va qadamlarni ko'rsataman</p>
   </div>
 
@@ -1719,7 +1730,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Qadam-baqadam</span>
-    <div class="sec-title">Test topshirish — qanday bo'ladi?</div>
+    <h2 class="sec-title">Test topshirish — qanday bo'ladi?</h2>
     <p class="sec-desc">Birinchi marta boradigan inson uchun — barcha ma'lumotlar aniq va sodda</p>
   </div>
 
@@ -1846,7 +1857,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <!-- MARKAZLAR -->
   <div class="sec-header fi" style="text-align:left;margin-bottom:16px;">
     <span class="sec-tag" style="color:var(--blue);">O'zbekistonda</span>
-    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Qayerga borish kerak?</div>
+    <h2 class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Qayerga borish kerak?</h2>
   </div>
   <div class="centers-grid fi">
     <div class="center-card">
@@ -1882,7 +1893,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="myth" class="myth-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--red);">Mif yoki haqiqat?</span>
-    <div class="sec-title">OIV haqida noto'g'ri tushunchalar</div>
+    <h2 class="sec-title">OIV haqida noto'g'ri tushunchalar</h2>
     <p class="sec-desc">Bosing — haqiqatni bilib oling. Bu savollar ko'pchilikni qiynaydi.</p>
   </div>
 
@@ -2017,7 +2028,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="bilish" class="fear-section">
   <div class="sec-header fi" style="text-align:left;margin-bottom:0;">
     <span class="sec-tag" style="color:var(--red);">Ko'p uchraydigan xavotirlar</span>
-    <div class="sec-title">Nimadan xavotirdasiz?</div>
+    <h2 class="sec-title">Nimadan xavotirdasiz?</h2>
     <p class="sec-desc" style="margin-bottom:28px;">Bu savollarning barchasi tabiiy. Ko'pchilik qadrdonlarimiz dastlab xuddi shunday his qilishgan. Haqiqatni bilib oling.</p>
   </div>
 
@@ -2083,7 +2094,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div id="demo" class="demo-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Jonli vizualizatsiya</span>
-    <div class="sec-title">Qon ichida nima bo'lyapti?</div>
+    <h2 class="sec-title">Qon ichida nima bo'lyapti?</h2>
     <p class="sec-desc">Tugmalarni bosib, OIV va ARV ta'sirini o'z ko'zingiz bilan kuzating</p>
   </div>
   <div class="live-card fi">
@@ -2124,7 +2135,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div class="slider-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--green);">Interaktiv tajriba</span>
-    <div class="sec-title">CD4 ni o'zgartirib ko'ring</div>
+    <h2 class="sec-title">CD4 ni o'zgartirib ko'ring</h2>
     <p class="sec-desc">Sliderni suring — CD4 darajasi qonga qanday ta'sir qilishini kuzating</p>
   </div>
   <div class="slider-card fi">
@@ -2167,7 +2178,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="uzstat" class="uzstat-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">O'zbekistonda</span>
-    <div class="sec-title">Bizning mamlakatda qanday ahvol?</div>
+    <h2 class="sec-title">Bizning mamlakatda qanday ahvol?</h2>
     <p class="sec-desc">Global raqamlar uzoq tuyuladi. Bu raqamlar — bizning yurtimiz haqida.</p>
   </div>
 
@@ -2242,7 +2253,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="yontasir" class="side-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Ochiq ma'lumot</span>
-    <div class="sec-title">ARV nojo'ya ta'sirlari</div>
+    <h2 class="sec-title">ARV nojo'ya ta'sirlari</h2>
     <p class="sec-desc">Ko'pchilik saytlar buni yashiradi. Biz yozyapmiz — chunki bilgan inson xotirjam tayyor bo'ladi.</p>
   </div>
 
@@ -2322,7 +2333,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div id="arvt" class="timeline-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--green);">ARV yo'li</span>
-    <div class="sec-title">ARV qabul qilsangiz nima bo'ladi?</div>
+    <h2 class="sec-title">ARV qabul qilsangiz nima bo'ladi?</h2>
     <p class="sec-desc">Tashxis kunidan to'laqonli hayotga — bosqichma-bosqich</p>
   </div>
   <div class="timeline fi">
@@ -2374,7 +2385,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="hikoyalar" class="story-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Haqiqiy hayot</span>
-    <div class="sec-title">Ular ham shunday yashayapti</div>
+    <h2 class="sec-title">Ular ham shunday yashayapti</h2>
     <p class="sec-desc">Bu hikoyalar real insonlar tajribasidan. Nomlar o'zgartirilgan, lekin so'zlar — haqiqiy.</p>
   </div>
 
@@ -2416,11 +2427,33 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <p class="story-note fi">* Maxfiylik maqsadida ism o'zgartirilgan. Hikoya egasining roziligi bilan chop etilgan.</p>
 </section>
 
+<!-- HOME ARTICLES -->
+<section id="maqolalar" class="home-articles-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--green);">Maqolalar</span>
+    <h2 class="sec-title">Muhim maqolalar</h2>
+    <p class="sec-desc" style="margin:0 auto;">Test, ARV muolajasi va kundalik hayot haqida qisqa, tushunarli maqolalar.</p>
+  </div>
+  <div class="home-articles fi">
+    <a href="./blog/test-qanday-topshiriladi.html" class="home-article"><span class="home-article-tag">Amaliy</span><h3 class="home-article-title">Tahlil qanday topshiriladi?</h3></a>
+    <a href="./blog/hiv-qanday-yuqadi.html" class="home-article"><span class="home-article-tag">Asoslar</span><h3 class="home-article-title">OIV qanday yuqadi?</h3></a>
+    <a href="./blog/u-equals-u.html" class="home-article"><span class="home-article-tag">Ilmiy</span><h3 class="home-article-title">A=U nima degani?</h3></a>
+    <a href="./blog/diagnoz-keyin.html" class="home-article"><span class="home-article-tag">Ruhiy sog'liq</span><h3 class="home-article-title">Tashxisdan keyingi ilk qadamlar</h3></a>
+    <a href="./blog/arvt-unutsam.html" class="home-article"><span class="home-article-tag">Amaliy</span><h3 class="home-article-title">ARV dori qabulini unutsam nima bo'ladi?</h3></a>
+    <a href="./blog/prep-nima.html" class="home-article"><span class="home-article-tag">Profilaktika</span><h3 class="home-article-title">PrEP nima?</h3></a>
+    <a href="./blog/yaqinlarimga-aytish.html" class="home-article"><span class="home-article-tag">Ruhiy sog'liq</span><h3 class="home-article-title">Yaqinlarimga qanday tushuntiraman?</h3></a>
+    <a href="./blog/hiv-bilan-oila.html" class="home-article"><span class="home-article-tag">Hayot</span><h3 class="home-article-title">OIV bilan oila qurish mumkinmi?</h3></a>
+    <a href="./blog/huquqlarim.html" class="home-article"><span class="home-article-tag">Huquq</span><h3 class="home-article-title">OIV bilan yashash — huquqiy kafolatlar</h3></a>
+  </div>
+  <a href="./blog/index.html" class="home-articles-all">Barcha maqolalar →</a>
+</section>
+<!-- /HOME ARTICLES -->
+
 <!-- FAQ -->
 <section id="faq" class="faq-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Ko'p so'raladigan savollar</span>
-    <div class="sec-title">Savollar & Javoblar</div>
+    <h2 class="sec-title">Savollar & Javoblar</h2>
   </div>
   <div class="fi" id="faqList">
     <div class="faq-item">
@@ -2454,7 +2487,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="hamroh" class="bot-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Community uchun</span>
-    <div class="sec-title">Hamroh — sizning botingiz</div>
+    <h2 class="sec-title">Hamroh — sizning botingiz</h2>
     <p class="sec-desc">OIV bo'yicha yopiq hamjamiyatlarga qo'shilgan AI hamroh. Istalgan vaqt, istalgan savol.</p>
   </div>
   <div class="bot-card fi">
@@ -2508,7 +2541,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="bot-feat-desc">ARV qabul qilish vaqtini eslatib turadi</div>
       </div>
     </div>
-    <div class="bot-cta-row">
+    <div class="bot-cta-row" id="ilova" style="scroll-margin-top:90px;">
       <div class="bot-cta-text">
         <b>Bugun boshlang</b> — birinchi suhbat 30 soniyadan kam vaqt oladi.<br>
         <span style="font-size:11px;">Telegram ilovasi orqali to'g'ridan-to'g'ri murojaat qiling.</span>
@@ -2521,6 +2554,10 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.6 2.1c-.3.3-.5.7-.5 1.2v17.4c0 .5.2.9.5 1.2l.1.1L13.9 12 3.7 2 3.6 2.1z"/><path d="M17.3 15.4l-3.4-3.4V12l3.4-3.4 4.5 2.6c.7.4.7 1.3 0 1.7l-4.5 2.5z" opacity=".7"/><path d="M13.9 12 3.7 22c.4.4 1 .4 1.6.1l11.5-6.5-2.9-3.6z"/><path d="M13.9 12l2.9-3.6L5.3 1.9c-.6-.3-1.2-.3-1.6.1L13.9 12z" opacity=".85"/></svg>
         Google Play'dan yuklab olish
       </a>
+      <a href="https://apps.apple.com/app/hamroh-community/id6774913295" target="_blank" rel="noopener" class="btn-playstore">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        App Store'dan yuklab olish
+      </a>
     </div>
   </div>
 </section>
@@ -2528,7 +2565,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <!-- HOTLINE -->
 <section id="hotline" class="hotline-section">
   <div class="hotline-card fi">
-    <div class="hotline-title">Yordam olishga tayyor bo'lsangiz</div>
+    <h2 class="hotline-title">Yordam olishga tayyor bo'lsangiz</h2>
     <p class="hotline-sub">O'zbekistonda OIV bilan bog'liq barcha xizmatlar <b>bepul va maxfiy</b>.<br>Bugun birinchi qadamni qo'ying.</p>
     <div class="hotline-grid">
       <div class="hline-card">
@@ -2570,7 +2607,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section class="sources-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--muted);">Ishonchlilik uchun</span>
-    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Ma'lumot manbalari</div>
+    <h2 class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Ma'lumot manbalari</h2>
   </div>
 
   <div class="disclaimer-box fi">

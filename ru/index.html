@@ -1316,6 +1316,17 @@ footer a{color:var(--blue-l);text-decoration:none;}
 }
 
 /* ── UTILS ── */
+/* home-articles */
+h2.sec-title,h2.segment-title,h2.hotline-title{font-weight:400;}
+.home-articles-section{padding:0 24px 72px;max-width:980px;margin:0 auto;}
+.home-articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;}
+.home-article{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;color:var(--text);text-decoration:none;transition:border-color .2s;}
+.home-article:hover{border-color:var(--blue-l);}
+.home-article-tag{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B6058;margin-bottom:8px;}
+.home-article-title{font-size:15px;font-weight:800;line-height:1.35;}
+.home-articles-all{display:block;width:fit-content;margin:24px auto 0;font-size:14px;font-weight:800;color:var(--blue);text-decoration:none;}
+@media(max-width:640px){.home-articles-section{padding-left:14px;padding-right:14px;}}
+/* /home-articles */
 .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .fi.vis{opacity:1;transform:none;}
 @media(max-width:640px){
@@ -1429,7 +1440,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
   <!-- Schema Markup - <head> ichiga qo'shing, </head> dan oldin -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiv.hikmatillo.work/#website","url":"https://hiv.hikmatillo.work/ru/","name":"Hamroh — платформа о ВИЧ и АРВ-терапии на русском языке","description":"Что такое ВИЧ, как он передаётся, где сдать тест и как жить полноценно на АРВ-терапии — понятно, анонимно, бесплатно. Статьи, тест на риск и бот Hamroh.","inLanguage":"ru","publisher":{"@id":"https://hiv.hikmatillo.work/#organization"},"alternateName":"Hamroh"},{"@type":"Organization","@id":"https://hiv.hikmatillo.work/#organization","name":"Hamroh","url":"https://hiv.hikmatillo.work/ru/","description":"Просветительская платформа о ВИЧ и хронических состояниях в Узбекистане","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"Russian","url":"https://t.me/HIVUzBot"},"logo":{"@type":"ImageObject","url":"https://hiv.hikmatillo.work/icon-512.png","width":512,"height":512},"sameAs":["https://t.me/HIVUzBot","https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social"]},{"@type":"MedicalWebPage","@id":"https://hiv.hikmatillo.work/#webpage","url":"https://hiv.hikmatillo.work/ru/","name":"ВИЧ: информация на русском, тест и помощь | Hamroh","description":"Что такое ВИЧ, как он передаётся, где сдать тест и как жить полноценно на АРВ-терапии — понятно, анонимно, бесплатно. Статьи, тест на риск и бот Hamroh.","inLanguage":"ru","isPartOf":{"@id":"https://hiv.hikmatillo.work/#website"},"about":{"@type":"MedicalCondition","name":"ВИЧ","alternateName":["СПИД","HIV","AIDS"],"relevantSpecialty":"https://schema.org/Infectious"},"audience":{"@type":"MedicalAudience","audienceType":"Patient"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Где можно сдать тест на ВИЧ?","acceptedAnswer":{"@type":"Answer","text":"В Узбекистане тест на ВИЧ можно сдать бесплатно и конфиденциально в специализированных центрах по борьбе со СПИДом. В Ташкенте: Республиканский центр по борьбе со СПИДом, +998 71 268-30-30."}},{"@type":"Question","name":"Бесплатны ли АРВ-препараты в Узбекистане?","acceptedAnswer":{"@type":"Answer","text":"Да. В Узбекистане АРВ-препараты бесплатно обеспечиваются государством. Чтобы получать лекарства, обратитесь в центр по борьбе со СПИДом и встаньте на учёт."}},{"@type":"Question","name":"Какими путями ВИЧ не передаётся?","acceptedAnswer":{"@type":"Answer","text":"ВИЧ ни в коем случае не передаётся через объятия, поцелуи в щёку, совместное питание, туалет, бассейн и воздух. Передача возможна только через кровь, грудное молоко и незащищённую близость."}},{"@type":"Question","name":"Если я буду принимать АРВ-терапию, вирус перестанет определяться?","acceptedAnswer":{"@type":"Answer","text":"Да. При АРВ-терапии в течение 6 месяцев вирусная нагрузка снижается до неопределяемого уровня (Н=Н — Неопределяемый = Непередающий). Это подтверждено ВОЗ и CDC."}},{"@type":"Question","name":"Можно ли создать семью и родить ребёнка, живя с ВИЧ?","acceptedAnswer":{"@type":"Answer","text":"Да. Если на фоне АРВ-терапии вирусная нагрузка неопределяемая, риск передачи партнёру равен нулю (Н=Н). Женщина, живущая с ВИЧ, может родить здорового ребёнка — риск ниже 1%."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiv.hikmatillo.work/#website","url":"https://hiv.hikmatillo.work/ru/","name":"Hamroh — платформа о ВИЧ и АРВ-терапии на русском языке","description":"Что такое ВИЧ, как он передаётся, где сдать тест и как жить полноценно на АРВ-терапии — понятно, анонимно, бесплатно. Статьи, тест на риск и бот Hamroh.","inLanguage":"ru","publisher":{"@id":"https://hiv.hikmatillo.work/#organization"},"alternateName":"Hamroh"},{"@type":"Organization","@id":"https://hiv.hikmatillo.work/#organization","name":"Hamroh","url":"https://hiv.hikmatillo.work/ru/","description":"Просветительская платформа о ВИЧ и хронических состояниях в Узбекистане","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"Russian","url":"https://t.me/HIVUzBot"},"logo":{"@type":"ImageObject","url":"https://hiv.hikmatillo.work/icon-512.png","width":512,"height":512},"sameAs":["https://t.me/HIVUzBot","https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social","https://apps.apple.com/app/hamroh-community/id6774913295"]},{"@type":"MedicalWebPage","@id":"https://hiv.hikmatillo.work/#webpage","url":"https://hiv.hikmatillo.work/ru/","name":"ВИЧ: информация на русском, тест и помощь | Hamroh","description":"Что такое ВИЧ, как он передаётся, где сдать тест и как жить полноценно на АРВ-терапии — понятно, анонимно, бесплатно. Статьи, тест на риск и бот Hamroh.","inLanguage":"ru","isPartOf":{"@id":"https://hiv.hikmatillo.work/#website"},"about":{"@type":"MedicalCondition","name":"ВИЧ","alternateName":["СПИД","HIV","AIDS"],"relevantSpecialty":"https://schema.org/Infectious"},"audience":{"@type":"MedicalAudience","audienceType":"Patient"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Где можно сдать тест на ВИЧ?","acceptedAnswer":{"@type":"Answer","text":"В Узбекистане тест на ВИЧ можно сдать бесплатно и конфиденциально в специализированных центрах по борьбе со СПИДом. В Ташкенте: Республиканский центр по борьбе со СПИДом, +998 71 268-30-30."}},{"@type":"Question","name":"Бесплатны ли АРВ-препараты в Узбекистане?","acceptedAnswer":{"@type":"Answer","text":"Да. В Узбекистане АРВ-препараты бесплатно обеспечиваются государством. Чтобы получать лекарства, обратитесь в центр по борьбе со СПИДом и встаньте на учёт."}},{"@type":"Question","name":"Какими путями ВИЧ не передаётся?","acceptedAnswer":{"@type":"Answer","text":"ВИЧ ни в коем случае не передаётся через объятия, поцелуи в щёку, совместное питание, туалет, бассейн и воздух. Передача возможна только через кровь, грудное молоко и незащищённую близость."}},{"@type":"Question","name":"Если я буду принимать АРВ-терапию, вирус перестанет определяться?","acceptedAnswer":{"@type":"Answer","text":"Да. При АРВ-терапии в течение 6 месяцев вирусная нагрузка снижается до неопределяемого уровня (Н=Н — Неопределяемый = Непередающий). Это подтверждено ВОЗ и CDC."}},{"@type":"Question","name":"Можно ли создать семью и родить ребёнка, живя с ВИЧ?","acceptedAnswer":{"@type":"Answer","text":"Да. Если на фоне АРВ-терапии вирусная нагрузка неопределяемая, риск передачи партнёру равен нулю (Н=Н). Женщина, живущая с ВИЧ, может родить здорового ребёнка — риск ниже 1%."}}]}]}
 </script>
 </head>
 <body>
@@ -1448,7 +1459,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
     <a href="./glossariy.html">Словарь</a>
     <a href="#hamroh" style="color:var(--blue-l);">🤖 Hamroh</a>
     <a href="./risk.html" style="color:#3E6B57;">⚡ Тест на риск</a>
-    <a href="https://play.google.com/store/apps/details?id=uz.hikmatillo.hamroh_social" target="_blank" rel="noopener" style="color:#3E6B57;">📱 Приложение</a>
+    <a href="#ilova" style="color:#3E6B57;">📱 Приложение</a>
     <a href="#hotline" class="nav-cta">Помощь →</a>
   </div>
 </nav>
@@ -1516,7 +1527,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="kimsiz" class="segment-section">
   <div class="sec-header fi">
     <span class="segment-label">Для вас</span>
-    <div class="segment-title">Чем я могу помочь вам сегодня?</div>
+    <h2 class="segment-title">Чем я могу помочь вам сегодня?</h2>
     <p class="segment-sub">Покажу информацию и шаги, подходящие вашей ситуации</p>
   </div>
 
@@ -1719,7 +1730,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Шаг за шагом</span>
-    <div class="sec-title">Сдать тест — как это проходит?</div>
+    <h2 class="sec-title">Сдать тест — как это проходит?</h2>
     <p class="sec-desc">Для тех, кто идёт впервые, — вся информация чётко и просто</p>
   </div>
 
@@ -1846,7 +1857,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <!-- MARKAZLAR -->
   <div class="sec-header fi" style="text-align:left;margin-bottom:16px;">
     <span class="sec-tag" style="color:var(--blue);">В Узбекистане</span>
-    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Куда обратиться?</div>
+    <h2 class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Куда обратиться?</h2>
   </div>
   <div class="centers-grid fi">
     <div class="center-card">
@@ -1882,7 +1893,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="myth" class="myth-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--red);">Миф или факт?</span>
-    <div class="sec-title">Заблуждения о ВИЧ</div>
+    <h2 class="sec-title">Заблуждения о ВИЧ</h2>
     <p class="sec-desc">Нажмите — узнайте правду. Эти вопросы волнуют многих.</p>
   </div>
 
@@ -2017,7 +2028,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="bilish" class="fear-section">
   <div class="sec-header fi" style="text-align:left;margin-bottom:0;">
     <span class="sec-tag" style="color:var(--red);">Частые тревоги</span>
-    <div class="sec-title">Что вас беспокоит?</div>
+    <h2 class="sec-title">Что вас беспокоит?</h2>
     <p class="sec-desc" style="margin-bottom:28px;">Все эти вопросы естественны. Многие наши земляки поначалу чувствовали то же самое. Узнайте правду.</p>
   </div>
 
@@ -2083,7 +2094,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div id="demo" class="demo-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Живая визуализация</span>
-    <div class="sec-title">Что происходит в крови?</div>
+    <h2 class="sec-title">Что происходит в крови?</h2>
     <p class="sec-desc">Нажимая на кнопки, наблюдайте собственными глазами, как действуют ВИЧ и АРВ-терапия</p>
   </div>
   <div class="live-card fi">
@@ -2124,7 +2135,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div class="slider-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--green);">Интерактивный опыт</span>
-    <div class="sec-title">Попробуйте изменить CD4</div>
+    <h2 class="sec-title">Попробуйте изменить CD4</h2>
     <p class="sec-desc">Двигайте ползунок — наблюдайте, как уровень CD4 влияет на кровь</p>
   </div>
   <div class="slider-card fi">
@@ -2167,7 +2178,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="uzstat" class="uzstat-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">В Узбекистане</span>
-    <div class="sec-title">Как обстоят дела в нашей стране?</div>
+    <h2 class="sec-title">Как обстоят дела в нашей стране?</h2>
     <p class="sec-desc">Глобальные цифры кажутся далёкими. Эти цифры — о нашей стране.</p>
   </div>
 
@@ -2242,7 +2253,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="yontasir" class="side-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Открытая информация</span>
-    <div class="sec-title">Побочные эффекты АРВ-терапии</div>
+    <h2 class="sec-title">Побочные эффекты АРВ-терапии</h2>
     <p class="sec-desc">Многие сайты об этом умалчивают. Мы пишем — потому что осведомлённый человек готов спокойно.</p>
   </div>
 
@@ -2322,7 +2333,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <div id="arvt" class="timeline-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--green);">Путь АРВ-терапии</span>
-    <div class="sec-title">Что происходит, если принимать АРВ-терапию?</div>
+    <h2 class="sec-title">Что происходит, если принимать АРВ-терапию?</h2>
     <p class="sec-desc">От дня постановки диагноза до полноценной жизни — шаг за шагом</p>
   </div>
   <div class="timeline fi">
@@ -2374,7 +2385,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="hikoyalar" class="story-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Реальная жизнь</span>
-    <div class="sec-title">Они тоже так живут</div>
+    <h2 class="sec-title">Они тоже так живут</h2>
     <p class="sec-desc">Эти истории — из опыта реальных людей. Имена изменены, но слова — настоящие.</p>
   </div>
 
@@ -2416,11 +2427,33 @@ footer a{color:var(--blue-l);text-decoration:none;}
   <p class="story-note fi">* Имя изменено в целях конфиденциальности. Опубликовано с согласия автора истории.</p>
 </section>
 
+<!-- HOME ARTICLES -->
+<section id="maqolalar" class="home-articles-section">
+  <div class="sec-header fi">
+    <span class="sec-tag" style="color:var(--green);">Статьи</span>
+    <h2 class="sec-title">Важные статьи</h2>
+    <p class="sec-desc" style="margin:0 auto;">Короткие и понятные статьи о тесте, АРВ-терапии и повседневной жизни.</p>
+  </div>
+  <div class="home-articles fi">
+    <a href="./blog/test-qanday-topshiriladi.html" class="home-article"><span class="home-article-tag">Практика</span><h3 class="home-article-title">Как сдать анализ?</h3></a>
+    <a href="./blog/hiv-qanday-yuqadi.html" class="home-article"><span class="home-article-tag">Основы</span><h3 class="home-article-title">Как передаётся ВИЧ?</h3></a>
+    <a href="./blog/u-equals-u.html" class="home-article"><span class="home-article-tag">Наука</span><h3 class="home-article-title">Что означает Н=Н (Неопределяемый = Непередающий)?</h3></a>
+    <a href="./blog/diagnoz-keyin.html" class="home-article"><span class="home-article-tag">Психологическое здоровье</span><h3 class="home-article-title">Первые шаги после диагноза</h3></a>
+    <a href="./blog/arvt-unutsam.html" class="home-article"><span class="home-article-tag">Практика</span><h3 class="home-article-title">Что будет, если я забуду принять АРВ?</h3></a>
+    <a href="./blog/prep-nima.html" class="home-article"><span class="home-article-tag">Профилактика</span><h3 class="home-article-title">Что такое ПрЭП?</h3></a>
+    <a href="./blog/yaqinlarimga-aytish.html" class="home-article"><span class="home-article-tag">Психологическое здоровье</span><h3 class="home-article-title">Как рассказать близким?</h3></a>
+    <a href="./blog/hiv-bilan-oila.html" class="home-article"><span class="home-article-tag">Жизнь</span><h3 class="home-article-title">Можно ли создать семью, живя с ВИЧ?</h3></a>
+    <a href="./blog/huquqlarim.html" class="home-article"><span class="home-article-tag">Права</span><h3 class="home-article-title">Жизнь с ВИЧ — правовые гарантии</h3></a>
+  </div>
+  <a href="./blog/index.html" class="home-articles-all">Все статьи →</a>
+</section>
+<!-- /HOME ARTICLES -->
+
 <!-- FAQ -->
 <section id="faq" class="faq-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--amber);">Часто задаваемые вопросы</span>
-    <div class="sec-title">Вопросы и ответы</div>
+    <h2 class="sec-title">Вопросы и ответы</h2>
   </div>
   <div class="fi" id="faqList">
     <div class="faq-item">
@@ -2454,7 +2487,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section id="hamroh" class="bot-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--blue);">Для сообщества</span>
-    <div class="sec-title">Hamroh — ваш бот</div>
+    <h2 class="sec-title">Hamroh — ваш бот</h2>
     <p class="sec-desc">ИИ-спутник, присоединившийся к закрытым сообществам по теме ВИЧ. В любое время, любой вопрос.</p>
   </div>
   <div class="bot-card fi">
@@ -2508,7 +2541,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <div class="bot-feat-desc">Напоминает о времени приёма АРВ-терапии</div>
       </div>
     </div>
-    <div class="bot-cta-row">
+    <div class="bot-cta-row" id="ilova" style="scroll-margin-top:90px;">
       <div class="bot-cta-text">
         <b>Начните сегодня</b> — первый разговор займёт меньше 30 секунд.<br>
         <span style="font-size:11px;">Обращайтесь напрямую через приложение Telegram.</span>
@@ -2521,6 +2554,10 @@ footer a{color:var(--blue-l);text-decoration:none;}
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.6 2.1c-.3.3-.5.7-.5 1.2v17.4c0 .5.2.9.5 1.2l.1.1L13.9 12 3.7 2 3.6 2.1z"/><path d="M17.3 15.4l-3.4-3.4V12l3.4-3.4 4.5 2.6c.7.4.7 1.3 0 1.7l-4.5 2.5z" opacity=".7"/><path d="M13.9 12 3.7 22c.4.4 1 .4 1.6.1l11.5-6.5-2.9-3.6z"/><path d="M13.9 12l2.9-3.6L5.3 1.9c-.6-.3-1.2-.3-1.6.1L13.9 12z" opacity=".85"/></svg>
         Скачать в Google Play
       </a>
+      <a href="https://apps.apple.com/app/hamroh-community/id6774913295" target="_blank" rel="noopener" class="btn-playstore">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        Скачать в App Store
+      </a>
     </div>
   </div>
 </section>
@@ -2528,7 +2565,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <!-- HOTLINE -->
 <section id="hotline" class="hotline-section">
   <div class="hotline-card fi">
-    <div class="hotline-title">Когда вы будете готовы обратиться за помощью</div>
+    <h2 class="hotline-title">Когда вы будете готовы обратиться за помощью</h2>
     <p class="hotline-sub">В Узбекистане все услуги, связанные с ВИЧ, <b>бесплатны и конфиденциальны</b>.<br>Сделайте первый шаг сегодня.</p>
     <div class="hotline-grid">
       <div class="hline-card">
@@ -2570,7 +2607,7 @@ footer a{color:var(--blue-l);text-decoration:none;}
 <section class="sources-section">
   <div class="sec-header fi">
     <span class="sec-tag" style="color:var(--muted);">Для достоверности</span>
-    <div class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Источники информации</div>
+    <h2 class="sec-title" style="font-size:clamp(24px,3.5vw,36px);">Источники информации</h2>
   </div>
 
   <div class="disclaimer-box fi">
